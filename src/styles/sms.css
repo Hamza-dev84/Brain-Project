@@ -1,0 +1,387 @@
+/*
+ * BSMS (SMS service provider) brand scope.
+ *
+ * Ported from the sms-service-provider project's design system. Every token is
+ * scoped under `.brand-sms` so the SMS section keeps its own cyan/teal identity
+ * without leaking into the Brain-Net parent or the BrainCLOUD section.
+ *
+ * Values are bare HSL channels (no hsl() wrapper) to match the parent project's
+ * `@theme inline { --color-x: hsl(var(--x)) }` convention.
+ */
+
+.brand-sms {
+  --background: 0 0% 100%;
+  --foreground: 182 90% 22%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 182 90% 22%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 182 90% 22%;
+
+  /* BSMS brand colors — sophisticated depth (3-tier system) */
+  --primary: 187 90% 35%;
+  --primary-foreground: 0 0% 100%;
+  --primary-deep: 187 85% 28%;
+  --primary-light: 187 100% 42%;
+  --primary-glow: 187 61% 81%;
+
+  --secondary: 187 70% 94%;
+  --secondary-foreground: 182 90% 22%;
+
+  --muted: 187 70% 94%;
+  --muted-foreground: 187 80% 30%;
+
+  --accent: 187 75% 38%;
+  --accent-foreground: 0 0% 100%;
+  --accent-light: 187 71% 50%;
+
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 100%;
+
+  --warning: 45 93% 47%;
+  --warning-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 187 70% 70%;
+  --input: 187 70% 94%;
+  --ring: 187 90% 35%;
+
+  /* Gradients — dark to light */
+  --gradient-primary: linear-gradient(135deg, hsl(187 85% 28%), hsl(187 90% 35%));
+  --gradient-secondary: linear-gradient(135deg, hsl(187 70% 85%), hsl(187 70% 94%));
+  --gradient-accent: linear-gradient(45deg, hsl(187 75% 38%), hsl(187 71% 50%));
+
+  /* Shadows with a deeper cyan tint */
+  --shadow-soft: 0 4px 20px -2px hsl(187 85% 28% / 0.12);
+  --shadow-medium: 0 8px 30px -4px hsl(187 85% 28% / 0.18);
+  --shadow-strong: 0 20px 40px -8px hsl(187 85% 28% / 0.25);
+  --shadow-glow: 0 0 30px hsl(187 90% 35% / 0.35);
+
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography hierarchy */
+.brand-sms h1,
+.brand-sms h2,
+.brand-sms h3,
+.brand-sms h4,
+.brand-sms h5,
+.brand-sms h6 {
+  font-family: "Raleway", "Raleway Fallback", sans-serif;
+  letter-spacing: -0.025em;
+}
+
+/* Reset: no parent-brand gradient may leak into SMS headings.
+ * Headings that opt into the BSMS gradient keep it via the classes below. */
+.brand-sms
+  h1:not(.text-gradient, .gradient-heading, .text-accent-gradient),
+.brand-sms
+  h2:not(.text-gradient, .gradient-heading, .text-accent-gradient),
+.brand-sms
+  h3:not(.text-gradient, .gradient-heading, .text-accent-gradient),
+.brand-sms
+  h4:not(.text-gradient, .gradient-heading, .text-accent-gradient),
+.brand-sms
+  h5:not(.text-gradient, .gradient-heading, .text-accent-gradient),
+.brand-sms
+  h6:not(.text-gradient, .gradient-heading, .text-accent-gradient) {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+.brand-sms h1 {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 700;
+}
+.brand-sms h2 {
+  font-size: 1.875rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+.brand-sms h3 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.brand-sms h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.brand-sms h5 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.brand-sms h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .brand-sms h1 {
+    font-size: 3rem;
+  }
+  .brand-sms h2 {
+    font-size: 2.25rem;
+  }
+  .brand-sms h3 {
+    font-size: 1.875rem;
+  }
+  .brand-sms h4 {
+    font-size: 1.5rem;
+  }
+  .brand-sms h5 {
+    font-size: 1.25rem;
+  }
+  .brand-sms h6 {
+    font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-sms h1 {
+    font-size: 3.75rem;
+  }
+  .brand-sms h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Shadow + gradient utilities used by the ported BSMS components */
+.brand-sms .shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+.brand-sms .shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+.brand-sms .shadow-strong {
+  box-shadow: var(--shadow-strong);
+}
+.brand-sms .shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+.brand-sms .hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+.brand-sms .shadow-elegant {
+  box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.1);
+}
+.brand-sms .bg-gradient-radial {
+  background-image: radial-gradient(circle at 30% 50%, var(--tw-gradient-stops));
+}
+.brand-sms .bg-gradient-conic {
+  background-image: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
+}
+
+/* Component classes from the BSMS design system */
+.brand-sms .btn-primary {
+  background-image: linear-gradient(
+    to right,
+    hsl(var(--primary)),
+    hsl(var(--primary) / 0.9)
+  );
+  color: hsl(var(--primary-foreground));
+  transition: all 300ms;
+}
+.brand-sms .btn-secondary {
+  background-image: linear-gradient(
+    to right,
+    hsl(var(--accent)),
+    hsl(var(--accent) / 0.8)
+  );
+  color: hsl(var(--accent-foreground));
+  transition: all 300ms;
+}
+.brand-sms .card-elevated {
+  background-color: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid hsl(var(--border) / 0.5);
+  box-shadow: var(--shadow-soft);
+  transition: all 300ms;
+}
+.brand-sms .card-elevated:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-0.25rem);
+}
+.brand-sms .card-premium {
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(var(--card)),
+    hsl(var(--accent) / 0.1)
+  );
+  border: 1px solid hsl(var(--accent) / 0.2);
+  box-shadow: var(--shadow-glow);
+  transition: all 500ms;
+}
+.brand-sms .card-premium:hover {
+  box-shadow: var(--shadow-strong);
+}
+.brand-sms .text-gradient,
+.brand-sms .gradient-heading,
+.brand-sms .text-accent-gradient {
+  background-image: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.brand-sms .hover-lift {
+  transition: all 300ms;
+}
+.brand-sms .hover-lift:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: var(--shadow-medium);
+}
+.brand-sms .divider-gradient {
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, hsl(var(--border)), transparent);
+}
+.brand-sms .divider-accent {
+  height: 1px;
+  background-image: linear-gradient(to right, transparent, hsl(var(--accent)), transparent);
+}
+
+/* Animation delay helpers */
+.brand-sms .delay-1 {
+  animation-delay: 0.2s;
+}
+.brand-sms .delay-2 {
+  animation-delay: 0.4s;
+}
+.brand-sms .delay-3 {
+  animation-delay: 0.6s;
+}
+.brand-sms .delay-4 {
+  animation-delay: 0.8s;
+}
+.brand-sms .delay-5 {
+  animation-delay: 1s;
+}
+.brand-sms .delay-6 {
+  animation-delay: 1.2s;
+}
+.brand-sms .delay-7 {
+  animation-delay: 1.4s;
+}
+
+/* Keyframes referenced by the BSMS animation tokens */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes page-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float-diagonal {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+}
+@keyframes float-vertical {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}

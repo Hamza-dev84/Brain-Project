@@ -1,0 +1,771 @@
+/*
+ * BrainNET (Internet & Voice Services) brand scope.
+ *
+ * Ported from the internet-services project's design system. Every token, utility
+ * and animation is scoped under `.brand-internet` so nothing leaks into the
+ * Brain-Net parent, BrainCLOUD or BSMS sections.
+ *
+ * Values are bare HSL channels (no hsl() wrapper) to match the parent project's
+ * `@theme inline { --color-x: hsl(var(--x)) }` convention.
+ */
+
+.brand-internet {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  /* Brand colors — BrainNET */
+  --brand-primary: 242 63% 29%;
+  /* #2D2E87 */
+  --brand-secondary: 242 55% 20%;
+  /* #17164F */
+  --brand-accent: 358 80% 52%;
+  /* #EC1C23 */
+
+  --primary: 242 63% 29%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 242 55% 20%;
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 358 80% 52%;
+  --accent-foreground: 0 0% 100%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 242 63% 29%;
+
+  --radius: 0.75rem;
+
+  /* Home redesign tokens (Bold Maximalist Tech) */
+  --bn-bg-deep: 233 60% 8%;
+  --bn-bg: 240 51% 17%;
+  --bn-violet: 244 76% 59%;
+  --bn-violet-soft: 244 76% 70%;
+  --bn-red: 358 84% 52%;
+  --bn-ink: 240 30% 96%;
+  --bn-ink-soft: 240 20% 75%;
+  --bn-line: 240 40% 30%;
+
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography — clear any gradient paint inherited from other brands */
+.brand-internet h1,
+.brand-internet h2,
+.brand-internet h3,
+.brand-internet h4,
+.brand-internet h5,
+.brand-internet h6 {
+  font-family: "Raleway", "Raleway Fallback", sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: inherit;
+}
+
+.brand-internet h1 {
+  font-size: 40px;
+}
+
+.brand-internet h2 {
+  font-size: 32px;
+}
+
+.brand-internet h3 {
+  font-size: 24px;
+}
+
+.brand-internet h4 {
+  font-size: 22px;
+}
+
+.brand-internet h5 {
+  font-size: 18px;
+}
+
+.brand-internet h6 {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .brand-internet h1 { font-size: 24px; }
+  .brand-internet h2 { font-size: 22px; }
+  .brand-internet h3 { font-size: 20px; }
+  .brand-internet h4 { font-size: 18px; }
+  .brand-internet h5 { font-size: 16px; }
+  .brand-internet h6 { font-size: 14px; }
+}
+
+.brand-internet .bn-mesh::before,
+.brand-internet .bn-mesh::after {
+  animation: none !important;
+  filter: none !important;
+  opacity: 0 !important;
+}
+
+.brand-internet .bn-grid-bg,
+.brand-internet .glass,
+.brand-internet .glass-card,
+.brand-internet .glass-card-highlighted {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.bn-logo-slider-track {
+  animation: none !important;
+}
+
+/* Headline gradient utilities intentionally keep their own paint */
+.brand-internet .gradient-text,
+.brand-internet .bn-display,
+.brand-internet .bn-display-accent {
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Typography utilities ---------- */
+.brand-internet .text-nav {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.brand-internet .text-button {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.brand-internet .text-body-small {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.brand-internet .text-body-xs {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.brand-internet .text-pricing {
+  font-family: "Raleway", "Raleway Fallback", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.brand-internet .text-mob-body {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.brand-internet .text-mob-body-small {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.brand-internet .font-display {
+  font-family: "Space Grotesk", "Space Grotesk Fallback", "Raleway", "Raleway Fallback", sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.brand-internet .font-dm {
+  font-family: "DM Sans", "DM Sans Fallback", "Lato", "Lato Fallback", sans-serif;
+}
+
+.brand-internet .font-raleway {
+  font-family: "Raleway", "Raleway Fallback", sans-serif;
+}
+
+.brand-internet .font-lato {
+  font-family: "Lato", "Lato Fallback", sans-serif;
+}
+
+/* ---------- Surface utilities ---------- */
+.brand-internet .glass {
+  background: rgb(255 255 255 / 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgb(255 255 255 / 0.2);
+}
+
+.brand-internet .glass-card {
+  background: rgb(255 255 255 / 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.brand-internet .glass-card-highlighted {
+  background: rgb(255 255 255 / 0.05);
+  backdrop-filter: blur(12px);
+  border: 2px solid hsl(var(--accent) / 0.5);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+}
+
+.brand-internet .section-spacing {
+  padding-block: 4rem;
+}
+
+@media (min-width: 768px) {
+  .brand-internet .section-spacing {
+    padding-block: 5rem;
+  }
+}
+
+.brand-internet .card-spacing {
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .brand-internet .card-spacing {
+    padding: 2rem;
+  }
+}
+
+.brand-internet .touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.brand-internet .gradient-text {
+  background-image: linear-gradient(to right,
+      hsl(var(--accent)),
+      hsl(var(--primary)),
+      hsl(var(--accent)));
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: bn-gradient-shift 3s ease infinite;
+}
+
+.brand-internet .animated-gradient {
+  background: linear-gradient(-45deg,
+      hsl(var(--brand-primary)),
+      hsl(var(--brand-secondary)),
+      hsl(var(--brand-accent)),
+      hsl(var(--brand-primary)));
+  background-size: 400% 400%;
+  animation: bn-gradient-flow 15s ease infinite;
+}
+
+.brand-internet .particles {
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-internet .particles::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle, rgb(255 255 255 / 0.1) 1px, transparent 1px),
+    radial-gradient(circle, rgb(255 255 255 / 0.05) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px;
+  background-position: 0 0, 40px 60px;
+  animation: bn-particle-float 20s linear infinite;
+}
+
+.brand-internet .network-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgb(236 28 35 / 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 90% 80%, rgb(236 28 35 / 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 50% 50%, rgb(236 28 35 / 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 30% 70%, rgb(236 28 35 / 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 70% 30%, rgb(236 28 35 / 0.3) 2px, transparent 2px);
+  background-size: 100% 100%;
+}
+
+.brand-internet .network-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(45deg, transparent 48%, rgb(236 28 35 / 0.1) 49%, rgb(236 28 35 / 0.1) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgb(236 28 35 / 0.1) 49%, rgb(236 28 35 / 0.1) 51%, transparent 52%);
+  background-size: 200px 200px;
+  animation: bn-network-pulse 8s ease-in-out infinite;
+}
+
+/* ---------- Animation utilities ---------- */
+.brand-internet .animate-fade-in {
+  animation: bn-fade-in 0.6s ease-out forwards;
+}
+
+.brand-internet .animate-fade-in-up {
+  animation: bn-fade-in-up 0.8s ease-out forwards;
+}
+
+.brand-internet .animate-slide-in-right {
+  animation: bn-slide-in-right 0.6s ease-out forwards;
+}
+
+.brand-internet .animate-scale-in {
+  animation: bn-scale-in 0.4s ease-out forwards;
+}
+
+.brand-internet .animate-float {
+  animation: bn-float 3s ease-in-out infinite;
+}
+
+.brand-internet .animate-pulse-slow {
+  animation: bn-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.brand-internet .animate-bounce-slow {
+  animation: bn-bounce 2s infinite;
+}
+
+.brand-internet .animate-spin-slow {
+  animation: bn-spin 3s linear infinite;
+}
+
+.brand-internet .icon-float {
+  animation: bn-icon-float 2s ease-in-out infinite;
+}
+
+.brand-internet .icon-pulse {
+  animation: bn-icon-pulse 2s ease-in-out infinite;
+}
+
+.brand-internet .icon-rotate {
+  animation: bn-icon-rotate 3s linear infinite;
+}
+
+.brand-internet .hover-lift {
+  transition: all 0.3s ease-out;
+}
+
+.brand-internet .hover-lift:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+.brand-internet .hover-glow {
+  transition: all 0.3s;
+}
+
+.brand-internet .hover-glow:hover {
+  box-shadow: 0 0 30px rgb(236 28 35 / 0.5);
+  transform: scale(1.02);
+}
+
+.brand-internet .hover-tilt {
+  transition: transform 0.3s;
+}
+
+.brand-internet .hover-tilt:hover {
+  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+}
+
+.brand-internet .btn-transition {
+  transition: all 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-internet .btn-transition:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+}
+
+.brand-internet .stagger-item {
+  animation: bn-fade-in-up 0.6s ease-out forwards;
+}
+
+.brand-internet .stagger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.brand-internet .stagger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.brand-internet .stagger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.brand-internet .stagger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.brand-internet .stagger-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.brand-internet .stagger-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.brand-internet .stagger-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.brand-internet .stagger-item:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.brand-internet .scroll-reveal {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.brand-internet .perspective-1000 {
+  perspective: 1000px;
+}
+
+.brand-internet .transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.brand-internet .gpu-accelerate {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ---------- Home redesign chrome ---------- */
+.brand-internet .bn-home {
+  background-color: hsl(var(--bn-bg-deep));
+  color: hsl(var(--bn-ink));
+}
+
+.brand-internet .bn-mesh {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.brand-internet .bn-mesh::before,
+.brand-internet .bn-mesh::after {
+  content: "";
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.brand-internet .bn-mesh::before {
+  background: radial-gradient(circle, hsl(var(--bn-violet) / 0.9), transparent 60%);
+  top: -20%;
+  left: -10%;
+  animation: bn-drift 18s ease-in-out infinite alternate;
+}
+
+.brand-internet .bn-mesh::after {
+  background: radial-gradient(circle, hsl(var(--bn-red) / 0.7), transparent 60%);
+  bottom: -25%;
+  right: -10%;
+  animation: bn-drift 22s ease-in-out infinite alternate-reverse;
+}
+
+.brand-internet .bn-grid-bg {
+  background-image:
+    linear-gradient(hsl(var(--bn-line) / 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--bn-line) / 0.35) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+.brand-internet .bn-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "DM Sans", "DM Sans Fallback", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: hsl(var(--bn-ink-soft));
+  padding: 0.5rem 0.875rem;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--bn-line) / 0.6);
+  background: hsl(var(--bn-bg) / 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.brand-internet .bn-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: hsl(var(--bn-red));
+  box-shadow: 0 0 12px hsl(var(--bn-red) / 0.9);
+}
+
+.brand-internet .bn-tile {
+  position: relative;
+  border-radius: 1.5rem;
+  background: linear-gradient(160deg, hsl(var(--bn-bg) / 0.85), hsl(var(--bn-bg-deep) / 0.85));
+  border: 1px solid hsl(var(--bn-line) / 0.55);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s;
+}
+
+.brand-internet .bn-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg,
+      hsl(var(--bn-violet) / 0.6),
+      transparent 40%,
+      transparent 60%,
+      hsl(var(--bn-red) / 0.5));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.brand-internet .bn-tile:hover {
+  transform: translateY(-4px);
+}
+
+.brand-internet .bn-tile:hover::before {
+  opacity: 1;
+}
+
+.brand-internet .bn-glow-violet {
+  box-shadow: 0 30px 80px -20px hsl(var(--bn-violet) / 0.5);
+}
+
+.brand-internet .bn-glow-red {
+  box-shadow: 0 30px 80px -20px hsl(var(--bn-red) / 0.45);
+}
+
+.brand-internet .bn-display {
+  background: linear-gradient(180deg, hsl(var(--bn-ink)) 0%, hsl(var(--bn-ink-soft)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-internet .bn-display-accent {
+  background: linear-gradient(135deg, hsl(var(--bn-red)) 0%, hsl(var(--bn-violet-soft)) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-internet .bn-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--bn-line) / 0.7), transparent);
+}
+
+/* ---------- Keyframes (bn- prefixed to avoid cross-brand collisions) ---------- */
+@keyframes bn-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes bn-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bn-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bn-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bn-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes bn-icon-float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bn-icon-pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes bn-icon-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bn-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bn-gradient-shift {
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes bn-particle-float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes bn-network-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes bn-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bn-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bn-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bn-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate3d(8%, 6%, 0) scale(1.15);
+  }
+}

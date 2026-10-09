@@ -1,0 +1,348 @@
+import { Lock, Receipt, Megaphone, MapPin, LucideIcon } from "lucide-react";
+
+export interface PricingTier {
+  tierName: string;
+  smsVolume: string;
+  validity: string;
+  maskCount: string;
+  ratePerSMS?: string;
+  variant: "standard" | "popular" | "premium" | "ultimate";
+  features: string[];
+}
+
+export interface PricingCategory {
+  id: string;
+  name: string;
+  icon: LucideIcon;
+  description: string;
+  accentColor: string;
+  tiers: PricingTier[];
+}
+
+export const pricingCategories: PricingCategory[] = [
+
+  {
+    id: "otp",
+    name: "OTP SMS",
+    icon: Lock,
+    description: "Secure one-time passwords for authentication and verification",
+    accentColor: "from-blue-500 to-cyan-500",
+    tiers: [
+      {
+        tierName: "Starter",
+        smsVolume: "5,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic reporting", "Email support", "API access", "Delivery reports"],
+      },
+      {
+        tierName: "Ready",
+        smsVolume: "10,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic reporting", "Email support", "API access", "Delivery reports"],
+      },
+      {
+        tierName: "Run",
+        smsVolume: "25,000",
+        validity: "6 Months",
+        maskCount: "2",
+        variant: "standard",
+        features: ["Advanced analytics", "Priority support", "API access", "Custom webhooks"],
+      },
+      {
+        tierName: "Good",
+        smsVolume: "50,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "standard",
+        features: ["Advanced analytics", "Priority support", "Dedicated account manager", "Custom integrations"],
+      },
+      {
+        tierName: "Better",
+        smsVolume: "100,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "popular",
+        features: ["Real-time analytics", "24/7 support", "Dedicated manager", "SLA guarantee"],
+      },
+      {
+        tierName: "Best",
+        smsVolume: "250,000",
+        validity: "9 Months",
+        maskCount: "5",
+        variant: "popular",
+        features: ["Enterprise analytics", "24/7 priority support", "Dedicated team", "99.9% uptime SLA"],
+      },
+      {
+        tierName: "Excellent",
+        smsVolume: "500,000",
+        validity: "10 Months",
+        maskCount: "6",
+        variant: "premium",
+        features: ["Full analytics suite", "VIP support", "Technical account manager", "Custom SLA"],
+      },
+      {
+        tierName: "Awesome",
+        smsVolume: "1,000,000",
+        validity: "12 Months",
+        maskCount: "8",
+        variant: "premium",
+        features: ["Enterprise platform", "Dedicated support team", "Custom development", "Guaranteed delivery"],
+      },
+      {
+        tierName: "Fantabulous",
+        smsVolume: "5,000,000",
+        validity: "24 Months",
+        maskCount: "10",
+        variant: "ultimate",
+        features: ["White-label solution", "Enterprise team", "Custom infrastructure", "Priority routing"],
+      },
+    ],
+  },
+  {
+    id: "transactional",
+    name: "Transactional SMS",
+    icon: Receipt,
+    description: "Time-sensitive notifications for orders, payments, and alerts",
+    accentColor: "from-green-500 to-emerald-500",
+    tiers: [
+      {
+        tierName: "Starter",
+        smsVolume: "5,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic reporting", "Email support", "API access", "Delivery reports"],
+      },
+      {
+        tierName: "Ready",
+        smsVolume: "10,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic reporting", "Email support", "API access", "Delivery reports"],
+      },
+      {
+        tierName: "Run",
+        smsVolume: "25,000",
+        validity: "6 Months",
+        maskCount: "2",
+        variant: "standard",
+        features: ["Advanced analytics", "Priority support", "API access", "Custom webhooks"],
+      },
+      {
+        tierName: "Good",
+        smsVolume: "50,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "standard",
+        features: ["Advanced analytics", "Priority support", "Dedicated account manager", "Custom integrations"],
+      },
+      {
+        tierName: "Better",
+        smsVolume: "100,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "popular",
+        features: ["Real-time analytics", "24/7 support", "Dedicated manager", "SLA guarantee"],
+      },
+      {
+        tierName: "Best",
+        smsVolume: "250,000",
+        validity: "9 Months",
+        maskCount: "5",
+        variant: "popular",
+        features: ["Enterprise analytics", "24/7 priority support", "Dedicated team", "99.9% uptime SLA"],
+      },
+      {
+        tierName: "Excellent",
+        smsVolume: "500,000",
+        validity: "10 Months",
+        maskCount: "6",
+        variant: "premium",
+        features: ["Full analytics suite", "VIP support", "Technical account manager", "Custom SLA"],
+      },
+      {
+        tierName: "Awesome",
+        smsVolume: "1,000,000",
+        validity: "12 Months",
+        maskCount: "8",
+        variant: "premium",
+        features: ["Enterprise platform", "Dedicated support team", "Custom development", "Guaranteed delivery"],
+      },
+      {
+        tierName: "Fantabulous",
+        smsVolume: "5,000,000",
+        validity: "24 Months",
+        maskCount: "10",
+        variant: "ultimate",
+        features: ["White-label solution", "Enterprise team", "Custom infrastructure", "Priority routing"],
+      },
+    ],
+  },
+  {
+    id: "marketing",
+    name: "Marketing SMS",
+    icon: Megaphone,
+    description: "Promotional campaigns and bulk messaging for marketing",
+    accentColor: "from-purple-500 to-pink-500",
+    tiers: [
+      {
+        tierName: "Starter",
+        smsVolume: "5,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic reporting", "Email support", "API access", "Campaign analytics"],
+      },
+      {
+        tierName: "Ready",
+        smsVolume: "10,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic reporting", "Email support", "API access", "Campaign analytics"],
+      },
+      {
+        tierName: "Run",
+        smsVolume: "25,000",
+        validity: "6 Months",
+        maskCount: "2",
+        variant: "standard",
+        features: ["Advanced analytics", "Priority support", "Scheduling", "A/B testing"],
+      },
+      {
+        tierName: "Good",
+        smsVolume: "50,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "standard",
+        features: ["Campaign optimization", "Priority support", "Dedicated manager", "Advanced segmentation"],
+      },
+      {
+        tierName: "Better",
+        smsVolume: "100,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "popular",
+        features: ["Marketing automation", "24/7 support", "Dedicated manager", "ROI tracking"],
+      },
+      {
+        tierName: "Best",
+        smsVolume: "250,000",
+        validity: "9 Months",
+        maskCount: "5",
+        variant: "popular",
+        features: ["Full marketing suite", "24/7 priority support", "Marketing team", "Advanced attribution"],
+      },
+      {
+        tierName: "Excellent",
+        smsVolume: "500,000",
+        validity: "10 Months",
+        maskCount: "6",
+        variant: "premium",
+        features: ["Enterprise marketing", "VIP support", "Strategy consultant", "Custom campaigns"],
+      },
+      {
+        tierName: "Awesome",
+        smsVolume: "1,000,000",
+        validity: "12 Months",
+        maskCount: "8",
+        variant: "premium",
+        features: ["Full automation platform", "Dedicated team", "Marketing strategy", "Multi-channel campaigns"],
+      },
+      {
+        tierName: "Fantabulous",
+        smsVolume: "5,000,000",
+        validity: "24 Months",
+        maskCount: "10",
+        variant: "ultimate",
+        features: ["White-label platform", "Enterprise team", "Custom infrastructure", "Omnichannel marketing"],
+      },
+    ],
+  },
+  {
+    id: "lbm",
+    name: "Location Based Marketing (LBM)",
+    icon: MapPin,
+    description: "Geo-targeted SMS campaigns based on customer location",
+    accentColor: "from-orange-500 to-red-500",
+    tiers: [
+      {
+        tierName: "Starter",
+        smsVolume: "5,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic geo-targeting", "Email support", "API access", "Location analytics"],
+      },
+      {
+        tierName: "Ready",
+        smsVolume: "10,000",
+        validity: "3 Months",
+        maskCount: "1",
+        variant: "standard",
+        features: ["Basic geo-targeting", "Email support", "API access", "Location analytics"],
+      },
+      {
+        tierName: "Run",
+        smsVolume: "25,000",
+        validity: "6 Months",
+        maskCount: "2",
+        variant: "standard",
+        features: ["Advanced geo-fencing", "Priority support", "Multiple zones", "Heat maps"],
+      },
+      {
+        tierName: "Good",
+        smsVolume: "50,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "standard",
+        features: ["Proximity targeting", "Priority support", "Custom zones", "Behavioral insights"],
+      },
+      {
+        tierName: "Better",
+        smsVolume: "100,000",
+        validity: "6 Months",
+        maskCount: "3",
+        variant: "popular",
+        features: ["Real-time triggers", "24/7 support", "Unlimited zones", "Footfall analysis"],
+      },
+      {
+        tierName: "Best",
+        smsVolume: "250,000",
+        validity: "9 Months",
+        maskCount: "5",
+        variant: "popular",
+        features: ["Enterprise geo-platform", "24/7 priority support", "Custom triggers", "Advanced attribution"],
+      },
+      {
+        tierName: "Excellent",
+        smsVolume: "500,000",
+        validity: "10 Months",
+        maskCount: "6",
+        variant: "premium",
+        features: ["Full LBM suite", "VIP support", "Location intelligence", "Predictive targeting"],
+      },
+      {
+        tierName: "Awesome",
+        smsVolume: "1,000,000",
+        validity: "12 Months",
+        maskCount: "8",
+        variant: "premium",
+        features: ["Enterprise platform", "Dedicated team", "AI-powered targeting", "Multi-location campaigns"],
+      },
+      {
+        tierName: "Fantabulous",
+        smsVolume: "5,000,000",
+        validity: "24 Months",
+        maskCount: "10",
+        variant: "ultimate",
+        features: ["White-label LBM", "Enterprise team", "Custom infrastructure", "Nationwide coverage"],
+      },
+    ],
+  },
+];
