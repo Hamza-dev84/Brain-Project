@@ -4,7 +4,7 @@ import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 import { nitro } from "nitro/vite";
-
+import netlify from "@netlify/vite-plugin-tanstack-start";
 // Self-hosted build config (no platform-specific wrappers).
 //
 //   npm run build              -> .output/  (Node server bundle)
@@ -60,6 +60,7 @@ export default defineConfig({
       // Route the SSR entry through src/server.ts (our error-page wrapper).
       server: { entry: "server" },
     }),
+    netlify(),
     viteReact(),
     nitro(nitroOptions),
     ...(isLovableSandbox ? [stripRedundantNodejsCompatFlag()] : []),
