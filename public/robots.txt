@@ -1,2 +1,10 @@
 User-agent: *
 Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+Sitemap: https://brain.net.pk/sitemap.xml
