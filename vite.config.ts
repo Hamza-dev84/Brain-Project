@@ -20,10 +20,10 @@ const isLovableSandbox = Boolean(process.env["LOVABLE_SANDBOX"] || process.env["
 
 const nitroOptions = isLovableSandbox
   ? {
-      preset: "cloudflare-module",
-      output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" },
-      cloudflare: { nodeCompat: true, deployConfig: true },
-    }
+    preset: "cloudflare-module",
+    output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" },
+    cloudflare: { nodeCompat: true, deployConfig: true },
+  }
   : { preset: process.env["NITRO_PRESET"] || "node-server" };
 
 // Editor-sandbox only: workers with a compatibility_date on/after 2026-08-04
@@ -66,7 +66,9 @@ export default defineConfig({
     ...(isLovableSandbox ? [stripRedundantNodejsCompatFlag()] : []),
   ],
 
-
+  ssr: {
+    noExternal: ["react-helmet-async"],
+  },
 
   resolve: {
     dedupe: ["react", "react-dom", "@tanstack/react-router", "@tanstack/react-query"],
