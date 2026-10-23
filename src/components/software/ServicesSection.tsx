@@ -4,11 +4,11 @@ import { StaggerContainer, StaggerItem } from './animations/StaggerContainer';
 import { ScrollReveal } from './animations/ScrollReveal';
 
 // Import service images
-import webDevBg from '@/assets/software/services/web-dev-bg.webp';
-import appDevBg from '@/assets/software/services/app-dev-bg.webp';
-import erpBg from '@/assets/software/services/erp-bg.webp';
-import digitalMarketingBg from '@/assets/software/services/digital-marketing-bg.webp';
-import uiuxBg from '@/assets/software/services/uiux-bg.webp';
+import webDevBg from '@/assets/software/services/web-dev-bg.png';
+import appDevBg from '@/assets/software/services/app-dev-bg.png';
+import erpBg from '@/assets/software/services/erp-bg.png';
+import digitalMarketingBg from '@/assets/software/services/digital-marketing-bg.png';
+import uiuxBg from '@/assets/software/services/uiux-bg.png';
 
 // Import service icons
 import webDevIcon from "@/assets/software/services/icons/Web Dev.svg";
