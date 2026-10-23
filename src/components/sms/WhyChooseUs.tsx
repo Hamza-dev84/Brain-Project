@@ -14,15 +14,41 @@ import AnimateOnScroll from "@/components/sms/animations/AnimateOnScroll";
 import StaggeredGrid from "@/components/sms/animations/StaggeredGrid";
 
 const WhyChooseUs = () => {
+  // const features = [
+  //   {
+  //     title: "99.9% Delivery Assurance",
+  //     description: "Guaranteed reach across all networks, including ported numbers (MNP).",
+  //     icon: <IconContainer icon={PackageCheck} size="large" />,
+  //   },
+  //   {
+  //     title: "Affordable Pricing Plans",
+  //     description: "We go as low as Rs. 2.7/SMS (cheaper than competitors).",
+  //     icon: <IconContainer icon={DollarSign} size="large" />,
+  //   },
+  //   {
+  //     title: "PTA-Compliant Routes",
+  //     description:
+  //       "We're an official PTA-Licensed SMS Gateway in Pakistan, this keeps you safe from any legal issues when it comes to sending Bulk SMS in Pakistan.",
+  //     icon: <IconContainer icon={Filter} size="large" />,
+  //   },
+  //   {
+  //     title: "Feature-Rich Client Portal",
+  //     description:
+  //       "Our self-developed SMS management portal for clients provides all the features you need, be it basic features like campaign scheduling to advanced AI-powered Analytics.",
+  //     icon: <IconContainer icon={Settings} size="large" />,
+  //   },
+  // ];
+
   const features = [
     {
       title: "99.9% Delivery Assurance",
-      description: "Guaranteed reach across all networks, including ported numbers (MNP).",
+      description:
+        "Guaranteed reach across all networks, including ported numbers (MNP).",
       icon: <IconContainer icon={PackageCheck} size="large" />,
     },
     {
       title: "Affordable Pricing Plans",
-      description: "We go as low as Rs. 2.7/SMS (cheaper than competitors).",
+      description: "We provide the lowest, most affordable rates when you buy in bulk from us with additional enterprise features",
       icon: <IconContainer icon={DollarSign} size="large" />,
     },
     {
@@ -70,13 +96,13 @@ const WhyChooseUs = () => {
     {
       title: "24/7 Enterprise Support",
       description:
-        "We don't make fake 24/7 support claims, our support is truly 24/7 backed by phone, email, and WhatsApp with strict SLAs and maximum availability of our experts.",
+        "We don't make fake 24/7 support claims, our support is truly 24/7 backed by phone, email, and WhatsApp with strict SLAs and maximum availability of our Experts.",
       icon: <IconContainer icon={Headset} size="large" />,
     },
     {
       title: "Free Consultation",
       description:
-        "We have a 40-year IT and telecom experience, and are well versed in providing different guidance for different industries. That's where our seasoned experts come in and help you optimize your SMS plan.",
+        "We have a 40-Year IT And Telecom Experience, and are well versed in providing different guidance for different industries. that's where our seasoned experts come in and help you optimize your SMS Plan.",
       icon: <IconContainer icon={CalendarCheck} size="large" />,
     },
   ];
@@ -90,7 +116,9 @@ const WhyChooseUs = () => {
         <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
           {feature.icon}
         </div>
-        <h3 className="text-lg font-raleway font-bold text-primary mb-3">{feature.title}</h3>
+        <h3 className="text-lg font-raleway font-bold text-primary mb-3">
+          {feature.title}
+        </h3>
         <p className="text-muted-foreground font-lato text-sm leading-relaxed">
           {feature.description}
         </p>

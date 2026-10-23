@@ -5,7 +5,7 @@ const ComparisonTable = () => {
   const features = [
     { title: "SMS Delivery Speed", bsms: "900ms avg", market: "<1s avg" },
     { title: "Uptime SLA", bsms: "Guaranteed 99.99%", market: "less than 99%" },
-    { title: "Carrier Routing", bsms: "Direct telco links", market: "Gateway hops" },
+    { title: "Carrier Routing", bsms: "Some Direct Telco links", market: "Gateway hops" },
     { title: "Compliance", bsms: "Auto-PTA formatting", market: "Manual submissions" },
   ];
 

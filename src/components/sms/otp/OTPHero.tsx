@@ -4,49 +4,24 @@ import BrowserMockup from "@/components/sms/branded-sms/BrowserMockup";
 import FloatingIcons from "@/components/sms/branded-sms/FloatingIcons";
 import SMSCampaignPlannerDialog from "@/components/sms/campaign-planner/SMSCampaignPlannerDialog";
 import AnimatedCounter from "@/components/sms/animations/AnimatedCounter";
+import GetStartedPopup from "../Popup-Form/GetStartedPopup";
+import { Button } from "@/components/ui/button";
 
 const OTPHero: React.FC = () => {
   const [isPlannerOpen, setIsPlannerOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
       <FloatingIcons />
-      <div className="container mx-auto px-6 lg:px-12 py-20 relative z-10">
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          {/* Left Content */}
+          <div className="space-y-8 animate-fade-in">
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-muted border border-border rounded-full px-4 py-2 text-sm font-body text-muted-foreground">
               <Shield size={16} className="text-primary" />
               <span>PTA Compliant OTP Solution</span>
             </div>
-            {/* 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-tight">
-              Enterprise{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                OTP SMS Service in Pakistan
-              </span>{" "}
-              - Affordable, yet powerful
-            </h1>
-
-            <p className="text-lg text-muted-foreground font-lato leading-relaxed max-w-2xl">
-              Facing Troubles with OTP Delays or Failures During Critical Business Operations? Our
-              Enterprise OTP SMS Service in Pakistan Delivers OTP SMS in a Mere Instant Backed by
-              Infrastructure Built to Handle 10M+ Daily Verifications — So Your Customers Never Face
-              OTP Verification Delays.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <div className="flex items-center gap-2 text-sm font-lato text-foreground">
-                <Zap size={18} className="text-primary" />
-                <span>3-Second Delivery</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm font-lato text-foreground">
-                <Shield size={18} className="text-primary" />
-                <span>99.5% Success Rate</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm font-lato text-foreground">
-                <CheckCircle size={18} className="text-primary" />
-                <span>PTA Approved</span>
-              </div>
-            </div> */}
 
             {/* Heading */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-tight">
@@ -104,16 +79,19 @@ const OTPHero: React.FC = () => {
               </div>
             </div>
 
+            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <button
-                onClick={() => setIsPlannerOpen(true)}
-                className="bg-primary text-primary-foreground font-lato font-semibold text-base px-8 py-4 rounded-lg hover:bg-primary/90 transition-all flex items-center gap-2 shadow-lg hover:shadow-xl"
-              >
+
+              <Button onClick={() => setIsPopupOpen(true)} size="lg">
                 <MessageSquare size={20} />
-                <span>Start Sending OTPs Today!</span>
+                <span>Start Sending OTPs Today</span>
                 <ArrowRight size={20} />
-              </button>
-              <a href="https://wa.me/923276222888" target="_blank" rel="noopener noreferrer">
+              </Button>
+              <a
+                href="https://wa.me/923276222888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <button className="group border-2 border-border text-foreground font-lato font-semibold text-base px-8 py-4 rounded-lg hover:bg-muted transition-all flex items-center gap-2">
                   <Phone size={20} className="text-primary" />
                   <span>Talk to An Expert</span>
@@ -121,45 +99,31 @@ const OTPHero: React.FC = () => {
               </a>
             </div>
 
+            {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8">
               <div className="text-center lg:text-left">
-                <AnimatedCounter
-                  end={50}
-                  suffix="M+"
-                  className="font-raleway font-bold text-3xl text-primary"
-                />
-                <div className="font-lato text-sm text-muted-foreground mt-1">
-                  OTP Messages Sent
-                </div>
+                <AnimatedCounter end={50} suffix="M+" className="font-raleway font-bold text-3xl text-primary" />
+                <div className="font-lato text-sm text-muted-foreground mt-1">OTP messages delivered</div>
               </div>
               <div className="text-center lg:text-left">
-                <AnimatedCounter
-                  end={99.5}
-                  decimals={1}
-                  suffix="%"
-                  className="font-raleway font-bold text-3xl text-primary"
-                />
-                <div className="font-lato text-sm text-muted-foreground mt-1">Delivery Success</div>
+                <AnimatedCounter end={99.5} decimals={1} suffix="%" className="font-raleway font-bold text-3xl text-primary" />
+                <div className="font-lato text-sm text-muted-foreground mt-1">OTP delivery success rate</div>
               </div>
               <div className="text-center lg:text-left">
-                <AnimatedCounter
-                  end={3}
-                  prefix="<"
-                  suffix="s"
-                  className="font-raleway font-bold text-3xl text-primary"
-                />
-                <div className="font-lato text-sm text-muted-foreground mt-1">Average Delivery</div>
+                <AnimatedCounter end={5} prefix="<" suffix="s" className="font-raleway font-bold text-3xl text-primary" />
+                <div className="font-lato text-sm text-muted-foreground mt-1">Average OTP delivery time</div>
               </div>
             </div>
           </div>
 
-          <div className="relative lg:block hidden">
-            <BrowserMockup altText="BSMS OTP SMS Service Pakistan dashboard showing real-time delivery reports, message status, and performance analytics for secure OTP verification" />
+          {/* Right Mockup */}
+          <div className="relative animate-slide-up lg:block hidden">
+            <BrowserMockup altText="BSMS dashboard showing SMS sent, failed, scheduled metrics, bucket details, and usage reports for OTP SMS Service in Pakistan." />
           </div>
         </div>
       </div>
 
-      <SMSCampaignPlannerDialog open={isPlannerOpen} onOpenChange={setIsPlannerOpen} />
+      <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
     </section>
   );
 };

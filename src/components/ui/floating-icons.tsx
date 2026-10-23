@@ -25,7 +25,13 @@ export function FloatingIcons() {
   const { scrollY } = useScroll();
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      style={{
+        maskImage: 'linear-gradient(to right, transparent, black 18%, black 100%)',
+        WebkitMaskImage: 'linear-gradient(to right, transparent, black 18%, black 100%)',
+      }}
+    >
       {ICONS.map(({ Icon, delay, x, y, depth }, index) => {
         // Parallax effect: different scroll speeds based on depth
         const yParallax = useTransform(scrollY, [0, 1000], [0, -1000 * depth]);
@@ -33,11 +39,11 @@ export function FloatingIcons() {
         return (
           <motion.div
             key={index}
-            className="absolute opacity-20 text-primary"
+            className="absolute opacity-20 text-m3-primary"
             initial={{ 
               x: x - 200, 
               y: y, 
-              opacity: 1,
+              opacity: 0,
               rotate: -15 
             }}
             animate={{ 

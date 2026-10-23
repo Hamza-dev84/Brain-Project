@@ -58,7 +58,7 @@ const TechnicalFeatures = () => {
   return (
     <section className="flex flex-col items-center gap-10 w-full px-[60px] max-md:px-10 max-sm:px-5">
       <AnimateOnScroll animation="fade-up">
-        <h2 className="text-primary text-center text-[32px] font-bold capitalize max-sm:text-2xl max-sm:leading-8">
+        <h2 className="text-[#145265] text-center text-[32px] font-bold capitalize bg-clip-text max-sm:text-2xl max-sm:leading-8">
           Technical Brilliance Built To Scale!
         </h2>
       </AnimateOnScroll>

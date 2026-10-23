@@ -50,65 +50,6 @@ export const ContactForm: React.FC = () => {
     }
   };
 
-  //   const handleSubmit = async (e: React.FormEvent) => {
-  //     e.preventDefault();
-
-  //     if (!formData.inquiryType) {
-  //       toast.error("Please select an inquiry type");
-  //       return;
-  //     }
-
-  //     setIsSubmitting(true);
-
-  //     try {
-  //       // Prepare email content
-  //       const emailBody = `
-  // Name: ${formData.name}
-  // Email: ${formData.email}
-  // Phone: ${formData.phone}
-  // Subject: ${formData.subject}
-  // Inquiry Type: ${formData.inquiryType}
-  // ${formData.hearAboutUs ? `How They Heard About Us: ${formData.hearAboutUs}` : ''}
-  // ${attachedFiles.length > 0 ? `\nAttached Files: ${attachedFiles.map(f => f.name).join(', ')}` : ''}
-
-  // Message:
-  // ${formData.message}
-  //       `.trim();
-
-  //       // Create mailto link
-  //       const mailtoLink = `mailto:muhammad@brain.net.pk?subject=${encodeURIComponent(
-  //         `Contact Form: ${formData.subject}`,
-  //       )}&body=${encodeURIComponent(emailBody)}`;
-
-  //       // Open email client
-  //       window.location.href = mailtoLink;
-
-  //       // Simulate API call
-  //       await new Promise((resolve) => setTimeout(resolve, 1500));
-
-  //       toast.success("Message sent successfully!", {
-  //         description: "We'll get back to you within a Maximum of 24 working hours.",
-  //       });
-
-  //       setFormData({
-  //         name: "",
-  //         email: "",
-  //         phone: "",
-  //         subject: "",
-  //         inquiryType: "",
-  //         hearAboutUs: "",
-  //         message: "",
-  //       });
-  //       setAttachedFiles([]);
-  //     } catch (error) {
-  //       toast.error("Failed to send message", {
-  //         description: "Please try again or contact us directly.",
-  //       });
-  //     } finally {
-  //       setIsSubmitting(false);
-  //     }
-  //   };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -166,8 +107,7 @@ export const ContactForm: React.FC = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            placeholder="Your full name"
-            className="h-12"
+            placeholder="Enter your full name"
           />
         </div>
 
@@ -179,8 +119,7 @@ export const ContactForm: React.FC = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            placeholder="your@email.com"
-            className="h-12"
+            placeholder="your.email@example.com"
           />
         </div>
       </div>
@@ -193,105 +132,69 @@ export const ContactForm: React.FC = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+92 300 1234567"
-            className="h-12"
+            placeholder="e.g. +14155552671 or 03001234567"
           />
         </div>
 
         <div>
-          <label className="block font-lato font-semibold text-brand-dark mb-2">Subject *</label>
-          <Input
-            type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-            placeholder="How can we help?"
-            className="h-12"
-          />
+          <label className="block font-lato font-semibold text-brand-dark mb-1">How can we help you? *</label>
+          <Select
+            value={formData.inquiryType}
+            onValueChange={(value) => handleSelectChange("inquiryType", value)}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select inquiry type" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="General">General</SelectItem>
+              <SelectItem value="Technical">Technical Issue</SelectItem>
+              <SelectItem value="Billing">Billing</SelectItem>
+              <SelectItem value="Sales">Sales</SelectItem>
+              <SelectItem value="Other">Other</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
+
       </div>
 
       <div>
-        <label className="block font-lato font-semibold text-brand-dark mb-2">What can we help you with? *</label>
+        <label className="block font-lato font-semibold text-brand-dark mb-2">How did you hear about us?(Optional)</label>
         <Select
-          value={formData.inquiryType}
-          onValueChange={(value) => handleSelectChange("inquiryType", value)}
-          required
+          value={formData.hearAboutUs}
+          onValueChange={(value) => handleSelectChange("hearAboutUs", value)}
         >
-          <SelectTrigger className="h-12">
-            <SelectValue placeholder="Select inquiry type" />
+          <SelectTrigger >
+            <SelectValue placeholder="Select Option" />
           </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="General Inquiries">General Inquiries</SelectItem>
-            <SelectItem value="Report a Technical Issue">Report a Technical Issue</SelectItem>
-            <SelectItem value="Billing & Account Help">Billing & Account Help</SelectItem>
-            <SelectItem value="Project Updates & Requests">Project Updates & Requests</SelectItem>
-            <SelectItem value="Sales Inquiries">Sales Inquiries</SelectItem>
-            <SelectItem value="Other">Other</SelectItem>
-          </SelectContent>
+              <SelectContent>
+                <SelectItem value="Web Search">
+                  Web Search (Google, Bing, etc.)
+                </SelectItem>
+                <SelectItem value="AI Search">
+                  Al Search (ChatGPT, Gemini, Etc.)
+                </SelectItem>
+                <SelectItem value="Social Media">Social Media</SelectItem>
+                <SelectItem value="Brochure">
+                  Brochure, Flyer, Banner
+                </SelectItem>
+                <SelectItem value="Referral">Referral</SelectItem>
+                <SelectItem value="Salesperson">Salesperson</SelectItem>
+                <SelectItem value="Other">Other</SelectItem>
+              </SelectContent>
         </Select>
       </div>
 
       <div>
-        <label className="block font-lato font-semibold text-brand-dark mb-2">Message *</label>
+        <label className="block font-lato font-semibold text-brand-dark mb-2">Message(Optional)</label>
         <Textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
           required
-          placeholder="Tell us about your project..."
+          placeholder="Enter Your Message"
           rows={6}
           className="resize-none"
         />
-      </div>
-
-      <div>
-        <label className="block font-lato font-semibold text-brand-dark mb-2">How did you hear about us?</label>
-        <Select
-          value={formData.hearAboutUs}
-          onValueChange={(value) => handleSelectChange("hearAboutUs", value)}
-        >
-          <SelectTrigger className="h-12">
-            <SelectValue placeholder="Select an option (optional)" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="Web Search (Google, Bing, ChatGPT, etc.)">Web Search (Google, Bing, ChatGPT, etc.)</SelectItem>
-            <SelectItem value="Social Media (Facebook, Instagram, LinkedIn, etc.)">Social Media (Facebook, Instagram, LinkedIn, etc.)</SelectItem>
-            <SelectItem value="Referral">Referral</SelectItem>
-            <SelectItem value="Clutch / GoodFirms / Industry Directory">Clutch / GoodFirms / Industry Directory</SelectItem>
-            <SelectItem value="Online Ad (Google, LinkedIn, or Social Media)">Online Ad (Google, LinkedIn, or Social Media)</SelectItem>
-            <SelectItem value="Tech Event or Webinar">Tech Event or Webinar</SelectItem>
-            <SelectItem value="Other">Other</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      <div>
-        <label className="block font-lato font-semibold text-brand-dark mb-2">Add Attachment (optional)</label>
-        <div className="relative">
-          <Input
-            type="file"
-            onChange={handleFileChange}
-            multiple
-            accept=".jpg,.jpeg,.png,.pdf,.docx,.zip"
-            className="h-12 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-brand-primary/10 file:text-brand-primary hover:file:bg-brand-primary/20"
-          />
-        </div>
-        <p className="text-sm text-neutral-medium mt-2">
-          You can attach files to help us better understand your request. Accepted formats: .jpg, .png, .pdf, .docx, .zip
-        </p>
-        {attachedFiles.length > 0 && (
-          <div className="mt-3 space-y-2">
-            {attachedFiles.map((file, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm text-brand-dark">
-                <Upload className="w-4 h-4" />
-                <span>{file.name}</span>
-                <span className="text-neutral-medium">({(file.size / 1024).toFixed(2)} KB)</span>
-              </div>
-            ))}
-          </div>
-        )}
       </div>
 
       <Button

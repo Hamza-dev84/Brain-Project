@@ -154,8 +154,6 @@ function CoworkingSpacesContent() {
   return (
     <>
       <PageHeader 
-        title="Co-Working Spaces"
-        description="Strategic technology solutions for Pakistan's coworking industry"
         breadcrumbs={[
           { label: 'Industry Solutions', path: '/industry-solutions' },
           { label: 'Co-Working Spaces' }
@@ -163,7 +161,7 @@ function CoworkingSpacesContent() {
       />
 
       {/* Hero Section with Enhanced Visuals */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-20 px-4 md:px-6 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -178,7 +176,7 @@ function CoworkingSpacesContent() {
           </Badge>
           
           <h1 className="heading-display text-brand-dark leading-tight">
-            <span className="text-primary block mt-2">BrainTEL — The Strategic Technology Partner for Pakistan's Co-working Spaces</span>
+            <span className="text-primary block mt-2">We Are The Strategic Technology Partner for Pakistan's Co-working Spaces</span>
           </h1>
           
           <p className="text-lead-lg text-neutral-medium max-w-4xl mx-auto leading-relaxed">
@@ -213,7 +211,7 @@ function CoworkingSpacesContent() {
             <Badge className="mx-auto bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20">
               Smart Solutions
             </Badge>
-            <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-2">
               Smart, Combined Solutions for Operational Excellence
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -340,9 +338,9 @@ function CoworkingSpacesContent() {
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         </div>
         
-        <div className="container mx-auto max-w-4xl text-center space-y-10 relative z-10">
+        <div className="container mx-auto max-w-5xl text-center space-y-10 relative z-10">
           <div className="space-y-6">
-            <h2 className="heading-xl heading-solid-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white pb-2">
               Build smarter, more productive space.
             </h2>
             <p className="text-lead-lg text-white/90 max-w-2xl mx-auto">

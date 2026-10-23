@@ -19,11 +19,9 @@ export default function CSR() {
       <PageMeta
         title="CSR Initiatives | Community Support & Social Impact | BrainTEL"
         description="Learn about BrainTEL’s CSR initiatives in Pakistan including flood relief programs, employee Hajj sponsorship, IT education centers, and community support focused on social impact and development."
-        // ogImage="/favicons/default.png"
+      // ogImage="/favicons/default.png"
       />
       <PageHeader
-        title="Corporate Social Responsibility"
-        description="Our community and our honoured employees together help nourish BrainTEL's aim to uplift the telecom industry. We, in return, take initiatives to nurture their personal and spiritual well-being, and our CSR approaches are a reflection of that."
         breadcrumbs={[
           { label: 'Company', path: '/company' },
           { label: 'Corporate Social Responsibility' }
@@ -36,10 +34,10 @@ export default function CSR() {
           <div className="relative mb-16 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 via-brand-secondary/5 to-brand-tertiary/10 p-8 md:p-12">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--brand-secondary)/0.08),transparent_50%)]"></div>
-            <div className="relative max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 tracking-tight">
+            <div className="relative max-w-5xl mx-auto text-center">
+              <h1 className=" text-3xl md:text-6xl font-bold font-lato text-foreground mb-6 tracking-tigh pb-4">
                 Making a Difference Together
-              </h2>
+              </h1>
               <p className="text-lg md:text-xl text-neutral-medium leading-relaxed">
                 It is compassion, community support and employee well-being that brings us together as one. We believe in strengthening the community by bringing a positive change within and outside our organization.
               </p>
@@ -141,7 +139,7 @@ export default function CSR() {
           <div className="mt-16 max-w-4xl mx-auto">
             <Card className="border-2 border-border/30 shadow-lg">
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-3xl md:text-4xl mb-4 bg-gradient-to-r from-primary via-brand-secondary to-brand-tertiary bg-clip-text text-transparent">
+                <CardTitle className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
                   Our Commitment to Society
                 </CardTitle>
                 <CardDescription className="text-lg leading-relaxed">
@@ -154,7 +152,9 @@ export default function CSR() {
                     <div className="mb-4 inline-block p-3 bg-primary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
                       <Heart className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="font-bold text-lg text-foreground mb-3">Community Impact</h3>
+                    <h3 className="text-2xl text-center font-bold pb-4">
+                      Community Impact
+                    </h3>
                     <p className="text-sm text-neutral-medium leading-relaxed">
                       Aiding Vulnerable Communities During the Time of Crisis
                     </p>
@@ -163,8 +163,9 @@ export default function CSR() {
                     <div className="mb-4 inline-block p-3 bg-brand-secondary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
                       <Users className="h-6 w-6 text-brand-secondary" />
                     </div>
-                    <h3 className="font-bold text-lg text-foreground mb-3">Employee Well-being</h3>
-                    <p className="text-sm text-neutral-medium leading-relaxed">
+                    <h3 className="text-2xl text-center font-bold pb-4">
+                      Employee Well-being
+                    </h3><p className="text-sm text-neutral-medium leading-relaxed">
                       Honoring cultural values and supporting personal spiritual journeys
                     </p>
                   </div>
@@ -172,8 +173,9 @@ export default function CSR() {
                     <div className="mb-4 inline-block p-3 bg-brand-tertiary/20 rounded-full group-hover:scale-110 transition-transform duration-300">
                       <Users className="h-6 w-6 text-brand-tertiary" />
                     </div>
-                    <h3 className="font-bold text-lg text-foreground mb-3">Educational Advancement</h3>
-                    <p className="text-sm text-neutral-medium leading-relaxed">
+                    <h3 className="text-2xl text-center font-bold pb-4">
+                      Educational Advancement
+                    </h3><p className="text-sm text-neutral-medium leading-relaxed">
                       Promoting IT literacy for local mass tech adoption.
                     </p>
                   </div>

@@ -116,7 +116,23 @@ const INCLUDED = [
   {
     icon: Globe,
     title: "High-Speed, Carrier-Neutral Connectivity",
-    body: "We don't lock you into a single ISP. As a carrier-neutral facility, you can access multiple Tier 1 internet providers with competitive bandwidth pricing and real redundancy.",
+    body: (
+      <>
+        We don't lock you into a single ISP. As a carrier-neutral facility, you can access
+        <a
+          href="/services/internet/business-internet"
+          className="
+    text-[#15803d]
+    hover:text-[#166534]
+    active:text-[#14532D]
+    transition-colors
+  "
+        >
+          multiple Tier 1 internet providers
+        </a>
+        with competitive bandwidth pricing and real redundancy.
+      </>
+    ),
     list: [
       "1Gbps and 10Gbps port options",
       "Unmetered bandwidth plans available",
@@ -272,11 +288,7 @@ function ColocationPage() {
               <span className="text-green">Can't Afford Downtime.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lede text-navy/70">
-              Your IT infrastructure is the backbone of your business. It deserves
-              more than a shared shelf in an overcrowded rack. At BrainCLOUD, we
-              offer top-notch colocation services and cloud colocation solutions.
-              You get complete control of your hardware and avoid the high costs
-              and hassle of building a data center.
+              Your IT infrastructure needs more than a shared shelf in a crowded rack. BrainCLOUD offers colocation services in Pakistan. You can rent space in a Tier III, PTA-licensed data center in Lahore. It features redundant power, carrier-neutral connectivity, and 24/7 physical security. This way, you fully control your hardware. You avoid the high costs and long waits of building your own data center.
             </p>
             <CTAPair
               className="mt-9"
@@ -371,7 +383,7 @@ function ColocationPage() {
                       <Check className="h-3.5 w-3.5" strokeWidth={3} />
                     </span>
                     <span className="min-w-0">
-                      <span className="block font-display text-sm font-extrabold leading-snug text-white">
+                      <span className="block font-display text-sm font-extrabold leading-snug text-white!">
                         {b.t}
                       </span>
                       <span className="mt-1 block text-xs leading-relaxed text-white/70">

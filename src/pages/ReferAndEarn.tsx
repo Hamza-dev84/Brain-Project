@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { toast } from '@/hooks/use-toast';
-import friendsReferralImage from '@/assets/refer-earn/friends-referral.webp';
+import friendsReferralImage from '@/assets/refer-earn/Refer_and_Earn_Image_New.webp';
 import { brainTelReferralFormApi } from '@/pages/services/brainTelFormsApi';
 
 const services = [
@@ -102,8 +102,6 @@ export default function ReferAndEarn() {
   return (
     <>
       <PageHeader
-        title="Refer & Earn"
-        description="Share the joy of fast internet and get rewarded for each successful referral"
         breadcrumbs={[
           { label: "Resources", path: "/resources" },
           { label: "Refer & Earn" },
@@ -117,7 +115,7 @@ export default function ReferAndEarn() {
       <PageMeta
         title="Refer & Earn | Refer Internet Services & Get Rewards | BrainTEL"
         description="Refer friends to BrainTEL internet services and earn rewards on every successful referral. Share high-speed fiber internet and help others get connected across Pakistan."
-        // ogImage="/favicons/default.png"
+      // ogImage="/favicons/default.png"
       />
 
       {/* Hero Section */}
@@ -130,20 +128,32 @@ export default function ReferAndEarn() {
                 Refer Your Friends & Get Rewarded
               </h1>
               <p className="text-lg text-neutral-medium">
-                Share The Joy Of Fast Internet And Get Rewarded For Each Successful Referral.
+                Share The Joy Of
+                <a
+                  href="/services/internet/home-internet"
+                  className="
+    text-[#2563EB]
+    hover:text-[#1D4ED8]
+    active:text-[#1E3A8A]
+
+    dark:text-[#60A5FA]
+    dark:hover:text-[#93C5FD]
+    dark:active:text-[#BFDBFE]
+
+    transition-colors
+  "
+                >{" "}
+                  Fast Internet{" "}
+                </a>
+                And Get Rewarded For Each Successful Referral.
               </p>
-              <Button
-                onClick={scrollToForm}
-                className="bg-destructive hover:bg-destructive/90 text-white px-8 py-6 text-lg h-auto cursor-pointer"
-              >
-                Refer Now
-              </Button>
+              
             </div>
 
             {/* Right Image */}
             <div className="relative">
               <div className="relative rounded-3xl overflow-hidden border-4 border-primary shadow-2xl">
-                <img width={800} height={600} loading="lazy" decoding="async"
+                <img
                   src={friendsReferralImage}
                   alt="Friends sharing referral"
                   className="w-full h-auto object-cover"
@@ -158,7 +168,7 @@ export default function ReferAndEarn() {
       <section id="referral-form" className="py-16 bg-card">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
               Enter Your Customer Code & Friend's Details
             </h2>
             <p className="text-neutral-medium">
@@ -263,45 +273,6 @@ export default function ReferAndEarn() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-primary mb-12">
-              Why Refer Friends to BrainTEL?
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-3xl">🎁</span>
-                </div>
-                <h3 className="font-semibold text-lg text-foreground">Earn Rewards</h3>
-                <p className="text-neutral-medium text-sm">
-                  Get exclusive rewards for every successful referral
-                </p>
-              </div>
-              <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-3xl">🚀</span>
-                </div>
-                <h3 className="font-semibold text-lg text-foreground">Help Friends</h3>
-                <p className="text-neutral-medium text-sm">
-                  Give your friends access to premium internet services
-                </p>
-              </div>
-              <div className="text-center space-y-3">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <span className="text-3xl">💯</span>
-                </div>
-                <h3 className="font-semibold text-lg text-foreground">Easy Process</h3>
-                <p className="text-neutral-medium text-sm">
-                  Simple form, quick approval, instant benefits
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

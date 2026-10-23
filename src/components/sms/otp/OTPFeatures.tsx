@@ -11,29 +11,30 @@ import StaggeredGrid from "@/components/sms/animations/StaggeredGrid";
 import { Link } from "@/lib/router-compat";
 
 const OTPFeatures = () => {
+
   const features = [
     {
       title: "40+ Years of Trust",
       description:
-        "BSMS is powered by Brain Telecommunication Ltd., founded and overlooked by the minds who first uncovered and exposed the world's First PC virus, which is the reason why so many industries trust us with their sensitive OTP SMS.",
+        "BSMS provides stable OTP SMS services in Pakistan backed by experienced telecom infrastructure. Businesses depend on our platform for reliable mobile number verification online Pakistan systems.",
       icon: <IconContainer icon={Award} size="large" />,
     },
     {
-      title: "Instant OTP Delivery Guaranteed",
+      title: "Instant OTP Delivery",
       description:
-        "Our OTP SMS in specific Verifies users in milliseconds as it goes through dedicated high-priority telecom routes, so our OTPs arrive Instantly, making our OTP SMS service in Pakistan truly premium.",
+        "We designed our infrastructure for rapid OTP code delivery in Pakistan. Customers receive verification codes in seconds when they enter their OTP to log in or sign up.",
       icon: <IconContainer icon={Zap} size="large" />,
     },
     {
-      title: "Elite Security",
+      title: "Enterprise Security",
       description:
-        "Elite Security for our OTP SMS which has TLS-Encryption and full compliance of PTA's Cyber-threat detection and incident reporting (CTDISR) with regular third-party audits.",
+        "BSMS keeps user accounts safe with secure OTP verification. This stops unauthorized access and boosts authentication security.",
       icon: <IconContainer icon={ShieldCheck} size="large" />,
     },
     {
-      title: "Elastic Scalability",
+      title: "Scalable Messaging Platform",
       description:
-        "Our SMS Portal auto-scales up and down with your SMS Needs accordingly in real-time, leaving you relaxed with no pre-provisioning, no delays, and no downtime.",
+        "No matter if you send hundreds or millions of OTPs daily, BSMS handles growth with ease. It's perfect for apps that need OTP SMS services or real-time verification.",
       icon: <IconContainer icon={TrendingUp} size="large" />,
     },
   ];

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/cloud")({
 function CloudLayout() {
   return (
     <div className="brand-cloud min-h-screen">
-      <BrandBar active="cloud" />
+      {/* <BrandBar active="cloud" /> */}
       <Outlet />
     </div>
   );

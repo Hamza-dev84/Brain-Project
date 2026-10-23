@@ -142,7 +142,7 @@ function ContactPage() {
       <section className="border-b border-hairline bg-surface">
         <div className="container-x py-20 text-center lg:py-24">
           <Eyebrow tone="green" withDot>
-            We reply within 1 business hour
+            We reply within 2 business hour
           </Eyebrow>
           <h1 className="mt-5 font-display text-hero font-extrabold text-navy">
             Get <span className="text-green">in touch</span>

@@ -10,10 +10,10 @@ const CompanyLogos: React.FC = () => {
       src: "/img/builder/05f844f5f1c917a6.webp",
       alt: "Company Logo 2",
     },
-    {
-      src: "/img/builder/6f8dd4c1360e65aa.webp",
-      alt: "Company Logo 3",
-    },
+    // {
+    //   src: "/img/builder/6f8dd4c1360e65aa.webp",
+    //   alt: "Company Logo 3",
+    // },
     {
       src: "/img/builder/488fa43d64cca4bb.webp",
       alt: "Company Logo 5",
@@ -27,7 +27,7 @@ const CompanyLogos: React.FC = () => {
   return (
     <section className="py-8 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-center text-primary/70 font-body font-medium text-sm uppercase tracking-wider mb-12">
+        <h2 className="text-center text-primary/70 font-body font-medium text-sm uppercase tracking-wider mb-12 animate-fade-in">
           Trusted and Used by Renowned Enterprises
         </h2>
         <div className="relative">

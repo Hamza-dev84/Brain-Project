@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/software")({
 function SoftwareLayout() {
   return (
     <div className="brand-software min-h-screen">
-      <BrandBar active="software" />
+      {/* <BrandBar active="software" /> */}
       <Outlet />
     </div>
   );

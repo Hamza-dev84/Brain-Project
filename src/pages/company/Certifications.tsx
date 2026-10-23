@@ -25,7 +25,7 @@ import oracleProfessionalLogo from '@/assets/certifications/oracle-certified-pro
 export default function Certifications() {
   return (
     <>
-      <PageMeta 
+      <PageMeta
         title="Certifications | ISO, PCI-DSS, PTA | BrainTEL"
         description="BrainTEL's certifications: ISO 27001, PCI-DSS, PTA Licensed, AWS & Cisco certified. Trusted IT infrastructure in Pakistan."
       />
@@ -139,7 +139,7 @@ function CertificationsContent() {
 
   return (
     <>
-      <PageHeader 
+      <PageHeader
         title="Certifications & Compliance"
         description="Demonstrating our commitment to excellence, security, and professional standards"
         breadcrumbs={[
@@ -149,23 +149,23 @@ function CertificationsContent() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-20 px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-48 h-48 bg-brand-secondary rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="container mx-auto max-w-5xl text-center space-y-8 relative z-10 animate-fade-in">
           <Badge className="mx-auto mb-4 bg-primary/10 text-primary border-primary/20">
             <Award className="w-4 h-4 mr-2" />
             Industry Leading Standards
           </Badge>
-          
+
           <h1 className="heading-display text-brand-dark leading-tight">
             Certified Excellence in
             <span className="text-primary block mt-2">Technology & Security</span>
           </h1>
-          
+
           <p className="text-lead-lg text-neutral-medium max-w-4xl mx-auto leading-relaxed">
             Our certifications represent more than compliance—they demonstrate our unwavering commitment to security, quality, and professional excellence in everything we do.
           </p>
@@ -190,7 +190,10 @@ function CertificationsContent() {
               <Badge className="mx-auto bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20">
                 Professional Standards
               </Badge>
-              <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+              {/* <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+                Our Commitment to Excellence
+              </h2> */}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface">
                 Our Commitment to Excellence
               </h2>
               <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -213,14 +216,14 @@ function CertificationsContent() {
               {/* Desktop Grid */}
               <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 {companyCertifications.map((cert, index) => (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className={`group relative overflow-hidden hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl border-0 bg-gradient-to-br ${cert.color} backdrop-blur-sm`}
                     onMouseEnter={() => setHoveredCard(index)}
                     onMouseLeave={() => setHoveredCard(null)}
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-700"></div>
-                    
+
                     <CardHeader className="space-y-6 relative z-10">
                       <div className="flex flex-col items-center text-center space-y-4">
                         <div className="w-24 h-24 rounded-xl bg-white/90 dark:bg-background/90 shadow-lg group-hover:shadow-xl transition-shadow p-3 flex items-center justify-center">
@@ -250,7 +253,7 @@ function CertificationsContent() {
                       <CarouselItem key={index} className="pl-4">
                         <Card className={`group relative overflow-hidden border-0 bg-gradient-to-br ${cert.color} backdrop-blur-sm h-full`}>
                           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
-                          
+
                           <CardHeader className="space-y-6 relative z-10">
                             <div className="flex flex-col items-center text-center space-y-4">
                               <div className="w-20 h-20 rounded-xl bg-white/90 dark:bg-background/90 shadow-lg p-3 flex items-center justify-center">
@@ -284,12 +287,12 @@ function CertificationsContent() {
               {/* Desktop Grid */}
               <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 {teamCertifications.map((cert, index) => (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className="group relative overflow-hidden hover:scale-[1.02] transition-all duration-500 hover:shadow-2xl border-0 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-950 dark:to-gray-950 backdrop-blur-sm"
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-700"></div>
-                    
+
                     <CardHeader className="space-y-6 relative z-10">
                       <div className="flex flex-col items-center text-center space-y-4">
                         <div className="w-24 h-24 rounded-xl bg-white/90 dark:bg-background/90 shadow-lg group-hover:shadow-xl transition-shadow p-3 flex items-center justify-center">
@@ -315,7 +318,7 @@ function CertificationsContent() {
                       <CarouselItem key={index} className="pl-4">
                         <Card className="group relative overflow-hidden border-0 bg-gradient-to-br from-slate-50 to-gray-50 dark:from-slate-950 dark:to-gray-950 backdrop-blur-sm h-full">
                           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-16 translate-x-16"></div>
-                          
+
                           <CardHeader className="space-y-6 relative z-10">
                             <div className="flex flex-col items-center text-center space-y-4">
                               <div className="w-20 h-20 rounded-xl bg-white/90 dark:bg-background/90 shadow-lg p-3 flex items-center justify-center">
@@ -350,7 +353,7 @@ function CertificationsContent() {
           <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-brand-secondary rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="container mx-auto max-w-5xl text-center space-y-8 relative z-10">
           <Badge className="mx-auto bg-white/20 text-brand-tertiary-foreground border-white/30">
             Our Commitment

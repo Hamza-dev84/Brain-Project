@@ -283,7 +283,7 @@ const Index = memo(() => {
 
       <main id="main-content" className="min-h-screen">
         {/* Ticker */}
-        <Ticker />
+        {/* <Ticker /> */}
 
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-card to-neutral-100 py-16 sm:py-24 lg:py-32" style={{
@@ -303,10 +303,9 @@ const Index = memo(() => {
             }}></div>
           </div>
 
-          <div className="container mx-auto px-4 md:px-6 relative">
+          <div className="relative mx-auto w-full px-4 md:px-6">
             {/* Two-column grid layout for desktop */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 items-center w-full">
               {/* Left Column - Content */}
               <motion.div className="text-center lg:text-left" initial="initial" animate="animate" variants={ANIMATION_VARIANTS.staggerContainer}>
                 <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="flex items-center justify-center lg:justify-start gap-2 mb-6">
@@ -314,16 +313,27 @@ const Index = memo(() => {
                   <span className="inline-block bg-neutral-100 text-foreground px-4 py-2 rounded-full text-sm font-medium">We're Back — Smarter. Faster. Better.</span>
                 </motion.div>
 
-                <h1 className="heading-display text-foreground mb-6 font-heading leading-tight">
+                <h1 className="font-raleway text-[clamp(2.5rem,8vw,4rem)] font-bold tracking-[-0.025em] leading-none text-m3-on-surface mb-6">
                   <TextReveal type="words" immediate={true}>
-                    Transforming Enterprises with World-Class IT Services in Pakistan
+                    Leading IT Services Company in Pakistan for Enterprise &
+                    Business Growth
                   </TextReveal>
                 </h1>
 
-                <motion.p variants={ANIMATION_VARIANTS.fadeInUp} className="text-xl md:text-2xl text-neutral-medium mb-4 font-heading flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2">
+                <motion.p variants={ANIMATION_VARIANTS.fadeInUp} className="text-xl md:text-2xl text-neutral-medium mb-2 font-heading flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-2">
                   <span>Where Winners Always Use Their</span>
                   <img loading="lazy" decoding="async" src={resolvedTheme === 'dark' ? brainOnlyWhite : brainIconBlue} alt="Brain Company Logo" className="h-10 md:h-14" />
                 </motion.p>
+
+                {/* <p className="font-lato mb-2 text-m3-on-surface-variant "> */}
+                <p className="font-lato mb-2 text-neutral-medium ">
+                  If you are searching for reliable IT solutions in Pakistan,
+                  you need more than just connectivity. You need stable
+                  infrastructure, fast response support, and a team that
+                  understands local business challenges. BrainTEL provides
+                  end-to-end IT services in Pakistan, helping companies improve
+                  performance, reduce downtime, and scale with confidence.
+                </p>
 
                 {/* Hero Badges */}
                 <motion.div variants={ANIMATION_VARIANTS.fadeInUp} className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-10">
@@ -581,13 +591,36 @@ const Index = memo(() => {
 
               <h2 className="heading-lg mb-6 font-heading leading-tight">
                 <span className="text-primary">
-                  Comprehensive IT Solutions
+                  Our Comprehensive IT Solutions
                 </span>
                 {' '}
-                <span className="text-foreground dark:text-foreground">in Pakistan by Brain</span>
+                <span className="text-foreground dark:text-foreground">in Pakistan.</span>
               </h2>
 
-              <p className="text-lg md:text-xl text-neutral-medium max-w-4xl mx-auto leading-relaxed">From providing high-speed fiber internet to enterprise AI software solutions, we cover a broad and comprehensive range of IT and telecom services in Pakistan for businesses of all sizes, outperforming all other IT solution providers in Pakistan.</p>
+              {/* <p className="text-lg md:text-xl text-neutral-medium max-w-4xl mx-auto leading-relaxed">From providing high-speed fiber internet to enterprise AI software solutions, we cover a broad and comprehensive range of IT and telecom services in Pakistan for businesses of all sizes, outperforming all other IT solution providers in Pakistan.</p> */}
+              <p className="font-lato text-lg md:text-lg text-neutral-medium max-w-4xl mx-auto leading-relaxed">
+                From providing{" "}
+                <a
+                  href="/services/internet"
+                  className="
+     text-[#2563EB]
+    hover:text-[#1D4ED8]
+    active:text-[#1E3A8A]
+
+    dark:text-[#60A5FA]
+    dark:hover:text-[#93C5FD]
+    dark:active:text-[#BFDBFE]
+
+    transition-colors
+  "
+                >
+                  high-speed fiber internet
+                </a>{" "}
+                to enterprise AI software solutions, we cover a broad and
+                comprehensive range of IT and telecom services in Pakistan for
+                businesses of all sizes, outperforming all other IT solution
+                providers in Pakistan.
+              </p>
             </motion.div>
 
             <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto" initial="initial" whileInView="animate" variants={ANIMATION_VARIANTS.staggerContainer} viewport={{

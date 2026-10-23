@@ -188,7 +188,7 @@ export function ContactForm() {
 
         <div className="space-y-2">
           <Label htmlFor="subject" className="text-foreground">
-            Subject *
+            How can we help you? *
           </Label>
           <Select value={formData.inquiryType} onValueChange={handleSelectChange} required>
             <SelectTrigger className="border-border">
@@ -207,7 +207,7 @@ export function ContactForm() {
 
       <div className="space-y-2">
         <Label htmlFor="source" className="text-foreground">
-          How Did You Hear About Us? *
+          How Did You Hear About Us?(Optional) *
         </Label>
         <Select value={formData.hearAboutUs} onValueChange={(value) => setFormData(prev => ({ ...prev, hearAboutUs: value }))} required>
           <SelectTrigger className="border-border">
@@ -228,7 +228,7 @@ export function ContactForm() {
       <div className="space-y-2">
         <Label htmlFor="message" className="text-foreground flex items-center gap-2">
           <MessageSquare className="w-4 h-4" />
-          Message
+          Message(Optional)
         </Label>
         <Textarea
           id="message"

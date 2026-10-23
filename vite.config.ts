@@ -61,6 +61,13 @@ export default defineConfig({
       server: { entry: "server" },
     }),
     netlify(),
+    // netlify({
+    //   dev: {
+    //     edgeFunctions: {
+    //       enabled: false,
+    //     },
+    //   },
+    // }),
     viteReact(),
     nitro(nitroOptions),
     ...(isLovableSandbox ? [stripRedundantNodejsCompatFlag()] : []),

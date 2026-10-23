@@ -166,7 +166,7 @@ function Hero() {
           {/* Stats — compact inline row, visible above the fold */}
           <div className="grid grid-cols-4 gap-2 border border-hairline bg-white p-1.5 sm:gap-0 sm:divide-x sm:divide-hairline sm:p-0">
             {[
-              { k: "99.9%", v: "UPTIME WITH SLA" },
+              { k: "99.982%", v: "UPTIME WITH SLA" },
               { k: "<30ms", v: "Latency" },
               { k: "24/7", v: "Support" },
               { k: "Tier III", v: "Data Center" },
@@ -663,14 +663,14 @@ function Support() {
                 <div className="mb-5 flex items-center gap-3">
                   <span
                     className={"flex h-10 w-10 items-center justify-center rounded-[var(--radius-card)] font-display text-sm font-extrabold " +
-                      (i === 1 ? "bg-green! text-navy!" : "bg-navy text-green")
+                      (i === 1 ? "bg-green! text-navy!" : "bg-navy! text-green!")
                     }
                   >
                     L{i + 1}
                   </span>
                   <h4
                     className={"font-display text-lg font-bold " +
-                      (i === 1 ? "text-white!" : "text-navy")
+                      (i === 1 ? "text-white!" : "text-navy!")
                     }
                   >
                     {t.level}

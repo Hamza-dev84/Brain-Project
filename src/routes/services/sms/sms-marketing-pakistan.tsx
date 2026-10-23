@@ -4,7 +4,7 @@ import UniversalHeader from "@/components/sms/common/UniversalHeader";
 import SMSMarketingHero from "@/components/sms/sms-marketing/SMSMarketingHero";
 import SMSMarketingWhyChoose from "@/components/sms/sms-marketing/SMSMarketingWhyChoose";
 import SMSMarketingHowItWorks from "@/components/sms/sms-marketing/SMSMarketingHowItWorks";
-import SMSMarketingFAQ, { smsMarketingFaqs } from "@/components/sms/sms-marketing/SMSMarketingFAQ";
+import SMSMarketingFAQ from "@/components/sms/sms-marketing/SMSMarketingFAQ";
 import CompanyLogos from "@/components/sms/common/CompanyLogos";
 import RelatedServicesSection from "@/components/sms/common/RelatedServicesSection";
 import OTPFooter from "@/components/sms/otp/OTPFooter";
@@ -82,7 +82,7 @@ function SMSMarketingPakistan() {
           <div className="container mx-auto px-6 lg:px-12">
             <AnimateOnScroll animation="fade-up">
               <h2 className="text-3xl md:text-5xl font-bold font-raleway text-center text-primary mb-16">
-                Why Choose Our SMS Marketing Service?
+                Why Choose Our SMS Marketing Service in Pakistan?
               </h2>
             </AnimateOnScroll>
             <StaggeredGrid

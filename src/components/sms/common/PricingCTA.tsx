@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@/lib/router-compat";
-import { ArrowRight, DollarSign } from "lucide-react";
+import { ArrowRight, Wallet } from "lucide-react";
 
 const PricingCTA: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const PricingCTA: React.FC = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6 backdrop-blur-xs">
-            <DollarSign className="w-10 h-10 text-white" />
+            <Wallet className="w-10 h-10 text-white" />
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold font-raleway text-white mb-6">
@@ -29,6 +29,9 @@ const PricingCTA: React.FC = () => {
               {" "}OTP SMS service in Pakistan.{" "}
             </a>
             It's perfect for apps, websites, fintech platforms, and digital services.
+          </p>
+          <p className="text-xl text-white/90 font-lato mb-8 leading-relaxed">
+            Choose a plan and start sending OTP to mobile numbers online without delay.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

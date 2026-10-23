@@ -279,7 +279,7 @@ function AboutUsContent() {
       />
 
       {/* Hero Section with Global Recognition */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-12 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-12 px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-48 h-48 bg-brand-secondary rounded-full blur-3xl"></div>
@@ -292,7 +292,7 @@ function AboutUsContent() {
               Our History
             </Badge>
             <h1 className="heading-display text-brand-dark leading-tight">
-              About Brain Telecommunication
+              Welcome to the Brain
             </h1>
             <p className="text-lead-lg text-neutral-medium max-w-3xl mx-auto">
               Pioneers in Pakistan's technology landscape since 1982, creators of the world's first PC virus, and leaders in telecom innovation
@@ -406,7 +406,7 @@ function AboutUsContent() {
               <Globe className="w-4 h-4 mr-2" />
               Who We Are
             </Badge>
-            <h2 className="heading-xl text-foreground max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface">
               Developers in Pakistan's Internet Services Industry
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-4xl mx-auto leading-relaxed">
@@ -422,7 +422,7 @@ function AboutUsContent() {
                     {highlight.icon}
                   </div>
                   <div className="space-y-3">
-                    <h3 className="text-foreground font-semibold">
+                    <h3 className="text-xl text-center font-bold pb-4">
                       {highlight.title}
                     </h3>
                     <p className="text-neutral-medium">
@@ -445,8 +445,8 @@ function AboutUsContent() {
               <Calendar className="w-4 h-4 mr-2" />
               Our Journey
             </Badge>
-            <h2 className="heading-xl text-foreground">
-              37 Years of Innovation
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface">
+              40+ Years of Innovation
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-3xl mx-auto">
               From pioneering computer services to leading Pakistan's digital transformation
@@ -531,18 +531,16 @@ function AboutUsContent() {
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto max-w-4xl text-center space-y-10 relative z-10">
+        <div className="container mx-auto max-w-6xl text-center space-y-10 relative z-10">
           <div className="space-y-6">
-            {/* <h2 className="heading-xl text-white">
-              Ready to Experience 37 Years of Excellence?
-            </h2> */}
 
-            <h2 className="heading-xl text-white! bg-none! bg-clip-border! [background-clip:border-box]! [-webkit-text-fill-color:#fff]!">
-              Ready to Experience 37 Years of Excellence?
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white">
+              Ready to Experience 40+ Years of Excellence?
             </h2>
 
-            <p className="text-lead-lg text-white/90 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust Brain Telecommunication for their technology needs.
+            <p className="m3-body-large text-white/90 max-w-4xl mx-auto">
+              Join thousands of satisfied customers who trust Brain
+              Telecommunication for their technology needs.
             </p>
           </div>
 

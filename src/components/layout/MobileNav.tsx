@@ -83,6 +83,7 @@ const navigationGroups = [
       { title: 'About Us', path: '/company/about-us', icon: Info },
       { title: 'Our History', path: '/company/history', icon: Clock },
       { title: 'Our Technology Partners', path: '/company/tech-partners', icon: Network },
+      { title: 'Payment Guides', path: '/resources/payment-guides', icon: CreditCard },
     ]
   },
   {

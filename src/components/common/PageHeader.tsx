@@ -7,54 +7,40 @@ interface BreadcrumbItem {
 }
 
 interface PageHeaderProps {
-  title: string;
-  description?: string;
   breadcrumbs?: BreadcrumbItem[];
 }
 
-export function PageHeader({ title, description, breadcrumbs }: PageHeaderProps) {
+export function PageHeader({ breadcrumbs }: PageHeaderProps) {
   return (
-    <div className="bg-card py-12 border-b border-border">
+    <div className="bg-m3-surface-container pt-2 border-b border-m3-outline-variant">
       <div className="container mx-auto px-4 md:px-6">
         {/* Breadcrumbs */}
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav className="flex items-center gap-2 text-sm text-neutral-medium mb-4" aria-label="Breadcrumb">
-            <Link 
-              to="/" 
-              className="flex items-center gap-1 hover:text-primary transition-colors"
+          <nav className="flex items-center gap-2 text-sm text-m3-on-surface-variant mb-2" aria-label="Breadcrumb">
+            <Link
+              to="/"
+              className="flex items-center gap-1 hover:text-m3-primary transition-colors"
             >
-              <Home className="h-4 w-4" />
+              <Home className="h-3 w-3" />
               Home
             </Link>
             {breadcrumbs.map((crumb, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <ChevronRight className="h-4 w-4" />
+              <div key={index} className="flex items-center gap-1">
+                <ChevronRight className="h-3 w-3" />
                 {crumb.path ? (
-                  <Link 
+                  <Link
                     to={crumb.path}
-                    className="hover:text-primary transition-colors"
+                    className="hover:text-m3-primary transition-colors"
                   >
                     {crumb.label}
                   </Link>
                 ) : (
-                  <span className="text-foreground">{crumb.label}</span>
+                  <span className="text-m3-on-surface">{crumb.label}</span>
                 )}
               </div>
             ))}
           </nav>
         )}
-        
-        {/* Title and Description */}
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
-            {title}
-          </h1>
-          {description && (
-            <p className="text-lg text-neutral-medium leading-relaxed">
-              {description}
-            </p>
-          )}
-        </div>
       </div>
     </div>
   );

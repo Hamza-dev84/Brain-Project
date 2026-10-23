@@ -3,6 +3,7 @@ import { Header } from './Header';
 import { Footer } from './Footer';
 import { FloatingWhatsApp } from '../ui/floating-whatsapp';
 import { ScrollProgress } from '../ui/scroll-progress';
+import { Ticker } from '../ui/ticker';
 
 interface LayoutProps {
   children: ReactNode;
@@ -13,6 +14,7 @@ export function Layout({ children }: LayoutProps) {
     <div className="brand-parent min-h-screen flex flex-col">
       <ScrollProgress />
       <Header />
+      <Ticker />
       <main className="flex-1">
         {children}
       </main>

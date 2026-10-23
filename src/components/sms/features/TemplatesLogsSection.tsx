@@ -132,6 +132,7 @@ const TemplatesLogsSection = () => {
       </div>
     </FeatureSection>
   );
+
 };
 
 export default TemplatesLogsSection;

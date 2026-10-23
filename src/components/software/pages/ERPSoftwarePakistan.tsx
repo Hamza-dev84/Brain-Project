@@ -3,8 +3,13 @@ import { Helmet } from "@/lib/helmet-compat";
 import Header from "@/components/software/Header";
 import Hero from "@/components/software/erp/Hero";
 import WhyChooseUs from "@/components/software/erp/WhyChooseUs";
-import Services from "@/components/software/erp/Services";
-import ImplementationFramework from "@/components/software/erp/ImplementationFramework";
+import ERPModules from "@/components/software/erp/ERPModules";
+import CloudERP from "@/components/software/erp/CloudERP";
+import IndustriesERP from "@/components/software/erp/IndustriesERP";
+import Pricing from "@/components/software/erp/Pricing";
+import WhyUs from "@/components/software/erp/WhyUs";
+import ERPSoftwareFAQs from "@/components/software/faqs/ERPSoftwareFAQs";
+import ERPSoftwareCTA from "@/components/software/erp/ERPSoftwareCTA";
 import CaseStudy from "@/components/software/erp/CaseStudy";
 import TestimonialsSection from "@/components/software/TestimonialsSection";
 import Footer from "@/components/software/Footer";
@@ -27,14 +32,19 @@ const ERPSoftwarePakistan = () => {
       <div className="bg-white overflow-hidden pt-[80px] md:pt-[88px]">
         <Header />
         <ERPSoftwareSchema />
-        <main>
-          <Hero onOpenPlanner={() => setIsPlannerOpen(true)} />
-          <WhyChooseUs />
-          <Services onOpenPlanner={() => setIsPlannerOpen(true)} />
-          <ImplementationFramework />
-          <CaseStudy />
-          <TestimonialsSection />
-        </main>
+      <main>
+        <Hero />
+        <WhyChooseUs />
+        <ERPModules />
+        <CloudERP />
+        <IndustriesERP />
+        <Pricing />
+        <WhyUs />
+        <ERPSoftwareFAQs />
+        <ERPSoftwareCTA />
+        <CaseStudy />
+        <TestimonialsSection />
+      </main>
         <Footer />
 
         <PlannerModal

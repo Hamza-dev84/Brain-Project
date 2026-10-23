@@ -29,7 +29,7 @@ const FeatureSection = ({
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-raleway text-primary mb-4">{title}</h2>
+          <h2 className="text-3xl md:text-5xl font-block font-raleway text-primary mb-4">{title}</h2>
           <p className="text-lg text-muted-foreground font-lato max-w-3xl mx-auto">{description}</p>
         </div>
         {children}

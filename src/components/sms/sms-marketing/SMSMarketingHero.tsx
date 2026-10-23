@@ -3,10 +3,11 @@ import { ArrowRight, MessageSquare, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import BrowserMockup from "@/components/sms/branded-sms/BrowserMockup";
 import FloatingIcons from "@/components/sms/branded-sms/FloatingIcons";
-import SMSCampaignPlannerDialog from "@/components/sms/campaign-planner/SMSCampaignPlannerDialog";
+import GetStartedPopup from "@/components/sms/Popup-Form/GetStartedPopup";
 
 const SMSMarketingHero: React.FC = () => {
   const [isPlannerOpen, setIsPlannerOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
       <FloatingIcons />
@@ -44,7 +45,7 @@ const SMSMarketingHero: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Button onClick={() => setIsPlannerOpen(true)} size="lg">
+              <Button onClick={() => setIsPopupOpen(true)} size="lg">
                 <MessageSquare size={20} />
                 <span>Start Your Campaign Now</span>
                 <ArrowRight size={20} />
@@ -77,7 +78,7 @@ const SMSMarketingHero: React.FC = () => {
         </div>
       </div>
 
-      <SMSCampaignPlannerDialog open={isPlannerOpen} onOpenChange={setIsPlannerOpen} />
+      <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
     </section>
   );
 };

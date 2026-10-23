@@ -133,8 +133,6 @@ function FinancialServicesContent() {
       />
 
       <PageHeader
-        title="Financial Services"
-        description="Secure technology foundation for Pakistan's financial sector"
         breadcrumbs={[
           { label: 'Industry Solutions', path: '/industry-solutions' },
           { label: 'Financial Services' }
@@ -142,7 +140,7 @@ function FinancialServicesContent() {
       />
 
       {/* Hero Section with Enhanced Visuals */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-20 px-4 md:px-6 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -193,7 +191,7 @@ function FinancialServicesContent() {
             <Badge className="mx-auto bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20">
               Smart Solutions
             </Badge>
-            <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface">
               Smart, Combined Solutions for Modern Financial Services
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -332,9 +330,9 @@ function FinancialServicesContent() {
                 value={`item-${index}`}
                 className="border border-border rounded-2xl px-8 py-2 bg-background shadow-sm hover:shadow-lg transition-shadow"
               >
-                <AccordionTrigger className="text-foreground hover:text-primary hover:no-underline py-8 group">
-                  <div className="flex items-center space-x-4">
-                    {faq.icon}
+                <AccordionTrigger className="text-foreground hover:text-primary hover:no-underline py-4 group">
+                  <div className="flex items-center font-lato space-x-4 font-bold">
+                    {/* {faq.icon} */}
                     <span>{faq.question}</span>
                   </div>
                 </AccordionTrigger>
@@ -354,9 +352,9 @@ function FinancialServicesContent() {
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto max-w-4xl text-center space-y-10 relative z-10">
+        <div className="container mx-auto max-w-5xl text-center space-y-10 relative z-10">
           <div className="space-y-6">
-            <h2 className="heading-xl heading-solid-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white pb-4">
               Build financial trust through technology that never fails.
             </h2>
             <p className="text-lead-lg text-white/90 max-w-2xl mx-auto">

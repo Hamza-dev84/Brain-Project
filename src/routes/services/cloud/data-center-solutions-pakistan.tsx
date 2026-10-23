@@ -346,7 +346,8 @@ function DataCenterSolutionsPage() {
 
       {/* AI-READY */}
       <section id="ai-ready" className="relative overflow-hidden bg-surface section-y">
-        <img width={1376} height={768} decoding="async"
+        <img 
+        // width={1376} height={768} decoding="async"
           src={aiReadyAsset}
           alt=""
           aria-hidden="true"
@@ -460,7 +461,7 @@ function DataCenterSolutionsPage() {
       </Section>
 
       {/* LOCATIONS */}
-      <section id="locations" className="relative bg-surface section-y">
+      {/* <section id="locations" className="relative bg-surface section-y">
         <div className="relative overflow-hidden">
           <img width={1200} height={896} decoding="async"
             src={locationsAsset}
@@ -511,8 +512,7 @@ function DataCenterSolutionsPage() {
             Coverage is expanding to additional cities — Faisalabad, Multan, and Rawalpindi — as demand grows.
           </p>
         </div>
-      </section>
-
+      </section> */}
 
       {/* VETTING */}
       <Section tone="white" id="vetting">

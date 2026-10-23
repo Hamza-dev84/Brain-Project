@@ -10,7 +10,8 @@ const FeaturesHero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-20">
+    // <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-20">
+    <section className="relative min-h-screen flex items-center w-full overflow-hidden bg-gradient-to-br from-background via-primary/5 to-background pt-20">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <TrendingUp className="absolute top-20 left-10 w-16 h-16 text-primary/10 animate-float-vertical" />
         <Zap className="absolute top-40 right-20 w-12 h-12 text-accent/20 animate-float-diagonal" />
@@ -53,7 +54,7 @@ const FeaturesHero = () => {
                 Explore Features
               </Button>
               <Button variant="outlined" size="lg" asChild>
-                <a href="https://cp.bsms.pk/login/" target="_blank" rel="noopener noreferrer">
+                <a href="https://portal.bsms.pk" target="_blank" rel="noopener noreferrer">
                   Login to Portal
                 </a>
               </Button>

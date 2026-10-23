@@ -45,7 +45,7 @@ const ComposeSendSection = () => {
                 disabled
               />
             </div>
-            <Button className="w-full" size="sm" disabled tabIndex={-1} aria-hidden="true">
+            <Button className="w-full" size="sm">
               <Zap className="w-4 h-4 mr-2" />
               Send Now
             </Button>
@@ -80,7 +80,7 @@ const ComposeSendSection = () => {
                 disabled
               />
             </div>
-            <Button className="w-full" variant="default" size="sm" disabled tabIndex={-1} aria-hidden="true">
+            <Button className="w-full" variant="default" size="sm">
               <Users className="w-4 h-4 mr-2" />
               Send to Group
             </Button>
@@ -117,7 +117,11 @@ const ComposeSendSection = () => {
                 Hi John Doe! Your order #12345 is ready for pickup at Downtown Store.
               </div>
             </div>
-            <Button className="w-full" variant="secondary" size="sm" disabled tabIndex={-1} aria-hidden="true">
+            {/* <Button className="w-full" variant="secondary" size="sm" disabled tabIndex={-1} aria-hidden="true">
+              <Code2 className="w-4 h-4 mr-2" />
+              Configure Variables
+            </Button> */}
+            <Button className="w-full" variant="secondary" size="sm">
               <Code2 className="w-4 h-4 mr-2" />
               Configure Variables
             </Button>

@@ -3,17 +3,34 @@ import { Check, X } from "lucide-react";
 import AnimateOnScroll from "@/components/sms/animations/AnimateOnScroll";
 
 const OTPComparisonTable = () => {
+  // const comparisonData = [
+  //   { category: "Delivery Success Rate", bsms: "99.9%", market: "85-90%" },
+  //   {
+  //     category: "Brand Recognition",
+  //     bsms: "Instant with Registered Name",
+  //     market: "Generic Number Display",
+  //   },
+  //   { category: "Customer Trust", bsms: "High", market: "Low to Medium" },
+  //   { category: "API Integration", bsms: "Full Support", market: "Limited" },
+  //   { category: "Compliance", bsms: "PTA Approved", market: "Variable" },
+  //   { category: "Support", bsms: "24/7 Dedicated", market: "Business Hours Only" },
+  // ];
+
   const comparisonData = [
     { category: "Delivery Success Rate", bsms: "99.9%", market: "85-90%" },
     {
       category: "Brand Recognition",
-      bsms: "Instant with Registered Name",
-      market: "Generic Number Display",
+      bsms: "Registered Sender Name",
+      market: "Generic Number",
     },
-    { category: "Customer Trust", bsms: "High", market: "Low to Medium" },
-    { category: "API Integration", bsms: "Full Support", market: "Limited" },
+    { category: "Customer Trust", bsms: "High Reliability", market: "Low to Medium" },
+    { category: "API Integration", bsms: "Full OTP SMS API Support", market: "Limited" },
     { category: "Compliance", bsms: "PTA Approved", market: "Variable" },
-    { category: "Support", bsms: "24/7 Dedicated", market: "Business Hours Only" },
+    {
+      category: "Support",
+      bsms: "24/7 Technical Assistance",
+      market: "Business Hours Only",
+    },
   ];
 
   return (

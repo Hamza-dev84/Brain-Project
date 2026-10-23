@@ -35,11 +35,11 @@ const APICoreFeatures = () => {
         <div className="text-center mb-16">
           <h2
             id="core-features"
-            className="text-primary text-4xl md:text-5xl font-bold font-raleway mb-4"
+            className="leading-tight text-4xl md:text-5xl font-bold font-raleway mb-4"
           >
             Core Features
           </h2>
-          <h3 className="text-primary text-2xl md:text-3xl font-semibold font-raleway">
+          <h3 className="leading-tight text-2xl md:text-3xl font-semibold font-raleway">
             of Our SMS API in Pakistan
           </h3>
         </div>
@@ -47,7 +47,8 @@ const APICoreFeatures = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <article key={index} className="group relative">
-              <div className="relative bg-card rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-2 border-border hover:border-accent">
+              {/* <div className="relative bg-card rounded-2xl p-6 h-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-2 border-border hover:border-accent"> */}
+              <div className="relative bg-white rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border-2 border-gray-100 hover:border-[#00CFE8]">
                 {index < 3 && (
                   <div className="hidden lg:block absolute -right-4 top-1/2 w-8 h-0.5 bg-gradient-to-r from-border to-transparent" />
                 )}
@@ -61,11 +62,12 @@ const APICoreFeatures = () => {
                     />
                   </div>
 
-                  <h4 className="text-primary text-xl font-bold font-raleway mb-3">
+                  <h4 className="text-[#145265] text-xl font-bold! font-raleway mb-3">
                     {feature.title}
                   </h4>
 
-                  <p className="text-muted-foreground text-base font-lato leading-relaxed">
+                  {/* <p className="text-muted-foreground text-base font-lato leading-relaxed"> */}
+                  <p className="text-gray-600 text-base font-lato leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

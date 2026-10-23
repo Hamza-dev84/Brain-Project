@@ -33,11 +33,11 @@ const codeSamples: Array<{
   language: "bash" | "json" | "java" | "javascript" | "swift" | "csharp" | "python" | "php";
   code: string;
 }> = [
-  {
-    value: "android",
-    label: "ANDROID",
-    language: "java",
-    code: `StringRequest registerRequest = new StringRequest(Request.Method.POST, "https://cp.bsms.pk/api/quick/message",
+    {
+      value: "android",
+      label: "ANDROID",
+      language: "java",
+      code: `StringRequest registerRequest = new StringRequest(Request.Method.POST, "https://cp.bsms.pk/api/quick/message",
     new Response.Listener() {
         @Override
         public void onResponse(String response) {
@@ -69,12 +69,12 @@ const codeSamples: Array<{
         return params;
     }
 };`,
-  },
-  {
-    value: "nodejs",
-    label: "NODE.JS",
-    language: "javascript",
-    code: `var Request = require("request");
+    },
+    {
+      value: "nodejs",
+      label: "NODE.JS",
+      language: "javascript",
+      code: `var Request = require("request");
 
 Request.post({
     "headers": { "content-type": "application/json" },
@@ -88,12 +88,12 @@ Request.post({
     }
     console.dir(JSON.parse(body));
 });`,
-  },
-  {
-    value: "swift",
-    label: "SWIFT",
-    language: "swift",
-    code: `let params = ["user": "username", "password": "secret", "to": "923123456789", "mask": "BrainTEL", "message": "Your message"] as Dictionary
+    },
+    {
+      value: "swift",
+      label: "SWIFT",
+      language: "swift",
+      code: `let params = ["user": "username", "password": "secret", "to": "923123456789", "mask": "BrainTEL", "message": "Your message"] as Dictionary
 
 var request = URLRequest(url: URL(string: "https://cp.bsms.pk/api/quick/message")!)
 request.httpMethod = "POST"
@@ -110,12 +110,12 @@ let task = session.dataTask(with: request, completionHandler: { data, response, 
     }
 })
 task.resume()`,
-  },
-  {
-    value: "dotnet",
-    label: ".NET",
-    language: "csharp",
-    code: `using System;
+    },
+    {
+      value: "dotnet",
+      label: ".NET",
+      language: "csharp",
+      code: `using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -174,21 +174,21 @@ namespace HttpClientSample
         }
     }
 }`,
-  },
-  {
-    value: "python",
-    label: "PYTHON",
-    language: "python",
-    code: `import requests
+    },
+    {
+      value: "python",
+      label: "PYTHON",
+      language: "python",
+      code: `import requests
 payload = {'user': 'username', 'password': 'secret', 'to': '923123456789', 'mask': 'BrainTEL', 'message': 'Your message'}
 r = requests.get('https://cp.bsms.pk/api/quick/message', params=payload)
 r.text`,
-  },
-  {
-    value: "php",
-    label: "PHP",
-    language: "php",
-    code: `function httpPost($url,$params)
+    },
+    {
+      value: "php",
+      label: "PHP",
+      language: "php",
+      code: `function httpPost($url,$params)
 {
     $postData = '';
     foreach($params as $k => $v) {
@@ -216,8 +216,8 @@ $params = [
     "message" => "Your Message",
 ];
 httpPost($url,$params);`,
-  },
-];
+    },
+  ];
 
 const APIDocumentation = () => {
   return (
@@ -307,15 +307,24 @@ const APIDocumentation = () => {
                 Download Full API Documentation
               </h3>
               <p className="text-lg text-primary-foreground/90 font-lato mb-8">
-                Get the complete PDF guide with detailed examples in 6 programming languages, error
-                handling, and integration best practices.
+                Get the complete 11-page PDF guide with detailed examples in 6 programming languages, error handling, and integration best practices.
               </p>
-              <a href="/docs/BSMS_API_Documentation.pdf" download className="inline-block">
-                <Button size="lg" variant="secondary" className="text-lg px-8">
+              <a
+                href="/docs/BSMS_API_Documentation.pdf"
+                download
+                className="inline-block"
+              >
+                <Button
+                  size="lg"
+                  className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-lg px-8"
+                >
                   <Download className="w-5 h-5" />
                   Download PDF (v2.0)
                 </Button>
               </a>
+              <p className="text-sm text-white/70 font-lato mt-4">
+                PDF • 2.5 MB • Last updated: January 2024
+              </p>
             </div>
           </div>
         </div>

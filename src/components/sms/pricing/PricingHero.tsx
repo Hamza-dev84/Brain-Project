@@ -85,9 +85,18 @@ const PricingHero = () => {
               >
                 View Pricing Plans
               </Button>
-              <Button size="lg" variant="outlined" onClick={() => setIsPlannerOpen(true)}>
+              {/* <Button size="lg" variant="outlined" onClick={() => setIsPlannerOpen(true)}>
                 Talk to Sales
-              </Button>
+              </Button> */}
+              <a
+                href="https://wa.me/923276222888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outlined" size="lg">
+                  Talk to Sales
+                </Button>
+              </a>
             </div>
           </div>
         </AnimateOnScroll>

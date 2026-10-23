@@ -1,219 +1,287 @@
 import { useState } from 'react';
+import { useForm, Controller, type SubmitHandler } from 'react-hook-form';
+import type { InferType } from 'yup';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { toast } from '../ui/sonner';
 import { brainTelContantUsFormApi } from '@/pages/services/brainTelFormsApi';
 
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  subject: string;
-  message: string;
-  source: string;
-}
+const contactSchema = yup.object({
+  name: yup
+    .string()
+    .required('Name is required')
+    .matches(/^[a-zA-Z ]*$/, 'Name can only contain letters and spaces')
+    .min(3, 'Name must be at least 3 characters')
+    .max(50, 'Name must be at most 50 characters')
+    .trim('Name cannot contain leading or trailing spaces'),
 
-const subjectOptions = [
-  'General Inquiry',
-  'Technical Support',
-  'Billing',
-  'Other'
-];
+  email: yup
+    .string()
+    .required('Email is required')
+    .trim('Email cannot contain leading or trailing spaces')
+    .strict(true)
+    .test(
+      'no-spaces',
+      'Email must not contain spaces',
+      (value) => !/\s/.test(value || ''),
+    )
+    .email('Please enter a valid email address'),
+
+  phone: yup
+    .string()
+    .required('Contact is required')
+    .test('phone-valid', 'Invalid phone number format', (value) => {
+      if (!value) return false;
+
+      const cleaned = value.replace(/[\s\-()]/g, '');
+
+      return (
+        /^\+[1-9]\d{7,14}$/.test(cleaned) ||
+        /^[0-9]{7,15}$/.test(cleaned)
+      );
+    }),
+
+  inquiryType: yup.string().required('Please select an inquiry type'),
+  hearAboutUs: yup.string().notRequired(),
+  message: yup.string().required('Message is required'),
+});
+
+type FormData = InferType<typeof contactSchema>;
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    phone: '',
-    subject: 'General Inquiry',
-    message: '',
-    source: ''
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const {
+    register,
+    handleSubmit,
+    control,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: yupResolver(contactSchema),
+    mode: 'onChange',
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      inquiryType: '',
+      hearAboutUs: '',
+      message: '',
+    },
+  });
 
-  const handleSubjectClick = (subject: string) => {
-    setFormData(prev => ({
-      ...prev,
-      subject
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       setIsSubmitting(true);
 
-      const apiResponse = await brainTelContantUsFormApi({
-        ...formData,
-        inquiryType: formData.subject,
-        hearAboutUs: formData.source,
-      });
+      const apiResponse = await brainTelContantUsFormApi(data);
 
       if (apiResponse.success) {
-        setIsSubmitting(false);
         setIsSubmitted(true);
+        reset();
 
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "General Inquiry",
-          message: "",
-          source: "",
-        });
-
-        toast.success("Message sent! We'll get back to you within 24 hours.");
+        toast.success(
+          "Thank you for reaching out! We'll get back to you within 24 hours.",
+        );
       } else {
-        setIsSubmitting(false);
         toast.error(
-          apiResponse.error || "Something went wrong. Please try again.",
+          apiResponse.error || 'Something went wrong. Please try again.',
         );
       }
     } catch (error) {
-      console.error("Contact form submission error:", error);
+      console.error('Contact form submission error:', error);
+      toast.error('Something went wrong. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      toast.error("Something went wrong. Please try again.");
     }
   };
 
   if (isSubmitted) {
     return (
-      <Card className="p-8 bg-[#2D2B5F] border-0 text-white text-center">
-        <h3 className="text-2xl font-bold mb-4">Thank You!</h3>
-        <p className="text-white/80 mb-6">Your inquiry has been submitted successfully. We'll get back to you soon.</p>
-        <Button
-          onClick={() => setIsSubmitted(false)}
-          className="bg-red-600 hover:bg-red-700 text-white cursor-pointer"
-        >
-          Submit Another Inquiry
-        </Button>
+      <Card className="p-8 bg-card border-0 text-primary text-center">
+        <h3 className="font-body text-2xl text-primary font-bold mb-4">
+          Thank You!
+        </h3>
+
+        <p className="font-body text-base text-muted-foreground mb-6">
+          Your inquiry has been submitted successfully.
+        </p>
       </Card>
     );
   }
 
   return (
-    <Card className="p-8 bg-[#2D2B5F] border-0">
-      <h2 className=" text-white! text-2xl font-bold mb-6 text-center"
-        style={{
-          background: "none",
-          WebkitTextFillColor: "#fff",
-          color: "#fff",
-        }}>Submit Your Inquiry</h2>
+    <Card className="bg-card border-0">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        {/* Name & Email */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block font-lato font-semibold text-brand-dark mb-1">
+              Name *
+            </label>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <Label htmlFor="name" className="text-white text-sm font-medium">Name</Label>
-          <Input
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleInputChange}
-            placeholder="Enter Your Name"
-            required
-            className="mt-2 bg-white border-0 text-gray-900 placeholder:text-gray-500"
-          />
-        </div>
+            <Input
+              {...register('name')}
+              placeholder="Enter your full name"
+            />
 
-        <div>
-          <Label htmlFor="email" className="text-white text-sm font-medium">Email</Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleInputChange}
-            placeholder="Enter Your Email"
-            required
-            className="mt-2 bg-white border-0 text-gray-900 placeholder:text-gray-500"
-          />
-        </div>
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.name.message}
+              </p>
+            )}
+          </div>
 
-        <div>
-          <Label htmlFor="phone" className="text-white text-sm font-medium">Phone Number</Label>
-          <Input
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleInputChange}
-            placeholder="Enter Your Phone Number"
-            required
-            className="mt-2 bg-white border-0 text-gray-900 placeholder:text-gray-500"
-          />
-        </div>
+          <div>
+            <label className="block font-lato font-semibold text-brand-dark mb-1">
+              Email *
+            </label>
 
-        <div>
-          <Label className="text-white text-sm font-medium">Subject</Label>
-          <div className="flex flex-wrap gap-2 mt-2">
-            {subjectOptions.map((option) => (
-              <Badge
-                key={option}
-                onClick={() => handleSubjectClick(option)}
-                className={`cursor-pointer px-3 py-1 text-xs ${formData.subject === option
-                  ? 'bg-blue-600 text-white hover:bg-blue-700'
-                  : 'bg-white/20 text-white hover:bg-white/30'
-                  }`}
-              >
-                {option}
-              </Badge>
-            ))}
+            <Input
+              {...register('email')}
+              placeholder="your.email@example.com"
+            />
+
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.email.message}
+              </p>
+            )}
           </div>
         </div>
 
-        <div>
-          <Label htmlFor="source" className="text-white text-sm font-medium">How Did You Hear About Us?</Label>
-          <select
-            id="source"
-            name="source"
-            value={formData.source}
-            onChange={(e) => setFormData(prev => ({ ...prev, source: e.target.value }))}
-            required
-            className="mt-2 w-full bg-white border-0 text-gray-900 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            <option value="">Select an option</option>
-            <option value="web-search">Web Search (Google, Bing, etc.)</option>
-            <option value="ai-search">AI Search (ChatGPT, Gemini, Etc.)</option>
-            <option value="social-media">Social Media</option>
-            <option value="brochure">Brochure, Flyer, Banner</option>
-            <option value="referral">Referral</option>
-            <option value="salesperson">Salesperson</option>
-            <option value="other">Other</option>
-          </select>
+        {/* Phone & Inquiry Type */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className="block font-lato font-semibold text-brand-dark mb-1">
+              Phone *
+            </label>
+
+            <Input
+              {...register('phone')}
+              placeholder="e.g. +14155552671 or 03001234567"
+            />
+
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.phone.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label className="block font-lato font-semibold text-brand-dark mb-1">
+              How can we help you? *
+            </label>
+
+            <Controller
+              name="inquiryType"
+              control={control}
+              render={({ field }) => (
+                <Select
+                  value={field.value || ''}
+                  onValueChange={field.onChange}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select inquiry type" />
+                  </SelectTrigger>
+
+                  <SelectContent>
+                    <SelectItem value="General">General</SelectItem>
+                    <SelectItem value="Technical">Technical Issue</SelectItem>
+                    <SelectItem value="Billing">Billing</SelectItem>
+                    <SelectItem value="Sales">Sales</SelectItem>
+                    <SelectItem value="Other">Other</SelectItem>
+                  </SelectContent>
+                </Select>
+              )}
+            />
+
+            {errors.inquiryType && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.inquiryType.message}
+              </p>
+            )}
+          </div>
         </div>
 
+        {/* How Did You Hear About Us */}
         <div>
-          <Label htmlFor="message" className="text-white text-sm font-medium">Message</Label>
-          <Textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleInputChange}
-            placeholder="Enter Your Message"
-            required
-            rows={4}
-            className="mt-2 bg-white border-0 text-gray-900 placeholder:text-gray-500 resize-none"
+          <label className="block font-lato font-semibold text-brand-dark mb-1">
+            How did you hear about us? (Optional)
+          </label>
+
+          <Controller
+            name="hearAboutUs"
+            control={control}
+            render={({ field }) => (
+              <Select
+                value={field.value || ''}
+                onValueChange={field.onChange}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select Option" />
+                </SelectTrigger>
+
+                <SelectContent>
+                  <SelectItem value="Web Search">
+                    Web Search (Google, Bing, etc.)
+                  </SelectItem>
+                  <SelectItem value="AI Search">
+                    AI Search (ChatGPT, Gemini, etc.)
+                  </SelectItem>
+                  <SelectItem value="Social Media">Social Media</SelectItem>
+                  <SelectItem value="Brochure">
+                    Brochure, Flyer, Banner
+                  </SelectItem>
+                  <SelectItem value="Referral">Referral</SelectItem>
+                  <SelectItem value="Salesperson">Salesperson</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            )}
           />
         </div>
 
+        {/* Message */}
+        <div>
+          <label className="block font-lato font-semibold text-brand-dark mb-1">
+            Message(Optional)
+          </label>
+
+          <Textarea
+            {...register('message')}
+            rows={5}
+            placeholder="Enter Your Message"
+          />
+
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">
+              {errors.message.message}
+            </p>
+          )}
+        </div>
+
+        {/* Submit Button */}
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-3 text-base cursor-pointer"
+          className="w-full font-lato font-bold h-14"
         >
-          {isSubmitting ? 'Submitting...' : 'Get A Quotation'}
+          {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
       </form>
     </Card>

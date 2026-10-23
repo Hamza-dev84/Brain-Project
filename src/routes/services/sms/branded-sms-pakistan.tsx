@@ -1,6 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import UniversalHeader from "@/components/sms/common/UniversalHeader";
 import BrandedHero from "@/components/sms/branded-sms/BrandedHero";
+import WhyTrusted from "@/components/sms/branded-sms/WhyTrusted";
+import WhatIsBranded from "@/components/sms/branded-sms/WhatIsBranded";
+import Pricing from "@/components/sms/branded-sms/Pricing";
+import WhyChoose from "@/components/sms/branded-sms/WhyChooseUs";
+import WhoUses from "@/components/sms/branded-sms/WhoUses";
+import SmsRequirements from "@/components/sms/branded-sms/SmsRequirements";
+import CTA from "@/components/sms/branded-sms/CTA";
 import CompanyLogos from "@/components/sms/common/CompanyLogos";
 import BrandedFeatures from "@/components/sms/branded-sms/BrandedFeatures";
 import BrandedComparison from "@/components/sms/branded-sms/BrandedComparison";
@@ -44,17 +51,24 @@ function BrandedSMSPakistan() {
       <PageMeta
         title="Branded SMS Service in Pakistan | PTA Approved Bulk SMS - BSMS"
         description="Send PTA-approved branded SMS in Pakistan with custom sender IDs, high delivery rates, API integration, Urdu support, and secure business messaging solutions from BSMS."
-        // ogImage="/favicons/bsms_favicon.png"
+      // ogImage="/favicons/bsms_favicon.png"
       />
       <BrandedSMSPakistanSchema />
       <UniversalHeader />
-      <main className="overflow-hidden">
+      <main className="bg-primary/5 overflow-hidden">
         <BrandedHero />
         <CompanyLogos />
+        <WhyTrusted />
+        <WhatIsBranded />
         <BrandedFeatures />
-        <BrandedComparison />
-        <BrandedHowItWorks />
+        <Pricing />
+        <WhyChoose />
+        <WhoUses />
+        <SmsRequirements />
+        {/* <BrandedComparison />
+        <BrandedHowItWorks /> */}
         <BrandedFAQ />
+        <CTA />
       </main>
       <OTPFooter />
     </div>

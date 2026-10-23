@@ -11,6 +11,7 @@ import APIHowToSendSMS from "@/components/sms/sms-api/APIHowToSendSMS";
 import APIDocumentation from "@/components/sms/sms-api/APIDocumentation";
 import APIStartWithBSMS from "@/components/sms/sms-api/APIStartWithBSMS";
 import APIFAQ, { apiFaqs } from "@/components/sms/sms-api/APIFAQ";
+import OTPFooter from "@/components/sms/otp/OTPFooter";
 import { generateFAQSchema } from "@/lib/seoUtils";
 import PageMeta from "@/components/common/PageMeta";
 import SMSAPISchema from "@/pages/schemaFiles/sms-schema-files/SMSAPISchema";
@@ -125,13 +126,12 @@ function SMSAPIPakistan() {
         <APICoreFeatures />
         <APIWhyChooseUs />
         <APIHowToSendSMS />
-        <APIDocumentation />
         <APIStartWithBSMS />
-        <PricingCTA />
-        <RelatedServicesSection currentService="SMS API" />
+        <APIDocumentation />
         <APIFAQ />
       </main>
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
+      <OTPFooter />
     </div>
   );
 }

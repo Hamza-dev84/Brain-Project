@@ -178,7 +178,7 @@ const WHY = [
     body: (
       <>
         We back every hosting account with a{" "}
-        <strong>99.9% uptime guarantee</strong>. That means your website stays
+        <strong>99.982% uptime guarantee</strong>. That means your website stays
         live, your customers can reach you, and your business doesn't stop
         because of
         <a
@@ -1156,8 +1156,8 @@ function WebHostingPage() {
         <IncludedTable />
 
         <LocalVsIntl />
-        <EmailHosting />
         <Audience />
+        <EmailHosting />
         <ClientTestimonials />
         <FAQSection />
         <ReadyCTA />

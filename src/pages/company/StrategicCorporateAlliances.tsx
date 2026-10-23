@@ -13,9 +13,14 @@ import smedaMeeting from '@/assets/alliances/smeda-meeting-recent.webp';
 export default function StrategicCorporateAlliances() {
   return (
     <>
-      <PageMeta 
+      {/* <PageMeta 
         title="Strategic Partners | BrainTEL Corporate Alliances"
         description="BrainTEL's strategic partnerships with government, SMEDA, and industry leaders. Collaborative growth in Pakistan's IT sector."
+      /> */}
+      <PageMeta
+        title="PTAPA Alliance | Telecom Industry Leadership Pakistan | BrainTEL"
+        description="Learn how BrainTEL and PTAPA work together to support Pakistan’s telecom industry through infrastructure projects, policy advocacy, capacity building, and national technology initiatives."
+      // ogImage="/favicons/default.png"
       />
       <AlliancesContent />
     </>
@@ -89,7 +94,7 @@ function AlliancesContent() {
 
   return (
     <>
-      <PageHeader 
+      <PageHeader
         title="Strategic Corporate Alliances"
         description="Building partnerships that drive industry transformation and national progress"
         breadcrumbs={[
@@ -102,17 +107,17 @@ function AlliancesContent() {
         {/* Hero Section - Partnership Introduction */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-brand-secondary/5 rounded-3xl -z-10" />
-          
+
           <div className="max-w-4xl mx-auto text-center py-12 px-6">
             <Badge variant="secondary" className="mb-6 text-base px-4 py-2">
               <Globe className="h-5 w-5 mr-2" />
               PTAPA Partnership
             </Badge>
-            
+
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
               Pakistan Telecommunication Access Providers Association
             </h2>
-            
+
             <div className="relative py-8">
               <Quote className="absolute top-0 left-0 h-12 w-12 text-primary/20 -translate-x-4 -translate-y-4" />
               <p className="text-lg md:text-xl text-neutral-medium leading-relaxed px-8">
@@ -133,23 +138,25 @@ function AlliancesContent() {
               Dr. Shahid and BrainTEL's team of experts guides our collaborative work with PTAPA, which focuses on four main pillars.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
             {contributionAreas.map((area, index) => {
               const IconComponent = area.icon;
               return (
-                <Card 
-                  key={index} 
+                <Card
+                  key={index}
                   className="group relative overflow-hidden hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-bl-full -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  
+
                   <CardHeader className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:from-primary/20 group-hover:to-primary/10 transition-all">
                         <IconComponent className="h-7 w-7 text-primary" />
                       </div>
                       <CardTitle className="text-xl md:text-2xl flex-1 pt-2">{area.title}</CardTitle>
+
+                      {/* <CardTitle className="text-xl md:text-2xl flex-1 pt-2">{area.title}</CardTitle> */}
                     </div>
                   </CardHeader>
                   <CardContent>
@@ -177,16 +184,16 @@ function AlliancesContent() {
           <div className="max-w-4xl mx-auto relative">
             {/* Timeline line */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20" />
-            
+
             <div className="space-y-12">
               {projects.map((project, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className={`relative flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary ring-4 ring-background z-10" />
-                  
+
                   <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'} pl-20 md:pl-0`}>
                     <Card className="hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary">
                       <CardHeader>
@@ -206,7 +213,7 @@ function AlliancesContent() {
                       </CardContent>
                     </Card>
                   </div>
-                  
+
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block flex-1" />
                 </div>
@@ -225,16 +232,16 @@ function AlliancesContent() {
               Visual documentation of our collaborative efforts and significant moments
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {galleryImages.map((image, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group overflow-hidden hover:shadow-2xl transition-all duration-500"
               >
                 <div className="aspect-video overflow-hidden bg-muted">
-                  <img loading="lazy" decoding="async" 
-                    src={image.src} 
+                  <img loading="lazy" decoding="async"
+                    src={image.src}
                     alt={image.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -255,14 +262,14 @@ function AlliancesContent() {
         {/* Impact Statement */}
         <section className="relative">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-brand-secondary/10 to-brand-tertiary/10 rounded-3xl" />
-          
+
           <div className="relative max-w-4xl mx-auto text-center py-16 px-6 md:px-12">
             <CheckCircle className="h-16 w-16 text-primary mx-auto mb-6" />
-            
+
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Our Commitment to National Progress
             </h3>
-            
+
             <p className="text-lg md:text-xl text-foreground leading-relaxed">
               This strategic collaboration with PTAPA reaffirms Brain Telecommunication Ltd.'s commitment to leading the market to unreachable heights. Our close alliance with key players and consistent leadership in impactful projects has enabled us to build a progressive and ever-moving Pakistan, and we take pride in that.
             </p>

@@ -9,10 +9,11 @@ const MiniChart = () => {
     { day: "30", sent: 90, failed: 3 },
   ];
 
-  const maxValue = Math.max(...data.map((d) => d.sent + d.failed));
+  const maxValue = Math.max(...data.map(d => d.sent + d.failed));
 
   return (
     <div className="space-y-4">
+      {/* Legend */}
       <div className="flex items-center gap-4 text-xs">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-primary" />
@@ -24,11 +25,12 @@ const MiniChart = () => {
         </div>
       </div>
 
+      {/* Chart */}
       <div className="h-32 flex items-end justify-between gap-2">
         {data.map((item, i) => {
           const sentHeight = (item.sent / maxValue) * 100;
           const failedHeight = (item.failed / maxValue) * 100;
-
+          
           return (
             <div key={i} className="flex-1 flex flex-col items-center gap-1">
               <div className="w-full flex flex-col-reverse gap-0.5">
@@ -36,10 +38,10 @@ const MiniChart = () => {
                   className="w-full bg-gradient-to-t from-primary to-primary/70 rounded-t transition-all hover:from-primary hover:to-accent"
                   style={{ height: `${sentHeight}px` }}
                 />
-                <div
+                {/* <div
                   className="w-full bg-destructive/70 rounded-t transition-all hover:bg-destructive"
                   style={{ height: `${failedHeight}px` }}
-                />
+                /> */}
               </div>
               <span className="text-[10px] text-muted-foreground">{item.day}</span>
             </div>
@@ -47,6 +49,7 @@ const MiniChart = () => {
         })}
       </div>
 
+      {/* Date Range Selector */}
       <div className="flex items-center gap-2 pt-2 border-t border-border/30">
         <span className="text-xs text-muted-foreground">Date Range:</span>
         <div className="flex-1 px-3 py-1 bg-primary/5 rounded-md border border-primary/20 text-xs text-primary">

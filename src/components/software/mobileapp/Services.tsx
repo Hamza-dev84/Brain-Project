@@ -1,37 +1,40 @@
 import React from "react";
-import { Lightbulb, Settings, Wrench, GraduationCap } from "lucide-react";
+import { Lightbulb, Settings, Wrench, GraduationCap, ArrowRight } from "lucide-react";
 import { Button } from "@/components/software/ui/button";
 import freeConsultationImg from "@/assets/software/services/free-consultation.webp";
+import ClearProjectScopeImg from "@/assets/software/services/ClearProjectScope.webp";
+import FullOwnershipImg from "@/assets/software/services/FullOwnership.webp";
+import DiscoveryStrategy from "@/assets/software/BrainSOFT Mobile App Dev Page/MobileApp_webp/Discovery&Strategy.webp";
+import UI_UX_Design from "@/assets/software/BrainSOFT Mobile App Dev Page/MobileApp_webp/UI-UX-Design.webp";
+import Development_Testing from "@/assets/software/BrainSOFT Mobile App Dev Page/MobileApp_webp/Development&Testing.webp";
+import LaunchSupport from "@/assets/software/BrainSOFT Mobile App Dev Page/MobileApp_webp/ProcessLaunch&Support.webp";
 
 interface ServiceStepProps {
   stepNumber: string;
   title: string;
   description: string;
-  icon: React.ReactNode;
+  image: string;
 }
 
 const ServiceStep: React.FC<ServiceStepProps> = ({
   stepNumber,
   title,
   description,
-  icon,
+  image,
 }) => {
   return (
     <article className="group bg-white border border-gray-300/50 rounded-2xl p-8 hover-lift transition-all duration-300 flex-1 min-w-[280px]">
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-16 h-16 bg-gradient-to-br from-brand-secondary to-brand-secondary rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-          {icon}
-        </div>
+        <img src={image} alt={title} className="w-24 h-24" />
+
         <span className="bg-brand-secondary/10 text-brand-secondary btn-text px-4 py-2 rounded-full">
           {stepNumber}
         </span>
       </div>
-      <h4 className="card-title">
+      <h3 className="software-card-title group-hover:text-brand-dark transition-colors">
         {title}
-      </h4>
-      <p className="card-description mt-3">
-        {description}
-      </p>
+      </h3>
+      <p className="card-description mt-3">{description}</p>
     </article>
   );
 };
@@ -40,32 +43,36 @@ interface ServiceCardProps {
   image: string;
   title: string;
   description: string;
-  alt?: string;
+  altText?: string;
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
   image,
   title,
   description,
-  alt,
+  altText,
 }) => {
   return (
-    <article className="group bg-white rounded-3xl overflow-hidden shadow-lg hover-lift transition-all duration-300 flex-1 min-w-[300px] max-w-[380px] border border-gray-300/30">
+    <article className="group bg-white rounded-b-2xl overflow-hidden shadow-lg hover-lift transition-all duration-300 flex-1 min-w-[300px] max-w-[380px] border border-gray-300/30">
       <div className="relative overflow-hidden h-64">
-        <img loading="lazy" decoding="async"
+        <img
           src={image}
-          alt={alt || title}
+          alt={altText || title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-brand-secondary flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-300">
+              <ArrowRight className="w-8 h-8 text-brand-dark" />
+            </div>
+          </div>
+        </div>
       </div>
       <div className="p-8">
-        <h4 className="card-title group-hover:text-brand-dark transition-colors">
+        <h3 className="software-card-title group-hover:text-brand-dark transition-colors">
           {title}
-        </h4>
-        <p className="card-description mt-4">
-          {description}
-        </p>
+        </h3>
+        <p className="card-description mt-4">{description}</p>
       </div>
       <div className="h-2 bg-gradient-to-r from-brand-secondary to-brand-secondary"></div>
     </article>
@@ -78,29 +85,29 @@ const Services: React.FC = () => {
       stepNumber: "Step 1",
       title: "Discovery & Strategy",
       description:
-        "We dissect your idea, audit competitors, and craft a roadmap. Miss this step, and you risk building an app no one downloads.",
-      icon: <Lightbulb size={32} />,
+        "We start by understanding your app idea, business model, audience, and feature priorities. This stage helps us define the scope, plan the workflow, and set the right direction.",
+      image: DiscoveryStrategy,
     },
     {
       stepNumber: "Step 2",
       title: "UI/UX Design",
       description:
-        "We create intuitive, pixel-perfect designs that convert visitors into customers. Every screen is crafted with user psychology and conversion optimization in mind.",
-      icon: <Settings size={32} />,
+        "We design app screens that are clean, simple, and easy to use. Every flow is planned to help users move smoothly through the app and complete key actions without confusion.",
+      image: UI_UX_Design,
     },
     {
       stepNumber: "Step 3",
       title: "Development & Testing",
       description:
-        "Using Agile workflows, we code, test, and refine. Every app undergoes 50+ QA checks for bugs, load times, and security.",
-      icon: <Wrench size={32} />,
+        "Our developers build the app in stages while testing speed, function, and stability along the way. This keeps the product reliable and reduces issues before launch.",
+      image: Development_Testing,
     },
     {
       stepNumber: "Step 4",
       title: "Launch & Support",
       description:
-        "We handle App Store submissions and provide 3 months FREE support—because your success is our success.",
-      icon: <GraduationCap size={32} />,
+        "Once the app is ready, we handle deployment and final checks. We also provide support after launch for fixes, updates, and ongoing app improvement.",
+      image: LaunchSupport,
     },
   ];
 
@@ -108,22 +115,24 @@ const Services: React.FC = () => {
     {
       image: freeConsultationImg,
       title: "Free Consultation",
-      description: "Share your idea → Get a roadmap + quote in 24 hours.",
-      alt: "Diverse mobile app developers in Pakistan collaborating in a modern office presentation",
+      description:
+        "Share your app idea with our team and get expert input on features, workflow, and project direction.",
+      altText:
+        "Group testing an app on multiple devices, mobile app developers Pakistan working together in a meeting.",
     },
     {
-      image:
-        "/img/builder/c05cc3fd9ab6bfa8.webp",
-      title: "No Upfront Costs",
-      description: "Pay 30% after approving the design.",
-      alt: "No upfront costs illustration for mobile app development",
+      image: ClearProjectScopeImg,
+      title: "Clear Project Scope",
+      description:
+        "We help you define the right feature set, timeline, and build plan before development starts.",
+      altText: "Golden Handshake being done on a payment agreement",
     },
     {
-      image:
-        "/img/builder/40f28c81cfbbb4d6.webp",
-      title: "Ownership Guarantee",
-      description: "Full code rights transferred upon launch.",
-      alt: "Ownership guarantee for mobile app development",
+      image: FullOwnershipImg,
+      title: " Full Ownership",
+      description:
+        "After launch, your business gets full access to the product, codebase, and core project assets.",
+      altText: "App Developer handing the code in a USB to its rightful owner",
     },
   ];
 
@@ -131,20 +140,20 @@ const Services: React.FC = () => {
     <>
       <section
         id="services"
-        className="w-full py-24 px-6 bg-white max-md:py-16"
+        className="w-full mt-28 mb-20 px-6 bg-white max-md:py-16"
       >
-        <header className="text-center max-w-4xl mx-auto mb-16 animate-fade-in-up">
+        <header className="text-center max-w-4xl mx-auto mb-12 animate-fade-in-up">
           <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
             Our Process
           </div>
           <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+            Full-Cycle{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
-              Full-Cycle
-            </span>{" "}
-            App Development Process
+              App Development Process
+            </span>
           </h2>
         </header>
-        <div className="flex w-full items-stretch gap-6 flex-wrap justify-center max-w-7xl mx-auto">
+        <div className="w-full max-w-4xl mx-auto grid grid-cols-1 gap-6">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -159,13 +168,13 @@ const Services: React.FC = () => {
       <section className="w-full py-24 px-6 bg-gradient-to-b from-gray-50 to-white max-md:py-16">
         <header className="text-center max-w-4xl mx-auto mb-16 animate-fade-in-up">
           <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
-            Start Your Project with
+            Start Your Project With Us
           </div>
-          <h3 className="font-raleway text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark">
+          <h3 className="font-raleway text-2xl md:text-3xl lg:text-4xl font-bold text-brand-dark -mb-8 py-4">
+            With BrainSOFT{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
-              BrainSOFT
-            </span>{" "}
-            Today!
+              Build Your Mobile App
+            </span>
           </h3>
         </header>
         <div className="flex w-full items-stretch gap-8 flex-wrap justify-center max-w-7xl mx-auto">

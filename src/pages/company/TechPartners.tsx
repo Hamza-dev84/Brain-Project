@@ -98,7 +98,7 @@ function TechPartnersContent() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-20 px-4 md:px-6 overflow-hidden">
+       <section className="relative py-20 px-4 md:px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 right-10 w-48 h-48 bg-brand-secondary rounded-full blur-3xl"></div>
@@ -138,7 +138,7 @@ function TechPartnersContent() {
             <Badge className="mx-auto bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20">
               Industry Leaders
             </Badge>
-            <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
               Our Strategic Technology Partners
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">

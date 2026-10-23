@@ -12,27 +12,27 @@ const OTPFAQ = () => {
     {
       question: "What is OTP SMS service in Pakistan?",
       answer:
-        "OTP (One-Time Password) service in Pakistan is a secure SMS-based authentication method where businesses send customers a unique password or verification code via SMS to confirm transactions, logins, or sensitive actions.",
+        "OTP SMS service sends a one-time password to a user’s mobile number for verification. Businesses use it for secure login, signup confirmation, and transaction authentication.",
     },
     {
-      question: "Which businesses need OTP SMS services in Pakistan?",
+      question: "Which businesses need OTP SMS services?",
       answer:
-        "Banks, e-commerce platforms, healthcare providers, fintech companies, educational institutions, and any business requiring secure user authentication and transaction verification can benefit from OTP SMS services.",
+        "Banks, fintech companies, e-commerce stores, healthcare platforms, and apps use OTP verification systems. This helps protect user accounts.",
     },
     {
-      question: "How does an OTP SMS service work in Pakistan?",
+      question: "How does OTP SMS verification work?",
       answer:
-        "When a user attempts to log in or make a transaction, the system generates a unique code and sends it via SMS to their registered mobile number. The user enters this code to complete the verification process, ensuring secure access.",
+        "When a user enters their mobile number, the system sends a Pakistan OTP code to that number. The user then enters the received code to verify their identity.",
     },
     {
-      question: "Is OTP service in Pakistan secure?",
+      question: "How secure is BSMS OTP service?",
       answer:
-        "Yes, our OTP service uses TLS encryption, direct SS7 carrier links, and is fully compliant with PTA regulations including CTDISR (Cyber-threat Detection and Incident Reporting). We maintain 99.99% uptime with enterprise-grade security.",
+        "BSMS uses secure telecom routes and verification protocols. This ensures reliable SMS OTP verification and protects user accounts from unauthorized access.",
     },
     {
-      question: "How can I get OTP SMS service for my business in Pakistan?",
+      question: "How can I start OTP SMS service for my business in Pakistan?",
       answer:
-        "Contact our team through the form above or call our telecom experts. We'll assess your requirements, provide a custom proposal, and help you integrate our OTP SMS service with your existing systems within days.",
+        "Create an account with BSMS. Then, integrate the OTP SMS API. You can start sending OTP codes to users right away.",
     },
   ];
 

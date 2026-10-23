@@ -8,7 +8,7 @@ export const Route = createFileRoute("/services/sms")({
 function SmsLayout() {
   return (
     <div className="brand-sms min-h-screen">
-      <BrandBar active="sms" />
+      {/* <BrandBar active="sms" /> */}
       <Outlet />
     </div>
   );

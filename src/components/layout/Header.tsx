@@ -77,6 +77,7 @@ const navigationData = {
     { title: 'About Us', path: '/company/about-us', icon: Info, description: 'Our story and mission' },
     { title: 'Careers', path: '/careers', icon: Briefcase, description: 'Join our team' },
     { title: 'Our Technology Partners', path: '/company/tech-partners', icon: Network, description: 'Technology partnerships' },
+    { title: 'Payment Guides', path: '/resources/payment-guides', icon: CreditCard, description: 'Secure payment methods and guides' },
   ],
   resources: [
     { title: 'Customer Guides', path: '/resources/customer-guides', icon: BookOpen, description: 'Helpful guides and manuals' },

@@ -5,7 +5,7 @@ import { Hero } from "@/components/software/webdev/Hero";
 import { Features } from "@/components/software/webdev/Features";
 import { Services } from "@/components/software/webdev/Services";
 import { Technologies } from "@/components/software/webdev/Technologies";
-import { Portfolio } from "@/components/software/webdev/Portfolio";
+import Portfolio from "@/components/software/webdev/Portfolio";
 import TestimonialsSection from "@/components/software/TestimonialsSection";
 import Footer from "@/components/software/Footer";
 import { PlannerModal } from "@/components/software/planner/PlannerModal";
@@ -13,6 +13,7 @@ import { webDevConfig } from "@/data/software/webDevConfig";
 import PageMeta from "@/components/common/PageMeta";
 import ServicesSEOSchema from "@/pages/schemaFiles/software-schema-files/ServicesSEOSchema";
 import FAQsSEOSchema from "@/pages/schemaFiles/software-schema-files/FAQsSEOSchema";
+import WebDevFAQs from "@/components/software/faqs/WebDevFAQs"
 
 const WebDevelopmentPakistan = () => {
   const [isPlannerOpen, setIsPlannerOpen] = useState(false);
@@ -42,6 +43,7 @@ const WebDevelopmentPakistan = () => {
           <Technologies />
           <Portfolio />
           <TestimonialsSection />
+          <WebDevFAQs />
         </main>
 
         <Footer />

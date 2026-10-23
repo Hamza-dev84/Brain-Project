@@ -11,9 +11,12 @@ import {
 } from "@/components/ui/carousel";
 import AnimateOnScroll from "@/components/sms/animations/AnimateOnScroll";
 import { Link } from "@/lib/router-compat";
+import { Button } from "../ui/button";
+import GetStartedPopup from "../Popup-Form/GetStartedPopup";
 
 const PricingCategories = () => {
   const [activeCategory, setActiveCategory] = useState("otp");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const currentCategory = pricingCategories.find((cat) => cat.id === activeCategory);
 
@@ -102,26 +105,38 @@ const PricingCategories = () => {
                     <span>✓ Volume Discounts</span>
                   </div>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                    <Link
+                    {/* <Link
                       to="/services/sms/contact"
                       className="btn-primary px-8 py-4 rounded-lg text-lg font-semibold"
                     >
                       Contact Sales
-                    </Link>
-                    <a
+                    </Link> */}
+                    <Button
+                      onClick={() => setIsPopupOpen(true)}
+                      className="btn-primary px-8 py-4 rounded-lg text-lg font-semibold"
+                    >
+                      Contact Sales
+                    </Button>
+                    {/* <a
                       href="https://wa.me/923276222888"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="border-2 border-primary text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/10 transition-colors"
                     >
                       Schedule Consultation
-                    </a>
+                    </a> */}
+                    <Link to="/services/sms/contact">
+                      <button className="border-2 border-primary text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/10 transition-colors">
+                        Schedule Consultation
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         )}
+        <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
       </div>
     </section>
   );

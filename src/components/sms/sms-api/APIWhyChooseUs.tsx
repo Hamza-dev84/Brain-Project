@@ -28,13 +28,10 @@ const APIWhyChooseUs = () => {
     <section className="py-20 bg-background relative overflow-hidden" aria-labelledby="why-choose-us">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
-          <h2
-            id="why-choose-us"
-            className="text-primary text-4xl md:text-5xl font-bold font-raleway mb-3"
-          >
+          <h2 id="why-choose-us" className="text-[#145265] text-4xl md:text-5xl font-bold font-raleway mb-3">
             Why choose our
           </h2>
-          <h3 className="text-primary text-3xl md:text-4xl font-bold font-raleway">
+          <h3 className="text-[#145265] text-3xl md:text-4xl font-bold! font-raleway">
             SMS Gateway in Pakistan?
           </h3>
         </div>
@@ -51,11 +48,11 @@ const APIWhyChooseUs = () => {
                   />
                 </div>
 
-                <h4 className="text-primary text-2xl font-bold font-raleway mb-4 text-center">
+                <h4 className="text-[#145265] text-2xl font-bold! font-raleway mb-4 text-center">
                   {reason.title}
                 </h4>
-
-                <p className="text-muted-foreground text-base font-lato leading-relaxed text-center">
+                
+                <p className="text-gray-600 text-base font-lato leading-relaxed text-center">
                   {reason.description}
                 </p>
               </div>

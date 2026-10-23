@@ -95,6 +95,34 @@ const Support = () => {
     },
   ];
 
+  const faqs = [
+    {
+      question: "What is the best way to contact support?",
+      answer:
+        "For the fastest assistance, please use the relevant contact option above. This helps route your query to the right specialist immediately.",
+    },
+    {
+      question: "How do I report a bug or technical issue?",
+      answer:
+        'Please use the "Report a Technical Issue" link. Be ready to provide details like your software version, operating system, and steps to reproduce the issue.',
+    },
+    {
+      question: "Who can I talk to about my bill or invoice?",
+      answer:
+        'Our billing team handles all account and payment inquiries. Click "Get Billing Help" to get in touch with them directly.',
+    },
+    {
+      question: "How can I get an update on my project's progress?",
+      answer:
+        'For project-specific updates and new requests, please use the "Project Updates & Requests" channel to contact your project manager.',
+    },
+    {
+      question: "Where can I find the latest software updates?",
+      answer:
+        'All updates are distributed directly to clients. If you believe you are missing an update, please contact us through the "Report a Technical Issue" channel.',
+    },
+  ];
+
   return (
     <>
       {/* <Helmet>
@@ -107,11 +135,11 @@ const Support = () => {
       <PageMeta
         title="BrainSOFT Support Center | Software & Technical Assistance"
         description="Get BrainSOFT technical support for software issues, billing help, project updates, ERP systems, web development, and digital solutions with fast response and expert assistance in Pakistan."
-        // ogImage="/favicons/brainsoft_favicon.png"
+      // ogImage="/favicons/brainsoft_favicon.png"
       />
       <SupportSchema />
       <div className="min-h-screen bg-white">
-        <TopNavBar />
+        {/* <TopNavBar /> */}
         <Header />
 
         {/* Hero Section */}
@@ -129,6 +157,7 @@ const Support = () => {
               challenges you may encounter. Find quick answers below or get in
               touch directly for personalized assistance.
             </p>
+
             <p className="font-lato text-sm text-neutral-medium/80 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Can't find what you're looking for? Our dedicated team is just a
               click away on our{" "}
@@ -191,87 +220,48 @@ const Support = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-neutral-light/30">
-          <div className="container mx-auto px-5 max-w-4xl">
-            <h2 className="font-raleway text-3xl md:text-4xl font-bold text-brand-dark text-center mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="font-lato text-neutral-medium text-center mb-12">
-              Quick answers to common questions about our support services.
-            </p>
 
-            <Accordion type="single" collapsible className="bg-white rounded-xl shadow-sm p-6">
-              <AccordionItem value="item-1">
-                <AccordionTrigger className="font-raleway text-lg text-brand-dark hover:text-brand-primary">
-                  What is the best way to contact support?
-                </AccordionTrigger>
-                <AccordionContent className="font-lato text-neutral-medium">
-                  For the fastest assistance, please use the relevant contact
-                  option above. This helps route your query to the right
-                  specialist immediately.
-                </AccordionContent>
-              </AccordionItem>
+        <section className="py-20 px-6 md:px-12 lg:px-16 bg-white">
+          <div className="max-w-4xl mx-auto">
+            {/* <ScrollReveal> */}
+            <div className="text-center mb-12">
+              <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+                Common Questions
+              </div>
+              <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
+                Frequently Asked{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
+                  Questions
+                </span>
+              </h2>
+            </div>
+            {/* </ScrollReveal> */}
 
-              <AccordionItem value="item-2">
-                <AccordionTrigger className="font-raleway text-lg text-brand-dark hover:text-brand-primary">
-                  How do I report a bug or technical issue?
-                </AccordionTrigger>
-                <AccordionContent className="font-lato text-neutral-medium">
-                  Please use the "Report a Technical Issue" link. Be ready to
-                  provide details like your software version, operating system,
-                  and steps to reproduce the issue.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3">
-                <AccordionTrigger className="font-raleway text-lg text-brand-dark hover:text-brand-primary">
-                  Who can I talk to about my bill or invoice?
-                </AccordionTrigger>
-                <AccordionContent className="font-lato text-neutral-medium">
-                  Our billing team handles all account and payment inquiries.
-                  Click "Get Billing Help" to get in touch with them directly.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4">
-                <AccordionTrigger className="font-raleway text-lg text-brand-dark hover:text-brand-primary">
-                  How can I get an update on my project's progress?
-                </AccordionTrigger>
-                <AccordionContent className="font-lato text-neutral-medium">
-                  For project-specific updates and new requests, please use the
-                  "Project Updates & Requests" channel to contact your project
-                  manager.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-5">
-                <AccordionTrigger className="font-raleway text-lg text-brand-dark hover:text-brand-primary">
-                  Where can I find the latest software updates?
-                </AccordionTrigger>
-                <AccordionContent className="font-lato text-neutral-medium">
-                  All updates are distributed directly to clients. If you believe
-                  you are missing an update, please contact us through the
-                  "Report a Technical Issue" channel.
-                </AccordionContent>
-              </AccordionItem>
+            {/* <ScrollReveal> */}
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="bg-neutral-50 rounded-xl border border-neutral-border px-6 data-[state=open]:border-brand-secondary transition-colors"
+                >
+                  <AccordionTrigger className="font-raleway font-bold text-brand-dark text-left hover:no-underline py-5">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="font-lato text-neutral-medium leading-relaxed pb-5">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
             </Accordion>
-
-            <p className="font-lato text-center text-neutral-medium mt-8">
-              Still have a question? We'd love to hear from you.{" "}
-              <Link
-                to="/services/software/contact-us"
-                className="text-brand-primary hover:text-brand-primary/80 underline font-medium transition-colors"
-              >
-                Contact Us
-              </Link>
-            </p>
+            {/* </ScrollReveal> */}
           </div>
         </section>
 
         {/* Support Policy Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-5 max-w-7xl">
-            <h2 className="font-raleway text-3xl md:text-4xl font-bold text-brand-dark text-center mb-4">
+            <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark text-center pb-4">
               Our Support Commitment
             </h2>
             <p className="font-lato text-neutral-medium text-center mb-12 max-w-3xl mx-auto">
@@ -293,7 +283,7 @@ const Support = () => {
                         <Icon className="w-5 h-5 text-brand-primary" />
                       </div>
                       <div>
-                        <h3 className="font-raleway text-lg font-bold text-brand-dark mb-2">
+                        <h3 className="font-raleway text-xl font-bold text-brand-dark mb-2">
                           {point.title}
                         </h3>
                         <p className="font-lato text-neutral-medium text-sm">

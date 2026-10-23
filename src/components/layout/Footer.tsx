@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { toast } from 'sonner';
-// import { Facebook, Linkedin, Instagram, Youtube, Phone, Mail, MapPin, Clock } from 'lucide-react';
 import {
   Facebook,
   Linkedin,
@@ -18,17 +17,9 @@ import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/common/Logo';
 import { newsletterSubscriptionApi } from '@/pages/services/footerFormApi';
-// import Company_Profile from "../../../public/docs/braintelprofile.pdf"
+import Terms_and_Conditions from "../../../public/docs/brainteltc.pdf";
 
 const footerLinks = {
-  // company: [
-  //   { title: 'About Us', path: '/company/about-us' },
-  //   { title: 'Careers', path: '/careers' },
-  //   { title: 'Company Profile', path: Company_Profile },
-  //   { title: 'Services', path: '/services' },
-  //   { title: 'Contact Us', path: '/contact-us' },
-  //   { title: 'Refer & Earn', path: '/refer-and-earn' },
-  // ],
   company: [
     { title: 'About Us', path: '/company/about-us', type: 'route' },
     { title: 'Careers', path: '/careers', type: 'route' },
@@ -146,7 +137,6 @@ export function Footer() {
         });
       }
     } catch (error) {
-      // setError("Somthing went wrong");
       toast.error("Failed to submit request. Please try again.");
       console.error(
         "Error in catch block of newsletterSubscriptionApi:",
@@ -156,81 +146,49 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-light border-t border-border">
+    <footer className="bg-m3-surface-container-low border-t border-m3-outline-variant">
       <div className="container mx-auto px-4 md:px-6">
         {/* Main Footer Content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="pt-12 pb-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Logo className="h-8 w-auto mb-4" />
-            <p className="text-sm text-neutral-medium leading-relaxed mb-4">
-              BrainTEL is the leading IT and Telecom Company in Pakistan, delivering telecom services and innovative IT solutions for enterprises across various industries nationwide.
-            </p>
+            {/* <Logo className="h-8 w-auto mb-4" /> */}
 
-            <div className="space-y-2">
-              <div className="flex items-start gap-2 text-sm text-neutral-medium">
-                <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <div>
-                  <a href="tel:042111222888" className="block">
-                    <strong>UAN:</strong>
-                    {/* (042) 111 222 888 */}
-                    <span className="hover:underline">(042) 111 222 888</span>
-                  </a>
-                  <a href="tel:04232100000" className="block">
-                    <strong>Phone:</strong>
-                    <span className="hover:underline">(042) 32100000</span>
-                    {/* (042) 32100000 */}
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-2 text-sm text-neutral-medium">
-                <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support@brain.net.pk"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline break-all"
-                >
-                  support@brain.net.pk
-                </a>
-              </div>
-              <div className="flex items-start gap-2 text-sm text-neutral-medium">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <a
-                  href="https://maps.app.goo.gl/rwFjoFNkDDi6Dv8a6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:underline"
-                >
-                  730, Nizam Block Allama Iqbal Town, Lahore, 54570, Pakistan.
-                </a>
-              </div>
-              <div className="flex items-start gap-2 text-sm text-neutral-medium">
-                <Clock className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <div>Mon–Sat, 9:00 AM – 5:30 PM</div>
-              </div>
-            </div>
+            <Link
+              to="/"
+              className="flex items-center hover:opacity-80 transition-opacity"
+              aria-label="Brain Telecommunication Ltd. Home"
+            >
+              <Logo className="h-8 md:h-10 w-auto" />
+            </Link>
+
+            <p className="text-sm text-m3-on-surface-variant leading-relaxed mb-4">
+              BrainTEL is the leading IT and Telecom Company in Pakistan,
+              delivering telecom services and innovative IT solutions for
+              enterprises across various industries nationwide.
+            </p>
           </div>
 
           {/* Company Links */}
           <div className="space-y-4">
-            <h4 className="text-base font-semibold text-foreground">Company</h4>
+            <h4 className="text-base font-semibold text-m3-on-surface">
+              Company
+            </h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
-                  {link.type === 'file' ? (
-                    <a
-                      href={link.path}
+                  {link.title === "Company Profile" ? (
+                    <Link
+                      to={link.path}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-neutral-medium hover:text-primary transition-colors"
+                      className="text-sm text-m3-on-surface-variant hover:text-m3-primary transition-colors"
                     >
                       {link.title}
-                    </a>
+                    </Link>
                   ) : (
                     <Link
                       to={link.path}
-                      className="text-sm text-neutral-medium hover:text-primary transition-colors"
+                      className="text-sm text-m3-on-surface-variant hover:text-m3-primary transition-colors"
                     >
                       {link.title}
                     </Link>
@@ -242,47 +200,55 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="space-y-4">
-            <h4 className="text-base font-semibold text-foreground">Services</h4>
+            <h4 className="text-base font-semibold text-m3-on-surface">
+              Services
+            </h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-neutral-medium hover:text-primary transition-colors"
+                    target="_blank"
+                    className="text-sm text-m3-on-surface-variant hover:text-m3-primary transition-colors"
                   >
                     {link.title}
                   </Link>
                 </li>
               ))}
-
             </ul>
           </div>
 
-          {/* Newsletter & Social */}
+          {/* Newsletter Form */}
           <div className="space-y-4">
-            <h4 className="text-base font-semibold text-foreground">Newsletter</h4>
-            <p className="text-sm text-neutral-medium">
+            <h4 className="text-base font-semibold text-m3-on-surface">
+              Newsletter
+            </h4>
+            <p className="text-sm text-m3-on-surface-variant">
               Stay updated with our latest news
             </p>
-            <form className="flex gap-2" onSubmit={handleSubmit}>
-              <label htmlFor="footer-newsletter-email" className="sr-only">
-                Your email
-              </label>
-              <input
-                id="footer-newsletter-email"
-                type="email"
-                value={email}
-                onChange={handleChange}
-                placeholder="Your email"
-                className="flex-1 px-3 py-2 text-sm bg-card border border-neutral-400 rounded-lg text-foreground placeholder:text-neutral-medium focus:outline-none focus:border-primary"
-              />
-              <Button
-                type="submit"
-                size="sm"
-                className="cursor-pointer bg-primary text-primary-foreground hover:bg-brand-light hover:text-brand-dark"
-              >
-                Subscribe
-              </Button>
+            <form
+              onSubmit={handleSubmit}
+              className="items-center max-sm:flex-col max-sm:gap-4"
+            >
+              <div className="flex gap-2">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={handleChange}
+                  placeholder="Enter Your Email"
+                  className="flex-1 px-3 py-2 text-sm bg-m3-surface-container border border-m3-outline rounded-lg text-m3-on-surface placeholder:text-m3-on-surface-variant focus:outline-none focus:border-m3-primary"
+                />
+                <button
+                  type="submit"
+                  className="bg-m3-primary text-m3-on-primary p-3 rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
+                  aria-label="Send Mail"
+                >
+                  <Send className="w-5 h-5" />
+                </button>
+              </div>
+              {showError && error && (
+                <p className="text-red-400 text-xs mt-1 font-lato">{error}</p>
+              )}
             </form>
 
             {/* Social Links */}
@@ -296,11 +262,11 @@ export function Footer() {
                       variant="ghost"
                       size="sm"
                       asChild
-                      className="p-2 text-neutral-medium hover:text-primary hover:bg-card state-layer"
+                      className="w-12 h-12 rounded-full bg-m3-primary/10 flex items-center justify-center hover:bg-m3-primary/20 hover:scale-110 transition-all duration-300"
                     >
                       <a
                         href={social.href}
-                        target="_blank"
+                        target={social.target}
                         rel="noopener noreferrer"
                         aria-label={`Follow us on ${social.name}`}
                       >
@@ -313,35 +279,92 @@ export function Footer() {
             </div>
           </div>
         </div>
+        <div
+          className="
+    grid grid-cols-1 sm:grid-cols-2 lg:flex
+    lg:flex-nowrap lg:items-stretch lg:gap-4
+    gap-4 px-2 sm:px-0 mb-6 text-m3-on-surface-variant
+  "
+        >
+          {/* Phone */}
+          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition lg:flex-shrink-0 lg:min-w-[260px]">
+            <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
+            <div className="space-y-1">
+              <a href="tel:042111222888" className="block">
+                <strong>UAN:</strong>{" "}
+                <span className="hover:underline">(042) 111 222 888</span>
+              </a>
+              <a href="tel:04232100000" className="block">
+                <strong>Phone:</strong>{" "}
+                <span className="hover:underline">(042) 32100000</span>
+              </a>
+            </div>
+          </div>
 
+          {/* Email */}
+          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition">
+            <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=support@brain.net.pk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline break-all"
+            >
+              support@brain.net.pk
+            </a>
+          </div>
+
+          {/* Address */}
+          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition lg:flex-shrink-0 lg:min-w-[300px]">
+            <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
+            <a
+              href="https://maps.app.goo.gl/rwFjoFNkDDi6Dv8a6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              730, Nizam Block Allama Iqbal Town, Lahore, 54570, Pakistan.
+            </a>
+          </div>
+
+          {/* Working Hours */}
+          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition lg:flex-shrink-0 lg:min-w-[220px]">
+            <Clock className="h-4 w-4 mt-1 flex-shrink-0" />
+            <span>Mon–Sat, 9:00 AM – 5:30 PM</span>
+          </div>
+        </div>
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-border">
+        <div className="py-6 border-t border-m3-outline-variant">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-neutral-medium">
-              Copyright © 2025 Brain Telecommunication Ltd. All rights reserved.
+            <p className="text-sm text-m3-on-surface-variant">
+              Copyright © 2026 Brain Telecommunication Ltd. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-6 text-sm text-neutral-medium">
-              <Link
-                to="/privacy-policy"
-                className="hover:text-primary transition-colors"
-              >
-                Privacy & Policy
-              </Link>
+            <div className="flex items-center gap-6 text-sm text-m3-on-surface-variant">
               <a
                 href="/docs/brainteltc.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="hover:text-m3-primary transition-colors"
               >
                 Terms & Conditions
               </a>
-              <Link
-                to="/company/csr"
-                className="hover:text-primary transition-colors"
+
+              <a
+                href="/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-m3-primary transition-colors"
+              >
+                Privacy Policy
+              </a>
+
+              <a
+                href="/company/csr"
+                className="hover:text-m3-primary transition-colors"
               >
                 PR & CSR
-              </Link>
+              </a>
             </div>
           </div>
         </div>

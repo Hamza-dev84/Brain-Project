@@ -8,6 +8,7 @@ import { Tools } from "@/components/software/webdesign/Tools";
 import { Portfolio } from "@/components/software/webdesign/Portfolio";
 import { Pricing } from "@/components/software/webdesign/Pricing";
 import { Process } from "@/components/software/webdesign/Process";
+import WebDesignFAQs from '@/components/software/faqs/WebDesignFAQs';
 import TestimonialsSection from "@/components/software/TestimonialsSection";
 import Footer from "@/components/software/Footer";
 import { PlannerModal } from "@/components/software/planner/PlannerModal";
@@ -23,7 +24,7 @@ const WebDesignServicesPakistan: React.FC = () => {
       <PageMeta
         title="Web Design Services Lahore | Professional Website Design Company"
         description="BrainSOFT provides professional web design services in Lahore for businesses across Pakistan. We build fast, responsive, SEO-friendly websites, eCommerce stores, landing pages, and custom business platforms that drive growth."
-        // ogImage="/favicons/brainsoft_favicon.png"
+      // ogImage="/favicons/brainsoft_favicon.png"
       />
       {/* <Helmet>
         <title>Reliable Web Design Services in Pakistan | BrainSOFT</title>
@@ -36,13 +37,14 @@ const WebDesignServicesPakistan: React.FC = () => {
         <Header />
         <WebDesignSEOSchema />
         <main className="relative">
-          <Hero onOpenPlanner={() => setIsPlannerOpen(true)} />
+          <Hero />
           <Features />
           <Services onOpenPlanner={() => setIsPlannerOpen(true)} />
           <Tools />
           <Pricing />
           <Process />
           <Portfolio />
+          <WebDesignFAQs />
           <TestimonialsSection />
         </main>
         <Footer />

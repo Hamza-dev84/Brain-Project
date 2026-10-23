@@ -4,62 +4,61 @@ import { Zap, Shield } from "lucide-react";
 export const Features: React.FC = () => {
   const features = [
     {
-      icon: "/img/builder/022988a51d9de019.svg",
-      title: "Proven Development Methodology",
+      icon: "https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/022988a51d9de0198fa17ed715ff14217ac5fa5d?placeholderIfAbsent=true",
+      title: "Clear Development Process",
       description:
-        "We follow an agile, milestone-driven approach—each phase is transparent, on-budget, and on-schedule.",
+        "We follow a step-by-step process from planning to launch. You stay updated at every stage, so your website project stays clear, organized, and on track.",
     },
     {
-      icon: "/img/builder/74d7dd0401c1e480.svg",
-      title: "Dedicated Project Manager",
+      icon: "https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/74d7dd0401c1e48076adc25172dfb666d772e9a9?placeholderIfAbsent=true",
+      title: "Dedicated Project Support",
       description:
-        "From kickoff to launch, you have a single point of contact ensuring clear communication and zero surprises.",
+        "You work with one point of contact throughout the project. This keeps communication simple, fast, and easy for feedback, updates, and approvals.",
     },
     {
-      icon: "/img/builder/26bd28d25696ccbd.svg",
-      title: "Global Clientele, Local Expertise",
+      icon: "https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/26bd28d25696ccbd37b5201cb2eae0bcb6cbdaff?placeholderIfAbsent=true",
+      title: "Pakistan Market Understanding",
       description:
-        "Trusted by businesses across the globe for premium website development services in Pakistan—delivering world-class quality at highly competitive rates.",
+        "We know how local businesses sell online. We build websites that match the needs of brands in Lahore, Karachi, Islamabad, and other cities across Pakistan.",
     },
     {
-      icon: "/img/builder/195b8003cedf17b2.svg",
-      title: "Responsive & Scalable Designs",
+      icon: "https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/195b8003cedf17b20edb3471287da2a600dcfece?placeholderIfAbsent=true",
+      title: "Responsive Custom Web Design",
       description:
-        "Built to adapt: mobile-first layouts, future-proof architectures, and integrations with your favorite platforms (e-commerce, CRM, payment gateways).",
+        "Your website is designed to work well on mobile, tablet, and desktop. Every layout is built to look clean, load properly, and support user action.",
     },
     {
-      icon: "/img/builder/b027270d96b99ef2.svg",
-      title: "Secure, Performance-Optimized Websites",
+      icon: "https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/b027270d96b99ef21ee79220bbe2977e21827c57?placeholderIfAbsent=true",
+      title: "Fast and Secure Websites",
       description:
-        "Every site is Optimized for speed and built to resist cyber threats—your site will load fast, stay secure, and pass Core Web Vitals before launch so visitors stay longer and convert faster.",
+        "We build websites with clean code, speed-focused structure, and strong security practices. That means better performance, safer data handling, and a smoother user experience.",
     },
     {
-      icon: "/img/builder/f1f7e28103b63be1.svg",
-      title: "Elevate with SEO",
+      icon: "https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/f1f7e28103b63be1e019e9f636a08509d2354036?placeholderIfAbsent=true",
+      title: "Built for SEO Growth",
       description:
-        "Want to boost organic traffic? Your website won't just look good—it'll rank better with our SEO Services. See how we can drive qualified leads to your new site",
+        "Our websites are made with SEO in mind from the start. We structure pages properly so your business has a better base for rankings, traffic, and conversions.",
     },
   ];
 
   return (
-    <section className="flex w-full flex-col items-center mt-[80px] px-[60px] py-16 max-md:mt-10 max-md:px-5 relative overflow-hidden gradient-subtle">
+    <section className="flex w-full flex-col items-center pt-24 px-[60px] max-md:mt-10 max-md:px-5 relative overflow-hidden gradient-subtle">
       <Zap className="absolute top-10 right-10 w-8 h-8 text-brand-secondary/20 animate-pulse-slow" />
       <Shield className="absolute bottom-20 left-10 w-10 h-10 text-brand-primary/20 animate-float" />
 
-      <div className="text-center mb-4">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+      <div className="text-center">
+        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-2">
           Why Choose Us
         </div>
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
-          We Don't Just Deliver Websites
-          <br />
+        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mt-4">
+          We Build Websites {" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
-            We Deliver Business Growth Engines
+            That Help Businesses Grow
           </span>
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-7xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 max-w-7xl w-full">
         {features.map((feature, index) => (
           <div
             key={index}
@@ -70,17 +69,17 @@ export const Features: React.FC = () => {
             <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-accent group-hover:w-full transition-all duration-500"></div>
 
             {/* Icon */}
-            <img loading="lazy" decoding="async"
+            <img
               src={feature.icon}
               alt=""
               className="w-[70px] h-[70px] object-contain mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
             />
 
-            <h3 className="card-title text-center">
+            <h3 className="font-bold text-[24px] text-center font-['Raleway',_sans-serif]">
               {feature.title}
             </h3>
 
-            <p className="card-description text-center">
+            <p className="software-card-description text-center">
               {feature.description}
             </p>
           </div>

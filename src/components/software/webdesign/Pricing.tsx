@@ -1,4 +1,6 @@
+
 import React from "react";
+import Brain_Soft_Logo from "@/assets/software/icons/BrainSoft_New_Logo_1.0.png";
 import { CheckCircle2, X, DollarSign, Clock, Headphones } from "lucide-react";
 
 export const Pricing: React.FC = () => {
@@ -27,22 +29,34 @@ export const Pricing: React.FC = () => {
   ];
 
   return (
-    <section className="w-full mt-24 px-6 md:px-12 lg:px-16 py-16 bg-gradient-to-br from-neutral-50 to-white">
+    <section className="w-full mt-8 px-6 md:px-12 lg:px-16 py-16 bg-gradient-to-br from-neutral-50 to-white">
       <div className="max-w-[1600px] mx-auto">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto mb-16 text-center space-y-4">
+        <div className="max-w-4xl mx-auto mb-4 text-center space-y-4">
           <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide">
             Value Comparison
           </div>
           <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
-            Affordably Outperform
+            Affordable Web Design Services
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
-              Global Competitors
+              in Pakistan
             </span>
           </h2>
         </div>
+        <div className="max-w-3xl mx-auto mb-12 space-y-4">
+          <p className="font-lato text-base font-medium leading-relaxed mt-4 text-neutral-400">
+            Many businesses want trustworthy web design services in Pakistan.
+            They also want them to be cheap. Brain Soft offers professional
+            design and development at competitive prices.
+          </p>
 
+          <p className="font-lato text-base font-medium leading-relaxed mt-4 text-neutral-400">
+            Companies seeking top web development services in Pakistan pick
+            Brain Soft. We blend design quality, technical skills, and lasting
+            support.
+          </p>
+        </div>
         {/* Comparison Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {comparisons.map((comparison, index) => {
@@ -59,7 +73,7 @@ export const Pricing: React.FC = () => {
                   <div className="w-16 h-16 mx-auto mb-4 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center relative z-10 border-2 border-white/20">
                     <IconComponent className="w-8 h-8" />
                   </div>
-                  <h3 className="font-raleway text-2xl font-bold relative z-10 text-white">
+                  <h3 className="font-raleway text-white text-2xl font-bold relative z-10">
                     {comparison.category}
                   </h3>
                 </div>
@@ -70,7 +84,13 @@ export const Pricing: React.FC = () => {
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 text-brand-dark font-raleway font-bold text-lg">
                       <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0" />
-                      <span>brainSOFT</span>
+                      <span>
+                        <img
+                          src={Brain_Soft_Logo}
+                          alt="BrainSOFT Logo"
+                          className="h-8   w-auto"
+                        />
+                      </span>
                     </div>
                     <div className="bg-green-50 border-2 border-green-200 rounded-xl p-4">
                       <p className="font-lato text-brand-dark font-bold text-xl">
@@ -104,11 +124,11 @@ export const Pricing: React.FC = () => {
         </div>
 
         {/* Value Proposition Banner */}
-        <div className="mt-16 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-3xl p-8 md:p-12 text-white text-center shadow-2xl">
-          <h3 className="font-raleway text-3xl md:text-4xl font-bold mb-4 text-white">
+        <div className="mt-16 bg-gradient-to-r from-brand-primary/90 to-brand-primary rounded-3xl p-8 md:p-12 text-center shadow-2xl">
+          <h3 className="font-raleway text-white text-3xl md:text-4xl font-bold mb-4">
             Save up to 80% Without Compromising Quality
           </h3>
-          <p className="font-lato text-lg md:text-xl max-w-3xl mx-auto text-white">
+          <p className="font-lato text-white text-lg md:text-xl max-w-3xl mx-auto">
             Get Silicon Valley-level design expertise at Pakistan prices. Our
             team delivers the same quality as top Western agencies, but at a
             fraction of the cost.

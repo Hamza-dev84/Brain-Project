@@ -7,6 +7,7 @@ import Technologies from "@/components/software/mobileapp/Technologies";
 import Services from "@/components/software/mobileapp/Services";
 import Portfolio from "@/components/software/mobileapp/Portfolio";
 import TestimonialsSection from "@/components/software/TestimonialsSection";
+import MobileAppFAQs from "@/components/software/faqs/MobileAppFAQs";
 import Footer from "@/components/software/Footer";
 import { PlannerModal } from "@/components/software/planner/PlannerModal";
 import { mobileAppConfig } from "@/data/software/mobileAppConfig";
@@ -34,12 +35,13 @@ const MobileAppDevelopersPakistan: React.FC = () => {
         <Header />
          <MobileApplicationSchema />
         <main>
-          <Hero onOpenPlanner={() => setIsPlannerOpen(true)} />
+          <Hero />
           <Features />
           <Technologies />
           <Services />
           <Portfolio />
           <TestimonialsSection />
+          <MobileAppFAQs />
         </main>
 
         <Footer />

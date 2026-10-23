@@ -17,6 +17,7 @@ import { brainTelResumeFormApi } from '@/pages/services/brainTelFormsApi';
 import heroImage from '@/assets/careers/hero-image.webp';
 import teamCollaborationImage from '@/assets/careers/team-collaboration-original.webp';
 import companyBuildingImage from '@/assets/careers/company-building-original.webp';
+import companyBuildingImageOrg from '@/assets/careers/company-building-original-1.jpg'
 
 // Life at Brain images
 import life1 from '@/assets/careers/life-1.webp';
@@ -87,72 +88,138 @@ const benefits = [
 const lifeAtBrainImages = [life1, life2, life3, life4, life5, life6, life7, life8];
 
 // Job data
+
 const jobsData = [
   {
     image: job1,
     title: "Software Engineer",
     department: "Engineering",
-    location: "Karachi",
+    // location: "Karachi",
+    location: "Lahore",
     type: "Full-time",
     experience: "Mid Level",
     salary: "Market Competitive",
-    description: "Join our development team and build innovative solutions that power our telecommunications infrastructure.",
-    skills: ["React", "Node.js", "Python", "AWS"]
-  },
-  {
-    image: job2,
-    title: "Product Manager",
-    department: "Engineering",
-    location: "Lahore",
-    type: "Full-time",
-    experience: "Senior Level",
-    salary: "Market Competitive",
-    description: "Lead product strategy and work with cross-functional teams to deliver exceptional user experiences.",
-    skills: ["Product Strategy", "Analytics", "Leadership", "Agile"]
+    description: (
+      <>
+        Join our development team and build innovative solutions that power our
+        <a
+          href="/services/internet"
+          className="
+     text-[#2563EB]
+    hover:text-[#1D4ED8]
+    active:text-[#1E3A8A]
+
+    dark:text-[#60A5FA]
+    dark:hover:text-[#93C5FD]
+    dark:active:text-[#BFDBFE]
+
+    transition-colors
+  "
+        >
+          {" "} telecommunications infrastructure. {" "}
+        </a>
+      </>
+    ),
+    skills: ["React", "Node.js", "Python", "AWS"],
   },
   {
     image: job3,
     title: "Sales Executive",
     department: "Sales",
-    location: "Islamabad",
+    // location: "Islamabad",
+    location: "Lahore",
     type: "Full-time",
     experience: "Entry Level",
     salary: "Base + Commission",
-    description: "Drive revenue growth by building relationships with enterprise clients and identifying new opportunities.",
-    skills: ["Sales", "Communication", "CRM", "Networking"]
+    description:
+      "Drive revenue growth by building relationships with enterprise clients and identifying new opportunities.",
+    skills: ["Sales", "Communication", "CRM", "Networking"],
   },
   {
     image: job4,
     title: "Customer Support Specialist",
     department: "Customer Service",
-    location: "Remote",
+    // location: "Remote",
+    location: "Lahore",
     type: "Full-time",
     experience: "Entry Level",
     salary: "Market Competitive",
-    description: "Provide exceptional support to our customers and help them maximize the value of our services.",
-    skills: ["Customer Service", "Problem Solving", "Communication", "Technical Support"]
+    description:
+      "Provide exceptional support to our customers and help them maximize the value of our services.",
+    skills: [
+      "Customer Service",
+      "Problem Solving",
+      "Communication",
+      "Technical Support",
+    ],
   },
   {
     image: job5,
     title: "Network Engineer",
     department: "Operations",
-    location: "Karachi",
+    // location: "Karachi",
+    location: "Lahore",
     type: "Full-time",
     experience: "Mid Level",
     salary: "Market Competitive",
-    description: "Design, implement, and maintain our network infrastructure to ensure optimal performance and reliability.",
-    skills: ["Networking", "Cisco", "Troubleshooting", "Security"]
+    description: (
+      <>
+        Design, implement, and maintain our
+        <a
+          href="/services/internet/dedicated-internet-lahore"
+          className="
+     text-[#2563EB]
+    hover:text-[#1D4ED8]
+    active:text-[#1E3A8A]
+
+    dark:text-[#60A5FA]
+    dark:hover:text-[#93C5FD]
+    dark:active:text-[#BFDBFE]
+
+    transition-colors
+  "
+        >
+          {" "} network infrastructure {" "}
+        </a>
+        to ensure optimal performance and reliability.
+      </>
+    ),
+    skills: ["Networking", "Cisco", "Troubleshooting", "Security"],
   },
+
   {
-    image: job6,
-    title: "Marketing Manager",
-    department: "Marketing",
+    // image: job6,
+    title: "Cable Hanger / Technician (All Rounder)",
+    department: "Operations",
     location: "Lahore",
     type: "Full-time",
-    experience: "Senior Level",
+    experience: "DAE with 2 Years Experience",
+    // salary: "Market Competitive",
+    description: "",
+    skills: [
+      "Fiber Installation",
+      "Aerial Fiber",
+      "Field Technician",
+      "Telecommunications Technician",
+    ],
+  },
+
+  {
+    // image: job7,
+    title: "Technical Support Engineer (On Site)",
+    department: "Technical Support",
+    location: "Lahore",
+    type: "Full-time",
+    experience: "Mid Level",
     salary: "Market Competitive",
-    description: "Develop and execute marketing strategies to promote our brand and drive customer acquisition.",
-    skills: ["Digital Marketing", "Brand Management", "Analytics", "Strategy"]
+    description: "",
+    skills: [
+      // "Technical Support",
+      // "Troubleshooting",
+      "Networking & Router Configuration",
+      "Onsite Field Support",
+      "CRM & Customer Service",
+    ],
   },
 ];
 
@@ -256,7 +323,7 @@ export default function Careers() {
       // ogImage="/favicons/default.png"
       />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-brand-light to-accent py-24 px-4 overflow-hidden">
+      <section className="relative py-24 px-4 overflow-hidden">
         <div className="absolute inset-0">
           <img width={1920} height={760} loading="lazy" decoding="async" src={heroImage} alt="Career opportunities at Brain" className="w-full h-full object-cover opacity-20" />
         </div>
@@ -329,38 +396,41 @@ export default function Careers() {
 
             <motion.div
               className="relative"
-              initial={{ opacity: 1, x: 30 }}
+              initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="relative bg-gradient-to-br from-primary to-brand-secondary rounded-full p-8 elevated-3">
-                <img width={1920} height={760} loading="lazy" decoding="async"
-                  src={heroImage}
-                  alt="Professional team members"
-                  className="w-full h-auto rounded-full"
-                />
+              <div className="relative">
+                <ImageHover type="lift">
+                  <img
+                    src={teamCollaborationImage}
+                    alt="Team collaboration and innovation at Brain Telecommunication"
+                    className="w-full h-auto m3-elevated-2 rounded-sm"
+                  />
+                </ImageHover>
                 {/* Decorative circles */}
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-brand-light rounded-2xl opacity-60"></div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent rounded-2xl opacity-60"></div>
               </div>
             </motion.div>
           </div>
-        </div>
+        </div >
 
         {/* Scroll indicator */}
-        <motion.div
+        < motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
+          animate={{ y: [0, 10, 0] }
+          }
           transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
         >
           <div className="w-6 h-6 border-2 border-primary rounded-full flex items-center justify-center">
             <div className="w-2 h-2 bg-primary rounded-full"></div>
           </div>
-        </motion.div>
-      </section>
+        </motion.div >
+      </section >
 
       {/* Company Story Section */}
-      <section className="py-20 bg-neutral-light">
+      < section className="py-20 bg-neutral-light" >
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -372,7 +442,7 @@ export default function Careers() {
             >
               <ImageHover type="lift">
                 <img width={1324} height={1108} loading="lazy" decoding="async"
-                  src={teamCollaborationImage}
+                  src={companyBuildingImageOrg}
                   alt="Team collaboration and innovation at Brain Telecommunication"
                   className="w-full h-auto rounded-xl elevated-2"
                 />
@@ -476,13 +546,13 @@ export default function Careers() {
           >
             <div className="bg-card border border-border rounded-xl p-8 elevated-1 hover:elevated-2 transition-all duration-300">
               <div className="flex items-center gap-6">
-                <div className="relative">
+                {/* <div className="relative">
                   <img width={200} height={201} loading="lazy" decoding="async"
                     src={companyBuildingImage}
                     alt="Brain Telecommunication company building and team"
                     className="w-24 h-24 rounded-xl object-cover"
                   />
-                </div>
+                </div> */}
                 <div className="flex-1">
                   <h3 className="font-bold text-primary mb-2">Our Story</h3>
                   <p className="text-neutral-medium leading-relaxed">
@@ -498,10 +568,10 @@ export default function Careers() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Employee Benefits Section */}
-      <section className="py-20 bg-background">
+      < section className="py-20 bg-background" >
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -516,7 +586,7 @@ export default function Careers() {
                 Why Choose Us
               </span>
             </div>
-            <h2 className="heading-xl font-semibold mb-4 text-foreground">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
               Employee Benefits
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -540,7 +610,9 @@ export default function Careers() {
                   <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center">
                     <IconComponent className="w-16 h-16 text-primary" strokeWidth={1.5} />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{benefit.title}</h3>
+                  <h3 className="text-2xl text-center font-bold">
+                    {benefit.title}
+                  </h3>
                   <p className="text-brand-secondary font-medium mb-4">{benefit.subtitle}</p>
                   <p className="text-neutral-medium">{benefit.description}</p>
                 </motion.div>
@@ -560,10 +632,10 @@ export default function Careers() {
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Life At Brain Section */}
-      <section className="py-20 bg-neutral-light">
+      < section className="py-20 bg-neutral-light" >
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -577,7 +649,7 @@ export default function Careers() {
                 Culture & Environment
               </span>
             </div>
-            <h2 className="heading-xl font-semibold mb-4 text-foreground">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
               Life at Brain
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -663,10 +735,10 @@ export default function Careers() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Job Openings Section */}
-      <section id="current-openings" className="py-20 bg-background scroll-mt-24">
+      < section id="current-openings" className="py-20 bg-background scroll-mt-24" >
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -675,7 +747,9 @@ export default function Careers() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="heading-xl font-semibold mb-4 text-foreground">Current Openings</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
+              Current Openings
+            </h2>
             <p className="text-lead-lg text-neutral-medium">Find your perfect role and join our team</p>
           </motion.div>
 
@@ -854,10 +928,10 @@ export default function Careers() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Application Form Section */}
-      <section className="py-20 px-4 bg-neutral-light relative" style={{
+      < section className="py-20 px-4 bg-neutral-light relative" style={{
         backgroundImage: `url(${formBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
@@ -872,7 +946,9 @@ export default function Careers() {
             viewport={{ once: true }}
           >
             <div className="text-center mb-8">
-              <h2 className="heading-xl font-semibold mb-4 text-foreground">Ready to Join Us?</h2>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
+                Ready to Join Us?
+              </h2>
               <p className="text-lead-lg text-neutral-medium">Send us your resume and we'll be in touch</p>
             </div>
 
@@ -922,18 +998,43 @@ export default function Careers() {
                 <div>
                   <label className="block font-medium text-foreground mb-2 flex items-center gap-2">
                     <Briefcase className="w-4 h-4" />
-                    Position
+                    Departments
                   </label>
                   <Select value={formData.position} onValueChange={(value) => handleInputChange('position', value)}>
                     <SelectTrigger className="bg-background border-border text-foreground">
                       <SelectValue placeholder="Select a position" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="software-engineer">Software Engineer</SelectItem>
-                      <SelectItem value="product-manager">Product Manager</SelectItem>
-                      <SelectItem value="sales-executive">Sales Executive</SelectItem>
-                      <SelectItem value="customer-support">Customer Support</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
+                      <SelectItem value="sales">Sales</SelectItem>
+                      <SelectItem value="marketing">Marketing</SelectItem>
+                      <SelectItem value="operations-maintenance">
+                        Operations & Maintenance
+                      </SelectItem>
+                      <SelectItem value="infrastructure">
+                        Infrastructure
+                      </SelectItem>
+                      <SelectItem value="administration">
+                        Administration
+                      </SelectItem>
+
+                      <SelectItem value="network-operations">
+                        Network Operations
+                      </SelectItem>
+
+                      <SelectItem value="software-development">
+                        Software Development
+                      </SelectItem>
+
+                      <SelectItem value="human-resources">
+                        Human Resources
+                      </SelectItem>
+                      <SelectItem value="accounts-finance">
+                        Accounts & Finance
+                      </SelectItem>
+
+                      <SelectItem value="research-development">
+                        Research & Development
+                      </SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -1015,10 +1116,10 @@ export default function Careers() {
             </form>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 relative" style={{
+      < section className="py-20 px-4 relative" style={{
         backgroundImage: `url(${testimonialBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
@@ -1095,7 +1196,7 @@ export default function Careers() {
             </motion.div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 }

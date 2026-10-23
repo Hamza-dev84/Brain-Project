@@ -32,16 +32,16 @@ const SMSMarketingWhyChoose = () => {
       <div className="grid md:grid-cols-2 gap-8">
         <DetailedFeatureCard
           icon={Target}
-          title="Target with Pinpoint Precision"
-          description="Go beyond simple blasts. Segment your audience by city, network, and even behavior to send hyper-relevant offers that feel personal, not promotional."
+          title="Drip Messaging & Automation"
+          description="Set up automated message series triggered by user actions, such as abandoned carts or new sign-ups."
         >
-          <div className="flex flex-wrap gap-2">
+          {/* <div className="flex flex-wrap gap-2">
             {["Jazz", "Telenor", "Zong", "Ufone"].map((n) => (
               <Badge key={n} variant="secondary" className="bg-primary/10 text-primary">
                 {n}
               </Badge>
             ))}
-          </div>
+          </div> */}
         </DetailedFeatureCard>
 
         <DetailedFeatureCard
@@ -117,9 +117,7 @@ const SMSMarketingWhyChoose = () => {
           description="For businesses requiring a multi-channel approach, pairing your SMS campaigns with our Voice Broadcast service creates an unstoppable communication stream."
         >
           <a
-            href="https://wa.me/923276222888"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/services/internet/voice-plans"
             className="inline-flex items-center text-sm text-primary hover:underline font-medium"
             title="Voice Broadcast Services in Pakistan"
           >

@@ -33,10 +33,42 @@ const APIHeroSection: React.FC = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground font-lato leading-relaxed max-w-2xl">
-              Power your Enterprise with instant messaging using Pakistan's Most Comprehensive SMS
-              API Solution. Our SMS API in Pakistan connects Any Custom App, Website, or CRMs with
-              the ability to deliver to millions instantly, reliably, and securely via
-              PTA-Compliant Communication.
+              Power your Enterprise with instant messaging using Pakistan's Most Comprehensive SMS API Solution. Our SMS API in Pakistan connects Any
+              <a
+                href="/services/software/mobile-app-developers-pakistan"
+                className="
+    text-[#9F1239]
+    hover:text-[#E11D48]
+    active:text-[#4C0519]
+    transition-colors
+  "
+              >
+                {" "}Custom App,{" "}
+              </a>
+              <a
+                href="/services/software/web-development-pakistan"
+                className="
+    text-[#9F1239]
+    hover:text-[#E11D48]
+    active:text-[#4C0519]
+    transition-colors
+  "
+              >
+                {" "}Website,{" "}
+              </a>
+              or
+              <a
+                href="/services/software/erp-software-pakistan"
+                className="
+    text-[#9F1239]
+    hover:text-[#E11D48]
+    active:text-[#4C0519]
+    transition-colors
+  "
+              >
+                {" "} CRMs {" "}
+              </a>
+              with the ability to deliver to millions instantly, reliably, and securely via PTA-Compliant Communication.
             </p>
 
             <div className="flex flex-wrap gap-4">

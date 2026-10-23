@@ -155,8 +155,6 @@ function SoftwareHousesContent() {
   return (
     <>
       <PageHeader
-        title="Software Houses"
-        description="Strategic technology solutions for Pakistan's global software industry"
         breadcrumbs={[
           { label: 'Industry Solutions', path: '/industry-solutions' },
           { label: 'Software Houses' }
@@ -164,7 +162,7 @@ function SoftwareHousesContent() {
       />
 
       {/* Hero Section with Enhanced Visuals */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative bg-white py-20 px-4 md:px-6 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -177,13 +175,12 @@ function SoftwareHousesContent() {
             <Star className="w-4 h-4 mr-2" />
             Trusted by 100+ Software Houses
           </Badge>
-
           <h1 className="heading-display text-brand-dark leading-tight">
-            <span className="text-primary block mt-2">BrainTEL — Helping Pakistan's Software Houses Compete Globally</span>
+            <span className="text-primary block mt-2">Helping Pakistan's Software Houses Compete Globally</span>
           </h1>
 
           <p className="text-lead-lg text-neutral-medium max-w-4xl mx-auto leading-relaxed">
-            Cloud-based call centers encounter countless drawbacks which, in result, greatly affect the organizations on a global scale. These drawbacks can be: Ever-changing international cloud prices, Latency issues for international clients, Integrating professional communication features. BrainTEL presents economical and technological solutions to make sure all your software house specific challenges are dealt with. Our solutions include:
+            Software Houses encounter countless drawbacks which, in result, greatly affect the organizations on a global scale. These drawbacks can be: Ever-changing international cloud prices, Latency issues for international clients, Integrating professional communication features. BrainTEL presents economical and technological solutions to make sure all your software house specific challenges are dealt with. Our solutions include:
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
@@ -214,7 +211,7 @@ function SoftwareHousesContent() {
             <Badge className="mx-auto bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20">
               Smart Solutions
             </Badge>
-            <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface">
               Smart, Combined Solutions for Global Competitiveness
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -341,12 +338,12 @@ function SoftwareHousesContent() {
           <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container mx-auto max-w-4xl text-center space-y-10 relative z-10">
+        <div className="container mx-auto max-w-5xl text-center space-y-10 relative z-10">
           <div className="space-y-6">
-            <h2 className="heading-xl heading-solid-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white pb-2">
               Build smarter. Save more. Scale globally.
             </h2>
-            <p className="text-lead-lg text-white/90 max-w-2xl mx-auto">
+            <p className="m3-body-large text-white/90 max-w-3xl mx-auto">
               Join 100+ software houses already using our infrastructure to compete on the global stage.
             </p>
           </div>

@@ -309,8 +309,6 @@ function ManufacturingContent() {
       />
 
       <PageHeader
-        title="Manufacturing"
-        description="Strategic technology solutions for Pakistan's manufacturing sector"
         breadcrumbs={[
           { label: 'Industry Solutions', path: '/industry-solutions' },
           { label: 'Manufacturing' }
@@ -318,7 +316,7 @@ function ManufacturingContent() {
       />
 
       {/* Hero Section with Enhanced Visuals */}
-      <section className="relative bg-gradient-to-br from-brand-light via-accent to-brand-tertiary-light py-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative py-20 px-4 md:px-6 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -496,7 +494,7 @@ function ManufacturingContent() {
             <Badge className="mx-auto bg-brand-tertiary/10 text-brand-tertiary border-brand-tertiary/20">
               Common Questions
             </Badge>
-            <h2 className="heading-xl text-foreground">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-2">
               Frequently Asked Questions
             </h2>
           </div>
@@ -508,9 +506,9 @@ function ManufacturingContent() {
                 value={`item-${index}`}
                 className="border border-border rounded-2xl px-8 py-2 bg-background shadow-sm hover:shadow-lg transition-shadow"
               >
-                <AccordionTrigger className="text-foreground hover:text-primary hover:no-underline py-8 group">
-                  <div className="flex items-center space-x-4">
-                    {faq.icon}
+                <AccordionTrigger className="text-foreground hover:text-primary hover:no-underline py-4 group">
+                  <div className="flex items-center font-lato space-x-4 font-bold">
+                    {/* {faq.icon} */}
                     <span>{faq.question}</span>
                   </div>
                 </AccordionTrigger>
@@ -532,11 +530,12 @@ function ManufacturingContent() {
 
         <div className="container mx-auto max-w-4xl text-center space-y-10 relative z-10">
           <div className="space-y-6">
-            <h2 className="heading-xl heading-solid-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white pb-4">
               Build a smarter, more connected, and more profitable operation.
             </h2>
-            <p className="text-lead-lg text-white/90 max-w-2xl mx-auto">
-              Request a consultation to design a technology ecosystem engineered for manufacturing.
+            <p className="m3-body-large text-white/90 max-w-3xl mx-auto">
+              Request a consultation to design a technology ecosystem engineered
+              for manufacturing.
             </p>
           </div>
 

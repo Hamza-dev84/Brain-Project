@@ -404,7 +404,7 @@ export function FeatureCard({
           <Icon className="h-5 w-5" />
         </div>
       )}
-      <h3 className="mt-5 font-display text-h3 font-extrabold text-navy">{title}</h3>
+      <h3 className="mt-5 font-display text-h3  font-extrabold text-navy">{title}</h3>
       {children && (
         <div className="mt-3 text-base leading-relaxed text-navy/70">
           {children}

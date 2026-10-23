@@ -71,6 +71,14 @@ const company = [
       "Our technology partners that empower our solutions and services.",
     color: "text-blue-600 dark:text-blue-400",
   },
+    {
+    title: "Payment Guides",
+    path: "/resources/payment-guides",
+    icon: CreditCard,
+    description:
+      "Step-by-step instructions to make payments easily and securely across our services.",
+    color: "text-blue-600 dark:text-blue-400",
+  },
 ];
 
 export default function Company() {

@@ -5,6 +5,7 @@ import Hero from '@/components/software/Hero';
 import ClientRatings from '@/components/software/ClientRatings';
 import ServicesSection from '@/components/software/ServicesSection';
 import PortfolioSection from '@/components/software/PortfolioSection';
+import WebDevFAQs from "@/components/software/faqs/WebDevFAQs"
 import TestimonialsSection from '@/components/software/TestimonialsSection';
 import OffshoreSection from '@/components/software/OffshoreSection';
 import Footer from '@/components/software/Footer';
@@ -34,6 +35,7 @@ const Index: React.FC = () => {
           <OffshoreSection />
           <ServicesSection />
           <PortfolioSection />
+          <WebDevFAQs />
           <TestimonialsSection />
         </main>
         <Footer />

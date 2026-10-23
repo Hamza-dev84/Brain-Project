@@ -37,11 +37,9 @@ const MaskManagementSection = () => {
                 </p>
               </div>
             </div>
-            <Button className="gap-2" asChild>
-              <Link to="/services/sms/contact">
-                <Plus className="w-4 h-4" />
-                Request New Sender ID
-              </Link>
+            <Button className="gap-2">
+              <Plus className="w-4 h-4" />
+              Request New Sender ID
             </Button>
           </div>
 
@@ -86,7 +84,7 @@ const MaskManagementSection = () => {
                       <div className="flex items-center justify-end gap-2">
                         {mask.status === "Active" ? (
                           <>
-                            <Button variant="ghost" size="sm" className="gap-2" disabled tabIndex={-1} aria-hidden="true">
+                            <Button variant="ghost" size="sm" className="gap-2">
                               <Edit className="w-4 h-4" />
                               Edit
                             </Button>
@@ -94,18 +92,19 @@ const MaskManagementSection = () => {
                               variant="ghost"
                               size="sm"
                               className="gap-2 text-destructive hover:text-destructive"
-                             disabled tabIndex={-1} aria-hidden="true">
+                              // disabled tabIndex={-1} aria-hidden="true"
+                              >
                               <Trash2 className="w-4 h-4" />
                               Delete
                             </Button>
                           </>
                         ) : mask.status === "Rejected" ? (
-                          <Button variant="outlined" size="sm" className="gap-2" disabled tabIndex={-1} aria-hidden="true">
+                          <Button variant="outlined" size="sm" className="gap-2">
                             <Plus className="w-4 h-4" />
                             Resubmit
                           </Button>
                         ) : (
-                          <Button variant="ghost" size="sm" className="gap-2" disabled tabIndex={-1} aria-hidden="true">
+                          <Button variant="ghost" size="sm" className="gap-2">
                             <Eye className="w-4 h-4" />
                             View Details
                           </Button>

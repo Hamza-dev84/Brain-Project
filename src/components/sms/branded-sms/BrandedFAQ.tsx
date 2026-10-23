@@ -10,24 +10,49 @@ import AnimateOnScroll from "@/components/sms/animations/AnimateOnScroll";
 
 export const brandedFaqs = [
   {
-    question: "What is Branded SMS and how does it differ from regular SMS?",
+    question: "What is the difference between branded SMS and normal SMS?",
     answer:
-      "Branded SMS displays your company name as the sender ID instead of a random number. This builds instant trust and recognition with your customers, making your messages more likely to be read and acted upon.",
+      'Normal SMS comes from random mobile numbers. Customers often ignore or distrust these unknown numbers. Branded SMS comes from your company name, like "MyShop" or "BankAlert." This makes it easy to recognize and builds trust.',
   },
   {
-    question: "How long does it take to get PTA approval for Branded SMS?",
+    question: "Is branded SMS legal in Pakistan?",
     answer:
-      "PTA approval typically takes 7-14 business days. We handle the entire registration process for you, including documentation and follow-ups with regulatory authorities.",
+      "Yes — it is subject to complete regulation by the PTA. You need to register and get approval for your sender ID (brand name) first. Only then can you start sending.",
   },
   {
-    question: "What are the costs associated with Branded SMS in Pakistan?",
+    question: "How long does sender ID approval take?",
     answer:
-      "Costs vary based on volume and service requirements. Contact us for a customized quote based on your specific needs and monthly SMS volume.",
+      "We expect a duration of 24 to 72 hours through our fast-track process.",
   },
   {
-    question: "Can I use Branded SMS for promotional messages?",
+    question: "Does Branded SMS work on all networks in Pakistan?",
     answer:
-      "Yes, but you must comply with PTA's DND regulations. Promotional messages can only be sent to users who have opted in to receive marketing communications.",
+      "Yes — Jazz (Warid), Telenor, Zong, Ufone, and SCOM are all fully covered.",
+  },
+  {
+    question: "What is the SMS character limit?",
+    answer:
+      "A single SMS supports 160 characters. If messages exceed this length, they are sent as multi-part SMSs. This may use 2 or more SMS credits.",
+  },
+  {
+    question: "Is an SMS API available?",
+    answer:
+      "Yes — our REST-based SMS API supports PHP, Python, Node.js, Java, and .NET. It's free with every account. It includes full documentation and a sandbox environment.",
+  },
+  {
+    question: "What is the smallest package?",
+    answer:
+      "The Starter package starts at Rs. 1,500 for 1,000 SMS — ideal for small businesses trying the service for the first time.",
+  },
+  {
+    question: "Can I schedule SMS campaigns?",
+    answer:
+      "Sure! Just set your campaign, pick a delivery date and time, and the system will take care of the rest for you.",
+  },
+  {
+    question: "Is a free trial available?",
+    answer:
+      "Register now to get free test credits. You can use them to check delivery quality and speed before you buy.",
   },
 ];
 

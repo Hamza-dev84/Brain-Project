@@ -6,30 +6,26 @@ const SMSMarketingHowItWorks = () => {
     {
       icon: Users,
       number: "01",
-      title: "Build Your Audience",
-      description:
-        "Import contacts, segment by demographics, behavior, or location. Target the right people with the right message.",
+      title: "Initial Consultation & Market Analysis",
+      description: "Understanding your specific business and marketing goals while Reviewing market trends and competitor activity.",
     },
     {
       icon: MessageSquare,
       number: "02",
-      title: "Craft Your Message",
-      description:
-        "Create personalized messages with dynamic fields. Full Urdu support ensures your message resonates with local audiences.",
+      title: "Custom Strategy",
+      description: "Tailoring a comprehensive SMS Marketing Strategy with timing, network, and audience segments in consideration.",
     },
     {
       icon: Send,
       number: "03",
       title: "Schedule & Send",
-      description:
-        "Send instantly or schedule for optimal timing. Bulk send thousands of messages across all Pakistani networks in seconds.",
+      description: "Setting up your portal and integrating APIs with your existing systems and platforms to execute your SMS Marketing campaigns.",
     },
     {
       icon: BarChart3,
       number: "04",
-      title: "Track & Optimize",
-      description:
-        "Monitor delivery reports, open rates, and conversions in real-time. Refine your strategy with actionable insights.",
+      title: "Transparent Reporting & Optimization",
+      description: "Providing weekly stats and performance progress and Adjusting campaigns based on data to maximize your ROI.",
     },
   ];
 

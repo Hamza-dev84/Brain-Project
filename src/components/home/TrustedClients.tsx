@@ -31,22 +31,23 @@ export const TrustedClients = memo(() => {
     <section className="py-16 md:py-24 bg-gradient-to-br from-neutral-light via-background to-neutral-light overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
-      <motion.div
-        initial={{ opacity: 1, y: 30, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="text-center mb-12"
-      >
+        <motion.div
+          initial={{ opacity: 1, y: 30, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-12"
+        >
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
             <Trophy className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Trusted by Pakistan's Leading Enterprises
+            Trusted IT Solutions Provider in Pakistan
           </h2>
           <p className="text-lg text-neutral-medium max-w-3xl mx-auto">
-            From Fortune 500 companies to innovative startups, businesses across Pakistan rely on our 40+ years of IT excellence
-          </p>
+            BrainTEL is recognized as a leading IT solution provider in Pakistan
+            because we focus on performance, reliability, and long-term
+            partnerships.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-6">
             {[
               'IT infrastructure setup and management',
@@ -71,7 +72,7 @@ export const TrustedClients = memo(() => {
           {/* Gradient Overlays for smooth fade effect */}
           <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-neutral-light to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-neutral-light to-transparent z-10 pointer-events-none" />
-          
+
           <div className="overflow-hidden py-8 group/carousel">
             <motion.div
               className="flex gap-12 md:gap-16"
@@ -97,15 +98,15 @@ export const TrustedClients = memo(() => {
                   initial={{ opacity: 1, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ 
-                    duration: 0.5, 
+                  transition={{
+                    duration: 0.5,
                     delay: index * 0.1,
                     ease: [0.22, 1, 0.36, 1]
                   }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="w-40 h-24 md:w-48 md:h-28 bg-card rounded-2xl border border-border flex items-center justify-center p-4 transition-all duration-300 hover:shadow-lg hover:bg-neutral-100"
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.1,
                       transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
                     }}
@@ -120,7 +121,7 @@ export const TrustedClients = memo(() => {
                   </motion.div>
                 </motion.div>
               ))}
-              
+
               {/* Duplicate set for seamless loop */}
               {CLIENT_LOGOS.map((logo, index) => (
                 <div

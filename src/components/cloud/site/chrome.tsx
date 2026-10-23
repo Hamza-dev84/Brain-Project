@@ -78,16 +78,16 @@ const PRODUCTS: ProductItem[] = [
     icon: Cloud,
   },
   {
-    to: "/services/cloud/web-hosting-pakistan",
-    title: "Web Hosting",
-    desc: "Shared & WordPress hosting with cPanel, from Rs 2,250/mo",
-    icon: Cloud,
-  },
-  {
     to: "/services/cloud/vps-hosting-pakistan",
     title: "VPS Hosting",
     desc: "NVMe VPS in Lahore & Karachi, from PKR 12,500/mo",
     icon: Server,
+  },
+  {
+    to: "/services/cloud/web-hosting-pakistan",
+    title: "Website Hosting",
+    desc: "Reliable web hosting for Pakistani businesses",
+    icon: Cloud,
   },
   {
     to: "/services/cloud/dedicated-server-hosting-pakistan",
@@ -203,7 +203,7 @@ export function SiteHeader() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuTrigger
                   className={"h-10 rounded-full bg-transparent px-4 text-sm font-bold text-navy/75 hover:bg-navy/[0.05] hover:text-navy data-[state=open]:bg-navy/[0.05] data-[state=open]:text-navy " +
                     FOCUS_RING
@@ -248,7 +248,8 @@ export function SiteHeader() {
                     </div>
                   </div>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
+
             </NavigationMenuList>
           </NavigationMenu>
 
@@ -471,7 +472,8 @@ export function SiteFinalCTA({
 export function SiteFooter() {
   return (
     <footer className="bg-navy-deep section-y text-white/80">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-6">
+      {/* <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-6"> */}
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 md:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-2">
           <img width={768} height={89} loading="eager" decoding="async" fetchPriority="high" src={logoWhite} alt="BrainCLOUD Plus" className="h-9 w-auto" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
@@ -491,7 +493,7 @@ export function SiteFooter() {
             <li><Link to="/services/cloud/data-center-solutions-pakistan" className="hover:text-white">Data Center Solutions</Link></li>
           </ul>
         </div>
-        <div>
+        {/* <div>
           <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-[0.14em] text-white!">
             AI
           </h4>
@@ -503,8 +505,8 @@ export function SiteFooter() {
             <li><Link to="/services/cloud/ai-inference-llm-hosting-pakistan" className="hover:text-white">LLM Hosting</Link></li>
             <li><Link to="/services/cloud/sovereign-ai-hosting-pakistan" className="hover:text-white">Sovereign AI</Link></li>
           </ul>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-[0.14em] text-white!">
             AI in your city
           </h4>
@@ -513,7 +515,7 @@ export function SiteFooter() {
             <li><Link to="/services/cloud/ai-companies-in-karachi" className="hover:text-white">AI Companies in Karachi</Link></li>
             <li><Link to="/services/cloud/ai-companies-in-islamabad" className="hover:text-white">AI Companies in Islamabad</Link></li>
           </ul>
-        </div>
+        </div> */}
         <div>
           <h4 className="mb-4 font-display text-xs font-bold uppercase tracking-[0.14em] text-white!">
             Contact
