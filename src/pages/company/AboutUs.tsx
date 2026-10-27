@@ -306,7 +306,7 @@ function AboutUsContent() {
                 <Star className="w-4 h-4 mr-2" />
                 Featured In
               </Badge>
-              <h2 className="heading-lg text-foreground mb-2">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
                 Global Recognition
               </h2>
               <p className="text-neutral-medium">
@@ -348,9 +348,9 @@ function AboutUsContent() {
                     <div className="p-3 rounded-full bg-primary/20 group-hover:bg-primary/30 transition-colors">
                       <Brain className="w-8 h-8 text-primary" />
                     </div>
-                    <h2 className="heading-lg text-foreground">The Beginning of Computer Security</h2>
+                    <h2 className="heading-lg text-foreground font-bold">The Beginning of Computer Security</h2>
                   </div>
-                  <p className="text-lead-lg text-neutral-medium leading-relaxed">
+                  <p className="text-lead-md text-neutral-medium leading-relaxed">
                     The journey of BrainTEL was kick-started by two very devoted brothers from Lahore, Pakistan. Amjad and Basit Farooq Alvi together invented the first PC virus — the Brain Virus, in 1986 to infect floppy disks to further infect other computers that could potentially duplicate their medical software. The virus was named "Brain" to honor the two brothers' computer consulting firm — Brain Computing Services.
                   </p>
                 </CardContent>
@@ -362,9 +362,9 @@ function AboutUsContent() {
                     <div className="p-3 rounded-full bg-primary/20 group-hover:bg-primary/30 transition-colors">
                       <Shield className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-foreground">Impact and Legacy</h3>
+                    <h3 className="text-foreground heading-lg font-bold">Impact and Legacy</h3>
                   </div>
-                  <p className="text-neutral-medium leading-relaxed">
+                  <p className="text-lead-md text-neutral-medium leading-relaxed">
                     The Brain virus would infect the boot sectors of floppy disks, then copy itself to the memory of a computer booted from an infected disk and further infect any inserted floppy disks. Moreover, the virus displayed a message, advising people to beware of the applications they use on their Personal Computers. As time passed, the two brothers developed an antivirus software, which helped in reducing the harm. The Brain virus at the time was the first known Floppy Disk Infecting Malware and alerted the computer industry to introduce better security measures to prevent malware from invading the computer machines.
                   </p>
                 </CardContent>
@@ -507,7 +507,7 @@ function AboutUsContent() {
                             {item.icon}
                           </div>
                         </div>
-                        <p className="text-lead-lg text-foreground leading-relaxed">
+                        <p className="text-lead-lg text-neutral-medium leading-relaxed">
                           {item.title}
                         </p>
                       </CardContent>

@@ -270,7 +270,7 @@ function AlliancesContent() {
               Our Commitment to National Progress
             </h3>
 
-            <p className="text-lg md:text-xl text-foreground leading-relaxed">
+            <p className="text-lg text-neutral-medium leading-relaxed">
               This strategic collaboration with PTAPA reaffirms Brain Telecommunication Ltd.'s commitment to leading the market to unreachable heights. Our close alliance with key players and consistent leadership in impactful projects has enabled us to build a progressive and ever-moving Pakistan, and we take pride in that.
             </p>
           </div>

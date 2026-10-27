@@ -29,49 +29,6 @@ export default function Manufacturing() {
 function ManufacturingContent() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  // const solutions = [
-  //   {
-  //     icon: <Clock className="w-12 h-12 text-primary" />,
-  //     title: "Eliminate Costly Production Downtime",
-  //     subtitle: "99.9% uptime SLA guaranteed",
-  //     description: "A network failure can stop your automated production line, costing thousands per minute. BrainNET Fiber's Symmetric Dedicated Internet Access (DIA) with 99.9% uptime SLA ensures your ERP, M2M (Machine-to-Machine) communication, and inventory systems never miss a beat, keeping your floor running and your output predictable.",
-  //     benefits: ["99.9% uptime guarantee", "Uncontested connection", "Real-time M2M communication"],
-  //     color: "from-red-50 to-orange-50 dark:from-red-950 dark:to-orange-950"
-  //   },
-  //   {
-  //     icon: <TrendingUp className="w-12 h-12 text-primary" />,
-  //     title: "Connect Your Entire Supply Chain in Real-Time",
-  //     subtitle: "Automated notifications & alerts",
-  //     description: "Waiting for supplier updates or delivery confirmations via manual calls creates bottlenecks. Leverage BSMS's SMS API to automate delivery alerts, inventory updates, and supplier notifications. BrainTEL's SIP Trunking establishes dedicated, clear lines for crucial communications with raw material vendors and logistics partners, preventing costly delays.",
-  //     benefits: ["Automated supplier alerts", "Real-time inventory updates", "Dedicated communication lines"],
-  //     color: "from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950"
-  //   },
-  //   {
-  //     icon: <Shield className="w-12 h-12 text-primary" />,
-  //     title: "Secure Your Industrial Data & Intellectual Property",
-  //     subtitle: "Sovereign cloud infrastructure",
-  //     description: "Your production formulas and operational data are crown jewels. Host your manufacturing execution systems (MES) and PLC data on BrainCloud Plus's secure, sovereign cloud infrastructure. With advanced DDoS mitigation and enterprise firewalls, we ensure your proprietary information remains protected within Pakistan's borders, safe from external threats.",
-  //     benefits: ["Sovereign cloud hosting", "Advanced DDoS protection", "Enterprise security"],
-  //     color: "from-blue-50 to-sky-50 dark:from-blue-950 dark:to-sky-950"
-  //   },
-  //   {
-  //     icon: <MessageSquare className="w-12 h-12 text-primary" />,
-  //     title: "Empower Your Plant Floor Communication",
-  //     subtitle: "Unified communications platform",
-  //     description: "In a noisy factory, missed calls between the maintenance team, floor managers, and control rooms cause delays. BrainTEL's Robust Unified Communications provide instant, reliable voice and messaging across your entire facility, speeding up issue resolution and streamlining shift handovers.",
-  //     benefits: ["Plant-wide communication", "Instant messaging", "Voice clarity"],
-  //     color: "from-purple-50 to-violet-50 dark:from-purple-950 dark:to-violet-950"
-  //   },
-  //   {
-  //     icon: <Database className="w-12 h-12 text-primary" />,
-  //     title: "Gain a Competitive Edge with Data-Driven Insights",
-  //     subtitle: "IoT & analytics ready infrastructure",
-  //     description: "Turn machine data into actionable intelligence. Our secure cloud hosting provides the powerful backbone to collect and analyze production line data, helping you predict maintenance needs, optimize energy consumption, and improve overall equipment effectiveness (OEE).",
-  //     benefits: ["IoT sensor support", "Predictive maintenance", "Energy optimization"],
-  //     color: "from-orange-50 to-amber-50 dark:from-orange-950 dark:to-amber-950"
-  //   }
-  // ];
-
   const solutions = [
     {
       icon: <Clock className="w-12 h-12 text-m3-primary" />,
@@ -276,10 +233,10 @@ function ManufacturingContent() {
   ];
 
   const stats = [
+    { value: "40+", label: "Years of Experience" },
     { value: "99.9%", label: "Uptime Guarantee" },
     { value: "24/7", label: "Industrial Support" },
     { value: "50+", label: "Manufacturing Clients" },
-    { value: "<5ms", label: "Average Latency" }
   ];
 
   // JSON-LD Schema
@@ -367,7 +324,7 @@ function ManufacturingContent() {
             <Badge className="mx-auto bg-brand-secondary/10 text-brand-secondary border-brand-secondary/20">
               Smart Solutions
             </Badge>
-            <h2 className="heading-xl text-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface">
               Smart, Combined Solutions for Manufacturing Excellence
             </h2>
             <p className="text-lead-lg text-neutral-medium max-w-2xl mx-auto">
@@ -395,7 +352,7 @@ function ManufacturingContent() {
                       <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 text-xs">
                         {solution.subtitle}
                       </Badge>
-                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight">
+                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight font-bold">
                         {solution.title}
                       </CardTitle>
                     </div>
@@ -412,7 +369,7 @@ function ManufacturingContent() {
                     <div className="grid gap-2">
                       {solution.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                           <span className="text-neutral-medium">{benefit}</span>
                         </div>
                       ))}
@@ -450,7 +407,7 @@ function ManufacturingContent() {
                             <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 text-xs">
                               {solution.subtitle}
                             </Badge>
-                            <CardTitle className="text-foreground leading-tight">
+                            <CardTitle className="text-foreground leading-tight font-bold">
                               {solution.title}
                             </CardTitle>
                           </div>
@@ -467,7 +424,7 @@ function ManufacturingContent() {
                           <div className="grid gap-2">
                             {solution.benefits.map((benefit, benefitIndex) => (
                               <div key={benefitIndex} className="flex items-center space-x-3">
-                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                                 <span className="text-neutral-medium">{benefit}</span>
                               </div>
                             ))}

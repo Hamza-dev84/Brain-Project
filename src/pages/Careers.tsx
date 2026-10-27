@@ -462,7 +462,8 @@ export default function Careers() {
                 </span>
               </div>
 
-              <h2 className="heading-xl font-semibold text-foreground">
+              {/* <h2 className="heading-xl font-bold text-foreground"> */}
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
                 Company Story
               </h2>
 

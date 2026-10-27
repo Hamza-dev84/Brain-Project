@@ -94,10 +94,10 @@ function FinancialServicesContent() {
   ];
 
   const stats = [
-    { value: "99.99%", label: "Transaction Uptime" },
-    { value: "<1ms", label: "Trading Latency" },
-    { value: "24/7", label: "Security Monitoring" },
-    { value: "100%", label: "SBP Compliant" }
+    { value: "40+", label: "Years of Experience" },
+    { value: "99.99%", label: "Uptime" },
+    { value: "24/7", label: "Real-Time Monitoring" },
+    { value: "100%", label: "Cloud First Policy Compliant" }
   ];
 
   const jsonLd = {
@@ -219,7 +219,7 @@ function FinancialServicesContent() {
                       <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 text-xs">
                         {solution.subtitle}
                       </Badge>
-                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight">
+                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight font-bold">
                         {solution.title}
                       </CardTitle>
                     </div>
@@ -236,7 +236,7 @@ function FinancialServicesContent() {
                     <div className="grid gap-2">
                       {solution.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                           <span className="text-neutral-medium">{benefit}</span>
                         </div>
                       ))}
@@ -274,7 +274,7 @@ function FinancialServicesContent() {
                             <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 text-xs">
                               {solution.subtitle}
                             </Badge>
-                            <CardTitle className="text-foreground leading-tight">
+                            <CardTitle className="text-foreground leading-tight font-bold">
                               {solution.title}
                             </CardTitle>
                           </div>
@@ -291,7 +291,7 @@ function FinancialServicesContent() {
                           <div className="grid gap-2">
                             {solution.benefits.map((benefit, benefitIndex) => (
                               <div key={benefitIndex} className="flex items-center space-x-3">
-                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                                 <span className="text-neutral-medium">{benefit}</span>
                               </div>
                             ))}

@@ -262,7 +262,8 @@ export default function ReferAndEarn() {
                 <div className="pt-4">
                   <Button
                     type="submit"
-                    className="w-full bg-destructive hover:bg-destructive/90 text-white h-12 text-lg font-medium cursor-pointer"
+                    // className="w-full bg-destructive hover:bg-destructive/90 text-white h-12 text-lg font-medium cursor-pointer"
+                    className="w-full bg-default hover:bg-default/90 text-white h-12 text-lg font-medium cursor-pointer"
                   >
                     Get Service Now
                   </Button>

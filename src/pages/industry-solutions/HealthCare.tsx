@@ -303,7 +303,7 @@ function HealthCareContent() {
                       <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 text-xs">
                         {solution.subtitle}
                       </Badge>
-                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight">
+                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight font-bold">
                         {solution.title}
                       </CardTitle>
                     </div>
@@ -320,7 +320,7 @@ function HealthCareContent() {
                     <div className="grid gap-2">
                       {solution.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                          <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                           <span className="text-neutral-medium">{benefit}</span>
                         </div>
                       ))}
@@ -375,7 +375,7 @@ function HealthCareContent() {
                           <div className="grid gap-2">
                             {solution.benefits.map((benefit, benefitIndex) => (
                               <div key={benefitIndex} className="flex items-center space-x-3">
-                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                                 <span className="text-neutral-medium">{benefit}</span>
                               </div>
                             ))}

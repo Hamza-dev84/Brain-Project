@@ -40,29 +40,6 @@ export function ContactForm() {
     setFormData(prev => ({ ...prev, inquiryType: value }));
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setIsSubmitting(true);
-
-  //   // Simulate form submission
-  //   await new Promise(resolve => setTimeout(resolve, 2000));
-
-  //   setIsSubmitting(false);
-  //   setIsSubmitted(true);
-
-  //   // Reset form after 3 seconds
-  //   setTimeout(() => {
-  //     setIsSubmitted(false);
-  //     setFormData({
-  //       name: '',
-  //       email: '',
-  //       phone: '',
-  //       subject: '',
-  //       message: '',
-  //       source: ''
-  //     });
-  //   }, 3000);
-  // };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -128,17 +105,19 @@ export function ContactForm() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-foreground mb-2 font-heading">Get in Touch</h3>
-        <p className="text-neutral-medium">
-          Ready to transform your business? Let's discuss your needs.
+
+      <div className="text-center py-6">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
+          Get in Touch
+        </h2>
+        <p className="text-lg text-neutral-medium">
+          Let's discuss how we can help transform your business
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="name" className="text-foreground flex items-center gap-2">
-            <User className="w-4 h-4" />
+          <Label htmlFor="name" className="block font-lato font-semibold text-brand-dark mb-1">
             Name *
           </Label>
           <Input
@@ -153,8 +132,7 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email" className="text-foreground flex items-center gap-2">
-            <Mail className="w-4 h-4" />
+          <Label htmlFor="name" className="block font-lato font-semibold text-brand-dark mb-1">
             Email *
           </Label>
           <Input
@@ -171,8 +149,7 @@ export function ContactForm() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="phone" className="text-foreground flex items-center gap-2">
-            <Phone className="w-4 h-4" />
+          <Label htmlFor="name" className="block font-lato font-semibold text-brand-dark mb-1">
             Phone *
           </Label>
           <Input
@@ -187,7 +164,7 @@ export function ContactForm() {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="subject" className="text-foreground">
+          <Label htmlFor="name" className="block font-lato font-semibold text-brand-dark mb-1">
             How can we help you? *
           </Label>
           <Select value={formData.inquiryType} onValueChange={handleSelectChange} required>
@@ -206,7 +183,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="source" className="text-foreground">
+        <Label htmlFor="name" className="block font-lato font-semibold text-brand-dark mb-1">
           How Did You Hear About Us?(Optional) *
         </Label>
         <Select value={formData.hearAboutUs} onValueChange={(value) => setFormData(prev => ({ ...prev, hearAboutUs: value }))} required>
@@ -226,8 +203,7 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message" className="text-foreground flex items-center gap-2">
-          <MessageSquare className="w-4 h-4" />
+        <Label htmlFor="name" className="block font-lato font-semibold text-brand-dark mb-1">
           Message(Optional)
         </Label>
         <Textarea
@@ -242,7 +218,7 @@ export function ContactForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary text-primary-foreground hover:bg-brand-primary transition-colors cursor-pointer"
+        className="w-full font-lato font-bold h-14"
       >
         {isSubmitting ? (
           <div className="flex items-center gap-2">
@@ -251,11 +227,10 @@ export function ContactForm() {
           </div>
         ) : (
           <div className="flex items-center gap-2">
-            <Send className="w-4 h-4" />
             Send Message
           </div>
         )}
       </Button>
-    </motion.form>
+    </motion.form >
   );
 }

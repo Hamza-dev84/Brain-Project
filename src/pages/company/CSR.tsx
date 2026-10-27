@@ -38,7 +38,7 @@ export default function CSR() {
               <h1 className=" text-3xl md:text-6xl font-bold font-lato text-foreground mb-6 tracking-tigh pb-4">
                 Making a Difference Together
               </h1>
-              <p className="text-lg md:text-xl text-neutral-medium leading-relaxed">
+              <p className="text-lg font-lato text-neutral-medium leading-relaxed">
                 It is compassion, community support and employee well-being that brings us together as one. We believe in strengthening the community by bringing a positive change within and outside our organization.
               </p>
             </div>

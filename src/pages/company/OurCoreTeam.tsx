@@ -162,6 +162,9 @@ function OurCoreTeamContent() {
       />
 
       <div className="container mx-auto px-4 md:px-6 py-12">
+        <h1 className="font-raleway font-bold text-4xl md:text-5xl lg:text-6xl leading-tight drop-shadow-lg pb-10 text-center">
+          Our Core Team
+        </h1>
         <div className="grid gap-8 md:gap-12">
           {teamMembers.map((member, index) => (
             <Card key={index} className="group hover:shadow-lg transition-all duration-300">

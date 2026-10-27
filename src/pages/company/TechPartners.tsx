@@ -170,7 +170,7 @@ function TechPartnersContent() {
                         {partner.status === 'Gold Partner' ? <Star className="w-3 h-3 mr-1" /> : <CheckCircle className="w-3 h-3 mr-1" />}
                         {partner.status}
                       </Badge>
-                      <CardTitle className="text-foreground group-hover:text-primary transition-colors leading-tight">
+                      <CardTitle className="text-foreground font-bold group-hover:text-primary transition-colors leading-tight">
                         {partner.name}
                       </CardTitle>
                       <p className="text-neutral-medium">{partner.category}</p>

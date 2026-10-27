@@ -7,7 +7,7 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
-import { DollarSign, Globe, Code, Briefcase, CheckCircle, TrendingUp, Shield, Zap, ArrowRight, Star } from 'lucide-react';
+import { DollarSign, Globe, Code, Briefcase, CheckCircle, TrendingUp, Shield, Zap, ArrowRight, Star, Wallet } from 'lucide-react';
 
 export default function SoftwareHouses() {
   return (
@@ -26,7 +26,8 @@ function SoftwareHousesContent() {
 
   const solutions = [
     {
-      icon: <DollarSign className="w-12 h-12 text-primary" />,
+      // icon: <DollarSign className="w-12 h-12 text-primary" />,
+      icon: <Wallet className="w-12 h-12 text-primary" />,
       title: "Flexible Cloud Costs",
       subtitle: "Save up to 40% on hosting costs",
       description: (
@@ -256,7 +257,8 @@ function SoftwareHousesContent() {
                     <div className="grid gap-2">
                       {solution.benefits.map((benefit, benefitIndex) => (
                         <div key={benefitIndex} className="flex items-center space-x-3">
-                          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                          {/* <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" /> */}
+                          <CheckCircle className="w-5 h-5 text-foreground flex-shrink-0" />
                           <span className="text-neutral-medium">{benefit}</span>
                         </div>
                       ))}
@@ -294,7 +296,7 @@ function SoftwareHousesContent() {
                             <Badge className="mb-3 bg-primary/10 text-primary border-primary/20 text-xs">
                               {solution.subtitle}
                             </Badge>
-                            <CardTitle className="text-foreground leading-tight">
+                            <CardTitle className="text-foreground leading-tight font-bold!">
                               {solution.title}
                             </CardTitle>
                           </div>
@@ -311,7 +313,8 @@ function SoftwareHousesContent() {
                           <div className="grid gap-2">
                             {solution.benefits.map((benefit, benefitIndex) => (
                               <div key={benefitIndex} className="flex items-center space-x-3">
-                                <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                                {/* <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" /> */}
+                                <CheckCircle className="w-5 h-5 text-foreground! flex-shrink-0" />
                                 <span className="text-neutral-medium">{benefit}</span>
                               </div>
                             ))}

@@ -28,6 +28,7 @@ import bbcNewsLogo from "@/assets/about/bbc-news-logo.png";
 import PageMeta from "@/components/common/PageMeta";
 import OrganizationSchema from "@/pages/schemaFiles/brainTel-schema-files/OrganizationSchema";
 import SEOSchema from "@/pages/schemaFiles/brainTel-schema-files/SEOSchema";
+import HomePageFAQs from './HomePageFAQs';
 
 
 // Memoized animation variants for performance
@@ -497,7 +498,7 @@ const Index = memo(() => {
                 <Star className="w-5 h-5 text-yellow-500 fill-current" aria-hidden="true" />
                 <span className="text-sm font-medium text-neutral-medium">Featured In</span>
               </div>
-              <h2 className="heading-lg text-foreground mb-2 font-heading leading-tight">
+              <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
                 <TextReveal type="words" delay={0.2}>
                   Global Recognition
                 </TextReveal>
@@ -589,12 +590,13 @@ const Index = memo(() => {
                 <span>Our Services</span>
               </motion.div>
 
-              <h2 className="heading-lg mb-6 font-heading leading-tight">
-                <span className="text-primary">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
+                <span className="font-raleway text-m3-primary">
                   Our Comprehensive IT Solutions
+                </span>{" "}
+                <span className="text-m3-on-surface dark:text-m3-on-surface">
+                  in Pakistan.
                 </span>
-                {' '}
-                <span className="text-foreground dark:text-foreground">in Pakistan.</span>
               </h2>
 
               {/* <p className="text-lg md:text-xl text-neutral-medium max-w-4xl mx-auto leading-relaxed">From providing high-speed fiber internet to enterprise AI software solutions, we cover a broad and comprehensive range of IT and telecom services in Pakistan for businesses of all sizes, outperforming all other IT solution providers in Pakistan.</p> */}
@@ -701,8 +703,11 @@ const Index = memo(() => {
               once: true,
               margin: "-100px"
             }}>
-              <h2 className="heading-lg text-[#17164f] mb-8 font-heading leading-tight">
+              {/* <h2 className="heading-lg text-[#17164f] mb-8 font-heading leading-tight">
                 Why Choose Us?
+              </h2> */}
+              <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-m3-on-surface pb-4">
+                Why Businesses Choose BrainTEL?
               </h2>
             </motion.div>
 
@@ -751,8 +756,6 @@ const Index = memo(() => {
             }} viewport={{
               once: true
             }}>
-              <h2 className="heading-lg text-foreground mb-4 font-heading leading-tight">Get in Touch</h2>
-              <p className="text-lg text-neutral-medium">Let's discuss how we can help transform your business</p>
             </motion.div>
 
             <motion.div initial={{
@@ -771,6 +774,13 @@ const Index = memo(() => {
             </motion.div>
           </div>
         </section>
+
+
+        {/* FAQs Section */}
+        <section className="text-center bg-m3-surface-container-low dark:bg-m3-surface ">
+          <HomePageFAQs />
+        </section>
+
 
         {/* Final CTA Section */}
         <section className="py-20 sm:py-28 bg-gradient-to-br from-primary via-brand-secondary to-brand-tertiary relative overflow-hidden">

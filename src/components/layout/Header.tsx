@@ -98,7 +98,7 @@ export function Header() {
       <header
         className={`top-app-bar ${isScrolled ? 'scrolled' : ''}`}
       >
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 pt-6 pb-2">
           <div className="flex items-center justify-between h-16">
             {/* Left: Logo and Mobile Menu */}
             <div className="flex items-center gap-4">
@@ -276,6 +276,24 @@ export function Header() {
                   <Phone className="h-4 w-4 text-primary" />
                 </a>
               </Button>
+
+              {/* Email */}
+              <Button
+                asChild
+                variant="ghost"
+                size="icon"
+                className="hidden md:flex p-2 text-m3-on-surface hover:bg-m3-primary/5 rounded-lg transition-colors h-9 w-9"
+                title="Email us: support@brain.net.pk"
+              >
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support@brain.net.pk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Mail className="h-4 w-4 text-m3-primary" />
+                </a>
+              </Button>
+
 
               {/* Contact Us Button */}
               <Button

@@ -22,15 +22,15 @@ import Terms_and_Conditions from "../../../public/docs/brainteltc.pdf";
 const footerLinks = {
   company: [
     { title: 'About Us', path: '/company/about-us', type: 'route' },
+    { title: 'Contact Us', path: '/contact-us', type: 'route' },
     { title: 'Careers', path: '/careers', type: 'route' },
+    { title: 'Refer & Earn', path: '/refer-and-earn', type: 'route' },
     {
       title: 'Company Profile',
       path: '/docs/braintelprofile.pdf',
       type: 'file',
     },
-    { title: 'Services', path: '/services', type: 'route' },
-    { title: 'Contact Us', path: '/contact-us', type: 'route' },
-    { title: 'Refer & Earn', path: '/refer-and-earn', type: 'route' },
+    // { title: 'Services', path: '/services', type: 'route' },
   ],
   services: [
     { title: 'Internet Services', path: '/services/internet' },
@@ -162,7 +162,7 @@ export function Footer() {
               <Logo className="h-8 md:h-10 w-auto" />
             </Link>
 
-            <p className="text-sm text-m3-on-surface-variant leading-relaxed mb-4">
+            <p className="text-sm text-neutral-medium leading-relaxed mb-4">
               BrainTEL is the leading IT and Telecom Company in Pakistan,
               delivering telecom services and innovative IT solutions for
               enterprises across various industries nationwide.
@@ -174,7 +174,7 @@ export function Footer() {
             <h4 className="text-base font-semibold text-m3-on-surface">
               Company
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-neutral-medium">
               {footerLinks.company.map((link) => (
                 <li key={link.path}>
                   {link.title === "Company Profile" ? (
@@ -203,7 +203,7 @@ export function Footer() {
             <h4 className="text-base font-semibold text-m3-on-surface">
               Services
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 text-neutral-medium">
               {footerLinks.services.map((link) => (
                 <li key={link.path}>
                   <Link
@@ -223,7 +223,7 @@ export function Footer() {
             <h4 className="text-base font-semibold text-m3-on-surface">
               Newsletter
             </h4>
-            <p className="text-sm text-m3-on-surface-variant">
+            <p className="text-sm text-neutral-medium">
               Stay updated with our latest news
             </p>
             <form
@@ -236,15 +236,16 @@ export function Footer() {
                   value={email}
                   onChange={handleChange}
                   placeholder="Enter Your Email"
-                  className="flex-1 px-3 py-2 text-sm bg-m3-surface-container border border-m3-outline rounded-lg text-m3-on-surface placeholder:text-m3-on-surface-variant focus:outline-none focus:border-m3-primary"
+                  className="flex-1 px-3 py-2 text-sm bg-m3-surface-container border border-neutral-medium rounded-md text-m3-on-surface placeholder:text-neutral-medium focus:outline-none focus:border-m3-primary"
                 />
-                <button
+                <Button
                   type="submit"
-                  className="bg-m3-primary text-m3-on-primary p-3 rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
+                  size="icon"
+                  className="h-11 w-11 p-0 rounded"
                   aria-label="Send Mail"
                 >
-                  <Send className="w-5 h-5" />
-                </button>
+                  <Send />
+                </Button>
               </div>
               {showError && error && (
                 <p className="text-red-400 text-xs mt-1 font-lato">{error}</p>
@@ -262,7 +263,7 @@ export function Footer() {
                       variant="ghost"
                       size="sm"
                       asChild
-                      className="w-12 h-12 rounded-full bg-m3-primary/10 flex items-center justify-center hover:bg-m3-primary/20 hover:scale-110 transition-all duration-300"
+                      className="w-12 h-12 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center hover:bg-primary/10 dark:hover:bg-primary/20 hover:scale-110 transition-all duration-300"
                     >
                       <a
                         href={social.href}
@@ -287,9 +288,9 @@ export function Footer() {
   "
         >
           {/* Phone */}
-          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition lg:flex-shrink-0 lg:min-w-[260px]">
-            <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-            <div className="space-y-1">
+          <div className="flex gap-3 bg-primary/5 p-4 rounded-lg hover:bg-primary/10 dark:bg-primary/20 transition lg:flex-shrink-0 lg:min-w-[260px]">
+            <Phone className="h-4 w-4 mt-0.5 text-neutral-medium flex-shrink-0" />
+            <div className="space-y-1 text-neutral-medium">
               <a href="tel:042111222888" className="block">
                 <strong>UAN:</strong>{" "}
                 <span className="hover:underline">(042) 111 222 888</span>
@@ -302,7 +303,7 @@ export function Footer() {
           </div>
 
           {/* Email */}
-          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition">
+          <div className="flex gap-3 bg-primary/5 p-4 rounded-lg hover:bg-primary/10 dark:bg-primary/20 transition lg:flex-shrink-0 lg:min-w-[260px] text-neutral-medium">
             <Mail className="h-4 w-4 mt-1 flex-shrink-0" />
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=support@brain.net.pk"
@@ -315,7 +316,7 @@ export function Footer() {
           </div>
 
           {/* Address */}
-          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition lg:flex-shrink-0 lg:min-w-[300px]">
+          <div className="flex gap-3 bg-primary/5 p-4 rounded-lg hover:bg-primary/10 dark:bg-primary/20 transition lg:flex-shrink-0 lg:min-w-[260px] text-neutral-medium">
             <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
             <a
               href="https://maps.app.goo.gl/rwFjoFNkDDi6Dv8a6"
@@ -328,13 +329,13 @@ export function Footer() {
           </div>
 
           {/* Working Hours */}
-          <div className="flex gap-3 bg-m3-primary/5 p-4 rounded-xl hover:bg-m3-primary/10 transition lg:flex-shrink-0 lg:min-w-[220px]">
+          <div className="flex gap-3 bg-primary/5 p-4 rounded-lg hover:bg-primary/10 dark:bg-primary/20 transition lg:flex-shrink-0 lg:min-w-[260px] text-neutral-medium">
             <Clock className="h-4 w-4 mt-1 flex-shrink-0" />
             <span>Mon–Sat, 9:00 AM – 5:30 PM</span>
           </div>
         </div>
         {/* Bottom Bar */}
-        <div className="py-6 border-t border-m3-outline-variant">
+        <div className="py-6 border-t border-m3-outline-variant text-neutral-medium">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-m3-on-surface-variant">
               Copyright © 2026 Brain Telecommunication Ltd. All rights reserved.
