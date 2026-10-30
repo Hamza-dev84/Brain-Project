@@ -2,39 +2,62 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageTransition } from "@/components/ui/page-transition";
 import PageMeta from "@/components/common/PageMeta";
 import ServiceSchema from "@/pages/schemaFiles/brainTel-schema-files/ServiceSchema"
+import { PageHeader } from "@/components/common/PageHeader";
+import {
+  Phone,
+  WifiHigh,
+  Cloud,
+  Code2,
+  MessageSquare,
+} from "lucide-react";
 
-const SERVICES = [
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../../components/ui/card";
+
+const services = [
   {
-    to: "/services/internet",
-    name: "BrainNET — Internet & Telephony",
-    description:
-      "Fiber internet, business broadband, SIP trunking, IP PBX and VoIP services across Pakistan.",
+    title: "Internet Services",
+    path: "/services/internet",
+    icon: WifiHigh,
+    description: "Reliable, high-speed connectivity solutions for homes and tailored for businesses of all sizes in Lahore.",
+    color: "text-blue-600 dark:text-blue-400",
   },
   {
-    to: "/services/cloud",
-    name: "BrainCLOUD Plus — Cloud & Data Centre",
-    description:
-      "Tier III cloud hosting, VPS, dedicated servers, colocation and GPU/AI infrastructure hosted in Pakistan.",
+    title: "Cloud Services",
+    path: "/services/cloud",
+    asset: "/assets/BrainCLOUDServices.pdf",
+    icon: Cloud,
+    description: "Scalable Tier 3 Local cloud infrastructure and hosting solutions to power your applications, data storage, and collaboration with maximum efficiency.",
+    color: "text-blue-600 dark:text-blue-400",
   },
   {
-    to: "/services/sms",
-    name: "BSMS — Bulk SMS",
-    description:
-      "Branded SMS, OTP delivery, SMS marketing campaigns and a developer-friendly SMS API.",
+    title: "Telephony Services",
+    path: "/services/internet/telephony",
+    icon: Phone,
+    description: "Comprehensive VoIP and telephony solutions for businesses, enabling cost-effective and reliable voice communication.",
+    color: "text-blue-600 dark:text-blue-400",
   },
   {
-    to: "/services/software",
-    name: "BrainSOFT — Software & Digital",
-    description:
-      "Custom software, web and mobile development, ERP implementation and digital marketing.",
+    title: "Software Services",
+    path: "/services/software",
+    icon: Code2,
+    description: "Discover BrainSOFT, a BrainTEL Division which offers Custom AI-driven software development services and ERP solutions to streamline business processes, boost productivity, and drive digital transformation.",
+    color: "text-blue-600 dark:text-blue-400",
   },
   {
-    to: "/services/internet/telephony",
-    name: "BrainTELEPHONY — Voice Services",
-    description:
-      "Business telephone lines, unified communications and managed voice solutions.",
+    title: "SMS Services",
+    path: "/services/sms",
+    icon: MessageSquare,
+    description: "Secure and efficient SMS gateways for marketing, notifications, and customer engagement across multiple platforms.",
+    color: "text-blue-600 dark:text-blue-400",
   },
-] as const;
+];
+
 
 export const Route = createFileRoute("/_layout/services/")({
   // head: () => ({
@@ -64,43 +87,76 @@ export const Route = createFileRoute("/_layout/services/")({
 });
 
 function ServicesIndex() {
+
   return (
-    <main className="container mx-auto px-4 py-16 md:py-24">
+    <>
       <PageMeta
         title="IT Services in Pakistan | Internet, Cloud & Software Solutions - BrainTEL"
         description="Explore BrainTEL’s IT services in Pakistan including fiber internet, cloud hosting, VoIP telephony, bulk SMS, AI software development, and managed business solutions with 24/7 support."
+        // ogImage="/favicons/default.png"
       />
-      <ServiceSchema />
-      <header className="max-w-3xl">
-        <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-          Our Services
-        </p>
-        <h1 className="mt-3 text-4xl font-bold md:text-5xl">
-          Everything your business needs, from one provider
-        </h1>
-        <p className="mt-5 text-lg text-muted-foreground">
-          Five specialist divisions, one company. Choose a service to explore plans,
-          coverage and pricing.
-        </p>
-      </header>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {SERVICES.map((service) => (
-          <Link
-            key={service.to}
-            to={service.to}
-            className="group rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary"
-          >
-            <h2 className="text-xl font-semibold group-hover:text-primary">
-              {service.name}
-            </h2>
-            <p className="mt-3 text-muted-foreground">{service.description}</p>
-            <span className="mt-5 inline-block font-medium text-primary">
-              Explore →
-            </span>
-          </Link>
-        ))}
+      <ServiceSchema />
+
+      {/* Breadcrumb */}
+      <PageHeader breadcrumbs={[{ label: "Services", path: "/services" }]} />
+
+      <div className="container mx-auto px-4 md:px-6 py-12">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => {
+            const IconComponent = service.icon;
+            const card = (
+              <Card className="h-full border-2 hover:border-primary hover:shadow-lg transition-all duration-200">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div
+                      className={`p-3 rounded-md bg-accent/50 ${service.color}`}
+                    >
+                      <IconComponent className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg md:text-2xl mt-2 group-hover:text-primary transition-colors">
+                        {service.title}
+                      </CardTitle>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+
+            if ("asset" in service) {
+              return (
+                <a
+                  key={service.path}
+                  href={service.asset}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group transition-all duration-200 hover:scale-[1.02]"
+                >
+                  {card}
+                </a>
+              );
+            }
+
+            return (
+              <Link
+                key={service.path}
+                to={service.path}
+                target="_blank"
+                className="group transition-all duration-200 hover:scale-[1.02]"
+              >
+                {card}
+              </Link>
+            );
+          })}
+        </div>
+
       </div>
-    </main>
+    </>
   );
 }

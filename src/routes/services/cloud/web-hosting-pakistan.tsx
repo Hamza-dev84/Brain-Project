@@ -356,11 +356,11 @@ function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-surface to-transparent md:hidden"
       />
       <div className="container-x relative z-10 pt-14 pb-14 lg:pt-20 lg:pb-20">
-        <div className="max-w-4xl animate-fade-up">
+        <div className="max-w-3xl animate-fade-up">
           <Eyebrow tone="green" withDot>
             Locally hosted in Lahore · From Rs 2,250/mo
           </Eyebrow>
-          <h1 className="mt-5 font-display text-hero font-extrabold leading-[1.05] tracking-[-0.02em] text-navy">
+          <h1 className="mt-5 font-display text-hero font-extrabold! leading-[1.05] tracking-[-0.02em] text-navy">
             Web Hosting in Pakistan — Fast, Secure &{" "}
             <span className="text-green">Made for Pakistani Websites</span>
           </h1>
@@ -413,7 +413,7 @@ function WhyChoose() {
   return (
     <Section tone="white" id="why">
       <SectionHeading
-        eyebrow="Why Pakistani businesses choose us"
+        eyebrow="WHY PAKISTANI BUSINESSES CHOOSE US"
         title="Why Pakistani Businesses Choose BrainCLOUD"
         lede="Thousands of Pakistani websites — from small shops in Lahore to corporate portals in Karachi — run on BrainCLOUD infrastructure. Here's what makes us different from the crowd."
       />
@@ -432,7 +432,7 @@ function HostingTierIntro() {
   return (
     <Section tone="surface" id="plans-intro">
       <SectionHeading
-        eyebrow="Hosting plans — pick what works for you"
+        eyebrow="HOSTING PLANS — PICK WHAT WORKS FOR YOU"
         title={
           <>
             One provider,{" "}
@@ -442,7 +442,7 @@ function HostingTierIntro() {
         lede={
           <>
             Every plan includes:{" "}
-            <strong>
+            <strong >
               Free SSL, cPanel access, daily backups, free migration, and 24/7
               Pakistani support.
             </strong>
@@ -610,7 +610,7 @@ function Plans() {
                     <span className="text-sm text-navy/60">/mo</span>
                   </div>
                 ) : (
-                  <span className="font-display text-2xl font-extrabold text-navy">
+                  <span className="font-display text-2xl! font-extrabold! text-navy">
                     {p.price}
                   </span>
                 )}
@@ -883,27 +883,27 @@ function FeatureMatrix() {
                 <AccordionItem
                   key={group.title}
                   value={group.title}
-                  className="card-surface card-surface-hover overflow-hidden rounded-[var(--radius-card)] border border-hairline"
+                  className="card-surface font-extrabold text-2xl card-surface-hover overflow-hidden rounded-[var(--radius-card)] border border-hairline"
                 >
                   <AccordionTrigger className="px-6 py-4 font-display text-h3 font-bold text-navy hover:no-underline">
                     {group.title}
                   </AccordionTrigger>
                   <AccordionContent className="pb-0">
-                    <div className="overflow-x-auto border-t border-hairline">
+                    <div className="overflow-x-auto border-t border-hairline!">
                       <table className="w-full min-w-[640px] text-left">
-                        <thead className="bg-surface">
+                        <thead className="bg-surface!">
                           <tr>
-                            <th className="px-6 py-3 font-display text-eyebrow uppercase tracking-wider text-navy/70">
+                            <th className="px-6 py-3 text-eyebrow text-navy/70!">
                               Feature
                             </th>
                             {MATRIX_PLANS.map((plan) => (
                               <th
                                 key={plan}
                                 className={cn(
-                                  "px-4 py-3 text-center font-display text-eyebrow uppercase tracking-wider",
+                                  "px-4 py-3 text-center text-eyebrow",
                                   plan === HIGHLIGHT_PLAN
-                                    ? "bg-green/10 text-green"
-                                    : "text-navy/70",
+                                    ? "bg-green/10! text-green!"
+                                    : "text-navy/70!",
                                 )}
                               >
                                 {plan}
@@ -915,8 +915,8 @@ function FeatureMatrix() {
                           {group.rows.map((row) => {
                             const [label, ...cells] = row;
                             return (
-                              <tr key={label} className="hover:bg-surface/60">
-                                <td className="px-6 py-3 text-sm font-medium text-navy">
+                              <tr key={label} className="hover:bg-surface/60!">
+                                <td className="px-6 py-3 text-sm font-medium text-navy!">
                                   {label}
                                 </td>
                                 {cells.map((cell, i) => (
@@ -925,7 +925,7 @@ function FeatureMatrix() {
                                     className={cn(
                                       "px-4 py-3 text-center",
                                       MATRIX_PLANS[i] === HIGHLIGHT_PLAN &&
-                                      "bg-green/5",
+                                      "bg-green/5!",
                                     )}
                                   >
                                     <MatrixValue value={cell} />
@@ -956,15 +956,15 @@ function IncludedTable() {
   return (
     <Section tone="white" id="included">
       <SectionHeading
-        eyebrow="Included in every plan"
+        eyebrow="INCLUDED IN EVERY PLAN"
         title="What's Included in Every BrainCLOUD Hosting Plan"
       />
       <div className="mt-10 overflow-hidden rounded-[var(--radius-card)] border border-hairline">
         <table className="w-full text-left">
-          <thead className="bg-navy text-white">
+          <thead className="bg-navy text-white ">
             <tr>
-              <th className="px-6 py-4 font-display text-eyebrow">Feature</th>
-              <th className="px-6 py-4 font-display text-eyebrow">Included?</th>
+              <th className="px-6 py-4 text-eyebrow">Feature</th>
+              <th className="px-6 py-4 text-eyebrow">Included?</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-hairline bg-white">
@@ -1002,7 +1002,7 @@ function LocalVsIntl() {
       <div className="container-x section-y relative z-10">
         <div className="max-w-2xl">
           <SectionHeading
-            eyebrow="Local vs international"
+            eyebrow="LOCAL VS INTERNATIONAL"
             title="Local Hosting vs. International Hosting — What's the Difference for Pakistani Websites?"
             lede="Many Pakistani businesses make the mistake of hosting their websites on international servers, because they look affordable at first glance. But there are real tradeoffs:"
           />
@@ -1048,7 +1048,7 @@ function EmailHosting() {
             <Mail className="h-8 w-8" />
           </div>
           <Eyebrow tone="green" className="mt-6 inline-flex">Email hosting included</Eyebrow>
-          <h2 className="mt-4 font-display text-h2 font-extrabold text-navy">
+          <h2 className="mt-4 font-display text-h2 font-extrabold! text-navy max-w-2xl">
             Email Hosting — Professional Addresses for Your Business
           </h2>
           <p className="mt-5 text-lede text-navy/75">
@@ -1069,7 +1069,7 @@ function Audience() {
   return (
     <Section tone="surface" id="audience">
       <SectionHeading
-        eyebrow="Who uses BrainCLOUD"
+        eyebrow="WHO USES BRAINCLOUD"
         title="Who Uses BrainCLOUD Web Hosting?"
       />
       <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -1081,7 +1081,7 @@ function Audience() {
                 strokeWidth={3}
               />
               <p className="text-base text-navy/80">
-                <strong className="text-navy">{a.title}</strong> {a.body}
+                <strong className="text-navy ">{a.title}</strong> {a.body}
               </p>
             </div>
           </div>

@@ -142,10 +142,10 @@ function ContactPage() {
       <section className="border-b border-hairline bg-surface">
         <div className="container-x py-20 text-center lg:py-24">
           <Eyebrow tone="green" withDot>
-            We reply within 2 business hour
+            WE REPLY WITHIN 2 BUSINESS HOUR
           </Eyebrow>
           <h1 className="mt-5 font-display text-hero font-extrabold text-navy">
-            Get <span className="text-green">in touch</span>
+            Get <span className="text-green">in Touch</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-lede text-navy/70">
             Cloud, VPS, dedicated servers, or colocation — tell us what you're
@@ -186,7 +186,7 @@ function ContactPage() {
         <div className="mt-16 grid grid-cols-1 gap-10 lg:grid-cols-2">
           {/* Form */}
           <div>
-            <Eyebrow tone="green">Send us a message</Eyebrow>
+            <Eyebrow tone="green">SEND US A MESSAGE</Eyebrow>
             <h2 className="mt-4 font-display text-h2 font-extrabold text-navy">
               Tell us what you're{" "}
               <span className="text-green">running</span>

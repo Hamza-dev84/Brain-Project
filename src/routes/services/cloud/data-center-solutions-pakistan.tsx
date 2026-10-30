@@ -246,7 +246,7 @@ function DataCenterSolutionsPage() {
       <Section tone="white" id="two-ways">
         <div className="mb-14">
           <SectionHeading
-            eyebrow="How we work"
+            eyebrow="HOW WE WORK"
             title="Two Ways We Support Your Infrastructure"
             lede="We work with businesses in two distinct ways, and it's worth understanding the difference before you reach out. Most clients start with one and stay for years. Some use both."
           />
@@ -258,7 +258,7 @@ function DataCenterSolutionsPage() {
               design, infrastructure, implementation, and project delivery. You
               own and operate the facility once it's live.
             </p>
-            <a href="#solutions" className="mt-5 inline-flex items-center gap-1 font-display text-sm font-extrabold uppercase tracking-[0.12em] text-green hover:underline">
+            <a href="#solutions" className="mt-5 inline-flex items-center gap-1 font-display text-sm font-extrabold uppercase tracking-[0.12em] text-green! hover:underline">
               Explore design &amp; build →
             </a>
           </FeatureCard>
@@ -268,7 +268,7 @@ function DataCenterSolutionsPage() {
               infrastructure in our data center instead, backed by a guaranteed
               uptime SLA.
             </p>
-            <a href="#hosting" className="mt-5 inline-flex items-center gap-1 font-display text-sm font-extrabold uppercase tracking-[0.12em] text-green hover:underline">
+            <a href="#hosting" className="mt-5 inline-flex items-center gap-1 font-display text-sm font-extrabold uppercase tracking-[0.12em] text-green! hover:underline">
               Explore hosting with us →
             </a>
           </FeatureCard>
@@ -276,7 +276,7 @@ function DataCenterSolutionsPage() {
       </Section>
 
       {/* SOLUTIONS — Design, Build & Implementation */}
-      <Section tone="surface" id="solutions">
+      {/* <Section tone="surface" id="solutions">
         <div className="relative mb-14 overflow-hidden min-h-[420px] md:min-h-[460px]">
           <img width={1376} height={768} decoding="async"
             src={solutionsAsset}
@@ -294,11 +294,13 @@ function DataCenterSolutionsPage() {
             className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-surface to-transparent md:hidden"
           />
           <div className="relative z-10 max-w-2xl">
-            <SectionHeading
-              eyebrow="Design, Build & Implementation"
-              title="Data Center Solutions — Built From the Ground Up."
-              lede="As a data center solutions company, we design and deliver complete data centers for clients from the ground up. This covers site assessment, architectural and MEP design, power and cooling infrastructure, network design, and full implementation — handed over ready to operate."
-            />
+            <div className="mb-14">
+              <SectionHeading
+                eyebrow="DESIGN, BUILD & IMPLEMENTATION"
+                title="Data Center Solutions — Built From the Ground Up."
+                lede="As a data center solutions company, we design and deliver complete data centers for clients from the ground up. This covers site assessment, architectural and MEP design, power and cooling infrastructure, network design, and full implementation — handed over ready to operate."
+              />
+            </div>
           </div>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -314,6 +316,73 @@ function DataCenterSolutionsPage() {
             This is a project-based engagement. We design and build the facility — you own and operate it. Because we're not the ones hosting or running your data center day-to-day, this service doesn't carry an uptime SLA; the guarantees here are around design standards, build quality, and delivery timelines.
           </p>
         </div>
+      </Section> */}
+
+      <Section
+        tone="surface"
+        id="solutions"
+        className="relative overflow-hidden"
+      >
+        {/* Background Image */}
+        <img
+          src={solutionsAsset} // Your image
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-y-0 right-0 h-full w-full object-cover object-right opacity-50 md:w-[60%] md:opacity-100"
+          loading="lazy"
+        />
+
+        {/* Gradient Overlay */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r
+      from-surface from-30%
+      via-surface/85 via-60%
+      to-surface/30
+      md:from-surface
+      md:from-30%
+      md:via-surface/70
+      md:via-60%
+      md:to-transparent"
+        />
+
+        {/* Mobile Bottom Fade */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-surface to-transparent md:hidden"
+        />
+
+        {/* Content */}
+        <div className="relative z-10">
+          <div className="mb-14">
+            <SectionHeading
+              eyebrow="DESIGN, BUILD & IMPLEMENTATION"
+              title="Data Center Solutions — Built From the Ground Up."
+              lede="As a data center solutions company, we design and deliver complete data centers for clients from the ground up. This covers site assessment, architectural and MEP design, power and cooling infrastructure, network design, and full implementation — handed over ready to operate."
+            />
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {SOLUTIONS_INCLUDED.map((s) => (
+              <FeatureCard key={s.t} icon={s.icon} title={s.t}>
+                <p>{s.d}</p>
+              </FeatureCard>
+            ))}
+          </div>
+
+          <div className="mt-10 rounded-[var(--radius-card)] border border-navy/10 bg-white p-6 sm:p-8">
+            <p className="text-sm leading-relaxed text-navy/70">
+              <span className="font-display font-extrabold text-navy">
+                Note on SLAs:
+              </span>{" "}
+              This is a project-based engagement. We design and build the
+              facility — you own and operate it. Because we're not the ones
+              hosting or running your data center day-to-day, this service
+              doesn't carry an uptime SLA; the guarantees here are around design
+              standards, build quality, and delivery timelines.
+            </p>
+          </div>
+        </div>
       </Section>
 
       {/* UPGRADES */}
@@ -321,7 +390,7 @@ function DataCenterSolutionsPage() {
         <div className="grid gap-x-12 gap-y-10 lg:grid-cols-12">
           <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
             <SectionHeading
-              eyebrow="Upgrades & Support"
+              eyebrow="UPGRADES & SUPPORT"
               title="Data Center Upgrades & Infrastructure Support"
               lede="Already running your own data center but need to modernize it? We help businesses upgrade existing infrastructure without a full rebuild — improving power redundancy, cooling efficiency, security systems, or network architecture based on where your current setup falls short."
             />
@@ -346,8 +415,8 @@ function DataCenterSolutionsPage() {
 
       {/* AI-READY */}
       <section id="ai-ready" className="relative overflow-hidden bg-surface section-y">
-        <img 
-        // width={1376} height={768} decoding="async"
+        <img
+          // width={1376} height={768} decoding="async"
           src={aiReadyAsset}
           alt=""
           aria-hidden="true"
@@ -365,7 +434,7 @@ function DataCenterSolutionsPage() {
         <div className="container-x relative z-10">
           <div className="max-w-2xl">
             <SectionHeading
-              eyebrow="AI-Ready"
+              eyebrow="AI-READY"
               title="AI-Ready Data Center Design"
               lede={
                 <>
@@ -409,7 +478,7 @@ function DataCenterSolutionsPage() {
         <div className="mb-14">
           <SectionHeading
             tone="dark"
-            eyebrow="Our Own Tier 3 Facility"
+            eyebrow="OUR OWN TIER 3 FACILITY"
             title="Data Center Hosting — Host Your Infrastructure With Us."
             lede="If you'd rather not build or operate your own data center, you can host your infrastructure in ours. This is where our uptime commitments apply — because we're the ones running the facility."
           />
@@ -435,9 +504,9 @@ function DataCenterSolutionsPage() {
 
       {/* WHAT HOSTING CLIENTS GET */}
       <Section tone="white" id="hosting-benefits">
-        <div className="mb-14">
+        <div className="mb-14 max-w-2xl">
           <SectionHeading
-            eyebrow="What our hosting clients get"
+            eyebrow="WHAT OUR HOSTING CLIENTS GET"
             title="Guarantees We Put in Writing."
             lede="What we deliver at the infrastructure layer, and what it means for your team."
           />
@@ -519,7 +588,7 @@ function DataCenterSolutionsPage() {
         <div className="grid gap-x-12 gap-y-10 lg:grid-cols-12">
           <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
             <SectionHeading
-              eyebrow="Before you choose"
+              eyebrow="BEFORE YOU CHOOSE"
               title="Ask Any Data Center Provider in Pakistan These Five Questions."
               lede="We're happy to answer all of this directly, with documentation on request."
             />

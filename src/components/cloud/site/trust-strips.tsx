@@ -78,7 +78,12 @@ export function PaymentsStrip({
 }) {
   return (
     <Section tone={tone} className="!section-y-tight">
-      <LogoStrip heading={heading} items={PAYMENT_LOGOS} size={56} />
+      <LogoStrip
+        heading={heading}
+        headingClassName="mb-4 text-center font-display text-xs font-bold uppercase tracking-[0.16em] text-navy/60"
+        items={PAYMENT_LOGOS}
+        size={56}
+      />
     </Section>
   );
 }
@@ -89,7 +94,7 @@ type Tone = "surface" | "white" | "tint";
 export function ToolingStrip({ tone = "white", className }: { tone?: Tone; className?: string }) {
   return (
     <Section tone={tone} className={cn("!section-y-tight", className)}>
-      <p className="mb-8 text-center font-display text-eyebrow text-navy/50">
+      <p className="mb-8 text-center text-eyebrow text-navy/60">
         Pre-tuned for the tools your team already uses
       </p>
       <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-14">
@@ -133,6 +138,7 @@ export function OSStrip({
   const inner = (
     <LogoStrip
       heading="Operating systems supported"
+      headingClassName="mb-4 text-center text-eyebrow text-navy/60"
       items={OS_LOGOS}
       size={36}
     />

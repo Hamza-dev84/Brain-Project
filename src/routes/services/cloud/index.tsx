@@ -208,7 +208,7 @@ function Audience() {
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         <div className="max-w-3xl">
           <span className={TECH_HEADING}>Built for serious workloads</span>
-          <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit">
+          <h2 className="mt-4 font-display text-h1 font-extrabold! text-inherit">
             Built for Businesses That Can't Afford{" "}
             <span className="text-green">Downtime.</span>
           </h2>
@@ -236,6 +236,46 @@ function Audience() {
           </div>
         </div>
       </div>
+      {/* <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="max-w-3xl">
+          <span className="text-[0.6875rem] font-extrabold uppercase tracking-[0.18em] text-[#17164f]/60">
+            Built for serious workloads
+          </span>
+
+          <h2 className="mt-4 font-[Raleway] text-[clamp(2.25rem,1.55rem_+_2.8vw,3.5rem)] font-extrabold leading-[1.08] tracking-[-0.015em] text-inherit">
+            Built for Businesses That Can't Afford{" "}
+            <span className="text-[#21bc32]">Downtime.</span>
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-[clamp(1.0625rem,1rem_+_0.4vw,1.25rem)] leading-[1.6] text-[#17164f]/70">
+            Many businesses in Pakistan are moving to the cloud as per
+            Pakistan's Cloud First Policy. However, not all providers deliver
+            the same performance. We don't offer servers; we give you a
+            ready-to-use secure environment. Everything functions well without
+            the need for frequent repairs.
+          </p>
+        </div>
+
+        <div className="mt-12 border-t border-[#e8ecf1] pt-10">
+          <span className="text-[0.6875rem] font-extrabold uppercase tracking-[0.18em] text-[#17164f]/60">
+            Who it's for
+          </span>
+
+          <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {items.map((it) => (
+              <div key={it} className="flex items-center gap-3">
+                <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#21bc32]/10 text-[#21bc32]">
+                  <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                </span>
+
+                <p className="font-[Raleway] text-sm font-bold leading-tight text-[#17164f]">
+                  {it}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div> */}
     </section>
   );
 }
@@ -294,7 +334,7 @@ function WhyUs() {
               <Wallet className="h-5 w-5" />
             </div>
             <div className="mt-auto pt-10">
-              <h3 className="font-display text-h3 font-extrabold leading-snug text-white">
+              <h3 className="font-display text-h3 font-extrabold leading-snug text-white!">
                 Transparent Pricing (PKR)
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-white">
@@ -346,7 +386,7 @@ function Performance() {
           <div className="card-surface lg:col-span-3 lg:row-span-2 flex flex-col justify-between p-6 sm:p-8 lg:p-10">
             <div>
               <span className={TECH_HEADING}>Performance</span>
-              <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit">
+              <h2 className="mt-4 font-display text-h2 font-extrabold! text-inherit">
                 Performance That Handles <span className="text-green">Real Traffic.</span>
               </h2>
               <p className="mt-6 text-base leading-relaxed text-navy/70">
@@ -380,7 +420,7 @@ function Performance() {
               className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent"
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
-              <div className="font-display text-3xl sm:text-4xl font-extrabold text-green!">99.9%</div>
+              <div className="font-display text-3xl sm:text-4xl font-extrabold text-green!">99.982%</div>
               <div className="mt-1 text-[10px] font-bold uppercase tracking-widest text-white/70">
                 Uptime SLA · Auto-scaled
               </div>
@@ -538,7 +578,7 @@ function Security() {
               <span className="text-eyebrow text-green">
                 Security
               </span>
-              <h2 className="mt-4 font-display text-h2 font-extrabold text-white!">
+              <h2 className="mt-4 font-display text-h2 font-extrabold! text-white!">
                 Security You Don't Have to Worry About.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-white/70">
@@ -586,7 +626,7 @@ function FrameworksAndStacks() {
     <section className="bg-white section-y">
       <div className="mx-auto max-w-3xl px-6 text-center">
         <span className={TECH_HEADING}>Ready out of the box</span>
-        <h2 className="mt-4 font-display text-h2 font-extrabold text-navy">
+        <h2 className="mt-4 font-display text-h2 font-black! text-navy">
           Pre-tuned for <span className="text-green">WordPress, E-Commerce, and Custom Apps.</span>
         </h2>
         <p className="mt-6 text-lede text-navy/70">
@@ -733,7 +773,7 @@ function CaseStudy() {
               <figcaption className="mt-4 flex items-center gap-3">
                 <span
                   aria-hidden
-                  className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-navy font-display text-xs font-extrabold text-white"
+                  className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-navy! font-display text-xs font-extrabold text-white!"
                 >
                   CH
                 </span>

@@ -21,7 +21,7 @@ type Solution = {
 const SOLUTIONS: Solution[] = [
   {
     icon: IconCloud,
-    title: "Cloud Hosting",
+    title: "Cloud Services",
     tagline: "Elastic, multi-tenant",
     desc: "Auto-scaling cloud infrastructure with Tier III redundancy for production websites and applications.",
     to: "/services/cloud",
@@ -74,9 +74,12 @@ export function SolutionsGrid({
           <span className="text-eyebrow text-green">
             {eyebrow}
           </span>
-          <h2 className="mt-4 font-display text-h2 font-extrabold! text-navy">
+          <h1 className="mt-4 font-display text-h1 font-extrabold  text-navy">
             {heading ?? "Cloud, VPS, and Dedicated — one Pakistan-based provider"}
-          </h2>
+          </h1>
+          {/* <h2 className="mt-4 font-display text-h2 font-extrabold! text-navy">
+            {heading ?? "Cloud, VPS, and Dedicated — one Pakistan-based provider"}
+          </h2> */}
           {subheading && (
             <p className="mt-4 text-base leading-relaxed text-navy/70">{subheading}</p>
           )}
@@ -92,9 +95,9 @@ export function SolutionsGrid({
                 <p className="mt-5 text-eyebrow text-green">
                   {s.tagline}
                 </p>
-                <h2 className="mt-2 font-display text-h3 font-extrabold text-navy">
+                <h3 className="mt-2 font-display text-h3 font-extrabold text-navy">
                   {s.title}
-                </h2>
+                </h3>
                 <p className="mt-3 text-sm leading-relaxed text-navy/70">{s.desc}</p>
                 <span className="mt-6 inline-flex items-center gap-2 font-display text-sm font-bold text-navy transition-colors group-hover:text-green">
                   Explore

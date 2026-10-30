@@ -47,7 +47,7 @@
   --dur-base: 220ms;
   --dur-slow: 400ms;
 
-  --font-cloud-display: "Raleway", "Raleway Fallback", ui-sans-serif, system-ui, sans-serif;
+  /* --font-cloud-display: "Raleway", "Raleway Fallback", ui-sans-serif, system-ui, sans-serif; */
   --font-cloud-sans: "Lato", "Lato Fallback", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -133,16 +133,19 @@
     font-weight: 900;
   }
   .text-h2 {
-    font-size: var(--text-h2);
+    /* font-size: var(--text-h2); */
+    font-size: clamp(36px, 5vw, 56px);
+
     line-height: 1.08;
     letter-spacing: -0.015em;
     font-weight: 800;
   }
   .text-h3 {
-    font-size: var(--text-h3);
+    /* font-size: var(--text-h3); */
+    font-size: 27px;
     line-height: 1.2;
     letter-spacing: -0.01em;
-    font-weight: 700;
+    /* font-weight: 700; */
   }
   .text-lede {
     font-size: var(--text-lede);

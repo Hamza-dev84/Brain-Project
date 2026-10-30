@@ -430,7 +430,7 @@ export function SiteFinalCTA({
   const { open: openContact } = useContactDialog();
   return (
     <section id="cta" className="bg-surface section-y">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-16">
         <div className="relative overflow-hidden border border-white/10 bg-navy px-8 py-20 text-center sm:px-16">
           <div className="relative">
             <h2 className="font-display text-hero font-extrabold tracking-tight text-white!">

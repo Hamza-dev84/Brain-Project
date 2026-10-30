@@ -318,7 +318,7 @@ function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-14 pb-16 lg:pt-20 lg:pb-20">
-        <div className="animate-fade-up space-y-7 max-w-3xl">
+        <div className="animate-fade-up space-y-7 max-w-[720px]">
           <h1 className="font-display text-hero font-extrabold leading-[1.05] tracking-[-0.02em] text-navy">
             Dedicated Server Hosting in Pakistan Built for High-Performance Workloads
           </h1>
@@ -455,7 +455,7 @@ function Plans() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mb-12 max-w-3xl">
           <span className={TECH_HEADING}>Configure</span>
-          <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit">
+          <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit max-w-2xl">
             Build Your Dedicated Server.{" "}
             <span className="text-green">Custom Quote in 24 Hours.</span>
           </h2>
@@ -605,7 +605,7 @@ function Managed() {
                   <IconFirewall className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="font-display text-sm font-extrabold">Fully Managed</div>
+                  <div className="font-display text-sm font-extrabold text-white!">Fully Managed</div>
                   <div className="text-xs text-white/60">Hands-off infrastructure</div>
                 </div>
               </div>
@@ -709,7 +709,7 @@ function Infrastructure() {
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="mb-12 max-w-3xl">
           <span className="text-eyebrow text-green">Enterprise-grade</span>
-          <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit">
+          <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit!">
             Enterprise-Grade <span className="text-green">Infrastructure.</span>
           </h2>
           <p className="mt-5 text-base leading-relaxed text-white/75">

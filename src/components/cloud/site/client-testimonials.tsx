@@ -175,7 +175,7 @@ export function ClientTestimonials({
     <Section tone={tone} className={className}>
       <div className="mb-12 max-w-3xl sm:mb-14">
         <span className="text-eyebrow text-navy/60">{eyebrow}</span>
-        <h2 className="mt-4 font-display text-h2 font-extrabold tracking-[-0.015em] text-navy">
+        <h2 className="mt-4 font-display text-h2 font-black tracking-[-0.015em] text-navy">
           {title}
         </h2>
         {lede && (

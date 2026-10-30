@@ -12,6 +12,7 @@ type Props = {
   items: LogoItem[];
   /** Heading above the row. */
   heading?: ReactNode;
+  headingClassName?: string;
   /** Visual size of logos (px height). Default 32. */
   size?: number;
   className?: string;
@@ -19,14 +20,22 @@ type Props = {
   dark?: boolean;
 };
 
-export function LogoStrip({ items, heading, size = 32, className = "", dark = false }: Props) {
+export function LogoStrip({
+  items,
+  heading,
+  headingClassName,
+  size = 32,
+  className = "",
+  dark = false,
+}: Props) {
   return (
     <div className={className}>
       {heading && (
         <p
           className={
+            headingClassName ??
             "mb-4 text-center font-display text-xs font-bold uppercase tracking-[0.16em] " +
-            (dark ? "text-white/60" : "text-navy/60")
+              (dark ? "text-white/60" : "text-navy/60")
           }
         >
           {heading}

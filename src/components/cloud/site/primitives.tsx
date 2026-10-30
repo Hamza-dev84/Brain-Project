@@ -148,7 +148,7 @@ export function Eyebrow({
   const TONE: Record<string, string> = {
     navy: "text-navy/60",
     green:
-      "inline-flex items-center gap-2 rounded-full border border-green/30 bg-white px-4 py-1.5 text-green shadow-sm",
+      "inline-flex items-center gap-2 rounded-full border border-green/30 bg-white px-4 py-1.5 text-green shadow-sm text-xs tracking-widest font-black",
     "on-navy":
       "inline-flex items-center gap-2 rounded-full border border-green/40 bg-green/10 px-4 py-1.5 text-green",
   };
@@ -189,14 +189,14 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <div className="mb-4">
+        <div className="mb-4 font-extrabold text-xs tracking-widest">
           <Eyebrow tone={isDark ? "on-navy" : "navy"}>{eyebrow}</Eyebrow>
         </div>
       )}
       <h2
         className={cn(
-          "text-h2! font-display font-extrabold!",
-          isDark ? "text-slate-50!" : "text-navy",
+          "text-h1! font-display font-extrabold! max-w-3xl",
+          isDark ? "text-slate-50! text-h1" : "text-navy ",
         )}
       >
         {title}
@@ -204,7 +204,7 @@ export function SectionHeading({
       {lede && (
         <p
           className={cn(
-            "mt-5 text-lede",
+            "mt-5 text-lede  text-xl leading-relaxed",
             isDark ? "text-white/75" : "text-navy/70",
           )}
         >
@@ -507,7 +507,7 @@ export function FAQ({
         >
           <AccordionTrigger
             className={cn(
-              "py-5 text-left font-display text-base font-bold text-navy hover:no-underline",
+              "py-5 text-left font-display text-base font-extrabold text-navy hover:no-underline",
               FOCUS_RING,
             )}
           >

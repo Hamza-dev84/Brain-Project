@@ -342,9 +342,9 @@ function Hero() {
       />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 pt-10 pb-10 lg:pt-14 lg:pb-12">
-        <div className="animate-fade-up space-y-7 max-w-3xl">
+        <div className="animate-fade-up space-y-7 max-w-2xl">
           <h1 className="font-display text-hero font-extrabold leading-[1.05] tracking-[-0.02em] text-navy">
-            High-Performance VPS Hosting in Pakistan.
+            High-Performance VPS Server Hosting in Pakistan.
           </h1>
           <p className="max-w-xl text-lede text-navy/75">
             BrainCLOUD gives your website or app a virtual server. It's located in our Tier III data center in Pakistan. It’s not part of an overcrowded shared server. Each VPS hosting plan gives you dedicated vCPU, RAM, and NVMe SSD. This means your performance stays steady, whether you have 10 visitors or 10,000. No resource sharing. No noisy-neighbour slowdowns. No hidden charges. PKR pricing and a server ready in under an hour.
@@ -371,7 +371,7 @@ function Hero() {
               { k: "Tier III", v: "Data Center" },
             ].map((s) => (
               <div key={s.k} className="bg-white/90 backdrop-blur px-4 py-5 text-center">
-                <div className="font-display text-2xl font-extrabold text-navy">{s.k}</div>
+                <div className="font-display text-2xl font-extrabold! text-navy">{s.k}</div>
                 <div className="mt-1 text-[10px] font-bold uppercase tracking-[0.16em] text-navy/50">{s.v}</div>
               </div>
             ))}
@@ -410,7 +410,7 @@ function Plans() {
         <div className="mb-8 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <span className={TECH_HEADING}>Plans & pricing</span>
-            <h2 className="mt-4 font-display text-h2 font-extrabold text-inherit">
+            <h2 className="mt-4 font-display text-h1 font-extrabold text-inherit">
               Our VPS Hosting Plans & Pricing in Pakistan
             </h2>
             <p className="mt-5 text-base leading-relaxed text-navy/70">
@@ -544,7 +544,7 @@ function LinuxVsWindows() {
     <Section tone="surface" id="os" className="!py-10 md:!py-14">
       <div className="mb-12">
         <SectionHeading
-          eyebrow="Operating systems"
+          eyebrow="OPERATING SYSTEMS"
           title={<>Linux VPS or Windows VPS — pick the environment that <span className="text-green">fits your stack</span>.</>}
           lede="Choosing Linux VPS hosting or Windows VPS hosting in Pakistan depends on your needs, not the cost. BrainCLOUD prices the two operating systems the same. So, your choice depends on your application, not your budget. Windows VPS plans come with genuine Microsoft Server licensing (2019 or 2022) included for free. Many budget VPS providers in Pakistan charge extra for this."
         />
@@ -637,8 +637,8 @@ function WhatMakesDifferent() {
     <Section tone="white" id="why" className="!py-10 md:!py-14">
       <div className="mb-12">
         <SectionHeading
-          eyebrow="What makes us different"
-          title={<>What makes BrainCLOUD different from <span className="text-green">other VPS providers</span> in Pakistan.</>}
+          eyebrow="WHAT MAKES US DIFFERENT"
+          title={<>What makes BrainCLOUD different from <span className="text-green">other VPS providers</span> in Pakistan?</>}
           lede="Search VPS hosting Pakistan, and you'll find dozens of providers reselling the same international template plans with a PKR price tag stapled on. BrainCLOUD is engineered from the ground up for Pakistani businesses — infrastructure, billing, and support built around what local developers, agencies, and SMBs actually need, not a generic global VPS product localized after the fact."
         />
       </div>
@@ -711,7 +711,7 @@ function CompareTiers() {
     <Section tone="white" id="compare" className="!py-10 md:!py-14">
       <div className="mb-10">
         <SectionHeading
-          eyebrow="Tiers compared"
+          eyebrow="SHARED HOSTING vs VPS vs DEDICATED"
           title={<>Shared Hosting vs VPS Hosting vs <span className="text-green">Dedicated Server</span>.</>}
           lede="If shared hosting can't handle your traffic, and a dedicated server seems too much, try VPS hosting. It's often the best choice. A VPS offers growing businesses in Pakistan the stability of a dedicated server, but at a lower cost. The table below shows how each tier compares."
         />
@@ -749,7 +749,7 @@ function HowToOrder() {
     <Section tone="surface" id="how-to-order" className="!py-10 md:!py-14">
       <div className="mb-12">
         <SectionHeading
-          eyebrow="How to order"
+          eyebrow="HOW TO ORDER"
           title={<>Go live on your BrainCLOUD VPS in <span className="text-green">under 1 hour</span>.</>}
           lede="Getting from order to live server is a straightforward process."
         />
@@ -760,7 +760,7 @@ function HowToOrder() {
           return (
             <li key={s.title} className="relative card-surface p-6 sm:p-7">
               <div className="flex items-center gap-3">
-                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-navy font-display text-sm font-extrabold text-white">
+                <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-navy! font-display text-sm font-extrabold text-white!">
                   {i + 1}
                 </span>
                 <div className="flex h-9 w-9 flex-none items-center justify-center rounded-[var(--radius-card)] bg-green/10 text-green">
@@ -896,7 +896,7 @@ function FloatingPlansCTA() {
       href="#plans"
       aria-label="Jump to VPS plans and pricing"
       className={
-        "fixed bottom-8 right-8 z-40 hidden items-center gap-2 rounded-full bg-green px-5 py-3 font-display text-xs font-extrabold uppercase tracking-[0.14em] text-white shadow-cta transition-all duration-300 hover:-translate-y-0.5 md:inline-flex " +
+        "fixed bottom-8 right-8 z-40 hidden items-center gap-2 rounded-full bg-green! px-5 py-3 font-display text-xs! font-extrabold! uppercase! tracking-[0.14em]! text-white! shadow-cta transition-all duration-300 hover:-translate-y-0.5 md:inline-flex " +
         (show ? "opacity-100 translate-y-0" : "pointer-events-none opacity-0 translate-y-3")
       }
     >

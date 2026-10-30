@@ -218,11 +218,11 @@ const PLANS: PricingTier[] = [
 ];
 
 const WHY = [
-  { icon: BadgeCheck, t: "99% Uptime SLA", d: "Not a marketing claim. A contractual guarantee with financial backing." },
+  { icon: BadgeCheck, t: "99% Uptime SLA", d: "Backed by a written contract with financial penalties if we miss it — not a number pulled from a marketing slide." },
   { icon: Network, t: "Carrier-Neutral Facility", d: "Freedom to choose your ISP. No vendor lock-in on bandwidth." },
   { icon: Banknote, t: "Transparent Pricing", d: "You know exactly what you're paying before you sign." },
   { icon: TrendingUp, t: "Scalable from Day One", d: "Start with 1U and grow to a private suite — all under one roof, one relationship." },
-  { icon: ShieldCheck, t: "Compliance-Ready", d: "PTA CTDISR Audited, ISO 27001 aligned, PCI-DSS capable environments." },
+  { icon: ShieldCheck, t: "Compliance-Ready", d: "PTA CTDISR audited, ISO 27001 aligned, and PCI-DSS capable — the paperwork banks, fintechs, and healthcare clients actually ask for before signing." },
   { icon: Headphones, t: "Real 24/7 Technical Support", d: "Engineers who pick up the phone, not just a chatbot ticket system." },
 ];
 
@@ -313,9 +313,12 @@ function ColocationPage() {
         <Section tone="surface" id="overview">
           <div className="mb-14">
             <SectionHeading
-              eyebrow="What's included"
+              eyebrow="WHAT'S INCLUDED"
               title="Our Colocation Services"
             />
+            <p className="mt-7 max-w-2xl text-lede text-navy/70">
+              Your IT infrastructure needs more than a shared shelf in a crowded rack. BrainCLOUD offers colocation services in Pakistan. You can rent space in a Tier III, PTA-licensed data center in Lahore. It features redundant power, carrier-neutral connectivity, and 24/7 physical security. This way, you fully control your hardware. You avoid the high costs and long waits of building your own data center.
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {INCLUDED.map((f) => (
@@ -363,9 +366,9 @@ function ColocationPage() {
             <div>
               <SectionHeading
                 tone="dark"
-                eyebrow="Cloud Colocation"
+                eyebrow="CLOUD COLOCATION"
                 title="The Best of Both Worlds"
-                lede="Modern businesses don't choose between cloud and physical infrastructure — they use both. BrainCLOUD's colocation services let you run your on-premises servers in our facility while establishing fast, private, low-latency connections to public cloud platforms."
+                lede="Modern businesses don't choose between cloud and physical infrastructure anymore — they run both. BrainCLOUD's colocation in Pakistan allows you to house your servers in our facility. You can enjoy fast, private links to public cloud platforms like AWS, Azure, and Google Cloud. More Pakistani businesses are shifting to a hybrid model. This change comes as data sovereignty rules get stricter and pure cloud costs rise."
               />
               <p className="mt-4 text-base leading-relaxed text-white/60">
                 This hybrid approach is the new standard for enterprises that
@@ -402,7 +405,7 @@ function ColocationPage() {
           <div className="grid gap-x-12 gap-y-10 lg:grid-cols-12">
             <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
               <SectionHeading
-                eyebrow="Use Cases"
+                eyebrow="USE CASES"
                 title="Where Cloud Colocation Fits Best"
                 lede="From hybrid cloud to AI workloads, our colocation services support the most demanding modern enterprise scenarios."
               />
@@ -430,9 +433,9 @@ function ColocationPage() {
         <Section tone="surface" id="pricing" className="!pt-[var(--section-y-tight)]">
           <div className="mb-14">
             <SectionHeading
-              eyebrow="Pricing"
+              eyebrow="PRICING"
               title="Request Your Colo Space."
-              lede="Custom Colocation plans — From a Single 1U Server to a Full Private Cage. Every plan is tailored to your space, power, and bandwidth needs."
+              lede="Colocation pricing varies based on your rack space, power draw, and bandwidth needs. That’s why each BrainCLOUD plan below has a specific quote, not a generic price. Tell us your requirements, and we'll send a written quote within 24 hours, with no obligation."
             />
           </div>
 
@@ -466,9 +469,9 @@ function ColocationPage() {
         <Section tone="white" id="why" className="!pb-[var(--section-y-tight)]">
           <div className="mb-14">
             <SectionHeading
-              eyebrow="Why BrainCLOUD"
+              eyebrow="WHAT SETS US APART"
               title="What Sets Us Apart"
-              lede="Many companies crowd the colocation market. Here's why businesses choose BrainCLOUD over generic providers."
+              lede="The colocation market in Pakistan is crowded. It features telecom operator data centers and generic resellers. BrainCLOUD stands out from a shared rack with another name on the door."
             />
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -505,7 +508,7 @@ function ColocationPage() {
         <Section tone="surface" id="industries" className="!pt-[var(--section-y-tight)] !pb-[var(--section-y-tight)]">
           <div className="mb-14">
             <SectionHeading
-              eyebrow="Industries"
+              eyebrow="INDUSTRIES"
               title="Industries We Serve"
               lede="BrainCLOUD colocation and cloud colocation services support businesses across:"
             />
@@ -563,10 +566,8 @@ function ColocationPage() {
                   <span className="text-green">To Us</span>?
                 </h2>
                 <p className="mx-auto mt-6 max-w-2xl text-lede text-white/75">
-                  Stop overpaying for cloud resources you don't fully control.
-                  Stop worrying about the reliability of your current setup.
-                  BrainCLOUD colocation gives you enterprise infrastructure
-                  without enterprise complexity.
+                  Stop overpaying for cloud resources you can’t fully control. Also, stop worrying about your current setup's reliability. BrainCLOUD colocation offers enterprise-level infrastructure. It's in a Tier III, PTA-licensed facility in Pakistan. You get all this without the usual complexity.
+
                 </p>
                 <p className="mx-auto mt-4 max-w-2xl text-eyebrow text-green">
                   Get a Custom Colocation Quote — No Commitment, No Pressure
