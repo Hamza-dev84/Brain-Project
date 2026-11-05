@@ -149,10 +149,10 @@ const Support = () => {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
 
           <div className="container mx-auto px-5 max-w-4xl text-center relative z-10">
-            <h1 className="font-raleway text-4xl md:text-5xl lg:text-6xl font-bold text-brand-dark mb-6 animate-fade-in">
+            <h1 className="font-lato text-4xl md:text-5xl lg:text-6xl font-bold text-brand-dark mb-6 animate-fade-in tracking-wider">
               How Can We Help You?
             </h1>
-            <p className="font-lato text-lg md:text-xl text-neutral-medium mb-4 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <p className="font-lato text-lg md:text-xl text-neutral-medium mb-4 max-w-3xl mx-auto animate-fade-in tracking-wide" style={{ animationDelay: "0.1s" }}>
               Our support team is here to assist you with any questions or
               challenges you may encounter. Find quick answers below or get in
               touch directly for personalized assistance.
@@ -175,7 +175,7 @@ const Support = () => {
         {/* Quick Support Links Section */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-5 max-w-7xl">
-            <h2 className="font-raleway text-3xl md:text-4xl font-bold text-brand-dark text-center mb-4">
+            <h2 className="font-lato text-3xl md:text-5xl font-bold text-brand-dark text-center tracking-wider mb-4">
               Get Support Quickly
             </h2>
             <p className="font-lato text-neutral-medium text-center mb-12 max-w-2xl mx-auto">
@@ -195,7 +195,7 @@ const Support = () => {
                         <Icon className="w-6 h-6 text-brand-primary" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-raleway text-xl font-bold text-brand-dark mb-2">
+                        <h3 className="font-lato text-xl font-bold text-brand-dark mb-2 tracking-wider">
                           {card.title}
                         </h3>
                         <p className="font-lato text-neutral-medium mb-4">
@@ -225,7 +225,7 @@ const Support = () => {
           <div className="max-w-4xl mx-auto">
             {/* <ScrollReveal> */}
             <div className="text-center mb-12">
-              <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+              <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-4">
                 Common Questions
               </div>
               <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
@@ -245,7 +245,7 @@ const Support = () => {
                   value={`item-${index}`}
                   className="bg-neutral-50 rounded-xl border border-neutral-border px-6 data-[state=open]:border-brand-secondary transition-colors"
                 >
-                  <AccordionTrigger className="font-raleway font-bold text-brand-dark text-left hover:no-underline py-5">
+                  <AccordionTrigger className="font-lato font-bold text-brand-dark text-left hover:no-underline py-5 tracking-wider">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="font-lato text-neutral-medium leading-relaxed pb-5">

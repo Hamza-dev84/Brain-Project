@@ -175,13 +175,13 @@ const CaseStudies: React.FC = () => {
               Portfolio
             </div>
             <h1
-              className="font-raleway font-bold text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6 animate-fade-in"
+              className="font-lato font-bold text-4xl md:text-5xl lg:text-6xl text-brand-dark mb-6 animate-fade-in tracking-wide"
               style={{ animationDelay: "0.1s" }}
             >
               What We've Delivered
             </h1>
             <p
-              className="font-lato text-lg md:text-xl text-neutral-medium max-w-3xl mx-auto animate-fade-in"
+              className="font-lato text-lg md:text-xl text-neutral-medium max-w-3xl mx-auto animate-fade-in tracking-wide"
               style={{ animationDelay: "0.2s" }}
             >
               Take a look at the projects we've brought to life, showcasing our dedication to

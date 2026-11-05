@@ -64,7 +64,7 @@ const ContactUs: React.FC = () => {
 
         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-primary/10 mb-4 mx-auto">{icon}</div>
 
-        <h3 className="font-raleway font-bold text-brand-dark text-lg mb-2">{title}</h3>
+        <h3 className="font-lato font-bold text-brand-dark text-lg mb-2">{title}</h3>
 
         {/* Render info lines */}
         {infoLines.map((line, idx) =>

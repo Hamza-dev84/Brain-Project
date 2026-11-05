@@ -48,13 +48,13 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="font-raleway text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+                <h1 className="font-lato text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 tracking-wider">
                   {title}
                 </h1>
                 <p className="font-lato text-xl text-muted-foreground mb-6">
                   {subtitle}
                 </p>
-                <p className="font-lato text-base text-foreground/80 leading-relaxed">
+                <p className="font-lato text-base text-foreground/80 leading-relaxed tracking-wide">
                   {description}
                 </p>
               </div>
@@ -74,7 +74,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
         {/* Technologies Section */}
         <section className="py-12 px-6 bg-muted/30">
           <div className="max-w-7xl mx-auto">
-            <h3 className="font-raleway text-lg font-semibold text-foreground mb-4">
+            <h3 className="font-raleway text-lg font-bold text-foreground mb-4">
               Technologies Used
             </h3>
             <div className="flex flex-wrap gap-3">
@@ -110,7 +110,7 @@ export const CaseStudyLayout: React.FC<CaseStudyLayoutProps> = ({
             <h2 className="font-raleway text-3xl font-bold text-foreground mb-6">
               Our Solution
             </h2>
-            <p className="font-lato text-lg text-foreground/80 leading-relaxed whitespace-pre-line">
+            <p className="font-lato text-lg text-foreground/80 leading-relaxed whitespace-pre-line tracking-wide">
               {solution}
             </p>
           </div>
