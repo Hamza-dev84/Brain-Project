@@ -67,7 +67,7 @@ export const buildTelephonyJsonLd = ({
         "@type": "ListItem",
         position: 2,
         name: "Corporate Telephony",
-        item: `${SITE}/services/internet/voip-providers-pakistan`,
+        item: `${SITE}/services/internet/voip-services`,
       },
       { "@type": "ListItem", position: 3, name: breadcrumbLabel, item: `${SITE}${path}` },
     ],

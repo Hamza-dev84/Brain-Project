@@ -40,11 +40,11 @@ const Header = () => {
     {
       title: 'Corporate Telephony',
       items: [
-        { label: 'SIP Trunk', href: '/services/internet/sip-trunk-providers-pakistan' },
-        { label: 'IVR Services', href: '/services/internet/ivr-services-pakistan' },
-        { label: 'VoIP', href: '/services/internet/voip-providers-pakistan' },
-        { label: 'Virtual PBX', href: '/services/internet/virtual-pbx-pakistan' },
-        { label: 'IP PBX', href: '/services/internet/ip-pbx-pakistan' },
+        { label: 'SIP Trunk', href: '/services/internet/sip-trunk' },
+        { label: 'IVR Services', href: '/services/internet/ivr-services' },
+        { label: 'VoIP', href: '/services/internet/voip-services' },
+        { label: 'Virtual PBX', href: '/services/internet/virtual-pbx' },
+        { label: 'IP PBX', href: '/services/internet/ip-pbx' },
         { label: 'PBX Price & Systems', href: '/services/internet/pbx-price-in-pakistan' },
       ],
     },

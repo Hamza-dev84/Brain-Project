@@ -16,7 +16,7 @@ const ERPSoftwareCTA = () => {
         />
 
         <div className="relative text-center">
-          <h2 className="font-raleway text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+          <h2 className="font-lato text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-wide">
             Ready to Get Started?
           </h2>
 

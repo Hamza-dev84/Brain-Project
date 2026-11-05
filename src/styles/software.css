@@ -12,9 +12,12 @@
 @layer base {
   .brand-software {
     /* Brand colors — Navy & Golden Orange */
-    --brand-dark: 249 63% 20%; /* #17164F */
-    --brand-primary: 249 60% 30%; /* #252470 */
-    --brand-secondary: 34 94% 65%; /* #F9B050 */
+    --brand-dark: 249 63% 20%;
+    /* #17164F */
+    --brand-primary: 249 60% 30%;
+    /* #252470 */
+    --brand-secondary: 34 94% 65%;
+    /* #F9B050 */
     --brand-light: 249 20% 97%;
 
     /* Neutrals */
@@ -66,31 +69,98 @@
     -webkit-text-fill-color: currentColor;
   }
 
-  :where(.brand-software) :where(h1) { font-size: 56px; line-height: 1.2; font-weight: 700; }
-  :where(.brand-software) :where(h2) { font-size: 48px; line-height: 1.25; font-weight: 700; }
-  :where(.brand-software) :where(h3) { font-size: 36px; line-height: 1.3; font-weight: 700; }
-  :where(.brand-software) :where(h4) { font-size: 28px; line-height: 1.35; font-weight: 700; }
-  :where(.brand-software) :where(h5) { font-size: 24px; line-height: 1.4; font-weight: 600; }
-  :where(.brand-software) :where(h6) { font-size: 20px; line-height: 1.4; font-weight: 600; }
+  :where(.brand-software) :where(h1) {
+    font-size: 56px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  :where(.brand-software) :where(h2) {
+    font-size: 48px;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  :where(.brand-software) :where(h3) {
+    font-size: 36px;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  :where(.brand-software) :where(h4) {
+    font-size: 28px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  :where(.brand-software) :where(h5) {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  :where(.brand-software) :where(h6) {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
 
   @media (max-width: 767px) {
-    :where(.brand-software) :where(h1) { font-size: 36px; }
-    :where(.brand-software) :where(h2) { font-size: 32px; }
-    :where(.brand-software) :where(h3) { font-size: 28px; }
-    :where(.brand-software) :where(h4) { font-size: 24px; }
-    :where(.brand-software) :where(h5) { font-size: 20px; }
-    :where(.brand-software) :where(h6) { font-size: 18px; }
+    :where(.brand-software) :where(h1) {
+      font-size: 36px;
+    }
+
+    :where(.brand-software) :where(h2) {
+      font-size: 32px;
+    }
+
+    :where(.brand-software) :where(h3) {
+      font-size: 28px;
+    }
+
+    :where(.brand-software) :where(h4) {
+      font-size: 24px;
+    }
+
+    :where(.brand-software) :where(h5) {
+      font-size: 20px;
+    }
+
+    :where(.brand-software) :where(h6) {
+      font-size: 18px;
+    }
   }
+
+  /* :where(.brand-software) :where(p) {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    color: hsl(var(--neutral-400));
+    line-height: 1.625;
+    font-size: 14px;
+    line-height: 1.5;
+  } */
 
   :where(.brand-software) :where(p) {
     font-family: "Lato", "Lato Fallback", sans-serif;
+    /* color: hsl(var(--neutral-400)); */
     color: hsl(var(--neutral-900));
     line-height: 1.625;
   }
 
-  :where(.brand-software) :where(a) { font-family: "Lato", "Lato Fallback", sans-serif; transition: color 0.2s ease; }
-  :where(.brand-software) :where(strong, b) { font-family: "Lato", "Lato Fallback", sans-serif; font-weight: 700; color: hsl(var(--brand-dark)); }
-  :where(.brand-software) :where(em, i) { font-family: "Lato", "Lato Fallback", sans-serif; font-style: italic; }
+  :where(.brand-software) :where(a) {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    transition: color 0.2s ease;
+  }
+
+  :where(.brand-software) :where(strong, b) {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    font-weight: 700;
+    color: hsl(var(--brand-dark));
+  }
+
+  :where(.brand-software) :where(em, i) {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    font-style: italic;
+  }
 
   /* ---------- Component typography classes ---------- */
   .brand-software .display-heading {
@@ -101,13 +171,17 @@
     letter-spacing: -0.02em;
     color: hsl(var(--brand-dark));
   }
+
   @media (max-width: 767px) {
-    .brand-software .display-heading { font-size: 48px; line-height: 1.15; }
+    .brand-software .display-heading {
+      font-size: 48px;
+      line-height: 1.15;
+    }
   }
 
   .brand-software .lead-text {
     font-family: "Lato", "Lato Fallback", sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.7;
     color: hsl(var(--neutral-900));
     max-width: 48rem;
@@ -121,8 +195,11 @@
     color: hsl(var(--brand-dark));
     margin-bottom: 1rem;
   }
+
   @media (max-width: 767px) {
-    .brand-software .section-heading { font-size: 32px; }
+    .brand-software .section-heading {
+      font-size: 32px;
+    }
   }
 
   .brand-software .section-subheading {
@@ -149,7 +226,11 @@
     color: hsl(var(--neutral-medium));
   }
 
-  .brand-software .btn-text { font-family: "Lato", "Lato Fallback", sans-serif; font-weight: 600; font-size: 16px; }
+  .brand-software .btn-text {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
 
   .brand-software .nav-link {
     font-family: "Lato", "Lato Fallback", sans-serif;
@@ -158,10 +239,24 @@
     color: hsl(var(--brand-dark));
     transition: color 0.2s ease;
   }
-  .brand-software .nav-link:hover { color: hsl(var(--brand-primary)); }
 
-  .brand-software .label-text { font-family: "Lato", "Lato Fallback", sans-serif; font-weight: 600; font-size: 14px; color: hsl(var(--neutral-900)); }
-  .brand-software .caption-text { font-family: "Lato", "Lato Fallback", sans-serif; font-size: 14px; line-height: 1.4; color: hsl(var(--neutral-medium)); }
+  .brand-software .nav-link:hover {
+    color: hsl(var(--brand-primary));
+  }
+
+  .brand-software .label-text {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: hsl(var(--neutral-900));
+  }
+
+  .brand-software .caption-text {
+    font-family: "Lato", "Lato Fallback", sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: hsl(var(--neutral-medium));
+  }
 
   .brand-software .overline-text {
     font-family: "Lato", "Lato Fallback", sans-serif;
@@ -182,46 +277,122 @@
     font-style: italic;
     color: hsl(var(--neutral-900));
   }
+
   .brand-software .quote-text {
     border-left: 4px solid hsl(var(--brand-secondary));
     padding-left: 1.5rem;
   }
 
   /* ---------- Brand-only utilities ---------- */
-  .brand-software .shadow-glow { box-shadow: 0 0 20px rgb(23 22 79 / 0.25); }
-  .brand-software .shadow-glow-orange { box-shadow: 0 0 20px rgb(249 176 80 / 0.4); }
-  .brand-software .hover\:shadow-glow:hover { box-shadow: 0 0 20px rgb(23 22 79 / 0.25); }
-  .brand-software .hover\:shadow-glow-orange:hover { box-shadow: 0 0 20px rgb(249 176 80 / 0.4); }
+  .brand-software .shadow-glow {
+    box-shadow: 0 0 20px rgb(23 22 79 / 0.25);
+  }
 
-  .brand-software .animate-fadeIn { animation: bsoft-fade-in 0.6s ease-out both; }
-  .brand-software .animate-slideUp { animation: bsoft-slide-up 0.8s ease-out both; }
-  .brand-software .animate-scaleIn { animation: bsoft-scale-in 0.5s ease-out both; }
-  .brand-software .animate-shimmer { animation: bsoft-shimmer 2s linear infinite; }
-  .brand-software .animate-ripple { animation: bsoft-ripple 0.6s ease-out; }
-  .brand-software .animate-pulse-slow { animation: bsoft-pulse-slow 3s ease-in-out infinite; }
+  .brand-software .shadow-glow-orange {
+    box-shadow: 0 0 20px rgb(249 176 80 / 0.4);
+  }
+
+  .brand-software .hover\:shadow-glow:hover {
+    box-shadow: 0 0 20px rgb(23 22 79 / 0.25);
+  }
+
+  .brand-software .hover\:shadow-glow-orange:hover {
+    box-shadow: 0 0 20px rgb(249 176 80 / 0.4);
+  }
+
+  .brand-software .animate-fadeIn {
+    animation: bsoft-fade-in 0.6s ease-out both;
+  }
+
+  .brand-software .animate-slideUp {
+    animation: bsoft-slide-up 0.8s ease-out both;
+  }
+
+  .brand-software .animate-scaleIn {
+    animation: bsoft-scale-in 0.5s ease-out both;
+  }
+
+  .brand-software .animate-shimmer {
+    animation: bsoft-shimmer 2s linear infinite;
+  }
+
+  .brand-software .animate-ripple {
+    animation: bsoft-ripple 0.6s ease-out;
+  }
+
+  .brand-software .animate-pulse-slow {
+    animation: bsoft-pulse-slow 3s ease-in-out infinite;
+  }
 }
 
 @keyframes bsoft-fade-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes bsoft-slide-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 @keyframes bsoft-scale-in {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
+
 @keyframes bsoft-shimmer {
-  0% { background-position: -1000px 0; }
-  100% { background-position: 1000px 0; }
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
 }
+
 @keyframes bsoft-ripple {
-  0% { width: 0; height: 0; opacity: 0.5; }
-  100% { width: 500px; height: 500px; opacity: 0; }
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+  }
 }
+
 @keyframes bsoft-pulse-slow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }

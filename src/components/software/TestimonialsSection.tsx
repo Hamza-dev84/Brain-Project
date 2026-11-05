@@ -50,10 +50,10 @@ const TestimonialsSection: React.FC = () => {
     <section className="relative w-full mt-[80px] px-[60px] py-24 max-md:mt-10 max-md:px-5 gradient-subtle">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal animationType="fade-up" className="text-center mb-16">
-          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-4">
             Testimonials
           </div>
-          <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+          <h2 className="font-lato tracking-wide text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
             What Our{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
               Clients Say
@@ -91,8 +91,8 @@ const TestimonialsSection: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="card-title mb-1">{testimonials[currentIndex].author}</h3>
-                  <p className="font-lato text-sm text-neutral-400 mb-2">{testimonials[currentIndex].company}</p>
+                  <h3 className=" lead-text mb-1">{testimonials[currentIndex].author}</h3>
+                  <p className="font-lato text-sm text-neutral-500 mb-2">{testimonials[currentIndex].company}</p>
                   <div className="flex gap-1">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-brand-secondary text-brand-secondary" />

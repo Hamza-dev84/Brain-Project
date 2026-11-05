@@ -74,10 +74,10 @@ export const Services: React.FC<ServicesProps> = ({ onOpenPlanner }) => {
     >
       {/* Section Header */}
       <div className="max-w-4xl mx-auto mb-16 text-center space-y-4">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide">
+        <div className="inline-block tracking-wider bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase">
           Our Services
         </div>
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+        <h2 className="font-lato  text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark tracking-wider">
           End-to-End
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">

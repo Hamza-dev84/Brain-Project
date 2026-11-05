@@ -50,7 +50,7 @@ const OffshoreSection: React.FC = () => {
         <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
           Why Choose Us
         </div>
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+        <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
           Why We Are The Leading
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">Software Development Company In Pakistan</span>

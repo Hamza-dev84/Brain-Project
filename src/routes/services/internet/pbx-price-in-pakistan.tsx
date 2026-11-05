@@ -69,7 +69,7 @@ const systemTypes = [
     cost: "Capital purchase + annual maintenance",
     body: "Hardware and extension licences bought once, installed in your rack. Recordings and call data stay in your building, and internal calling survives an internet outage.",
     verdict: "Best five-year cost at scale, and mandatory where data must stay on site.",
-    link: "/services/internet/ip-pbx-pakistan",
+    link: "/services/internet/ip-pbx",
   },
   {
     Icon: Cloud,
@@ -78,7 +78,7 @@ const systemTypes = [
     cost: "Monthly per extension, no capital",
     body: "The system runs in our data centre. No hardware, no maintenance window, extensions added or dropped each month, and staff answer the office number on mobile.",
     verdict: "Lowest entry cost and the fastest to deploy — usually live within a week.",
-    link: "/services/internet/virtual-pbx-pakistan",
+    link: "/services/internet/virtual-pbx",
   },
 ];
 

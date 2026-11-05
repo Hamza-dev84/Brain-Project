@@ -161,7 +161,7 @@ function BusinessInternet() {
                 <p className="font-dm text-[hsl(var(--bn-ink-soft))] text-lg md:text-xl mt-6 max-w-2xl mx-auto">
                   Guaranteed bandwidth. Symmetrical speeds. 99.9% uptime SLA. Internet that doesn't slow down when your business needs it most.
                   Pair it with our{" "}
-                  <Link to="/services/internet/voip-providers-pakistan" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
+                  <Link to="/services/internet/voip-services" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
                     business VoIP services
                   </Link>{" "}
                   for voice and data on one bill.

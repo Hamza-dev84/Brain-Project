@@ -35,13 +35,13 @@ import CTABand from "@/components/internet/telephony/CTABand";
 import ImagePlaceholder from "@/components/internet/telephony/ImagePlaceholder";
 import { buildTelephonyJsonLd } from "@/components/internet/telephony/telephonySeo";
 
-const PATH = "/services/internet/ivr-services-pakistan";
+const PATH = "/services/internet/ivr-services";
 
 const title = "IVR Services in Pakistan | IVR Service Provider — BrainNET";
 const description =
   "IVR service provider in Pakistan. Multi-level auto attendant, Urdu & English prompts, skills-based routing, queue analytics and CRM integration. Live in days.";
 
-export const Route = createFileRoute("/services/internet/ivr-services-pakistan")({
+export const Route = createFileRoute("/services/internet/ivr-services")({
   head: () => ({
     meta: [
       { title },
@@ -164,7 +164,7 @@ function IVRServices() {
           <>
             Multi-level auto attendant with Urdu and English prompts, skills-based routing, queue
             analytics and CRM lookups — built on your PBX or ours, and on the same network as our{" "}
-            <Link to="/services/internet/voip-providers-pakistan" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
+            <Link to="/services/internet/voip-services" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
               VoIP services
             </Link>
             .
@@ -295,9 +295,9 @@ function IVRServices() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
             {[
-              { to: "/services/internet/sip-trunk-providers-pakistan", title: "SIP Trunk", body: "The licensed channels that carry the calls into your IVR, sized to your busy hour." },
-              { to: "/services/internet/ip-pbx-pakistan", title: "IP PBX", body: "An on-premise phone system if you want dial plans and recordings inside your own building." },
-              { to: "/services/internet/virtual-pbx-pakistan", title: "Virtual PBX", body: "A hosted phone system with the IVR built in — nothing to rack, nothing to maintain." },
+              { to: "/services/internet/sip-trunk", title: "SIP Trunk", body: "The licensed channels that carry the calls into your IVR, sized to your busy hour." },
+              { to: "/services/internet/ip-pbx", title: "IP PBX", body: "An on-premise phone system if you want dial plans and recordings inside your own building." },
+              { to: "/services/internet/virtual-pbx", title: "Virtual PBX", body: "A hosted phone system with the IVR built in — nothing to rack, nothing to maintain." },
             ].map((c) => (
               <Link key={c.to} to={c.to} className="bn-tile p-7 flex flex-col gap-3 group">
                 <h3 className="font-display font-semibold text-xl text-[hsl(var(--bn-ink))] group-hover:text-[hsl(var(--bn-violet-soft))] transition-colors">

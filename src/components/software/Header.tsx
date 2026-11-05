@@ -214,7 +214,7 @@ const Header: React.FC = () => {
         <div className="hidden lg:flex items-center gap-3 btn-text">
           <Link
             to="/services/software/contact-us"
-            className="bg-[hsl(var(--brand-secondary))] text-[hsl(var(--brand-dark))] px-6 py-3 rounded-lg hover-scale hover:shadow-[var(--shadow-glow)] transition-all flex items-center gap-2"
+            className="bg-[hsl(var(--brand-secondary))] text-[hsl(var(--brand-dark))] px-6 py-3 hover-scale hover:shadow-[var(--shadow-glow)] transition-all flex items-center gap-2 rounded-sm"
           >
             <Calendar className="w-4 h-4" />
             <span>Free Consultation</span>
@@ -223,7 +223,7 @@ const Header: React.FC = () => {
             href="https://pay.brain.net.pk"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[hsl(var(--brand-dark))] text-white px-6 py-3 rounded-lg hover-scale hover:shadow-xl transition-all flex items-center gap-2 border-2 border-[hsl(var(--brand-dark))]"
+            className="bg-[hsl(var(--brand-dark))] text-white px-6 py-3 rounded-lg hover-scale hover:shadow-xl transition-all flex items-center gap-2 border-2 border-[hsl(var(--brand-dark))] rounded-sm"
           >
             <Banknote className="w-4 h-4" />
             <span>Pay Your Bill</span>

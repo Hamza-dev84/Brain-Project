@@ -33,10 +33,10 @@ export const Pricing: React.FC = () => {
       <div className="max-w-[1600px] mx-auto">
         {/* Section Header */}
         <div className="max-w-4xl mx-auto mb-4 text-center space-y-4">
-          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide">
+          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide">
             Value Comparison
           </div>
-          <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+          <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark tracking-wide">
             Affordable Web Design Services
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
@@ -125,7 +125,7 @@ export const Pricing: React.FC = () => {
 
         {/* Value Proposition Banner */}
         <div className="mt-16 bg-gradient-to-r from-brand-primary/90 to-brand-primary rounded-3xl p-8 md:p-12 text-center shadow-2xl">
-          <h3 className="font-raleway text-white text-3xl md:text-4xl font-bold mb-4">
+          <h3 className="font-lato text-white text-3xl md:text-4xl font-bold mb-4 tracking-wider">
             Save up to 80% Without Compromising Quality
           </h3>
           <p className="font-lato text-white text-lg md:text-xl max-w-3xl mx-auto">

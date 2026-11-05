@@ -224,7 +224,7 @@ const Technologies: React.FC = () => {
   return (
     <section className="self-center flex w-full flex-col items-stretch justify-center mt-28 px-20 max-md:max-w-full max-md:mt-10 max-md:px-5 animate-fade-in-up">
       <header className="flex w-full flex-col items-stretch text-center max-md:max-w-full mb-8">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4 self-center">
+        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-bold text-sm uppercase tracking-wide mb-4 self-center">
           Technologies
         </div>
         <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">

@@ -83,15 +83,15 @@ export const Features: React.FC = () => {
   ];
 
   return (
-    <section className="flex w-full flex-col items-center mt-[80px] px-[60px] py-16 max-md:mt-10 max-md:px-5 relative overflow-hidden gradient-subtle">
+    <section className="flex w-full flex-col items-center mt-[80px] px-[60px] py-5 max-md:mt-10 max-md:px-5 relative overflow-hidden gradient-subtle">
       <Sparkles className="absolute top-10 right-10 w-8 h-8 text-brand-secondary/20 animate-pulse-slow" />
       <Zap className="absolute bottom-20 left-10 w-10 h-10 text-brand-primary/20 animate-float" />
 
-      <div className="text-center mb-4">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+      <div className="text-center">
+        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide">
           Why Choose Us
         </div>
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+        <h2 className="font-lato tracking-wide text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
             Why Brain Soft for Web Design
@@ -116,7 +116,7 @@ export const Features: React.FC = () => {
                 <Icon className="w-8 h-8 text-brand-primary" />
               </div>
 
-              <h3 className="card-title text-center">
+              <h3 className="card-title text-center font-raleway">
                 {feature.title}
               </h3>
 

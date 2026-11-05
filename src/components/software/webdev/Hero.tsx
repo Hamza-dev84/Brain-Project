@@ -31,7 +31,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPlanner }) => {
             </span>
           </div>
 
-          <h1 className="font-raleway text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white">
+          <h1 className="font-lato text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white max-w-lg">
            Website Development Services in Pakistan
           </h1>
 

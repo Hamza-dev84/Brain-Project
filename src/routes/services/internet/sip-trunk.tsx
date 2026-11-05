@@ -35,13 +35,13 @@ import CTABand from "@/components/internet/telephony/CTABand";
 import ImagePlaceholder from "@/components/internet/telephony/ImagePlaceholder";
 import { buildTelephonyJsonLd } from "@/components/internet/telephony/telephonySeo";
 
-const PATH = "/services/internet/sip-trunk-providers-pakistan";
+const PATH = "/services/internet/sip-trunk";
 
 const title = "SIP Trunk Providers in Pakistan | Licensed SIP Trunking — BrainNET";
 const description =
   "Licensed SIP trunk providers in Pakistan. Replace PRI lines with elastic SIP channels, keep your numbers, works with Asterisk and 3CX. 99.9% uptime SLA.";
 
-export const Route = createFileRoute("/services/internet/sip-trunk-providers-pakistan")({
+export const Route = createFileRoute("/services/internet/sip-trunk")({
   head: () => ({
     meta: [
       { title },
@@ -270,7 +270,7 @@ function SIPTrunkPage() {
             Licensed SIP channels delivered over BrainNET's own fiber — sized to your busy hour, scalable within the
             billing cycle and tested against every major IP PBX. Part of our wider{" "}
             <Link
-              to="/services/internet/voip-providers-pakistan"
+              to="/services/internet/voip-services"
               className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4"
             >
               VoIP services in Pakistan
@@ -409,17 +409,17 @@ function SIPTrunkPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
             {[
               {
-                to: "/services/internet/ip-pbx-pakistan",
+                to: "/services/internet/ip-pbx",
                 title: "IP PBX (on-premise)",
                 body: "Hardware at your site, full control of dial plans and recordings, one-time capital cost.",
               },
               {
-                to: "/services/internet/virtual-pbx-pakistan",
+                to: "/services/internet/virtual-pbx",
                 title: "Virtual PBX (cloud)",
                 body: "No hardware, no maintenance window — extensions billed monthly and scaled instantly.",
               },
               {
-                to: "/services/internet/ivr-services-pakistan",
+                to: "/services/internet/ivr-services",
                 title: "IVR & call routing",
                 body: "Layer Urdu and English auto-attendant menus, queues and skills-based routing on top.",
               },

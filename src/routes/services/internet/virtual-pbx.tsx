@@ -39,7 +39,7 @@ const title = "Virtual PBX in Pakistan | Cloud Phone System — BrainNET";
 const description =
   "Virtual PBX in Pakistan — a cloud phone system with IVR, queues, recording and mobile extensions. No hardware, per-extension billing, live in days.";
 
-export const Route = createFileRoute("/services/internet/virtual-pbx-pakistan")({
+export const Route = createFileRoute("/services/internet/virtual-pbx")({
   head: () => ({
     meta: [
       { title },
@@ -166,7 +166,7 @@ function VirtualPBX() {
           <>
             A hosted cloud PBX with IVR, queues, recording and mobile extensions — billed per seat and
             live in days. Need the hardware on site instead? Compare it with{" "}
-            <Link to="/services/internet/ip-pbx-pakistan" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
+            <Link to="/services/internet/ip-pbx" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
               on-premise IP PBX
             </Link>
             .
@@ -274,8 +274,8 @@ function VirtualPBX() {
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
             {[
-              { to: "/services/internet/sip-trunk-providers-pakistan", title: "SIP Trunk", body: "Licensed channels carrying calls into your cloud tenant, sized to your busy hour." },
-              { to: "/services/internet/ivr-services-pakistan", title: "IVR Services", body: "Urdu and English auto-attendant menus, queues and skills-based routing on top of your tenant." },
+              { to: "/services/internet/sip-trunk", title: "SIP Trunk", body: "Licensed channels carrying calls into your cloud tenant, sized to your busy hour." },
+              { to: "/services/internet/ivr-services", title: "IVR Services", body: "Urdu and English auto-attendant menus, queues and skills-based routing on top of your tenant." },
               { to: "/services/internet/business-internet", title: "Dedicated Internet", body: "Uncontended 1:1 fiber with QoS on voice traffic, on one invoice with your telephony." },
             ].map((c) => (
               <Link key={c.to} to={c.to} className="bn-tile p-7 flex flex-col gap-3 group">

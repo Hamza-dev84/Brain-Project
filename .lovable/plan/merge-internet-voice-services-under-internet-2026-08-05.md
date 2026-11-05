@@ -10,10 +10,10 @@ under `/internet`, keeping its own look, with zero color bleed into `/`, `/cloud
 ```text
 /internet                             Index
 /internet/home-internet               /internet/business-internet
-/internet/voice-plans                 /internet/voip-providers-pakistan
-/internet/sip-trunk-providers-pakistan
-/internet/ivr-services-pakistan       /internet/ip-pbx-pakistan
-/internet/virtual-pbx-pakistan        /internet/pbx-price-in-pakistan
+/internet/voice-plans                 /internet/voip-services
+/internet/sip-trunk
+/internet/ivr-services                /internet/ip-pbx
+/internet/virtual-pbx                 /internet/pbx-price-in-pakistan
 /internet/hdtv-bundles                /internet/coverage-area
 /internet/contact-us
 ```

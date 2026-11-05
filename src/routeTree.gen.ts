@@ -79,14 +79,14 @@ import { Route as ServicesInternetContactUsRouteImport } from './routes/services
 import { Route as ServicesInternetCoverageAreaRouteImport } from './routes/services/internet/coverage-area'
 import { Route as ServicesInternetHdtvBundlesRouteImport } from './routes/services/internet/hdtv-bundles'
 import { Route as ServicesInternetHomeInternetRouteImport } from './routes/services/internet/home-internet'
-import { Route as ServicesInternetIpPbxPakistanRouteImport } from './routes/services/internet/ip-pbx-pakistan'
-import { Route as ServicesInternetIvrServicesPakistanRouteImport } from './routes/services/internet/ivr-services-pakistan'
+import { Route as ServicesInternetIpPbxRouteImport } from './routes/services/internet/ip-pbx'
+import { Route as ServicesInternetIvrServicesRouteImport } from './routes/services/internet/ivr-services'
 import { Route as ServicesInternetPbxPriceInPakistanRouteImport } from './routes/services/internet/pbx-price-in-pakistan'
-import { Route as ServicesInternetSipTrunkProvidersPakistanRouteImport } from './routes/services/internet/sip-trunk-providers-pakistan'
+import { Route as ServicesInternetSipTrunkRouteImport } from './routes/services/internet/sip-trunk'
 import { Route as ServicesInternetTelephonyRouteImport } from './routes/services/internet/telephony'
-import { Route as ServicesInternetVirtualPbxPakistanRouteImport } from './routes/services/internet/virtual-pbx-pakistan'
+import { Route as ServicesInternetVirtualPbxRouteImport } from './routes/services/internet/virtual-pbx'
 import { Route as ServicesInternetVoicePlansRouteImport } from './routes/services/internet/voice-plans'
-import { Route as ServicesInternetVoipProvidersPakistanRouteImport } from './routes/services/internet/voip-providers-pakistan'
+import { Route as ServicesInternetVoipServicesRouteImport } from './routes/services/internet/voip-services'
 import { Route as ServicesSmsIndexRouteImport } from './routes/services/sms/index'
 import { Route as ServicesSmsBrandedSmsPakistanRouteImport } from './routes/services/sms/branded-sms-pakistan'
 import { Route as ServicesSmsContactRouteImport } from './routes/services/sms/contact'
@@ -506,16 +506,15 @@ const ServicesInternetHomeInternetRoute =
     path: '/home-internet',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetIpPbxPakistanRoute =
-  ServicesInternetIpPbxPakistanRouteImport.update({
-    id: '/ip-pbx-pakistan',
-    path: '/ip-pbx-pakistan',
-    getParentRoute: () => ServicesInternetRoute,
-  } as any)
-const ServicesInternetIvrServicesPakistanRoute =
-  ServicesInternetIvrServicesPakistanRouteImport.update({
-    id: '/ivr-services-pakistan',
-    path: '/ivr-services-pakistan',
+const ServicesInternetIpPbxRoute = ServicesInternetIpPbxRouteImport.update({
+  id: '/ip-pbx',
+  path: '/ip-pbx',
+  getParentRoute: () => ServicesInternetRoute,
+} as any)
+const ServicesInternetIvrServicesRoute =
+  ServicesInternetIvrServicesRouteImport.update({
+    id: '/ivr-services',
+    path: '/ivr-services',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
 const ServicesInternetPbxPriceInPakistanRoute =
@@ -524,10 +523,10 @@ const ServicesInternetPbxPriceInPakistanRoute =
     path: '/pbx-price-in-pakistan',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetSipTrunkProvidersPakistanRoute =
-  ServicesInternetSipTrunkProvidersPakistanRouteImport.update({
-    id: '/sip-trunk-providers-pakistan',
-    path: '/sip-trunk-providers-pakistan',
+const ServicesInternetSipTrunkRoute =
+  ServicesInternetSipTrunkRouteImport.update({
+    id: '/sip-trunk',
+    path: '/sip-trunk',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
 const ServicesInternetTelephonyRoute =
@@ -536,10 +535,10 @@ const ServicesInternetTelephonyRoute =
     path: '/telephony',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetVirtualPbxPakistanRoute =
-  ServicesInternetVirtualPbxPakistanRouteImport.update({
-    id: '/virtual-pbx-pakistan',
-    path: '/virtual-pbx-pakistan',
+const ServicesInternetVirtualPbxRoute =
+  ServicesInternetVirtualPbxRouteImport.update({
+    id: '/virtual-pbx',
+    path: '/virtual-pbx',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
 const ServicesInternetVoicePlansRoute =
@@ -548,10 +547,10 @@ const ServicesInternetVoicePlansRoute =
     path: '/voice-plans',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetVoipProvidersPakistanRoute =
-  ServicesInternetVoipProvidersPakistanRouteImport.update({
-    id: '/voip-providers-pakistan',
-    path: '/voip-providers-pakistan',
+const ServicesInternetVoipServicesRoute =
+  ServicesInternetVoipServicesRouteImport.update({
+    id: '/voip-services',
+    path: '/voip-services',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
 const ServicesSmsIndexRoute = ServicesSmsIndexRouteImport.update({
@@ -802,14 +801,14 @@ export interface FileRoutesByFullPath {
   '/services/internet/coverage-area': typeof ServicesInternetCoverageAreaRoute
   '/services/internet/hdtv-bundles': typeof ServicesInternetHdtvBundlesRoute
   '/services/internet/home-internet': typeof ServicesInternetHomeInternetRoute
-  '/services/internet/ip-pbx-pakistan': typeof ServicesInternetIpPbxPakistanRoute
-  '/services/internet/ivr-services-pakistan': typeof ServicesInternetIvrServicesPakistanRoute
+  '/services/internet/ip-pbx': typeof ServicesInternetIpPbxRoute
+  '/services/internet/ivr-services': typeof ServicesInternetIvrServicesRoute
   '/services/internet/pbx-price-in-pakistan': typeof ServicesInternetPbxPriceInPakistanRoute
-  '/services/internet/sip-trunk-providers-pakistan': typeof ServicesInternetSipTrunkProvidersPakistanRoute
+  '/services/internet/sip-trunk': typeof ServicesInternetSipTrunkRoute
   '/services/internet/telephony': typeof ServicesInternetTelephonyRoute
-  '/services/internet/virtual-pbx-pakistan': typeof ServicesInternetVirtualPbxPakistanRoute
+  '/services/internet/virtual-pbx': typeof ServicesInternetVirtualPbxRoute
   '/services/internet/voice-plans': typeof ServicesInternetVoicePlansRoute
-  '/services/internet/voip-providers-pakistan': typeof ServicesInternetVoipProvidersPakistanRoute
+  '/services/internet/voip-services': typeof ServicesInternetVoipServicesRoute
   '/services/sms/branded-sms-pakistan': typeof ServicesSmsBrandedSmsPakistanRoute
   '/services/sms/contact': typeof ServicesSmsContactRoute
   '/services/sms/features': typeof ServicesSmsFeaturesRoute
@@ -906,14 +905,14 @@ export interface FileRoutesByTo {
   '/services/internet/coverage-area': typeof ServicesInternetCoverageAreaRoute
   '/services/internet/hdtv-bundles': typeof ServicesInternetHdtvBundlesRoute
   '/services/internet/home-internet': typeof ServicesInternetHomeInternetRoute
-  '/services/internet/ip-pbx-pakistan': typeof ServicesInternetIpPbxPakistanRoute
-  '/services/internet/ivr-services-pakistan': typeof ServicesInternetIvrServicesPakistanRoute
+  '/services/internet/ip-pbx': typeof ServicesInternetIpPbxRoute
+  '/services/internet/ivr-services': typeof ServicesInternetIvrServicesRoute
   '/services/internet/pbx-price-in-pakistan': typeof ServicesInternetPbxPriceInPakistanRoute
-  '/services/internet/sip-trunk-providers-pakistan': typeof ServicesInternetSipTrunkProvidersPakistanRoute
+  '/services/internet/sip-trunk': typeof ServicesInternetSipTrunkRoute
   '/services/internet/telephony': typeof ServicesInternetTelephonyRoute
-  '/services/internet/virtual-pbx-pakistan': typeof ServicesInternetVirtualPbxPakistanRoute
+  '/services/internet/virtual-pbx': typeof ServicesInternetVirtualPbxRoute
   '/services/internet/voice-plans': typeof ServicesInternetVoicePlansRoute
-  '/services/internet/voip-providers-pakistan': typeof ServicesInternetVoipProvidersPakistanRoute
+  '/services/internet/voip-services': typeof ServicesInternetVoipServicesRoute
   '/services/sms/branded-sms-pakistan': typeof ServicesSmsBrandedSmsPakistanRoute
   '/services/sms/contact': typeof ServicesSmsContactRoute
   '/services/sms/features': typeof ServicesSmsFeaturesRoute
@@ -1019,14 +1018,14 @@ export interface FileRoutesById {
   '/services/internet/coverage-area': typeof ServicesInternetCoverageAreaRoute
   '/services/internet/hdtv-bundles': typeof ServicesInternetHdtvBundlesRoute
   '/services/internet/home-internet': typeof ServicesInternetHomeInternetRoute
-  '/services/internet/ip-pbx-pakistan': typeof ServicesInternetIpPbxPakistanRoute
-  '/services/internet/ivr-services-pakistan': typeof ServicesInternetIvrServicesPakistanRoute
+  '/services/internet/ip-pbx': typeof ServicesInternetIpPbxRoute
+  '/services/internet/ivr-services': typeof ServicesInternetIvrServicesRoute
   '/services/internet/pbx-price-in-pakistan': typeof ServicesInternetPbxPriceInPakistanRoute
-  '/services/internet/sip-trunk-providers-pakistan': typeof ServicesInternetSipTrunkProvidersPakistanRoute
+  '/services/internet/sip-trunk': typeof ServicesInternetSipTrunkRoute
   '/services/internet/telephony': typeof ServicesInternetTelephonyRoute
-  '/services/internet/virtual-pbx-pakistan': typeof ServicesInternetVirtualPbxPakistanRoute
+  '/services/internet/virtual-pbx': typeof ServicesInternetVirtualPbxRoute
   '/services/internet/voice-plans': typeof ServicesInternetVoicePlansRoute
-  '/services/internet/voip-providers-pakistan': typeof ServicesInternetVoipProvidersPakistanRoute
+  '/services/internet/voip-services': typeof ServicesInternetVoipServicesRoute
   '/services/sms/branded-sms-pakistan': typeof ServicesSmsBrandedSmsPakistanRoute
   '/services/sms/contact': typeof ServicesSmsContactRoute
   '/services/sms/features': typeof ServicesSmsFeaturesRoute
@@ -1132,14 +1131,14 @@ export interface FileRouteTypes {
     | '/services/internet/coverage-area'
     | '/services/internet/hdtv-bundles'
     | '/services/internet/home-internet'
-    | '/services/internet/ip-pbx-pakistan'
-    | '/services/internet/ivr-services-pakistan'
+    | '/services/internet/ip-pbx'
+    | '/services/internet/ivr-services'
     | '/services/internet/pbx-price-in-pakistan'
-    | '/services/internet/sip-trunk-providers-pakistan'
+    | '/services/internet/sip-trunk'
     | '/services/internet/telephony'
-    | '/services/internet/virtual-pbx-pakistan'
+    | '/services/internet/virtual-pbx'
     | '/services/internet/voice-plans'
-    | '/services/internet/voip-providers-pakistan'
+    | '/services/internet/voip-services'
     | '/services/sms/branded-sms-pakistan'
     | '/services/sms/contact'
     | '/services/sms/features'
@@ -1236,14 +1235,14 @@ export interface FileRouteTypes {
     | '/services/internet/coverage-area'
     | '/services/internet/hdtv-bundles'
     | '/services/internet/home-internet'
-    | '/services/internet/ip-pbx-pakistan'
-    | '/services/internet/ivr-services-pakistan'
+    | '/services/internet/ip-pbx'
+    | '/services/internet/ivr-services'
     | '/services/internet/pbx-price-in-pakistan'
-    | '/services/internet/sip-trunk-providers-pakistan'
+    | '/services/internet/sip-trunk'
     | '/services/internet/telephony'
-    | '/services/internet/virtual-pbx-pakistan'
+    | '/services/internet/virtual-pbx'
     | '/services/internet/voice-plans'
-    | '/services/internet/voip-providers-pakistan'
+    | '/services/internet/voip-services'
     | '/services/sms/branded-sms-pakistan'
     | '/services/sms/contact'
     | '/services/sms/features'
@@ -1348,14 +1347,14 @@ export interface FileRouteTypes {
     | '/services/internet/coverage-area'
     | '/services/internet/hdtv-bundles'
     | '/services/internet/home-internet'
-    | '/services/internet/ip-pbx-pakistan'
-    | '/services/internet/ivr-services-pakistan'
+    | '/services/internet/ip-pbx'
+    | '/services/internet/ivr-services'
     | '/services/internet/pbx-price-in-pakistan'
-    | '/services/internet/sip-trunk-providers-pakistan'
+    | '/services/internet/sip-trunk'
     | '/services/internet/telephony'
-    | '/services/internet/virtual-pbx-pakistan'
+    | '/services/internet/virtual-pbx'
     | '/services/internet/voice-plans'
-    | '/services/internet/voip-providers-pakistan'
+    | '/services/internet/voip-services'
     | '/services/sms/branded-sms-pakistan'
     | '/services/sms/contact'
     | '/services/sms/features'
@@ -1904,18 +1903,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesInternetHomeInternetRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/ip-pbx-pakistan': {
-      id: '/services/internet/ip-pbx-pakistan'
-      path: '/ip-pbx-pakistan'
-      fullPath: '/services/internet/ip-pbx-pakistan'
-      preLoaderRoute: typeof ServicesInternetIpPbxPakistanRouteImport
+    '/services/internet/ip-pbx': {
+      id: '/services/internet/ip-pbx'
+      path: '/ip-pbx'
+      fullPath: '/services/internet/ip-pbx'
+      preLoaderRoute: typeof ServicesInternetIpPbxRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/ivr-services-pakistan': {
-      id: '/services/internet/ivr-services-pakistan'
-      path: '/ivr-services-pakistan'
-      fullPath: '/services/internet/ivr-services-pakistan'
-      preLoaderRoute: typeof ServicesInternetIvrServicesPakistanRouteImport
+    '/services/internet/ivr-services': {
+      id: '/services/internet/ivr-services'
+      path: '/ivr-services'
+      fullPath: '/services/internet/ivr-services'
+      preLoaderRoute: typeof ServicesInternetIvrServicesRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
     '/services/internet/pbx-price-in-pakistan': {
@@ -1925,11 +1924,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesInternetPbxPriceInPakistanRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/sip-trunk-providers-pakistan': {
-      id: '/services/internet/sip-trunk-providers-pakistan'
-      path: '/sip-trunk-providers-pakistan'
-      fullPath: '/services/internet/sip-trunk-providers-pakistan'
-      preLoaderRoute: typeof ServicesInternetSipTrunkProvidersPakistanRouteImport
+    '/services/internet/sip-trunk': {
+      id: '/services/internet/sip-trunk'
+      path: '/sip-trunk'
+      fullPath: '/services/internet/sip-trunk'
+      preLoaderRoute: typeof ServicesInternetSipTrunkRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
     '/services/internet/telephony': {
@@ -1939,11 +1938,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesInternetTelephonyRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/virtual-pbx-pakistan': {
-      id: '/services/internet/virtual-pbx-pakistan'
-      path: '/virtual-pbx-pakistan'
-      fullPath: '/services/internet/virtual-pbx-pakistan'
-      preLoaderRoute: typeof ServicesInternetVirtualPbxPakistanRouteImport
+    '/services/internet/virtual-pbx': {
+      id: '/services/internet/virtual-pbx'
+      path: '/virtual-pbx'
+      fullPath: '/services/internet/virtual-pbx'
+      preLoaderRoute: typeof ServicesInternetVirtualPbxRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
     '/services/internet/voice-plans': {
@@ -1953,11 +1952,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesInternetVoicePlansRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/voip-providers-pakistan': {
-      id: '/services/internet/voip-providers-pakistan'
-      path: '/voip-providers-pakistan'
-      fullPath: '/services/internet/voip-providers-pakistan'
-      preLoaderRoute: typeof ServicesInternetVoipProvidersPakistanRouteImport
+    '/services/internet/voip-services': {
+      id: '/services/internet/voip-services'
+      path: '/voip-services'
+      fullPath: '/services/internet/voip-services'
+      preLoaderRoute: typeof ServicesInternetVoipServicesRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
     '/services/sms/': {
@@ -2370,14 +2369,14 @@ interface ServicesInternetRouteChildren {
   ServicesInternetCoverageAreaRoute: typeof ServicesInternetCoverageAreaRoute
   ServicesInternetHdtvBundlesRoute: typeof ServicesInternetHdtvBundlesRoute
   ServicesInternetHomeInternetRoute: typeof ServicesInternetHomeInternetRoute
-  ServicesInternetIpPbxPakistanRoute: typeof ServicesInternetIpPbxPakistanRoute
-  ServicesInternetIvrServicesPakistanRoute: typeof ServicesInternetIvrServicesPakistanRoute
+  ServicesInternetIpPbxRoute: typeof ServicesInternetIpPbxRoute
+  ServicesInternetIvrServicesRoute: typeof ServicesInternetIvrServicesRoute
   ServicesInternetPbxPriceInPakistanRoute: typeof ServicesInternetPbxPriceInPakistanRoute
-  ServicesInternetSipTrunkProvidersPakistanRoute: typeof ServicesInternetSipTrunkProvidersPakistanRoute
+  ServicesInternetSipTrunkRoute: typeof ServicesInternetSipTrunkRoute
   ServicesInternetTelephonyRoute: typeof ServicesInternetTelephonyRoute
-  ServicesInternetVirtualPbxPakistanRoute: typeof ServicesInternetVirtualPbxPakistanRoute
+  ServicesInternetVirtualPbxRoute: typeof ServicesInternetVirtualPbxRoute
   ServicesInternetVoicePlansRoute: typeof ServicesInternetVoicePlansRoute
-  ServicesInternetVoipProvidersPakistanRoute: typeof ServicesInternetVoipProvidersPakistanRoute
+  ServicesInternetVoipServicesRoute: typeof ServicesInternetVoipServicesRoute
   ServicesInternetIndexRoute: typeof ServicesInternetIndexRoute
 }
 
@@ -2387,19 +2386,15 @@ const ServicesInternetRouteChildren: ServicesInternetRouteChildren = {
   ServicesInternetCoverageAreaRoute: ServicesInternetCoverageAreaRoute,
   ServicesInternetHdtvBundlesRoute: ServicesInternetHdtvBundlesRoute,
   ServicesInternetHomeInternetRoute: ServicesInternetHomeInternetRoute,
-  ServicesInternetIpPbxPakistanRoute: ServicesInternetIpPbxPakistanRoute,
-  ServicesInternetIvrServicesPakistanRoute:
-    ServicesInternetIvrServicesPakistanRoute,
+  ServicesInternetIpPbxRoute: ServicesInternetIpPbxRoute,
+  ServicesInternetIvrServicesRoute: ServicesInternetIvrServicesRoute,
   ServicesInternetPbxPriceInPakistanRoute:
     ServicesInternetPbxPriceInPakistanRoute,
-  ServicesInternetSipTrunkProvidersPakistanRoute:
-    ServicesInternetSipTrunkProvidersPakistanRoute,
+  ServicesInternetSipTrunkRoute: ServicesInternetSipTrunkRoute,
   ServicesInternetTelephonyRoute: ServicesInternetTelephonyRoute,
-  ServicesInternetVirtualPbxPakistanRoute:
-    ServicesInternetVirtualPbxPakistanRoute,
+  ServicesInternetVirtualPbxRoute: ServicesInternetVirtualPbxRoute,
   ServicesInternetVoicePlansRoute: ServicesInternetVoicePlansRoute,
-  ServicesInternetVoipProvidersPakistanRoute:
-    ServicesInternetVoipProvidersPakistanRoute,
+  ServicesInternetVoipServicesRoute: ServicesInternetVoipServicesRoute,
   ServicesInternetIndexRoute: ServicesInternetIndexRoute,
 }
 

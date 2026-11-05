@@ -115,7 +115,7 @@ export const HeroLeadForm: React.FC<HeroLeadFormProps> = ({
   };
 
   const inputBase =
-    "w-full rounded-lg bg-white/10 border border-white/20 px-4 py-3 text-white placeholder:text-white/50 font-lato text-sm md:text-base outline-none focus:border-brand-secondary focus:bg-white/15 focus:ring-2 focus:ring-brand-secondary/30 transition";
+    "w-full rounded-sm bg-white/10 border border-white/20 px-4 py-3 text-white placeholder:text-white/50 font-lato text-sm md:text-base outline-none focus:border-brand-secondary focus:bg-white/15 focus:ring-2 focus:ring-brand-secondary/30 transition";
 
   return (
     <motion.div
@@ -237,7 +237,7 @@ export const HeroLeadForm: React.FC<HeroLeadFormProps> = ({
           <button
             type="submit"
             disabled={submitting}
-            className="group w-full mt-1 inline-flex items-center justify-center gap-2 bg-brand-secondary text-brand-dark font-lato font-bold text-base py-3.5 rounded-xl hover:bg-brand-secondary/90 hover:shadow-glow transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+            className="group w-full mt-1 inline-flex items-center justify-center gap-2 bg-brand-secondary text-brand-dark font-lato font-bold text-base py-3.5 rounded-md hover:bg-brand-secondary/90 hover:shadow-glow transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {submitting ? (
               <>

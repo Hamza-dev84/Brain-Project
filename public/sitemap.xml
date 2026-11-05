@@ -261,12 +261,12 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/ip-pbx-pakistan</loc>
+    <loc>https://brain.net.pk/services/internet/ip-pbx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/ivr-services-pakistan</loc>
+    <loc>https://brain.net.pk/services/internet/ivr-services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -276,7 +276,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/sip-trunk-providers-pakistan</loc>
+    <loc>https://brain.net.pk/services/internet/sip-trunk</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -286,7 +286,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/virtual-pbx-pakistan</loc>
+    <loc>https://brain.net.pk/services/internet/virtual-pbx</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -296,7 +296,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/voip-providers-pakistan</loc>
+    <loc>https://brain.net.pk/services/internet/voip-services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -75,11 +75,11 @@ export const Features: React.FC = () => {
               className="w-[70px] h-[70px] object-contain mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
             />
 
-            <h3 className="font-bold text-[24px] text-center font-['Raleway',_sans-serif]">
+            <h3 className="font-bold text-[24px] text-center font-['Raleway',_sans-serif] ">
               {feature.title}
             </h3>
 
-            <p className="software-card-description text-center">
+            <p className="software-card-description  text-[14px] text-center text-neutral-medium">
               {feature.description}
             </p>
           </div>

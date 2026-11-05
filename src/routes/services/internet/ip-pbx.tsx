@@ -42,7 +42,7 @@ const title = "IP PBX in Pakistan | IP PBX Price, Supply & Installation — Brai
 const description =
   "IP PBX systems in Pakistan — Yeastar, Grandstream, Asterisk & FreePBX supplied, installed and maintained. On-premise control, SIP trunk ready, on-site engineers.";
 
-export const Route = createFileRoute("/services/internet/ip-pbx-pakistan")({
+export const Route = createFileRoute("/services/internet/ip-pbx")({
   head: () => ({
     meta: [
       { title },
@@ -176,7 +176,7 @@ function IPPBX() {
           <>
             On-premise IP PBX supplied, configured, installed and maintained by our own engineers —
             with recordings and dial plans that never leave your site. Prefer no hardware? See{" "}
-            <Link to="/services/internet/virtual-pbx-pakistan" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
+            <Link to="/services/internet/virtual-pbx" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
               virtual PBX
             </Link>
             .

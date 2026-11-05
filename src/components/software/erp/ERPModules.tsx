@@ -68,7 +68,7 @@ const ERPModules = () => {
       <div className="mx-auto max-w-7xl px-6 py-20">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-4">
             Our Modules
           </div>
 
@@ -76,7 +76,7 @@ const ERPModules = () => {
             Powerful <span className="text-brand-secondary">ERP Modules</span>
           </h2> */}
 
-          <h2 className="font-raleway py-2 text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+          <h2 className="font-lato tracking-wide py-2 text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
             Powerful{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
               ERP Modules
@@ -107,18 +107,18 @@ const ERPModules = () => {
 
                 {/* Right: Text */}
                 <div>
-                  <h3 className="software-card-title">{title}</h3>
+                  <h3 className="font-bold text-[24px] font-['Raleway',_sans-serif] text-hsl(var(--brand-dark))">{title}</h3>
                   {Array.isArray(desc) ? (
                     <div className="mt-2">
                       {desc.map((item) => (
                         <div key={item} className="flex items-start gap-2">
                           <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-secondary flex-shrink-0" />
-                          <p className="software-card-description">{item}</p>
+                          <p className="software-card-description  text-[14px] text-neutral-medium">{item}</p>
                         </div>
                       ))}
                     </div>
                   ) : (
-                    <p className="software-card-description mt-2">{desc}</p>
+                    <p className="software-card-description  text-[14px] text-neutral-medium">{desc}</p>
                   )}
                 </div>
               </div>
@@ -126,7 +126,7 @@ const ERPModules = () => {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

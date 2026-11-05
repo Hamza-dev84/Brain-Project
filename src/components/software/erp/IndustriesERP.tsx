@@ -28,7 +28,7 @@ const IndustriesERP = () => {
       title: "Retail & POS ERP:",
       desc: "Connect all your outlets with the head office. Manage pricing, promotions, and cashier operations in real time.",
     },
-   
+
   ];
 
   return (
@@ -44,8 +44,8 @@ const IndustriesERP = () => {
             Industries
           </div>
 
-           <h2 className="font-raleway py-2 text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
-           Industry-Specific{" "}
+          <h2 className="font-lato py-2 text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark tracking-wide">
+            Industry-Specific{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
               ERP Solutions
             </span>
@@ -72,7 +72,7 @@ const IndustriesERP = () => {
               </div>
 
               {/* Title */}
-              <h3 className="mt-5 text-lg font-semibold text-brand-dark">
+              <h3 className="mt-5 text-lg tracking-wide font-bold text-brand-dark font-lato">
                 {title}
               </h3>
 

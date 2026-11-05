@@ -30,11 +30,11 @@ const Footer = () => {
     {
       title: 'Corporate Telephony',
       links: [
-        { label: 'VoIP Services', href: '/services/internet/voip-providers-pakistan', type: 'route' },
-        { label: 'SIP Trunk', href: '/services/internet/sip-trunk-providers-pakistan', type: 'route' },
-        { label: 'IVR Services', href: '/services/internet/ivr-services-pakistan', type: 'route' },
-        { label: 'Virtual PBX', href: '/services/internet/virtual-pbx-pakistan', type: 'route' },
-        { label: 'IP PBX', href: '/services/internet/ip-pbx-pakistan', type: 'route' },
+        { label: 'VoIP Services', href: '/services/internet/voip-services', type: 'route' },
+        { label: 'SIP Trunk', href: '/services/internet/sip-trunk', type: 'route' },
+        { label: 'IVR Services', href: '/services/internet/ivr-services', type: 'route' },
+        { label: 'Virtual PBX', href: '/services/internet/virtual-pbx', type: 'route' },
+        { label: 'IP PBX', href: '/services/internet/ip-pbx', type: 'route' },
         { label: 'PBX Price & Systems', href: '/services/internet/pbx-price-in-pakistan', type: 'route' },
       ],
     },

@@ -149,11 +149,11 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="font-raleway text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white">
+          <h1 className="font-lato text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-black leading-none tracking-widest text-white">
             ERP Software in Pakistan — One System. Full Control.
           </h1>
 
-          <p className="font-lato text-lg md:text-xl font-medium text-white/85 max-w-2xl leading-relaxed">
+          <p className="font-lato text-lg md:text-xl font-medium text-white/85 max-w-2xl leading-normal">
             Running a business in Pakistan with the wrong tools wastes time,
             money, and growth. Our ERP software in Pakistan combines accounting,
             inventory, HR, sales, and production. This unified platform gives

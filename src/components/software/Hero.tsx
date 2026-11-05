@@ -14,7 +14,7 @@ import HeroTrustStrip from '@/components/software/hero/HeroTrustStrip';
 //         alt="Abstract digital network background representing advanced software development services in Pakistan by Brainsoft"
 //         className="absolute h-full w-full object-cover inset-0"
 //       />
-      
+
 //       {/* Floating Decorative Icons */}
 //       <motion.div
 //         animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
@@ -44,7 +44,7 @@ import HeroTrustStrip from '@/components/software/hero/HeroTrustStrip';
 //       >
 //         <Zap className="w-8 h-8 text-brand-secondary/50" />
 //       </motion.div>
-      
+
 //       {/* Content */}
 //       <div className="relative z-20 max-w-5xl mx-auto px-8 py-32 text-center text-white max-md:px-5 max-md:py-24 space-y-8">
 //         {/* Badge */}
@@ -59,7 +59,7 @@ import HeroTrustStrip from '@/components/software/hero/HeroTrustStrip';
 //             Enterprise-Grade AI Solutions
 //           </span>
 //         </motion.div>
-        
+
 //         {/* Main Heading */}
 //         <motion.h1
 //           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +70,7 @@ import HeroTrustStrip from '@/components/software/hero/HeroTrustStrip';
 //           Delivering Scalable, Enterprise-Grade AI Software Development Services
 //           in Pakistan
 //         </motion.h1>
-        
+
 //         {/* Subheading */}
 //         <motion.p
 //           initial={{ opacity: 0, y: 20 }}
@@ -82,7 +82,7 @@ import HeroTrustStrip from '@/components/software/hero/HeroTrustStrip';
 //           projects with <span className="font-bold">24/7</span> delivery from
 //           teams in Pakistan & Globally.
 //         </motion.p>
-        
+
 //         {/* CTA Button */}
 //         <motion.div
 //           initial={{ opacity: 0, scale: 0.9 }}
@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-24 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         {/* LEFT — content */}
-        <div className="lg:col-span-6 text-white space-y-6">
+        <div className="lg:col-span-5 text-white space-y-6">
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -141,10 +141,10 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="font-raleway font-extrabold text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight text-white"
+            className="font-lato font-extrabold! text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.1] tracking-tight text-white max-w-[750px]!"
           >
-              Delivering Scalable, Enterprise-Grade AI Software Development Services
-              in Pakistan
+            Delivering Scalable, Enterprise-Grade AI Software Development Services
+            in Pakistan
           </motion.h1>
 
           <motion.p
@@ -169,7 +169,7 @@ const Hero: React.FC = () => {
                 const servicesSection = document.getElementById('services');
                 servicesSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
               }}
-              className="group inline-flex items-center gap-3 justify-center px-7 py-3.5 bg-brand-secondary text-brand-dark rounded-xl font-lato font-bold hover:bg-brand-secondary/90 hover:shadow-glow transition-all duration-300 shadow-xl"
+              className="group inline-flex items-center gap-3 justify-center px-7 py-3.5 bg-brand-secondary text-brand-dark rounded-md font-lato font-bold hover:bg-brand-secondary/90 hover:shadow-glow transition-all duration-300 shadow-xl"
             >
               <span>Explore more</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -180,7 +180,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* RIGHT — lead form */}
-        <div className="lg:col-span-6 w-full">
+        <div className="lg:col-span-7 w-full">
           <HeroLeadForm source="home" />
         </div>
       </div>

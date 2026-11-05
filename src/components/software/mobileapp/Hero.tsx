@@ -25,11 +25,11 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="font-raleway text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-[1.1] font-extrabold text-white">
+          <h1 className="font-raleway text-4xl md:text-5xl lg:text-5xl xl:text-6xl leading-none font-extrabold text-white tracking-wider">
             Mobile App Developers in Pakistan
           </h1>
 
-          <p className="font-lato text-lg md:text-xl font-medium text-white/85 max-w-2xl leading-relaxed">
+          <p className="font-lato text-lg md:text-xl font-medium text-white/85 max-w-2xl leading-normal">
             We help businesses turn ideas into fast, reliable, and easy-to-use
             mobile apps. As experienced mobile app developers in Pakistan, we
             build custom Android, iOS, and cross-platform apps that support
@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <button
-              className="group bg-brand-secondary text-brand-dark inline-flex items-center gap-3 px-7 py-3.5 rounded-xl font-lato font-bold hover:bg-brand-secondary/90 hover:shadow-glow transition-all shadow-xl"
+              className="group bg-brand-secondary text-brand-dark inline-flex items-center gap-3 px-7 py-3.5 rounded-md font-lato font-bold hover:bg-brand-secondary/90 hover:shadow-glow transition-all shadow-xl"
               onClick={() => (window.location.href = "/contact-us")}
             >
               <Rocket size={20} />

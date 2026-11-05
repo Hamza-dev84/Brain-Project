@@ -40,11 +40,11 @@ const WhyChooseUs = () => {
     <section className="flex w-full flex-col items-center px-[60px] py-24 max-md:px-5 relative overflow-hidden gradient-subtle">
       {/* Header */}
       <div className="text-center mb-10 max-w-2xl">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-4">
           Why Choose ERP
         </div>
 
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+        <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark tracking-wider">
           Why Businesses in Pakistan
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
@@ -79,8 +79,8 @@ const WhyChooseUs = () => {
 
               {/* Right: Text */}
               <div>
-                <h3 className="software-card-title">{title}</h3>
-                <p className="software-card-description mt-2">{desc}</p>
+                <h3 className="font-bold text-[24px] font-lato text-hsl(var(--brand-dark))">{title}</h3>
+                <p className="software-card-description  text-[14px]  text-neutral-medium">{desc}</p>
               </div>
             </div>
           </div>

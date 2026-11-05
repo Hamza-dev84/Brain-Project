@@ -116,7 +116,7 @@ function VoicePlansPage() {
                 Premium telephony for homes and businesses — HD audio, unlimited calling, 24/7 support. Need SIP trunks
                 or a cloud PBX?{" "}
                 <Link
-                  to="/services/internet/voip-providers-pakistan"
+                  to="/services/internet/voip-services"
                   className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4"
                 >
                   See our VoIP services in Pakistan

@@ -51,7 +51,7 @@ export const Technologies: React.FC = () => {
           Technologies
         </div>
         
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mt-4">
+        <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mt-4">
             Technology Stack {" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
           Behind Every High-Performing Website

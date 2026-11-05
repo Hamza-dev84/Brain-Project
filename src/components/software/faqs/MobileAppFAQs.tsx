@@ -66,7 +66,7 @@ export default function MobileAppFAQs() {
              <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
                Common Questions
              </div>
-             <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
+             <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 tracking-wide">
                Frequently Asked{" "}
                <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
                  Questions

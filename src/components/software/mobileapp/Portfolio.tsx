@@ -167,7 +167,7 @@ const Portfolio: React.FC = () => {
         </div>
 
         {/* Custom Android Development Section */}
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mx-auto mt-12">
+        <h2 className="font-lato tracking-wide text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mx-auto mt-12">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
             Custom{" "}
           </span>
@@ -185,7 +185,7 @@ const Portfolio: React.FC = () => {
         </p>
 
         {/* Who We Build Apps For Section */}
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mx-auto mt-18">
+        <h2 className="font-lato tracking-wide text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark mx-auto mt-18">
           Who We Build{"  "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
             Apps For

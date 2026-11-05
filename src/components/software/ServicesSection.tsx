@@ -19,33 +19,6 @@ import uiuxIcon from "@/assets/software/services/icons/UX Design.svg";
 
 
 const ServicesSection: React.FC = () => {
-  // const services = [
-  //   {
-  //     image: webDevBg,
-  //     title: "Web Development",
-  //     description: "We Build Websites That Convert. PHP, React, Or Next.Js—We Craft Responsive Sites With 99.9% Uptime.",
-  //   },
-  //   {
-  //     image: appDevBg,
-  //     title: "App Development",
-  //     description: "We Craft Apps That Dominate Stores. From iOS To Hybrid Apps. We Engineer Sleek, Scalable Solutions.",
-  //   },
-  //   {
-  //     image: erpBg,
-  //     title: "ERP Solutions",
-  //     description: "Streamline Your Business. Odoo For SMEs, Oracle For Enterprises—Customized For Your Workflows.",
-  //   },
-  //   {
-  //     image: digitalMarketingBg,
-  //     title: "Digital Marketing",
-  //     description: "From Code To Customers. SEO, Google Ads, And Social Media Strategies Tailored For Various Industries And Locations.",
-  //   },
-  //   {
-  //     image: uiuxBg,
-  //     title: "UI/UX Designing",
-  //     description: "We Build Designs That Users Love With Wireframing, Prototyping, And Usability Testing Aligned With WCAG 2.2 Standards.",
-  //   },
-  // ];
 
   const services = [
     {
@@ -98,7 +71,7 @@ const ServicesSection: React.FC = () => {
         <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
           What We Offer
         </div>
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+        <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
           Our Comprehensive Suite of <br />{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
             Software Development Services in Pakistan

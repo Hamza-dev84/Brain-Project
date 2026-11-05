@@ -36,14 +36,14 @@ import VoIPFAQ, { voipFaqs } from "@/components/internet/voip/VoIPFAQ";
 import RelatedServices from "@/components/internet/telephony/RelatedServices";
 
 const SITE = "https://brainnet.com.pk";
-const PATH = "/services/internet/voip-providers-pakistan";
+const PATH = "/services/internet/voip-services";
 const WHATSAPP = "https://api.whatsapp.com/send/?phone=923276222888";
 
 const title = "VoIP Providers in Pakistan | Business VoIP Services — BrainNET";
 const description =
   "Licensed VoIP provider in Pakistan. Business VoIP and cloud voice on BrainNET's own fiber network — HD call quality, 99.9% uptime SLA and 24/7 local support.";
 
-export const Route = createFileRoute("/services/internet/voip-providers-pakistan")({
+export const Route = createFileRoute("/services/internet/voip-services")({
   head: () => ({
     meta: [
       { title },

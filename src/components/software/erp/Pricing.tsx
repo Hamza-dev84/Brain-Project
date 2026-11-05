@@ -50,11 +50,11 @@ const Pricing = () => {
     <section id="pricing" className="mx-auto max-w-7xl px-6 py-24">
       {/* Header */}
       <div className="mx-auto max-w-3xl text-center">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-2">
+        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-2">
           Pricing
         </div>
 
-        <h2 className="font-raleway py-2 text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
+        <h2 className="font-lato tracking-wide py-2 text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">
           ERP Software{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
             Price in Pakistan

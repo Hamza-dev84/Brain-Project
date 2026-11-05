@@ -91,7 +91,7 @@ const Features: React.FC = () => {
       {/* Content */}
       <div className="relative z-10 w-full my-28">
         <div className="text-center mb-4">
-          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-bold text-sm uppercase tracking-wide mb-4">
             Why We Are The Go-To
           </div>
 
@@ -135,11 +135,11 @@ const Features: React.FC = () => {
                 />
               </div>
 
-              <h3 className="software-card-title text-center">
+              <h3 className="font-bold text-[24px] text-center font-['Raleway',_sans-serif] text-hsl(var(--brand-dark))">
                 {feature.title}
               </h3>
 
-              <p className="software-card-description text-center">
+              <p className="software-card-description  text-[14px] text-center text-neutral-medium">
                 {feature.description}
               </p>
             </div>

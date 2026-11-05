@@ -31,10 +31,16 @@ const ServiceStep: React.FC<ServiceStepProps> = ({
           {stepNumber}
         </span>
       </div>
-      <h3 className="software-card-title group-hover:text-brand-dark transition-colors">
+      {/* <h3 className="software-card-title group-hover:text-brand-dark transition-colors">
+        {title}
+      </h3> */}
+
+      <h3 className="font-bold text-[24px] font-['Raleway',_sans-serif] text-hsl(var(--brand-dark))">
         {title}
       </h3>
-      <p className="card-description mt-3">{description}</p>
+
+      <p className="text-black mt-3 tex-[20px]">
+        {description}</p>
     </article>
   );
 };
@@ -69,10 +75,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         </div>
       </div>
       <div className="p-8">
-        <h3 className="software-card-title group-hover:text-brand-dark transition-colors">
+        {/* <h3 className="software-card-title group-hover:text-brand-dark transition-colors"> */}
+        <h3 className="font-bold text-[24px] font-['Raleway',_sans-serif] text-hsl(var(--brand-dark))">
           {title}
         </h3>
-        <p className="card-description mt-4">{description}</p>
+        <p className="text-neutral-800 tex-[20px] mt-4">{description}</p>
       </div>
       <div className="h-2 bg-gradient-to-r from-brand-secondary to-brand-secondary"></div>
     </article>
@@ -143,7 +150,7 @@ const Services: React.FC = () => {
         className="w-full mt-28 mb-20 px-6 bg-white max-md:py-16"
       >
         <header className="text-center max-w-4xl mx-auto mb-12 animate-fade-in-up">
-          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-4">
             Our Process
           </div>
           <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold text-brand-dark">

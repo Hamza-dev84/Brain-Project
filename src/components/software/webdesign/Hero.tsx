@@ -114,12 +114,12 @@ export const Hero: React.FC = () => {
         <div className="lg:col-span-7 text-white space-y-6 animate-fadeIn">
           <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
             <PenTool className="w-4 h-4 text-brand-secondary" />
-            <span className="font-lato text-sm font-semibold text-white tracking-wide">
+            <span className="font-lato text-sm font-extrabold text-white tracking-wider">
               Pakistan's Premier Web Design Agency
             </span>
           </div>
 
-          <h1 className="font-raleway text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white">
+          <h1 className="font-lato tracking-wider text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-none text-white">
             Professional Web Design Services in Lahore for Modern Business Websites
           </h1>
 

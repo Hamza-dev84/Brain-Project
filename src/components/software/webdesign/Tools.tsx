@@ -89,10 +89,10 @@ export const Tools: React.FC = () => {
     <section className="w-full flex flex-col items-center text-brand-dark text-center mt-24 px-6 md:px-12 lg:px-16 max-w-[1600px] mx-auto">
       {/* Section Header */}
       <div className="max-w-4xl mx-auto mb-10 space-y-4">
-        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide">
+        <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide">
           Technology Stack
         </div>
-        <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-bold">
+        <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-wide">
           <span className="text-brand-dark">Tools & Technologies </span>
 
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-secondary">
@@ -110,14 +110,14 @@ export const Tools: React.FC = () => {
         {/* Frontend */}
         <article className="bg-card border border-primary/10 rounded-2xl p-6">
           <header className="flex items-center gap-3 text-primary mb-4">
-            <h3 className="text-h4 font-bold">Design Tools</h3>
+            <h3 className="text-h5 tracking-wide font-bold">Design Tools</h3>
           </header>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {DesignTools.map((tool, index) => (
               <div
                 key={index}
-                className="group bg-white border-2 border-brand-dark flex flex-col items-center justify-center p-4 rounded-xl"
+                className="group bg-white border-2 border-brand-dark flex flex-col items-center justify-center p-4 rounded-md"
               >
                 <img src={tool.icon} className="w-12 h-12" />
                 <div className="text-sm mt-2 text-center">{tool.name}</div>
@@ -128,14 +128,14 @@ export const Tools: React.FC = () => {
 
         <article className="bg-card border border-primary/10 rounded-2xl p-6">
           <header className="flex items-center gap-3 text-primary mb-4">
-            <h3 className="text-h4 font-bold">Development Technologies</h3>
+            <h3 className="text-h5 tracking-wide font-bold">Development Technologies</h3>
           </header>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {DevelopmentTools.map((tool, index) => (
               <div
                 key={index}
-                className="group bg-white border-2 border-brand-dark flex flex-col items-center justify-center p-4 rounded-xl"
+                className="group bg-white border-2 border-brand-dark flex flex-col items-center justify-center p-4 rounded-md"
               >
                 <img src={tool.icon} className="w-12 h-12" />
                 <div className="text-sm mt-2 text-center">{tool.name}</div>

@@ -190,13 +190,13 @@ const Footer: React.FC = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-brand-secondary font-lato text-body-small"
+                  placeholder="Enter Your Email"
+                  className="flex-1 px-4 py-3 rounded-sm bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-brand-secondary font-lato text-body-small"
                   required
                 />
                 <button
                   type="submit"
-                  className="bg-brand-secondary text-brand-dark p-3 rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
+                  className="bg-brand-secondary text-brand-dark p-3 rounded-sm hover:scale-110 hover:shadow-lg transition-all duration-300"
                   aria-label="Subscribe"
                 >
                   <Send className="w-5 h-5" />

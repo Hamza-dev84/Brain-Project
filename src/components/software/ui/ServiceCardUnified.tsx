@@ -67,14 +67,14 @@ export const ServiceCardUnified: React.FC<ServiceCardUnifiedProps> = ({
           <img
             src={imageIcon}
             alt={imageIcon}
-            className="absolute left-4 top-[67%] md:top-[82%] z-30 h-15 w-15 rounded-full bg-white object-contain p-2shadow-xl"
+            className="absolute left-4 top-[67%] md:top-[82%] z-30 h-23 w-23 rounded-full bg-white object-contain p-2shadow-xl"
           />
         }
       </div>
 
       <div className="w-full mt-14 pb-6 px-6">
         <div className="w-full text-brand-dark">
-          <h3 className="font-raleway text-2xl font-bold">{title}</h3>
+          <h3 className="font-lato text-2xl font-bold!">{title}</h3>
 
           {techHeading && techIcons?.length ? (
             <>

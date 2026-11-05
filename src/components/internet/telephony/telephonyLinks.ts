@@ -10,27 +10,27 @@ export interface TelephonyLink {
 /** Single source of truth for the Corporate Telephony cluster. */
 export const telephonyLinks: TelephonyLink[] = [
   {
-    path: "/services/internet/voip-providers-pakistan",
+    path: "/services/internet/voip-services",
     label: "VoIP Services",
     blurb: "The full picture — business VoIP, cloud voice and everything below in one service.",
   },
   {
-    path: "/services/internet/sip-trunk-providers-pakistan",
+    path: "/services/internet/sip-trunk",
     label: "SIP Trunk",
     blurb: "Licensed SIP channels that replace your PRI/E1 lines and plug into any IP PBX.",
   },
   {
-    path: "/services/internet/ivr-services-pakistan",
+    path: "/services/internet/ivr-services",
     label: "IVR Services",
     blurb: "Auto attendant, Urdu & English prompts, queues and skills-based call routing.",
   },
   {
-    path: "/services/internet/ip-pbx-pakistan",
+    path: "/services/internet/ip-pbx",
     label: "IP PBX",
     blurb: "On-premise phone systems — hardware, licensing, installation and maintenance.",
   },
   {
-    path: "/services/internet/virtual-pbx-pakistan",
+    path: "/services/internet/virtual-pbx",
     label: "Virtual PBX",
     blurb: "A cloud phone system with no hardware, billed per extension and scaled instantly.",
   },

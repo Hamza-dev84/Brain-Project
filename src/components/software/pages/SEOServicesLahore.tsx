@@ -1381,11 +1381,11 @@ const SEOServicesLahore: React.FC = () => {
               <div className="lg:col-span-6 space-y-6 animate-fade-in">
                 <div className="inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full">
                   <Search className="w-4 h-4 text-brand-secondary" />
-                  <span className="font-lato text-sm font-semibold text-white tracking-wide">
+                  <span className="font-lato text-sm font-extrabold text-white tracking-wide">
                     SEO Agency in Lahore
                   </span>
                 </div>
-                <h1 className="font-raleway text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-[1.1] text-white">
+                <h1 className="font-lato text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold leading-none tracking-widest text-white">
                   SEO Services in Lahore That Actually Grow Your Business.
                 </h1>
                 <p className="font-lato text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl">
@@ -1444,7 +1444,7 @@ const SEOServicesLahore: React.FC = () => {
                       loading="lazy"
                       className="w-24 h-24 md:w-28 md:h-28 object-contain mb-4"
                     />
-                    <span className="font-raleway text-3xl md:text-4xl font-extrabold text-brand-dark">
+                    <span className="font-lato text-3xl md:text-4xl font-extrabold text-brand-dark">
                       {s.value}
                     </span>
                     <span className="font-lato text-sm md:text-base text-brand-dark/70 mt-1">
@@ -1466,7 +1466,7 @@ const SEOServicesLahore: React.FC = () => {
                 className="w-full h-auto max-w-full rounded-2xl shadow-lg"
               />
               <div className="space-y-6">
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-wider">
                   Why BrainSOFT Is Lahore's Trusted SEO Partner
                 </h2>
                 <p className="font-lato text-base md:text-lg text-brand-dark/70 leading-relaxed">
@@ -1480,8 +1480,8 @@ const SEOServicesLahore: React.FC = () => {
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-primary/10 flex items-center justify-center mt-1">
                         <div className="w-2.5 h-2.5 rounded-full bg-brand-primary" />
                       </div>
-                      <p className="font-lato text-base md:text-lg text-brand-dark/80">
-                        <strong className="text-brand-dark">{p.title}</strong>{" "}
+                      <p className="font-lato text-base md:text-lg text-brand-dark/80 tracking-wide">
+                        <strong className="text-brand-dark font-extrabold">{p.title}</strong>{" "}
                         {p.desc}
                       </p>
                     </li>
@@ -1500,7 +1500,7 @@ const SEOServicesLahore: React.FC = () => {
           <section className="bg-gradient-to-b from-white to-brand-primary/5 py-20 md:py-28 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-widest">
                   Our SEO Services in Lahore
                 </h2>
               </div>
@@ -1520,10 +1520,10 @@ const SEOServicesLahore: React.FC = () => {
                         />
                       </div>
                     </div>
-                    <h3 className="font-raleway text-xl md:text-2xl font-bold text-brand-dark mb-3">
+                    <h3 className="font-lato text-xl md:text-2xl font-bold text-brand-dark mb-3 tracking-wider">
                       {s.title}
                     </h3>
-                    <p className="font-lato text-base text-brand-dark/75 leading-relaxed">
+                    <p className="font-lato text-base text-brand-dark/75 leading-relaxed tracking-wider">
                       {s.body}
                     </p>
                     {s.includes && (
@@ -1556,10 +1556,10 @@ const SEOServicesLahore: React.FC = () => {
           >
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-3xl mx-auto mb-14">
-                <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
+                <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-extrabold text-sm uppercase tracking-wide mb-4">
                   Packages & Pricing
                 </div>
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-none tracking-widest">
                   SEO Packages Built to Outperform the Lahore Market
                 </h2>
                 <p className="font-lato text-base md:text-lg text-brand-dark/70 mt-5">
@@ -1667,7 +1667,7 @@ const SEOServicesLahore: React.FC = () => {
               {/* COMPARISON TABLE */}
               <div className="mt-20">
                 <div className="text-center max-w-3xl mx-auto mb-8">
-                  <h3 className="font-raleway text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-tight">
+                  <h3 className="font-lato text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-tight tracking-wider">
                     Full Feature Comparison
                   </h3>
                   <p className="font-lato text-base text-brand-dark/70 mt-3">
@@ -1751,7 +1751,7 @@ const SEOServicesLahore: React.FC = () => {
               {/* VALUE-ADDS */}
               <div className="mt-20">
                 <div className="text-center max-w-3xl mx-auto mb-8">
-                  <h3 className="font-raleway text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-tight">
+                  <h3 className="font-lato text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-tight tracking-wider">
                     Value-Added Services
                   </h3>
                   <p className="font-lato text-base text-brand-dark/70 mt-3">
@@ -1765,7 +1765,7 @@ const SEOServicesLahore: React.FC = () => {
                       className="bg-gradient-to-br from-brand-primary/5 to-brand-secondary/5 border border-brand-dark/10 rounded-xl p-5 text-center hover:border-brand-secondary/40 hover:-translate-y-1 transition-all"
                     >
                       <Gift className="w-6 h-6 text-brand-secondary mx-auto mb-3" />
-                      <p className="font-lato text-sm font-semibold text-brand-dark leading-snug">
+                      <p className="font-lato text-sm font-bold text-brand-dark leading-snug">
                         {v}
                       </p>
                     </div>
@@ -1776,7 +1776,7 @@ const SEOServicesLahore: React.FC = () => {
               {/* ADD-ONS */}
               <div className="mt-20">
                 <div className="text-center max-w-3xl mx-auto mb-8">
-                  <h3 className="font-raleway text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-tight">
+                  <h3 className="font-lato text-2xl md:text-3xl lg:text-4xl font-extrabold text-brand-dark leading-tight tracking-wider">
                     Add-Ons & Upsells
                   </h3>
                   <p className="font-lato text-base text-brand-dark/70 mt-3">
@@ -1804,7 +1804,7 @@ const SEOServicesLahore: React.FC = () => {
           <section className="bg-gradient-to-br from-brand-dark to-brand-dark/95 py-20 md:py-24 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-3xl mx-auto mb-14">
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-none tracking-widest">
                   Guarantees Which Other SEO Agencies in Lahore Won't Offer.
                 </h2>
                 <p className="font-lato text-base md:text-lg text-white/75 mt-5">
@@ -1840,7 +1840,7 @@ const SEOServicesLahore: React.FC = () => {
           <section className="bg-gradient-to-br from-brand-dark to-brand-dark/90 py-20 md:py-28 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto">
               <div className="text-center max-w-3xl mx-auto mb-16">
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-none tracking-widest">
                   Our SEO Process: Simple, Transparent, Effective.
                 </h2>
               </div>
@@ -1857,14 +1857,14 @@ const SEOServicesLahore: React.FC = () => {
                         loading="lazy"
                         className="w-28 h-28 md:w-32 md:h-32 object-contain"
                       />
-                      <div className="absolute -top-1 -right-1 w-9 h-9 rounded-lg bg-brand-secondary text-brand-dark font-raleway font-extrabold text-base flex items-center justify-center shadow-lg">
+                      <div className="absolute -top-1 -right-1 w-9 h-9 rounded-sm bg-brand-secondary text-brand-dark font-raleway font-extrabold text-base flex items-center justify-center shadow-lg">
                         {idx + 1}
                       </div>
                     </div>
-                    <h3 className="font-raleway text-lg font-bold text-white mb-2">
+                    <h3 className="font-raleway text-lg font-bold text-white mb-2 tracking-wide">
                       {step.title}
                     </h3>
-                    <p className="font-lato text-sm text-white/75 leading-relaxed">
+                    <p className="font-lato text-sm text-white/75 leading-relaxed tracking-wide">
                       {step.desc}
                     </p>
                   </div>
@@ -1877,7 +1877,7 @@ const SEOServicesLahore: React.FC = () => {
           <section className="bg-white py-20 md:py-28 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-none tracking-widest">
                   Industries We Serve in Lahore
                 </h2>
                 <p className="font-lato text-base md:text-lg text-brand-dark/75 leading-relaxed">
@@ -1892,7 +1892,7 @@ const SEOServicesLahore: React.FC = () => {
                 </p>
                 <div className="flex flex-wrap gap-3 pt-2">
                   <a href="#hero">
-                    <Button className="group text-base px-7 py-3.5 h-auto bg-brand-secondary text-brand-dark hover:bg-brand-secondary/90 hover:shadow-glow transition-all shadow-xl font-bold">
+                    <Button className="group text-base px-7 py-3.5 h-auto bg-brand-secondary text-brand-dark hover:bg-brand-secondary/90 hover:shadow-glow transition-all shadow-xl font-bold tracking-wider">
                       Get Free SEO Audit for your Industry
                       <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>
@@ -1980,7 +1980,7 @@ const SEOServicesLahore: React.FC = () => {
           <section className="bg-gradient-to-b from-brand-primary/5 to-white py-20 md:py-28 px-6 md:px-12 lg:px-24">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight">
+                <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-brand-dark leading-tight tracking-widest">
                   Frequently Asked Questions
                 </h2>
               </div>
@@ -1991,7 +1991,7 @@ const SEOServicesLahore: React.FC = () => {
                     value={`item-${idx}`}
                     className="bg-white border border-brand-dark/10 rounded-2xl px-6 shadow-sm"
                   >
-                    <AccordionTrigger className="font-raleway text-left text-base md:text-lg font-bold text-brand-dark hover:no-underline py-5">
+                    <AccordionTrigger className="font-lato text-left text-base md:text-lg font-extrabold text-brand-dark tracking-wider hover:no-underline py-5">
                       {f.q}
                     </AccordionTrigger>
                     <AccordionContent className="font-lato text-base text-brand-dark/75 leading-relaxed pb-5">
@@ -2010,10 +2010,10 @@ const SEOServicesLahore: React.FC = () => {
               <div className="absolute bottom-10 right-10 w-64 h-64 bg-white rounded-full blur-3xl" />
             </div>
             <div className="relative max-w-5xl mx-auto text-center space-y-7">
-              <h2 className="font-raleway text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+              <h2 className="font-lato text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-widest">
                 Get Your Free SEO Consultation.
               </h2>
-              <p className="font-lato text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
+              <p className="font-lato text-lg md:text-xl text-white/90 leading-normal max-w-3xl mx-auto tracking-wide">
                 Not sure why your website isn't ranking? Let's find out
                 together. BrainSOFT offers a complimentary SEO consultation for
                 Lahore businesses — no commitment, no pressure. In our 30
@@ -2025,7 +2025,7 @@ const SEOServicesLahore: React.FC = () => {
                 <Link to="/services/software/contact-us">
                   <Button
                     size="lg"
-                    className="group text-lg px-10 py-7 bg-brand-secondary text-brand-dark hover:bg-brand-secondary/90 hover:scale-105 transition-all shadow-2xl"
+                    className="group text-lg px-10 py-7 bg-brand-secondary text-brand-dark hover:bg-brand-secondary/90 hover:scale-105 transition-all shadow-2xl rounded-sm"
                   >
                     Book My Free Consultation
                     <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

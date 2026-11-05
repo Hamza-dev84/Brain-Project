@@ -73,7 +73,7 @@ const Portfolio: React.FC = () => {
           <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-6 py-2 rounded-full font-lato font-semibold text-sm uppercase tracking-wide mb-4">
             Our Portfolio
           </div>
-          <h2 className="font-raleway text-4xl md:text-5xl lg:text-6xl font-bold">
+          <h2 className="font-lato text-4xl md:text-5xl lg:text-6xl font-bold">
             Real Website Projects.
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-dark to-brand-secondary">
