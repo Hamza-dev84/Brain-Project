@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as LayoutRouteImport } from './routes/_layout'
 import { Route as LayoutIndexRouteImport } from './routes/_layout/index'
 import { Route as LayoutSplatRouteImport } from './routes/_layout/$'
-import { Route as LayoutCareersRouteImport } from './routes/_layout/careers'
 import { Route as LayoutCompanyRouteImport } from './routes/_layout/company'
 import { Route as LayoutCompanyProfileRouteImport } from './routes/_layout/company-profile'
 import { Route as LayoutContactUsRouteImport } from './routes/_layout/contact-us'
@@ -36,6 +35,7 @@ import { Route as SoftwareIndexRouteImport } from './routes/software.index'
 import { Route as SoftwareSplatRouteImport } from './routes/software.$'
 import { Route as LayoutCompanyIndexRouteImport } from './routes/_layout/company.index'
 import { Route as LayoutCompanyAboutUsRouteImport } from './routes/_layout/company.about-us'
+import { Route as LayoutCompanyCareersRouteImport } from './routes/_layout/company.careers'
 import { Route as LayoutCompanyCertificationsRouteImport } from './routes/_layout/company.certifications'
 import { Route as LayoutCompanyCsrRouteImport } from './routes/_layout/company.csr'
 import { Route as LayoutCompanyOurCoreTeamRouteImport } from './routes/_layout/company.our-core-team'
@@ -53,7 +53,6 @@ import { Route as LayoutIndustrySolutionsRestaurantsAndFoodServicesRouteImport }
 import { Route as LayoutIndustrySolutionsSoftwareHousesRouteImport } from './routes/_layout/industry-solutions.software-houses'
 import { Route as LayoutResourcesIndexRouteImport } from './routes/_layout/resources.index'
 import { Route as LayoutResourcesCustomerGuidesRouteImport } from './routes/_layout/resources.customer-guides'
-import { Route as LayoutResourcesPaymentGuidesRouteImport } from './routes/_layout/resources.payment-guides'
 import { Route as LayoutServicesIndexRouteImport } from './routes/_layout/services.index'
 import { Route as LayoutServicesTelephoneRouteImport } from './routes/_layout/services.telephone'
 import { Route as ServicesCloudIndexRouteImport } from './routes/services/cloud/index'
@@ -74,12 +73,12 @@ import { Route as ServicesCloudSovereignAiHostingPakistanRouteImport } from './r
 import { Route as ServicesCloudVpsHostingPakistanRouteImport } from './routes/services/cloud/vps-hosting-pakistan'
 import { Route as ServicesCloudWebHostingPakistanRouteImport } from './routes/services/cloud/web-hosting-pakistan'
 import { Route as ServicesInternetIndexRouteImport } from './routes/services/internet/index'
-import { Route as ServicesInternetBusinessInternetRouteImport } from './routes/services/internet/business-internet'
 import { Route as ServicesInternetContactUsRouteImport } from './routes/services/internet/contact-us'
-import { Route as ServicesInternetCoverageAreaRouteImport } from './routes/services/internet/coverage-area'
-import { Route as ServicesInternetHdtvBundlesRouteImport } from './routes/services/internet/hdtv-bundles'
-import { Route as ServicesInternetHomeInternetRouteImport } from './routes/services/internet/home-internet'
+import { Route as ServicesInternetCoverageAreasRouteImport } from './routes/services/internet/coverage-areas'
+import { Route as ServicesInternetDedicatedInternetLahoreRouteImport } from './routes/services/internet/dedicated-internet-lahore'
+import { Route as ServicesInternetHomeInternetServicesLahoreRouteImport } from './routes/services/internet/home-internet-services-lahore'
 import { Route as ServicesInternetIpPbxRouteImport } from './routes/services/internet/ip-pbx'
+import { Route as ServicesInternetIptvLahoreRouteImport } from './routes/services/internet/iptv-lahore'
 import { Route as ServicesInternetIvrServicesRouteImport } from './routes/services/internet/ivr-services'
 import { Route as ServicesInternetPbxPriceInPakistanRouteImport } from './routes/services/internet/pbx-price-in-pakistan'
 import { Route as ServicesInternetSipTrunkRouteImport } from './routes/services/internet/sip-trunk'
@@ -91,7 +90,7 @@ import { Route as ServicesSmsIndexRouteImport } from './routes/services/sms/inde
 import { Route as ServicesSmsBrandedSmsPakistanRouteImport } from './routes/services/sms/branded-sms-pakistan'
 import { Route as ServicesSmsContactRouteImport } from './routes/services/sms/contact'
 import { Route as ServicesSmsFeaturesRouteImport } from './routes/services/sms/features'
-import { Route as ServicesSmsOtpServicePakistanRouteImport } from './routes/services/sms/otp-service-pakistan'
+import { Route as ServicesSmsOtpSmsServicePakistanRouteImport } from './routes/services/sms/otp-sms-service-pakistan'
 import { Route as ServicesSmsPricingRouteImport } from './routes/services/sms/pricing'
 import { Route as ServicesSmsPrivacyPolicyRouteImport } from './routes/services/sms/privacy-policy'
 import { Route as ServicesSmsSmsApiPakistanRouteImport } from './routes/services/sms/sms-api-pakistan'
@@ -104,8 +103,10 @@ import { Route as ServicesSoftwareErpSoftwarePakistanRouteImport } from './route
 import { Route as ServicesSoftwareMobileAppDevelopersPakistanRouteImport } from './routes/services/software/mobile-app-developers-pakistan'
 import { Route as ServicesSoftwareSeoServicesLahoreRouteImport } from './routes/services/software/seo-services-lahore'
 import { Route as ServicesSoftwareSupportRouteImport } from './routes/services/software/support'
-import { Route as ServicesSoftwareWebDesignServicesPakistanRouteImport } from './routes/services/software/web-design-services-pakistan'
+import { Route as ServicesSoftwareWebDesignServicesLahoreRouteImport } from './routes/services/software/web-design-services-lahore'
 import { Route as ServicesSoftwareWebDevelopmentPakistanRouteImport } from './routes/services/software/web-development-pakistan'
+import { Route as LayoutResourcesCustomerGuidesIndexRouteImport } from './routes/_layout/resources.customer-guides.index'
+import { Route as LayoutResourcesCustomerGuidesPaymentGuidesRouteImport } from './routes/_layout/resources.customer-guides.payment-guides'
 import { Route as ServicesCloudBlogIndexRouteImport } from './routes/services/cloud/blog.index'
 import { Route as ServicesCloudBlogSlugRouteImport } from './routes/services/cloud/blog.$slug'
 import { Route as ServicesSoftwareCaseStudiesIndexRouteImport } from './routes/services/software/case-studies.index'
@@ -132,11 +133,6 @@ const LayoutIndexRoute = LayoutIndexRouteImport.update({
 const LayoutSplatRoute = LayoutSplatRouteImport.update({
   id: '/$',
   path: '/$',
-  getParentRoute: () => LayoutRoute,
-} as any)
-const LayoutCareersRoute = LayoutCareersRouteImport.update({
-  id: '/careers',
-  path: '/careers',
   getParentRoute: () => LayoutRoute,
 } as any)
 const LayoutCompanyRoute = LayoutCompanyRouteImport.update({
@@ -255,6 +251,11 @@ const LayoutCompanyAboutUsRoute = LayoutCompanyAboutUsRouteImport.update({
   path: '/about-us',
   getParentRoute: () => LayoutCompanyRoute,
 } as any)
+const LayoutCompanyCareersRoute = LayoutCompanyCareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => LayoutCompanyRoute,
+} as any)
 const LayoutCompanyCertificationsRoute =
   LayoutCompanyCertificationsRouteImport.update({
     id: '/certifications',
@@ -353,12 +354,6 @@ const LayoutResourcesCustomerGuidesRoute =
   LayoutResourcesCustomerGuidesRouteImport.update({
     id: '/customer-guides',
     path: '/customer-guides',
-    getParentRoute: () => LayoutResourcesRoute,
-  } as any)
-const LayoutResourcesPaymentGuidesRoute =
-  LayoutResourcesPaymentGuidesRouteImport.update({
-    id: '/payment-guides',
-    path: '/payment-guides',
     getParentRoute: () => LayoutResourcesRoute,
   } as any)
 const LayoutServicesIndexRoute = LayoutServicesIndexRouteImport.update({
@@ -476,34 +471,28 @@ const ServicesInternetIndexRoute = ServicesInternetIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ServicesInternetRoute,
 } as any)
-const ServicesInternetBusinessInternetRoute =
-  ServicesInternetBusinessInternetRouteImport.update({
-    id: '/business-internet',
-    path: '/business-internet',
-    getParentRoute: () => ServicesInternetRoute,
-  } as any)
 const ServicesInternetContactUsRoute =
   ServicesInternetContactUsRouteImport.update({
     id: '/contact-us',
     path: '/contact-us',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetCoverageAreaRoute =
-  ServicesInternetCoverageAreaRouteImport.update({
-    id: '/coverage-area',
-    path: '/coverage-area',
+const ServicesInternetCoverageAreasRoute =
+  ServicesInternetCoverageAreasRouteImport.update({
+    id: '/coverage-areas',
+    path: '/coverage-areas',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetHdtvBundlesRoute =
-  ServicesInternetHdtvBundlesRouteImport.update({
-    id: '/hdtv-bundles',
-    path: '/hdtv-bundles',
+const ServicesInternetDedicatedInternetLahoreRoute =
+  ServicesInternetDedicatedInternetLahoreRouteImport.update({
+    id: '/dedicated-internet-lahore',
+    path: '/dedicated-internet-lahore',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
-const ServicesInternetHomeInternetRoute =
-  ServicesInternetHomeInternetRouteImport.update({
-    id: '/home-internet',
-    path: '/home-internet',
+const ServicesInternetHomeInternetServicesLahoreRoute =
+  ServicesInternetHomeInternetServicesLahoreRouteImport.update({
+    id: '/home-internet-services-lahore',
+    path: '/home-internet-services-lahore',
     getParentRoute: () => ServicesInternetRoute,
   } as any)
 const ServicesInternetIpPbxRoute = ServicesInternetIpPbxRouteImport.update({
@@ -511,6 +500,12 @@ const ServicesInternetIpPbxRoute = ServicesInternetIpPbxRouteImport.update({
   path: '/ip-pbx',
   getParentRoute: () => ServicesInternetRoute,
 } as any)
+const ServicesInternetIptvLahoreRoute =
+  ServicesInternetIptvLahoreRouteImport.update({
+    id: '/iptv-lahore',
+    path: '/iptv-lahore',
+    getParentRoute: () => ServicesInternetRoute,
+  } as any)
 const ServicesInternetIvrServicesRoute =
   ServicesInternetIvrServicesRouteImport.update({
     id: '/ivr-services',
@@ -574,10 +569,10 @@ const ServicesSmsFeaturesRoute = ServicesSmsFeaturesRouteImport.update({
   path: '/features',
   getParentRoute: () => ServicesSmsRoute,
 } as any)
-const ServicesSmsOtpServicePakistanRoute =
-  ServicesSmsOtpServicePakistanRouteImport.update({
-    id: '/otp-service-pakistan',
-    path: '/otp-service-pakistan',
+const ServicesSmsOtpSmsServicePakistanRoute =
+  ServicesSmsOtpSmsServicePakistanRouteImport.update({
+    id: '/otp-sms-service-pakistan',
+    path: '/otp-sms-service-pakistan',
     getParentRoute: () => ServicesSmsRoute,
   } as any)
 const ServicesSmsPricingRoute = ServicesSmsPricingRouteImport.update({
@@ -648,10 +643,10 @@ const ServicesSoftwareSupportRoute = ServicesSoftwareSupportRouteImport.update({
   path: '/support',
   getParentRoute: () => ServicesSoftwareRoute,
 } as any)
-const ServicesSoftwareWebDesignServicesPakistanRoute =
-  ServicesSoftwareWebDesignServicesPakistanRouteImport.update({
-    id: '/web-design-services-pakistan',
-    path: '/web-design-services-pakistan',
+const ServicesSoftwareWebDesignServicesLahoreRoute =
+  ServicesSoftwareWebDesignServicesLahoreRouteImport.update({
+    id: '/web-design-services-lahore',
+    path: '/web-design-services-lahore',
     getParentRoute: () => ServicesSoftwareRoute,
   } as any)
 const ServicesSoftwareWebDevelopmentPakistanRoute =
@@ -659,6 +654,18 @@ const ServicesSoftwareWebDevelopmentPakistanRoute =
     id: '/web-development-pakistan',
     path: '/web-development-pakistan',
     getParentRoute: () => ServicesSoftwareRoute,
+  } as any)
+const LayoutResourcesCustomerGuidesIndexRoute =
+  LayoutResourcesCustomerGuidesIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LayoutResourcesCustomerGuidesRoute,
+  } as any)
+const LayoutResourcesCustomerGuidesPaymentGuidesRoute =
+  LayoutResourcesCustomerGuidesPaymentGuidesRouteImport.update({
+    id: '/payment-guides',
+    path: '/payment-guides',
+    getParentRoute: () => LayoutResourcesCustomerGuidesRoute,
   } as any)
 const ServicesCloudBlogIndexRoute = ServicesCloudBlogIndexRouteImport.update({
   id: '/blog/',
@@ -740,7 +747,6 @@ const ServicesSoftwareDigitalMarketingPakistanSeoServicesLahoreRoute =
 export interface FileRoutesByFullPath {
   '/': typeof LayoutIndexRoute
   '/$': typeof LayoutSplatRoute
-  '/careers': typeof LayoutCareersRoute
   '/company': typeof LayoutCompanyRouteWithChildren
   '/company-profile': typeof LayoutCompanyProfileRoute
   '/contact-us': typeof LayoutContactUsRoute
@@ -763,6 +769,7 @@ export interface FileRoutesByFullPath {
   '/sms/': typeof SmsIndexRoute
   '/software/': typeof SoftwareIndexRoute
   '/company/about-us': typeof LayoutCompanyAboutUsRoute
+  '/company/careers': typeof LayoutCompanyCareersRoute
   '/company/certifications': typeof LayoutCompanyCertificationsRoute
   '/company/csr': typeof LayoutCompanyCsrRoute
   '/company/our-core-team': typeof LayoutCompanyOurCoreTeamRoute
@@ -777,8 +784,7 @@ export interface FileRoutesByFullPath {
   '/industry-solutions/manufacturing': typeof LayoutIndustrySolutionsManufacturingRoute
   '/industry-solutions/restaurants-and-food-services': typeof LayoutIndustrySolutionsRestaurantsAndFoodServicesRoute
   '/industry-solutions/software-houses': typeof LayoutIndustrySolutionsSoftwareHousesRoute
-  '/resources/customer-guides': typeof LayoutResourcesCustomerGuidesRoute
-  '/resources/payment-guides': typeof LayoutResourcesPaymentGuidesRoute
+  '/resources/customer-guides': typeof LayoutResourcesCustomerGuidesRouteWithChildren
   '/services/telephone': typeof LayoutServicesTelephoneRoute
   '/services/cloud/ai-colocation-pakistan': typeof ServicesCloudAiColocationPakistanRoute
   '/services/cloud/ai-companies-in-islamabad': typeof ServicesCloudAiCompaniesInIslamabadRoute
@@ -796,12 +802,12 @@ export interface FileRoutesByFullPath {
   '/services/cloud/sovereign-ai-hosting-pakistan': typeof ServicesCloudSovereignAiHostingPakistanRoute
   '/services/cloud/vps-hosting-pakistan': typeof ServicesCloudVpsHostingPakistanRoute
   '/services/cloud/web-hosting-pakistan': typeof ServicesCloudWebHostingPakistanRoute
-  '/services/internet/business-internet': typeof ServicesInternetBusinessInternetRoute
   '/services/internet/contact-us': typeof ServicesInternetContactUsRoute
-  '/services/internet/coverage-area': typeof ServicesInternetCoverageAreaRoute
-  '/services/internet/hdtv-bundles': typeof ServicesInternetHdtvBundlesRoute
-  '/services/internet/home-internet': typeof ServicesInternetHomeInternetRoute
+  '/services/internet/coverage-areas': typeof ServicesInternetCoverageAreasRoute
+  '/services/internet/dedicated-internet-lahore': typeof ServicesInternetDedicatedInternetLahoreRoute
+  '/services/internet/home-internet-services-lahore': typeof ServicesInternetHomeInternetServicesLahoreRoute
   '/services/internet/ip-pbx': typeof ServicesInternetIpPbxRoute
+  '/services/internet/iptv-lahore': typeof ServicesInternetIptvLahoreRoute
   '/services/internet/ivr-services': typeof ServicesInternetIvrServicesRoute
   '/services/internet/pbx-price-in-pakistan': typeof ServicesInternetPbxPriceInPakistanRoute
   '/services/internet/sip-trunk': typeof ServicesInternetSipTrunkRoute
@@ -812,7 +818,7 @@ export interface FileRoutesByFullPath {
   '/services/sms/branded-sms-pakistan': typeof ServicesSmsBrandedSmsPakistanRoute
   '/services/sms/contact': typeof ServicesSmsContactRoute
   '/services/sms/features': typeof ServicesSmsFeaturesRoute
-  '/services/sms/otp-service-pakistan': typeof ServicesSmsOtpServicePakistanRoute
+  '/services/sms/otp-sms-service-pakistan': typeof ServicesSmsOtpSmsServicePakistanRoute
   '/services/sms/pricing': typeof ServicesSmsPricingRoute
   '/services/sms/privacy-policy': typeof ServicesSmsPrivacyPolicyRoute
   '/services/sms/sms-api-pakistan': typeof ServicesSmsSmsApiPakistanRoute
@@ -824,7 +830,7 @@ export interface FileRoutesByFullPath {
   '/services/software/mobile-app-developers-pakistan': typeof ServicesSoftwareMobileAppDevelopersPakistanRoute
   '/services/software/seo-services-lahore': typeof ServicesSoftwareSeoServicesLahoreRoute
   '/services/software/support': typeof ServicesSoftwareSupportRoute
-  '/services/software/web-design-services-pakistan': typeof ServicesSoftwareWebDesignServicesPakistanRoute
+  '/services/software/web-design-services-lahore': typeof ServicesSoftwareWebDesignServicesLahoreRoute
   '/services/software/web-development-pakistan': typeof ServicesSoftwareWebDevelopmentPakistanRoute
   '/company/': typeof LayoutCompanyIndexRoute
   '/industry-solutions/': typeof LayoutIndustrySolutionsIndexRoute
@@ -834,6 +840,7 @@ export interface FileRoutesByFullPath {
   '/services/internet/': typeof ServicesInternetIndexRoute
   '/services/sms/': typeof ServicesSmsIndexRoute
   '/services/software/': typeof ServicesSoftwareIndexRoute
+  '/resources/customer-guides/payment-guides': typeof LayoutResourcesCustomerGuidesPaymentGuidesRoute
   '/services/cloud/blog/$slug': typeof ServicesCloudBlogSlugRoute
   '/services/software/case-studies/bia-care': typeof ServicesSoftwareCaseStudiesBiaCareRoute
   '/services/software/case-studies/cumulus-labs': typeof ServicesSoftwareCaseStudiesCumulusLabsRoute
@@ -844,13 +851,13 @@ export interface FileRoutesByFullPath {
   '/services/software/case-studies/seeium': typeof ServicesSoftwareCaseStudiesSeeiumRoute
   '/services/software/case-studies/zensory': typeof ServicesSoftwareCaseStudiesZensoryRoute
   '/services/software/digital-marketing-pakistan/seo-services-lahore': typeof ServicesSoftwareDigitalMarketingPakistanSeoServicesLahoreRoute
+  '/resources/customer-guides/': typeof LayoutResourcesCustomerGuidesIndexRoute
   '/services/cloud/blog/': typeof ServicesCloudBlogIndexRoute
   '/services/software/case-studies/': typeof ServicesSoftwareCaseStudiesIndexRoute
   '/services/software/digital-marketing-pakistan/': typeof ServicesSoftwareDigitalMarketingPakistanIndexRoute
 }
 export interface FileRoutesByTo {
   '/$': typeof LayoutSplatRoute
-  '/careers': typeof LayoutCareersRoute
   '/company-profile': typeof LayoutCompanyProfileRoute
   '/contact-us': typeof LayoutContactUsRoute
   '/customer-referral': typeof LayoutCustomerReferralRoute
@@ -867,6 +874,7 @@ export interface FileRoutesByTo {
   '/sms': typeof SmsIndexRoute
   '/software': typeof SoftwareIndexRoute
   '/company/about-us': typeof LayoutCompanyAboutUsRoute
+  '/company/careers': typeof LayoutCompanyCareersRoute
   '/company/certifications': typeof LayoutCompanyCertificationsRoute
   '/company/csr': typeof LayoutCompanyCsrRoute
   '/company/our-core-team': typeof LayoutCompanyOurCoreTeamRoute
@@ -881,8 +889,6 @@ export interface FileRoutesByTo {
   '/industry-solutions/manufacturing': typeof LayoutIndustrySolutionsManufacturingRoute
   '/industry-solutions/restaurants-and-food-services': typeof LayoutIndustrySolutionsRestaurantsAndFoodServicesRoute
   '/industry-solutions/software-houses': typeof LayoutIndustrySolutionsSoftwareHousesRoute
-  '/resources/customer-guides': typeof LayoutResourcesCustomerGuidesRoute
-  '/resources/payment-guides': typeof LayoutResourcesPaymentGuidesRoute
   '/services/telephone': typeof LayoutServicesTelephoneRoute
   '/services/cloud/ai-colocation-pakistan': typeof ServicesCloudAiColocationPakistanRoute
   '/services/cloud/ai-companies-in-islamabad': typeof ServicesCloudAiCompaniesInIslamabadRoute
@@ -900,12 +906,12 @@ export interface FileRoutesByTo {
   '/services/cloud/sovereign-ai-hosting-pakistan': typeof ServicesCloudSovereignAiHostingPakistanRoute
   '/services/cloud/vps-hosting-pakistan': typeof ServicesCloudVpsHostingPakistanRoute
   '/services/cloud/web-hosting-pakistan': typeof ServicesCloudWebHostingPakistanRoute
-  '/services/internet/business-internet': typeof ServicesInternetBusinessInternetRoute
   '/services/internet/contact-us': typeof ServicesInternetContactUsRoute
-  '/services/internet/coverage-area': typeof ServicesInternetCoverageAreaRoute
-  '/services/internet/hdtv-bundles': typeof ServicesInternetHdtvBundlesRoute
-  '/services/internet/home-internet': typeof ServicesInternetHomeInternetRoute
+  '/services/internet/coverage-areas': typeof ServicesInternetCoverageAreasRoute
+  '/services/internet/dedicated-internet-lahore': typeof ServicesInternetDedicatedInternetLahoreRoute
+  '/services/internet/home-internet-services-lahore': typeof ServicesInternetHomeInternetServicesLahoreRoute
   '/services/internet/ip-pbx': typeof ServicesInternetIpPbxRoute
+  '/services/internet/iptv-lahore': typeof ServicesInternetIptvLahoreRoute
   '/services/internet/ivr-services': typeof ServicesInternetIvrServicesRoute
   '/services/internet/pbx-price-in-pakistan': typeof ServicesInternetPbxPriceInPakistanRoute
   '/services/internet/sip-trunk': typeof ServicesInternetSipTrunkRoute
@@ -916,7 +922,7 @@ export interface FileRoutesByTo {
   '/services/sms/branded-sms-pakistan': typeof ServicesSmsBrandedSmsPakistanRoute
   '/services/sms/contact': typeof ServicesSmsContactRoute
   '/services/sms/features': typeof ServicesSmsFeaturesRoute
-  '/services/sms/otp-service-pakistan': typeof ServicesSmsOtpServicePakistanRoute
+  '/services/sms/otp-sms-service-pakistan': typeof ServicesSmsOtpSmsServicePakistanRoute
   '/services/sms/pricing': typeof ServicesSmsPricingRoute
   '/services/sms/privacy-policy': typeof ServicesSmsPrivacyPolicyRoute
   '/services/sms/sms-api-pakistan': typeof ServicesSmsSmsApiPakistanRoute
@@ -928,7 +934,7 @@ export interface FileRoutesByTo {
   '/services/software/mobile-app-developers-pakistan': typeof ServicesSoftwareMobileAppDevelopersPakistanRoute
   '/services/software/seo-services-lahore': typeof ServicesSoftwareSeoServicesLahoreRoute
   '/services/software/support': typeof ServicesSoftwareSupportRoute
-  '/services/software/web-design-services-pakistan': typeof ServicesSoftwareWebDesignServicesPakistanRoute
+  '/services/software/web-design-services-lahore': typeof ServicesSoftwareWebDesignServicesLahoreRoute
   '/services/software/web-development-pakistan': typeof ServicesSoftwareWebDevelopmentPakistanRoute
   '/company': typeof LayoutCompanyIndexRoute
   '/industry-solutions': typeof LayoutIndustrySolutionsIndexRoute
@@ -938,6 +944,7 @@ export interface FileRoutesByTo {
   '/services/internet': typeof ServicesInternetIndexRoute
   '/services/sms': typeof ServicesSmsIndexRoute
   '/services/software': typeof ServicesSoftwareIndexRoute
+  '/resources/customer-guides/payment-guides': typeof LayoutResourcesCustomerGuidesPaymentGuidesRoute
   '/services/cloud/blog/$slug': typeof ServicesCloudBlogSlugRoute
   '/services/software/case-studies/bia-care': typeof ServicesSoftwareCaseStudiesBiaCareRoute
   '/services/software/case-studies/cumulus-labs': typeof ServicesSoftwareCaseStudiesCumulusLabsRoute
@@ -948,6 +955,7 @@ export interface FileRoutesByTo {
   '/services/software/case-studies/seeium': typeof ServicesSoftwareCaseStudiesSeeiumRoute
   '/services/software/case-studies/zensory': typeof ServicesSoftwareCaseStudiesZensoryRoute
   '/services/software/digital-marketing-pakistan/seo-services-lahore': typeof ServicesSoftwareDigitalMarketingPakistanSeoServicesLahoreRoute
+  '/resources/customer-guides': typeof LayoutResourcesCustomerGuidesIndexRoute
   '/services/cloud/blog': typeof ServicesCloudBlogIndexRoute
   '/services/software/case-studies': typeof ServicesSoftwareCaseStudiesIndexRoute
   '/services/software/digital-marketing-pakistan': typeof ServicesSoftwareDigitalMarketingPakistanIndexRoute
@@ -956,7 +964,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_layout': typeof LayoutRouteWithChildren
   '/_layout/$': typeof LayoutSplatRoute
-  '/_layout/careers': typeof LayoutCareersRoute
   '/_layout/company': typeof LayoutCompanyRouteWithChildren
   '/_layout/company-profile': typeof LayoutCompanyProfileRoute
   '/_layout/contact-us': typeof LayoutContactUsRoute
@@ -980,6 +987,7 @@ export interface FileRoutesById {
   '/sms/': typeof SmsIndexRoute
   '/software/': typeof SoftwareIndexRoute
   '/_layout/company/about-us': typeof LayoutCompanyAboutUsRoute
+  '/_layout/company/careers': typeof LayoutCompanyCareersRoute
   '/_layout/company/certifications': typeof LayoutCompanyCertificationsRoute
   '/_layout/company/csr': typeof LayoutCompanyCsrRoute
   '/_layout/company/our-core-team': typeof LayoutCompanyOurCoreTeamRoute
@@ -994,8 +1002,7 @@ export interface FileRoutesById {
   '/_layout/industry-solutions/manufacturing': typeof LayoutIndustrySolutionsManufacturingRoute
   '/_layout/industry-solutions/restaurants-and-food-services': typeof LayoutIndustrySolutionsRestaurantsAndFoodServicesRoute
   '/_layout/industry-solutions/software-houses': typeof LayoutIndustrySolutionsSoftwareHousesRoute
-  '/_layout/resources/customer-guides': typeof LayoutResourcesCustomerGuidesRoute
-  '/_layout/resources/payment-guides': typeof LayoutResourcesPaymentGuidesRoute
+  '/_layout/resources/customer-guides': typeof LayoutResourcesCustomerGuidesRouteWithChildren
   '/_layout/services/telephone': typeof LayoutServicesTelephoneRoute
   '/services/cloud/ai-colocation-pakistan': typeof ServicesCloudAiColocationPakistanRoute
   '/services/cloud/ai-companies-in-islamabad': typeof ServicesCloudAiCompaniesInIslamabadRoute
@@ -1013,12 +1020,12 @@ export interface FileRoutesById {
   '/services/cloud/sovereign-ai-hosting-pakistan': typeof ServicesCloudSovereignAiHostingPakistanRoute
   '/services/cloud/vps-hosting-pakistan': typeof ServicesCloudVpsHostingPakistanRoute
   '/services/cloud/web-hosting-pakistan': typeof ServicesCloudWebHostingPakistanRoute
-  '/services/internet/business-internet': typeof ServicesInternetBusinessInternetRoute
   '/services/internet/contact-us': typeof ServicesInternetContactUsRoute
-  '/services/internet/coverage-area': typeof ServicesInternetCoverageAreaRoute
-  '/services/internet/hdtv-bundles': typeof ServicesInternetHdtvBundlesRoute
-  '/services/internet/home-internet': typeof ServicesInternetHomeInternetRoute
+  '/services/internet/coverage-areas': typeof ServicesInternetCoverageAreasRoute
+  '/services/internet/dedicated-internet-lahore': typeof ServicesInternetDedicatedInternetLahoreRoute
+  '/services/internet/home-internet-services-lahore': typeof ServicesInternetHomeInternetServicesLahoreRoute
   '/services/internet/ip-pbx': typeof ServicesInternetIpPbxRoute
+  '/services/internet/iptv-lahore': typeof ServicesInternetIptvLahoreRoute
   '/services/internet/ivr-services': typeof ServicesInternetIvrServicesRoute
   '/services/internet/pbx-price-in-pakistan': typeof ServicesInternetPbxPriceInPakistanRoute
   '/services/internet/sip-trunk': typeof ServicesInternetSipTrunkRoute
@@ -1029,7 +1036,7 @@ export interface FileRoutesById {
   '/services/sms/branded-sms-pakistan': typeof ServicesSmsBrandedSmsPakistanRoute
   '/services/sms/contact': typeof ServicesSmsContactRoute
   '/services/sms/features': typeof ServicesSmsFeaturesRoute
-  '/services/sms/otp-service-pakistan': typeof ServicesSmsOtpServicePakistanRoute
+  '/services/sms/otp-sms-service-pakistan': typeof ServicesSmsOtpSmsServicePakistanRoute
   '/services/sms/pricing': typeof ServicesSmsPricingRoute
   '/services/sms/privacy-policy': typeof ServicesSmsPrivacyPolicyRoute
   '/services/sms/sms-api-pakistan': typeof ServicesSmsSmsApiPakistanRoute
@@ -1041,7 +1048,7 @@ export interface FileRoutesById {
   '/services/software/mobile-app-developers-pakistan': typeof ServicesSoftwareMobileAppDevelopersPakistanRoute
   '/services/software/seo-services-lahore': typeof ServicesSoftwareSeoServicesLahoreRoute
   '/services/software/support': typeof ServicesSoftwareSupportRoute
-  '/services/software/web-design-services-pakistan': typeof ServicesSoftwareWebDesignServicesPakistanRoute
+  '/services/software/web-design-services-lahore': typeof ServicesSoftwareWebDesignServicesLahoreRoute
   '/services/software/web-development-pakistan': typeof ServicesSoftwareWebDevelopmentPakistanRoute
   '/_layout/company/': typeof LayoutCompanyIndexRoute
   '/_layout/industry-solutions/': typeof LayoutIndustrySolutionsIndexRoute
@@ -1051,6 +1058,7 @@ export interface FileRoutesById {
   '/services/internet/': typeof ServicesInternetIndexRoute
   '/services/sms/': typeof ServicesSmsIndexRoute
   '/services/software/': typeof ServicesSoftwareIndexRoute
+  '/_layout/resources/customer-guides/payment-guides': typeof LayoutResourcesCustomerGuidesPaymentGuidesRoute
   '/services/cloud/blog/$slug': typeof ServicesCloudBlogSlugRoute
   '/services/software/case-studies/bia-care': typeof ServicesSoftwareCaseStudiesBiaCareRoute
   '/services/software/case-studies/cumulus-labs': typeof ServicesSoftwareCaseStudiesCumulusLabsRoute
@@ -1061,6 +1069,7 @@ export interface FileRoutesById {
   '/services/software/case-studies/seeium': typeof ServicesSoftwareCaseStudiesSeeiumRoute
   '/services/software/case-studies/zensory': typeof ServicesSoftwareCaseStudiesZensoryRoute
   '/services/software/digital-marketing-pakistan/seo-services-lahore': typeof ServicesSoftwareDigitalMarketingPakistanSeoServicesLahoreRoute
+  '/_layout/resources/customer-guides/': typeof LayoutResourcesCustomerGuidesIndexRoute
   '/services/cloud/blog/': typeof ServicesCloudBlogIndexRoute
   '/services/software/case-studies/': typeof ServicesSoftwareCaseStudiesIndexRoute
   '/services/software/digital-marketing-pakistan/': typeof ServicesSoftwareDigitalMarketingPakistanIndexRoute
@@ -1070,7 +1079,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
-    | '/careers'
     | '/company'
     | '/company-profile'
     | '/contact-us'
@@ -1093,6 +1101,7 @@ export interface FileRouteTypes {
     | '/sms/'
     | '/software/'
     | '/company/about-us'
+    | '/company/careers'
     | '/company/certifications'
     | '/company/csr'
     | '/company/our-core-team'
@@ -1108,7 +1117,6 @@ export interface FileRouteTypes {
     | '/industry-solutions/restaurants-and-food-services'
     | '/industry-solutions/software-houses'
     | '/resources/customer-guides'
-    | '/resources/payment-guides'
     | '/services/telephone'
     | '/services/cloud/ai-colocation-pakistan'
     | '/services/cloud/ai-companies-in-islamabad'
@@ -1126,12 +1134,12 @@ export interface FileRouteTypes {
     | '/services/cloud/sovereign-ai-hosting-pakistan'
     | '/services/cloud/vps-hosting-pakistan'
     | '/services/cloud/web-hosting-pakistan'
-    | '/services/internet/business-internet'
     | '/services/internet/contact-us'
-    | '/services/internet/coverage-area'
-    | '/services/internet/hdtv-bundles'
-    | '/services/internet/home-internet'
+    | '/services/internet/coverage-areas'
+    | '/services/internet/dedicated-internet-lahore'
+    | '/services/internet/home-internet-services-lahore'
     | '/services/internet/ip-pbx'
+    | '/services/internet/iptv-lahore'
     | '/services/internet/ivr-services'
     | '/services/internet/pbx-price-in-pakistan'
     | '/services/internet/sip-trunk'
@@ -1142,7 +1150,7 @@ export interface FileRouteTypes {
     | '/services/sms/branded-sms-pakistan'
     | '/services/sms/contact'
     | '/services/sms/features'
-    | '/services/sms/otp-service-pakistan'
+    | '/services/sms/otp-sms-service-pakistan'
     | '/services/sms/pricing'
     | '/services/sms/privacy-policy'
     | '/services/sms/sms-api-pakistan'
@@ -1154,7 +1162,7 @@ export interface FileRouteTypes {
     | '/services/software/mobile-app-developers-pakistan'
     | '/services/software/seo-services-lahore'
     | '/services/software/support'
-    | '/services/software/web-design-services-pakistan'
+    | '/services/software/web-design-services-lahore'
     | '/services/software/web-development-pakistan'
     | '/company/'
     | '/industry-solutions/'
@@ -1164,6 +1172,7 @@ export interface FileRouteTypes {
     | '/services/internet/'
     | '/services/sms/'
     | '/services/software/'
+    | '/resources/customer-guides/payment-guides'
     | '/services/cloud/blog/$slug'
     | '/services/software/case-studies/bia-care'
     | '/services/software/case-studies/cumulus-labs'
@@ -1174,13 +1183,13 @@ export interface FileRouteTypes {
     | '/services/software/case-studies/seeium'
     | '/services/software/case-studies/zensory'
     | '/services/software/digital-marketing-pakistan/seo-services-lahore'
+    | '/resources/customer-guides/'
     | '/services/cloud/blog/'
     | '/services/software/case-studies/'
     | '/services/software/digital-marketing-pakistan/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/$'
-    | '/careers'
     | '/company-profile'
     | '/contact-us'
     | '/customer-referral'
@@ -1197,6 +1206,7 @@ export interface FileRouteTypes {
     | '/sms'
     | '/software'
     | '/company/about-us'
+    | '/company/careers'
     | '/company/certifications'
     | '/company/csr'
     | '/company/our-core-team'
@@ -1211,8 +1221,6 @@ export interface FileRouteTypes {
     | '/industry-solutions/manufacturing'
     | '/industry-solutions/restaurants-and-food-services'
     | '/industry-solutions/software-houses'
-    | '/resources/customer-guides'
-    | '/resources/payment-guides'
     | '/services/telephone'
     | '/services/cloud/ai-colocation-pakistan'
     | '/services/cloud/ai-companies-in-islamabad'
@@ -1230,12 +1238,12 @@ export interface FileRouteTypes {
     | '/services/cloud/sovereign-ai-hosting-pakistan'
     | '/services/cloud/vps-hosting-pakistan'
     | '/services/cloud/web-hosting-pakistan'
-    | '/services/internet/business-internet'
     | '/services/internet/contact-us'
-    | '/services/internet/coverage-area'
-    | '/services/internet/hdtv-bundles'
-    | '/services/internet/home-internet'
+    | '/services/internet/coverage-areas'
+    | '/services/internet/dedicated-internet-lahore'
+    | '/services/internet/home-internet-services-lahore'
     | '/services/internet/ip-pbx'
+    | '/services/internet/iptv-lahore'
     | '/services/internet/ivr-services'
     | '/services/internet/pbx-price-in-pakistan'
     | '/services/internet/sip-trunk'
@@ -1246,7 +1254,7 @@ export interface FileRouteTypes {
     | '/services/sms/branded-sms-pakistan'
     | '/services/sms/contact'
     | '/services/sms/features'
-    | '/services/sms/otp-service-pakistan'
+    | '/services/sms/otp-sms-service-pakistan'
     | '/services/sms/pricing'
     | '/services/sms/privacy-policy'
     | '/services/sms/sms-api-pakistan'
@@ -1258,7 +1266,7 @@ export interface FileRouteTypes {
     | '/services/software/mobile-app-developers-pakistan'
     | '/services/software/seo-services-lahore'
     | '/services/software/support'
-    | '/services/software/web-design-services-pakistan'
+    | '/services/software/web-design-services-lahore'
     | '/services/software/web-development-pakistan'
     | '/company'
     | '/industry-solutions'
@@ -1268,6 +1276,7 @@ export interface FileRouteTypes {
     | '/services/internet'
     | '/services/sms'
     | '/services/software'
+    | '/resources/customer-guides/payment-guides'
     | '/services/cloud/blog/$slug'
     | '/services/software/case-studies/bia-care'
     | '/services/software/case-studies/cumulus-labs'
@@ -1278,6 +1287,7 @@ export interface FileRouteTypes {
     | '/services/software/case-studies/seeium'
     | '/services/software/case-studies/zensory'
     | '/services/software/digital-marketing-pakistan/seo-services-lahore'
+    | '/resources/customer-guides'
     | '/services/cloud/blog'
     | '/services/software/case-studies'
     | '/services/software/digital-marketing-pakistan'
@@ -1285,7 +1295,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/_layout'
     | '/_layout/$'
-    | '/_layout/careers'
     | '/_layout/company'
     | '/_layout/company-profile'
     | '/_layout/contact-us'
@@ -1309,6 +1318,7 @@ export interface FileRouteTypes {
     | '/sms/'
     | '/software/'
     | '/_layout/company/about-us'
+    | '/_layout/company/careers'
     | '/_layout/company/certifications'
     | '/_layout/company/csr'
     | '/_layout/company/our-core-team'
@@ -1324,7 +1334,6 @@ export interface FileRouteTypes {
     | '/_layout/industry-solutions/restaurants-and-food-services'
     | '/_layout/industry-solutions/software-houses'
     | '/_layout/resources/customer-guides'
-    | '/_layout/resources/payment-guides'
     | '/_layout/services/telephone'
     | '/services/cloud/ai-colocation-pakistan'
     | '/services/cloud/ai-companies-in-islamabad'
@@ -1342,12 +1351,12 @@ export interface FileRouteTypes {
     | '/services/cloud/sovereign-ai-hosting-pakistan'
     | '/services/cloud/vps-hosting-pakistan'
     | '/services/cloud/web-hosting-pakistan'
-    | '/services/internet/business-internet'
     | '/services/internet/contact-us'
-    | '/services/internet/coverage-area'
-    | '/services/internet/hdtv-bundles'
-    | '/services/internet/home-internet'
+    | '/services/internet/coverage-areas'
+    | '/services/internet/dedicated-internet-lahore'
+    | '/services/internet/home-internet-services-lahore'
     | '/services/internet/ip-pbx'
+    | '/services/internet/iptv-lahore'
     | '/services/internet/ivr-services'
     | '/services/internet/pbx-price-in-pakistan'
     | '/services/internet/sip-trunk'
@@ -1358,7 +1367,7 @@ export interface FileRouteTypes {
     | '/services/sms/branded-sms-pakistan'
     | '/services/sms/contact'
     | '/services/sms/features'
-    | '/services/sms/otp-service-pakistan'
+    | '/services/sms/otp-sms-service-pakistan'
     | '/services/sms/pricing'
     | '/services/sms/privacy-policy'
     | '/services/sms/sms-api-pakistan'
@@ -1370,7 +1379,7 @@ export interface FileRouteTypes {
     | '/services/software/mobile-app-developers-pakistan'
     | '/services/software/seo-services-lahore'
     | '/services/software/support'
-    | '/services/software/web-design-services-pakistan'
+    | '/services/software/web-design-services-lahore'
     | '/services/software/web-development-pakistan'
     | '/_layout/company/'
     | '/_layout/industry-solutions/'
@@ -1380,6 +1389,7 @@ export interface FileRouteTypes {
     | '/services/internet/'
     | '/services/sms/'
     | '/services/software/'
+    | '/_layout/resources/customer-guides/payment-guides'
     | '/services/cloud/blog/$slug'
     | '/services/software/case-studies/bia-care'
     | '/services/software/case-studies/cumulus-labs'
@@ -1390,6 +1400,7 @@ export interface FileRouteTypes {
     | '/services/software/case-studies/seeium'
     | '/services/software/case-studies/zensory'
     | '/services/software/digital-marketing-pakistan/seo-services-lahore'
+    | '/_layout/resources/customer-guides/'
     | '/services/cloud/blog/'
     | '/services/software/case-studies/'
     | '/services/software/digital-marketing-pakistan/'
@@ -1432,13 +1443,6 @@ declare module '@tanstack/react-router' {
       path: '/$'
       fullPath: '/$'
       preLoaderRoute: typeof LayoutSplatRouteImport
-      parentRoute: typeof LayoutRoute
-    }
-    '/_layout/careers': {
-      id: '/_layout/careers'
-      path: '/careers'
-      fullPath: '/careers'
-      preLoaderRoute: typeof LayoutCareersRouteImport
       parentRoute: typeof LayoutRoute
     }
     '/_layout/company': {
@@ -1602,6 +1606,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutCompanyAboutUsRouteImport
       parentRoute: typeof LayoutCompanyRoute
     }
+    '/_layout/company/careers': {
+      id: '/_layout/company/careers'
+      path: '/careers'
+      fullPath: '/company/careers'
+      preLoaderRoute: typeof LayoutCompanyCareersRouteImport
+      parentRoute: typeof LayoutCompanyRoute
+    }
     '/_layout/company/certifications': {
       id: '/_layout/company/certifications'
       path: '/certifications'
@@ -1719,13 +1730,6 @@ declare module '@tanstack/react-router' {
       path: '/customer-guides'
       fullPath: '/resources/customer-guides'
       preLoaderRoute: typeof LayoutResourcesCustomerGuidesRouteImport
-      parentRoute: typeof LayoutResourcesRoute
-    }
-    '/_layout/resources/payment-guides': {
-      id: '/_layout/resources/payment-guides'
-      path: '/payment-guides'
-      fullPath: '/resources/payment-guides'
-      preLoaderRoute: typeof LayoutResourcesPaymentGuidesRouteImport
       parentRoute: typeof LayoutResourcesRoute
     }
     '/_layout/services/': {
@@ -1868,13 +1872,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesInternetIndexRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/business-internet': {
-      id: '/services/internet/business-internet'
-      path: '/business-internet'
-      fullPath: '/services/internet/business-internet'
-      preLoaderRoute: typeof ServicesInternetBusinessInternetRouteImport
-      parentRoute: typeof ServicesInternetRoute
-    }
     '/services/internet/contact-us': {
       id: '/services/internet/contact-us'
       path: '/contact-us'
@@ -1882,25 +1879,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesInternetContactUsRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/coverage-area': {
-      id: '/services/internet/coverage-area'
-      path: '/coverage-area'
-      fullPath: '/services/internet/coverage-area'
-      preLoaderRoute: typeof ServicesInternetCoverageAreaRouteImport
+    '/services/internet/coverage-areas': {
+      id: '/services/internet/coverage-areas'
+      path: '/coverage-areas'
+      fullPath: '/services/internet/coverage-areas'
+      preLoaderRoute: typeof ServicesInternetCoverageAreasRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/hdtv-bundles': {
-      id: '/services/internet/hdtv-bundles'
-      path: '/hdtv-bundles'
-      fullPath: '/services/internet/hdtv-bundles'
-      preLoaderRoute: typeof ServicesInternetHdtvBundlesRouteImport
+    '/services/internet/dedicated-internet-lahore': {
+      id: '/services/internet/dedicated-internet-lahore'
+      path: '/dedicated-internet-lahore'
+      fullPath: '/services/internet/dedicated-internet-lahore'
+      preLoaderRoute: typeof ServicesInternetDedicatedInternetLahoreRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
-    '/services/internet/home-internet': {
-      id: '/services/internet/home-internet'
-      path: '/home-internet'
-      fullPath: '/services/internet/home-internet'
-      preLoaderRoute: typeof ServicesInternetHomeInternetRouteImport
+    '/services/internet/home-internet-services-lahore': {
+      id: '/services/internet/home-internet-services-lahore'
+      path: '/home-internet-services-lahore'
+      fullPath: '/services/internet/home-internet-services-lahore'
+      preLoaderRoute: typeof ServicesInternetHomeInternetServicesLahoreRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
     '/services/internet/ip-pbx': {
@@ -1908,6 +1905,13 @@ declare module '@tanstack/react-router' {
       path: '/ip-pbx'
       fullPath: '/services/internet/ip-pbx'
       preLoaderRoute: typeof ServicesInternetIpPbxRouteImport
+      parentRoute: typeof ServicesInternetRoute
+    }
+    '/services/internet/iptv-lahore': {
+      id: '/services/internet/iptv-lahore'
+      path: '/iptv-lahore'
+      fullPath: '/services/internet/iptv-lahore'
+      preLoaderRoute: typeof ServicesInternetIptvLahoreRouteImport
       parentRoute: typeof ServicesInternetRoute
     }
     '/services/internet/ivr-services': {
@@ -1987,11 +1991,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSmsFeaturesRouteImport
       parentRoute: typeof ServicesSmsRoute
     }
-    '/services/sms/otp-service-pakistan': {
-      id: '/services/sms/otp-service-pakistan'
-      path: '/otp-service-pakistan'
-      fullPath: '/services/sms/otp-service-pakistan'
-      preLoaderRoute: typeof ServicesSmsOtpServicePakistanRouteImport
+    '/services/sms/otp-sms-service-pakistan': {
+      id: '/services/sms/otp-sms-service-pakistan'
+      path: '/otp-sms-service-pakistan'
+      fullPath: '/services/sms/otp-sms-service-pakistan'
+      preLoaderRoute: typeof ServicesSmsOtpSmsServicePakistanRouteImport
       parentRoute: typeof ServicesSmsRoute
     }
     '/services/sms/pricing': {
@@ -2078,11 +2082,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSoftwareSupportRouteImport
       parentRoute: typeof ServicesSoftwareRoute
     }
-    '/services/software/web-design-services-pakistan': {
-      id: '/services/software/web-design-services-pakistan'
-      path: '/web-design-services-pakistan'
-      fullPath: '/services/software/web-design-services-pakistan'
-      preLoaderRoute: typeof ServicesSoftwareWebDesignServicesPakistanRouteImport
+    '/services/software/web-design-services-lahore': {
+      id: '/services/software/web-design-services-lahore'
+      path: '/web-design-services-lahore'
+      fullPath: '/services/software/web-design-services-lahore'
+      preLoaderRoute: typeof ServicesSoftwareWebDesignServicesLahoreRouteImport
       parentRoute: typeof ServicesSoftwareRoute
     }
     '/services/software/web-development-pakistan': {
@@ -2091,6 +2095,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/services/software/web-development-pakistan'
       preLoaderRoute: typeof ServicesSoftwareWebDevelopmentPakistanRouteImport
       parentRoute: typeof ServicesSoftwareRoute
+    }
+    '/_layout/resources/customer-guides/': {
+      id: '/_layout/resources/customer-guides/'
+      path: '/'
+      fullPath: '/resources/customer-guides/'
+      preLoaderRoute: typeof LayoutResourcesCustomerGuidesIndexRouteImport
+      parentRoute: typeof LayoutResourcesCustomerGuidesRoute
+    }
+    '/_layout/resources/customer-guides/payment-guides': {
+      id: '/_layout/resources/customer-guides/payment-guides'
+      path: '/payment-guides'
+      fullPath: '/resources/customer-guides/payment-guides'
+      preLoaderRoute: typeof LayoutResourcesCustomerGuidesPaymentGuidesRouteImport
+      parentRoute: typeof LayoutResourcesCustomerGuidesRoute
     }
     '/services/cloud/blog/': {
       id: '/services/cloud/blog/'
@@ -2188,6 +2206,7 @@ declare module '@tanstack/react-router' {
 
 interface LayoutCompanyRouteChildren {
   LayoutCompanyAboutUsRoute: typeof LayoutCompanyAboutUsRoute
+  LayoutCompanyCareersRoute: typeof LayoutCompanyCareersRoute
   LayoutCompanyCertificationsRoute: typeof LayoutCompanyCertificationsRoute
   LayoutCompanyCsrRoute: typeof LayoutCompanyCsrRoute
   LayoutCompanyOurCoreTeamRoute: typeof LayoutCompanyOurCoreTeamRoute
@@ -2198,6 +2217,7 @@ interface LayoutCompanyRouteChildren {
 
 const LayoutCompanyRouteChildren: LayoutCompanyRouteChildren = {
   LayoutCompanyAboutUsRoute: LayoutCompanyAboutUsRoute,
+  LayoutCompanyCareersRoute: LayoutCompanyCareersRoute,
   LayoutCompanyCertificationsRoute: LayoutCompanyCertificationsRoute,
   LayoutCompanyCsrRoute: LayoutCompanyCsrRoute,
   LayoutCompanyOurCoreTeamRoute: LayoutCompanyOurCoreTeamRoute,
@@ -2251,15 +2271,32 @@ const LayoutIndustrySolutionsRouteWithChildren =
     LayoutIndustrySolutionsRouteChildren,
   )
 
+interface LayoutResourcesCustomerGuidesRouteChildren {
+  LayoutResourcesCustomerGuidesPaymentGuidesRoute: typeof LayoutResourcesCustomerGuidesPaymentGuidesRoute
+  LayoutResourcesCustomerGuidesIndexRoute: typeof LayoutResourcesCustomerGuidesIndexRoute
+}
+
+const LayoutResourcesCustomerGuidesRouteChildren: LayoutResourcesCustomerGuidesRouteChildren =
+  {
+    LayoutResourcesCustomerGuidesPaymentGuidesRoute:
+      LayoutResourcesCustomerGuidesPaymentGuidesRoute,
+    LayoutResourcesCustomerGuidesIndexRoute:
+      LayoutResourcesCustomerGuidesIndexRoute,
+  }
+
+const LayoutResourcesCustomerGuidesRouteWithChildren =
+  LayoutResourcesCustomerGuidesRoute._addFileChildren(
+    LayoutResourcesCustomerGuidesRouteChildren,
+  )
+
 interface LayoutResourcesRouteChildren {
-  LayoutResourcesCustomerGuidesRoute: typeof LayoutResourcesCustomerGuidesRoute
-  LayoutResourcesPaymentGuidesRoute: typeof LayoutResourcesPaymentGuidesRoute
+  LayoutResourcesCustomerGuidesRoute: typeof LayoutResourcesCustomerGuidesRouteWithChildren
   LayoutResourcesIndexRoute: typeof LayoutResourcesIndexRoute
 }
 
 const LayoutResourcesRouteChildren: LayoutResourcesRouteChildren = {
-  LayoutResourcesCustomerGuidesRoute: LayoutResourcesCustomerGuidesRoute,
-  LayoutResourcesPaymentGuidesRoute: LayoutResourcesPaymentGuidesRoute,
+  LayoutResourcesCustomerGuidesRoute:
+    LayoutResourcesCustomerGuidesRouteWithChildren,
   LayoutResourcesIndexRoute: LayoutResourcesIndexRoute,
 }
 
@@ -2269,7 +2306,6 @@ const LayoutResourcesRouteWithChildren = LayoutResourcesRoute._addFileChildren(
 
 interface LayoutRouteChildren {
   LayoutSplatRoute: typeof LayoutSplatRoute
-  LayoutCareersRoute: typeof LayoutCareersRoute
   LayoutCompanyRoute: typeof LayoutCompanyRouteWithChildren
   LayoutCompanyProfileRoute: typeof LayoutCompanyProfileRoute
   LayoutContactUsRoute: typeof LayoutContactUsRoute
@@ -2286,7 +2322,6 @@ interface LayoutRouteChildren {
 
 const LayoutRouteChildren: LayoutRouteChildren = {
   LayoutSplatRoute: LayoutSplatRoute,
-  LayoutCareersRoute: LayoutCareersRoute,
   LayoutCompanyRoute: LayoutCompanyRouteWithChildren,
   LayoutCompanyProfileRoute: LayoutCompanyProfileRoute,
   LayoutContactUsRoute: LayoutContactUsRoute,
@@ -2364,12 +2399,12 @@ const ServicesCloudRouteWithChildren = ServicesCloudRoute._addFileChildren(
 )
 
 interface ServicesInternetRouteChildren {
-  ServicesInternetBusinessInternetRoute: typeof ServicesInternetBusinessInternetRoute
   ServicesInternetContactUsRoute: typeof ServicesInternetContactUsRoute
-  ServicesInternetCoverageAreaRoute: typeof ServicesInternetCoverageAreaRoute
-  ServicesInternetHdtvBundlesRoute: typeof ServicesInternetHdtvBundlesRoute
-  ServicesInternetHomeInternetRoute: typeof ServicesInternetHomeInternetRoute
+  ServicesInternetCoverageAreasRoute: typeof ServicesInternetCoverageAreasRoute
+  ServicesInternetDedicatedInternetLahoreRoute: typeof ServicesInternetDedicatedInternetLahoreRoute
+  ServicesInternetHomeInternetServicesLahoreRoute: typeof ServicesInternetHomeInternetServicesLahoreRoute
   ServicesInternetIpPbxRoute: typeof ServicesInternetIpPbxRoute
+  ServicesInternetIptvLahoreRoute: typeof ServicesInternetIptvLahoreRoute
   ServicesInternetIvrServicesRoute: typeof ServicesInternetIvrServicesRoute
   ServicesInternetPbxPriceInPakistanRoute: typeof ServicesInternetPbxPriceInPakistanRoute
   ServicesInternetSipTrunkRoute: typeof ServicesInternetSipTrunkRoute
@@ -2381,12 +2416,14 @@ interface ServicesInternetRouteChildren {
 }
 
 const ServicesInternetRouteChildren: ServicesInternetRouteChildren = {
-  ServicesInternetBusinessInternetRoute: ServicesInternetBusinessInternetRoute,
   ServicesInternetContactUsRoute: ServicesInternetContactUsRoute,
-  ServicesInternetCoverageAreaRoute: ServicesInternetCoverageAreaRoute,
-  ServicesInternetHdtvBundlesRoute: ServicesInternetHdtvBundlesRoute,
-  ServicesInternetHomeInternetRoute: ServicesInternetHomeInternetRoute,
+  ServicesInternetCoverageAreasRoute: ServicesInternetCoverageAreasRoute,
+  ServicesInternetDedicatedInternetLahoreRoute:
+    ServicesInternetDedicatedInternetLahoreRoute,
+  ServicesInternetHomeInternetServicesLahoreRoute:
+    ServicesInternetHomeInternetServicesLahoreRoute,
   ServicesInternetIpPbxRoute: ServicesInternetIpPbxRoute,
+  ServicesInternetIptvLahoreRoute: ServicesInternetIptvLahoreRoute,
   ServicesInternetIvrServicesRoute: ServicesInternetIvrServicesRoute,
   ServicesInternetPbxPriceInPakistanRoute:
     ServicesInternetPbxPriceInPakistanRoute,
@@ -2405,7 +2442,7 @@ interface ServicesSmsRouteChildren {
   ServicesSmsBrandedSmsPakistanRoute: typeof ServicesSmsBrandedSmsPakistanRoute
   ServicesSmsContactRoute: typeof ServicesSmsContactRoute
   ServicesSmsFeaturesRoute: typeof ServicesSmsFeaturesRoute
-  ServicesSmsOtpServicePakistanRoute: typeof ServicesSmsOtpServicePakistanRoute
+  ServicesSmsOtpSmsServicePakistanRoute: typeof ServicesSmsOtpSmsServicePakistanRoute
   ServicesSmsPricingRoute: typeof ServicesSmsPricingRoute
   ServicesSmsPrivacyPolicyRoute: typeof ServicesSmsPrivacyPolicyRoute
   ServicesSmsSmsApiPakistanRoute: typeof ServicesSmsSmsApiPakistanRoute
@@ -2418,7 +2455,7 @@ const ServicesSmsRouteChildren: ServicesSmsRouteChildren = {
   ServicesSmsBrandedSmsPakistanRoute: ServicesSmsBrandedSmsPakistanRoute,
   ServicesSmsContactRoute: ServicesSmsContactRoute,
   ServicesSmsFeaturesRoute: ServicesSmsFeaturesRoute,
-  ServicesSmsOtpServicePakistanRoute: ServicesSmsOtpServicePakistanRoute,
+  ServicesSmsOtpSmsServicePakistanRoute: ServicesSmsOtpSmsServicePakistanRoute,
   ServicesSmsPricingRoute: ServicesSmsPricingRoute,
   ServicesSmsPrivacyPolicyRoute: ServicesSmsPrivacyPolicyRoute,
   ServicesSmsSmsApiPakistanRoute: ServicesSmsSmsApiPakistanRoute,
@@ -2438,7 +2475,7 @@ interface ServicesSoftwareRouteChildren {
   ServicesSoftwareMobileAppDevelopersPakistanRoute: typeof ServicesSoftwareMobileAppDevelopersPakistanRoute
   ServicesSoftwareSeoServicesLahoreRoute: typeof ServicesSoftwareSeoServicesLahoreRoute
   ServicesSoftwareSupportRoute: typeof ServicesSoftwareSupportRoute
-  ServicesSoftwareWebDesignServicesPakistanRoute: typeof ServicesSoftwareWebDesignServicesPakistanRoute
+  ServicesSoftwareWebDesignServicesLahoreRoute: typeof ServicesSoftwareWebDesignServicesLahoreRoute
   ServicesSoftwareWebDevelopmentPakistanRoute: typeof ServicesSoftwareWebDevelopmentPakistanRoute
   ServicesSoftwareIndexRoute: typeof ServicesSoftwareIndexRoute
   ServicesSoftwareCaseStudiesBiaCareRoute: typeof ServicesSoftwareCaseStudiesBiaCareRoute
@@ -2464,8 +2501,8 @@ const ServicesSoftwareRouteChildren: ServicesSoftwareRouteChildren = {
   ServicesSoftwareSeoServicesLahoreRoute:
     ServicesSoftwareSeoServicesLahoreRoute,
   ServicesSoftwareSupportRoute: ServicesSoftwareSupportRoute,
-  ServicesSoftwareWebDesignServicesPakistanRoute:
-    ServicesSoftwareWebDesignServicesPakistanRoute,
+  ServicesSoftwareWebDesignServicesLahoreRoute:
+    ServicesSoftwareWebDesignServicesLahoreRoute,
   ServicesSoftwareWebDevelopmentPakistanRoute:
     ServicesSoftwareWebDevelopmentPakistanRoute,
   ServicesSoftwareIndexRoute: ServicesSoftwareIndexRoute,

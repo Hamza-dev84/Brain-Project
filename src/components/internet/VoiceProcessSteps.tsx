@@ -9,7 +9,7 @@ const steps = [
         We verify your
 
         <a
-          href="/services/internet/business-internet"
+          href="/services/internet/dedicated-internet-lahore"
           className="
     text-[#FF3333]
     hover:text-[#FF6666]

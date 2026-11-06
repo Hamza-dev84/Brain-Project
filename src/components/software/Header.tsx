@@ -31,7 +31,7 @@ const Header: React.FC = () => {
     {
       name: "Web Design Services",
       description: "Creative UI/UX and responsive designs",
-      href: "/services/software/web-design-services-pakistan",
+      href: "/services/software/web-design-services-lahore",
       icon: Palette
     },
     {
@@ -58,7 +58,7 @@ const Header: React.FC = () => {
     {
       name: "Careers",
       description: "Join our growing team",
-      href: "/careers",
+      href: "/company/careers",
       icon: Briefcase
     },
     {
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
     {
       name: "Payment Guides",
       description: "Secure payment methods and guides",
-      href: "/resources/payment-guides",
+      href: "/resources/customer-guides/payment-guides",
       icon: CreditCard
     }
   ];

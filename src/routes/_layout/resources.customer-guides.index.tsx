@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
-import Careers from "@/pages/Careers";
+import CustomerGuides from "@/pages/resources/CustomerGuides";
 import { PageTransition } from "@/components/ui/page-transition";
 
-export const Route = createFileRoute("/_layout/careers")({
+export const Route = createFileRoute("/_layout/resources/customer-guides/")({
   component: () => (
     <PageTransition>
-      <Careers />
+      <CustomerGuides />
     </PageTransition>
   ),
 });

@@ -9,12 +9,12 @@ under `/internet`, keeping its own look, with zero color bleed into `/`, `/cloud
 
 ```text
 /internet                             Index
-/internet/home-internet               /internet/business-internet
+/internet/home-internet-services-lahore               /internet/dedicated-internet-lahore
 /internet/voice-plans                 /internet/voip-services
 /internet/sip-trunk
 /internet/ivr-services                /internet/ip-pbx
 /internet/virtual-pbx                 /internet/pbx-price-in-pakistan
-/internet/hdtv-bundles                /internet/coverage-area
+/internet/iptv-lahore                /internet/coverage-areas
 /internet/contact-us
 ```
 

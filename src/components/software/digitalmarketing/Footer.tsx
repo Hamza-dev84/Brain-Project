@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
     { name: "About Us", href: "https://brain.net.pk/AboutUs", external: true },
     { name: "Services", href: "/#services", external: false },
     { name: "Contact Us", href: "/contact-us", external: false },
-    { name: "Careers", href: "https://brain.net.pk/Careers", external: true },
+    { name: "Careers", href: "https://brain.net.pk/company/Careers", external: true },
   ];
 
   const serviceLinks = [

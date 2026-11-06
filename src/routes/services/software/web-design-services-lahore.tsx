@@ -4,7 +4,7 @@ import WebDesignServicesPakistan from "@/components/software/pages/WebDesignServ
 const title = "Reliable Web Design Services in Pakistan | BrainSOFT";
 const description = "BrainSOFT is a Leading Web Design Company in Pakistan Offering Creative, Responsive, and WCAG-Based Scalable Web Design Solutions.";
 
-export const Route = createFileRoute("/services/software/web-design-services-pakistan")({
+export const Route = createFileRoute("/services/software/web-design-services-lahore")({
   // head: () => ({
   //   meta: [
   //     { title },

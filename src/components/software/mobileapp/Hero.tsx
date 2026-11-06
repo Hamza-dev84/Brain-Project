@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
             build custom Android, iOS, and cross-platform apps that support
             business growth, better 
                <a
-                href="/services/software/web-design-services-pakistan"
+                href="/services/software/web-design-services-lahore"
                 className="
     text-[#fab152]
     hover:text-[#c88e42]

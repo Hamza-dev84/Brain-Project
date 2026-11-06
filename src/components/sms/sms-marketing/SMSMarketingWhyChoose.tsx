@@ -65,7 +65,7 @@ const SMSMarketingWhyChoose = () => {
               to trigger automated order confirmations, appointment reminders,
               and
               <a
-                href="/services/sms/otp-service-pakistan"
+                href="/services/sms/otp-sms-service-pakistan"
                 className="
     text-[#9F1239]
     hover:text-[#E11D48]

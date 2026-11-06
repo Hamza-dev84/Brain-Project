@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://brain.net.pk/Careers"
+                  href="https://brain.net.pk/company/Careers"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white/80 font-lato font-medium text-[16px] hover:text-secondary hover:translate-x-1 transition-all duration-300 inline-block"
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="/services/software/web-design-services-pakistan"
+                  href="/services/software/web-design-services-lahore"
                   className="text-white/80 font-lato font-medium text-[16px] hover:text-secondary hover:translate-x-1 transition-all duration-300 inline-block"
                 >
                   Web Design Services

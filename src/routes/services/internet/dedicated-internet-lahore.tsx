@@ -40,7 +40,7 @@ import DedicatedInternetSEOSchema from "@/pages/schemaFiles/internet-schema-file
 // const description =
 //   "Dedicated fiber internet in Lahore with 99.9% uptime SLA, static IP, symmetrical speeds, and 24/7 NOC support. Business plans from PKR 8,000/month.";
 
-export const Route = createFileRoute("/services/internet/business-internet")({
+export const Route = createFileRoute("/services/internet/dedicated-internet-lahore")({
   // head: () => ({
   //   meta: [
   //     { title },
@@ -222,7 +222,7 @@ function BusinessInternet() {
                   <p className="font-dm text-[hsl(var(--bn-ink))] text-lg md:text-xl leading-relaxed">
                     If your business runs on the internet, a shared broadband connection is not enough. We offer
                     {/* <span className="text-[hsl(var(--bn-violet-soft))] font-semibold">dedicated internet in Lahore</span>  */}
-                    <Link to="/services/internet/business-internet" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
+                    <Link to="/services/internet/dedicated-internet-lahore" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
                       dedicated internet in Lahore
                     </Link>{" "}
                     — your office gets guaranteed bandwidth. It's private, not slowed down at busy times, and there is no reason for dropped connections.

@@ -111,7 +111,7 @@ export const Header: React.FC = () => {
                     Refer & Win
                   </button>
                   <a
-                    href="/careers"
+                    href="/company/careers"
                     className="block w-full text-left px-4 py-2 hover:bg-neutral-50 transition-colors"
                   >
                     Careers
@@ -192,7 +192,7 @@ export const Header: React.FC = () => {
                 Refer & Win
               </button>
               <a
-                href="/careers"
+                href="/company/careers"
                 className="text-left py-2 hover:text-brand-secondary transition-colors"
               >
                 Careers

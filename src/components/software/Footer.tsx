@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
                 Contact Us
               </a>
               <a
-                href="/careers"
+                href="/company/careers"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/90 font-lato text-body-small hover:text-brand-secondary transition-colors"
@@ -166,7 +166,7 @@ const Footer: React.FC = () => {
                 Web Development
               </a>
               <a
-                href="/services/software/web-design-services-pakistan"
+                href="/services/software/web-design-services-lahore"
                 className="text-white/90 font-lato text-body-small hover:text-brand-secondary transition-colors"
               >
                 Web Design Services

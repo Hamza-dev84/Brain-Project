@@ -73,7 +73,7 @@ const UniversalHeader: React.FC = () => {
     },
     {
       label: "OTP SMS",
-      path: "/services/sms/otp-service-pakistan",
+      path: "/services/sms/otp-sms-service-pakistan",
       icon: ShieldCheck,
       description: "Deliver instant verification codes.",
     },
@@ -94,7 +94,7 @@ const UniversalHeader: React.FC = () => {
     },
     {
       label: "Careers",
-      path: "/careers",
+      path: "/company/careers",
       icon: Briefcase,
       description: "Join our growing team",
     },
@@ -106,7 +106,7 @@ const UniversalHeader: React.FC = () => {
     },
     {
       label: "Payment Guides",
-      path: "/resources/payment-guides",
+      path: "/resources/customer-guides/payment-guides",
       icon: CreditCard,
       description: "Secure payment methods and guides",
     },
@@ -164,8 +164,8 @@ const UniversalHeader: React.FC = () => {
     //                   SMS Marketing
     //                 </button>
     //                 <button
-    //                   onClick={() => handleNavigation("/services/sms/otp-service-pakistan")}
-    //                   onMouseEnter={() => preload("/services/sms/otp-service-pakistan")}
+    //                   onClick={() => handleNavigation("/services/sms/otp-sms-service-pakistan")}
+    //                   onMouseEnter={() => preload("/services/sms/otp-sms-service-pakistan")}
     //                   className="block w-full px-4 py-3 text-left text-foreground hover:bg-primary hover:text-primary-foreground transition-colors font-body"
     //                 >
     //                   OTP SMS
@@ -233,7 +233,7 @@ const UniversalHeader: React.FC = () => {
     //                   Refer &amp; Win
     //                 </button>
     //                 <button
-    //                   onClick={() => handleNavigation("/careers")}
+    //                   onClick={() => handleNavigation("/company/careers")}
     //                   className="block w-full px-4 py-3 text-left text-foreground hover:bg-primary hover:text-primary-foreground transition-colors font-body"
     //                 >
     //                   Careers
@@ -294,7 +294,7 @@ const UniversalHeader: React.FC = () => {
     //             SMS Marketing
     //           </button>
     //           <button
-    //             onClick={() => handleNavigation("/services/sms/otp-service-pakistan")}
+    //             onClick={() => handleNavigation("/services/sms/otp-sms-service-pakistan")}
     //             className="text-left text-primary/80 font-body text-sm"
     //           >
     //             OTP SMS
@@ -333,7 +333,7 @@ const UniversalHeader: React.FC = () => {
     //             About Us
     //           </button>
     //           <button
-    //             onClick={() => handleNavigation("/careers")}
+    //             onClick={() => handleNavigation("/company/careers")}
     //             className="text-left text-primary/80 font-body text-sm"
     //           >
     //             Careers

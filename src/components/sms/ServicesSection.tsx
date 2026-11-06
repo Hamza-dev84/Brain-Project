@@ -52,7 +52,7 @@ const ServicesSection = () => {
       title: "OTP SMS Service",
       description:
         "Secure transactions and logins with instant OTPs, high-priority routing, and reliable delivery.",
-      link: "/services/sms/otp-service-pakistan",
+      link: "/services/sms/otp-sms-service-pakistan",
       // Icon: ShieldCheck,
       icon: (
         <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg" className="icon-svg" style={{ width: '55px', height: '55px' }}>

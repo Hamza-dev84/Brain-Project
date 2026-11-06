@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
                 Web Development
               </a>
               <a 
-                href="/services/software/web-design-services-pakistan"
+                href="/services/software/web-design-services-lahore"
                 className="block hover:text-brand-secondary transition-colors cursor-pointer"
               >
                 Web Design Services

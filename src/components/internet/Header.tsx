@@ -31,9 +31,9 @@ const Header = () => {
   }, [isMobileOpen]);
 
   const homeMenu = [
-    { label: 'Home Internet', href: '/services/internet/home-internet' },
+    { label: 'Home Internet', href: '/services/internet/home-internet-services-lahore' },
     { label: 'Voice Plans', href: '/services/internet/voice-plans' },
-    { label: 'HDTV Bundles', href: '/services/internet/hdtv-bundles' },
+    { label: 'HDTV Bundles', href: '/services/internet/iptv-lahore' },
   ];
 
   const businessGroups = [
@@ -50,13 +50,13 @@ const Header = () => {
     },
     {
       title: 'Dedicated Internet',
-      items: [{ label: 'Dedicated Internet', href: '/services/internet/business-internet' }],
+      items: [{ label: 'Dedicated Internet', href: '/services/internet/dedicated-internet-lahore' }],
     },
   ];
 
   const resourcesMenu = [
     { label: 'About Us', href: '/company/about-us' },
-    { label: 'Careers', href: '/careers' },
+    { label: 'Careers', href: '/company/careers' },
     { label: 'Contact Us', href: '/services/internet/contact-us' },
     { label: 'Refer & Earn', href: '/refer-and-earn' },
   ];
@@ -166,7 +166,7 @@ const Header = () => {
               <Link to="/services/internet/contact-us" preload="intent" className="px-4 py-2 text-[hsl(var(--bn-ink))] text-sm font-medium rounded-full hover:bg-[hsl(var(--bn-violet)/0.15)] transition-colors whitespace-nowrap">
                 Support
               </Link>
-              <Link to="/services/internet/coverage-area" preload="intent" className="px-4 py-2 text-[hsl(var(--bn-ink))] text-sm font-medium rounded-full hover:bg-[hsl(var(--bn-violet)/0.15)] transition-colors whitespace-nowrap">
+              <Link to="/services/internet/coverage-areas" preload="intent" className="px-4 py-2 text-[hsl(var(--bn-ink))] text-sm font-medium rounded-full hover:bg-[hsl(var(--bn-violet)/0.15)] transition-colors whitespace-nowrap">
                 Coverage Areas
               </Link>
 
@@ -245,7 +245,7 @@ const Header = () => {
                   <Link to="/services/internet/contact-us" onClick={() => setIsMobileOpen(false)} className="touch-target px-3 py-3 rounded-lg text-[hsl(var(--bn-ink))] text-sm hover:bg-[hsl(var(--bn-violet)/0.2)] transition-colors">
                     Support
                   </Link>
-                  <Link to="/services/internet/coverage-area" onClick={() => setIsMobileOpen(false)} className="touch-target px-3 py-3 rounded-lg text-[hsl(var(--bn-ink))] text-sm hover:bg-[hsl(var(--bn-violet)/0.2)] transition-colors">
+                  <Link to="/services/internet/coverage-areas" onClick={() => setIsMobileOpen(false)} className="touch-target px-3 py-3 rounded-lg text-[hsl(var(--bn-ink))] text-sm hover:bg-[hsl(var(--bn-violet)/0.2)] transition-colors">
                     Coverage Areas
                   </Link>
 

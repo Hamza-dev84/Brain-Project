@@ -18,7 +18,7 @@ const PricingCTA: React.FC = () => {
           <p className="text-lg text-white/90 font-lato mb-8 leading-relaxed">
             Start sending OTP codes to users across Pakistan within minutes. BSMS provides a quick
             <a
-              href="/services/sms/otp-service-pakistan"
+              href="/services/sms/otp-sms-service-pakistan"
               className="
     text-[#A3E635]
     hover:text-[#BEF264]

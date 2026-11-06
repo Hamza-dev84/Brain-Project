@@ -21,7 +21,7 @@ const getServiceLink = (title: string): string => {
     "ERP Solutions": "/services/software/erp-software-pakistan",
     "Digital Marketing": "/services/software/digital-marketing-pakistan",
     "SEO Services": "/services/software/seo-services-lahore",
-    "UI/UX Designing": "/services/software/web-design-services-pakistan",
+    "UI/UX Designing": "/services/software/web-design-services-lahore",
   };
   return linkMap[title] || "/";
 };

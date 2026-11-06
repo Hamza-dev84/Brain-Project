@@ -312,7 +312,7 @@ function VoIPProvidersPage() {
                 <p className="font-dm text-[hsl(var(--bn-ink-soft))] leading-relaxed">
                   Call quality is a network problem before it is a phone problem. Pair your trunk with a{" "}
                   <Link
-                    to="/services/internet/business-internet"
+                    to="/services/internet/dedicated-internet-lahore"
                     className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4"
                   >
                     dedicated business internet connection
@@ -328,7 +328,7 @@ function VoIPProvidersPage() {
                   instead.
                 </p>
                 <Link
-                  to="/services/internet/coverage-area"
+                  to="/services/internet/coverage-areas"
                   className="font-display font-semibold text-sm text-[hsl(var(--bn-ink))] inline-flex items-center gap-2 hover:gap-3 transition-all"
                 >
                   Check if we cover your area <ArrowRight className="w-4 h-4" />

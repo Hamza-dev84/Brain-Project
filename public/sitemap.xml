@@ -6,7 +6,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/careers</loc>
+    <loc>https://brain.net.pk/company/careers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -131,7 +131,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/resources/payment-guides</loc>
+    <loc>https://brain.net.pk/resources/customer-guides/payment-guides</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -236,7 +236,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/business-internet</loc>
+    <loc>https://brain.net.pk/services/internet/dedicated-internet-lahore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -246,17 +246,17 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/coverage-area</loc>
+    <loc>https://brain.net.pk/services/internet/coverage-areas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/hdtv-bundles</loc>
+    <loc>https://brain.net.pk/services/internet/iptv-lahore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/internet/home-internet</loc>
+    <loc>https://brain.net.pk/services/internet//home-internet-services-lahore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -321,7 +321,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/sms/otp-service-pakistan</loc>
+    <loc>https://brain.net.pk/services/sms/otp-sms-service-pakistan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -436,7 +436,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://brain.net.pk/services/software/web-design-services-pakistan</loc>
+    <loc>https://brain.net.pk/services/software/web-design-services-lahore</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>

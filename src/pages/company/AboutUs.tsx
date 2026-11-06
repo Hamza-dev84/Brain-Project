@@ -152,7 +152,7 @@ function AboutUsContent() {
         <>
           Brain started providing
           <a
-            href="/services/internet/home-internet"
+            href="/services/internet/home-internet-services-lahore"
             className="
     text-[#2563EB]
     hover:text-[#1D4ED8]

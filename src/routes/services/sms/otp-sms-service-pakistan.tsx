@@ -50,7 +50,7 @@ const faqData = [
   },
 ];
 
-export const Route = createFileRoute("/services/sms/otp-service-pakistan")({
+export const Route = createFileRoute("/services/sms/otp-sms-service-pakistan")({
   // head: () => ({
   //   meta: [
   //     { title },

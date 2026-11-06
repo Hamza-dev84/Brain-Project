@@ -99,7 +99,7 @@ const OTPFooter = () => {
       links: [
         { name: "About Us", href: "/company/about-us" },
         { name: "Contact Us", href: "/services/sms/contact" },
-        { name: "Careers", href: "/careers" },
+        { name: "Careers", href: "/company/careers" },
         { name: "Company Profile", href: '/docs/braintelprofile.pdf', target: "_blank" },
       ],
     },
@@ -107,7 +107,7 @@ const OTPFooter = () => {
       title: "Services",
       links: [
         { name: "Branded SMS", href: "/services/sms/branded-sms-pakistan" },
-        { name: "OTP Service", href: "/services/sms/otp-service-pakistan" },
+        { name: "OTP Service", href: "/services/sms/otp-sms-service-pakistan" },
         { name: "SMS Marketing", href: "/services/sms/sms-marketing-pakistan" },
         { name: "API Integration", href: "/services/sms/sms-api-pakistan" },
       ],

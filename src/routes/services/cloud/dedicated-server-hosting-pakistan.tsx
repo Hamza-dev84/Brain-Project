@@ -119,7 +119,7 @@ const FEATURES = [
       <>
         Redundant power, redundant cooling, and
         <a
-          href="/services/internet/business-internet"
+          href="/services/internet/dedicated-internet-lahore"
           className="
     text-[#15803d]
     hover:text-[#166534]

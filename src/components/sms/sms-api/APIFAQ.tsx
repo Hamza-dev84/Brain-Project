@@ -14,7 +14,7 @@ export const apiFaqs = [
         <>
       An SMS API (Application Programming Interface) allows businesses in Pakistan to connect their applications, websites, or software with an SMS gateway. This enables automated sending and receiving of messages such as 
         <a
-                href="/services/sms/otp-service-pakistan"
+                href="/services/sms/otp-sms-service-pakistan"
                 className="
     text-[#9F1239]
     hover:text-[#E11D48]

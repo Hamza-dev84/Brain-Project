@@ -43,7 +43,7 @@ const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({ current
     {
       title: "OTP SMS",
       description: "Secure transactions and logins with instant OTPs, high-priority routing, and reliable delivery.",
-      link: "/services/sms/otp-service-pakistan",
+      link: "/services/sms/otp-sms-service-pakistan",
       icon: ShieldCheck,
     },
     {

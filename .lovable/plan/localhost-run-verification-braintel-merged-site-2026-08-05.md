@@ -13,7 +13,7 @@ Yes. The merged app runs locally. I verified it against the running dev server i
 200 /company                       200 /cloud/vps-hosting-pakistan
 200 /services/cloud                200 /sms
 200 /contact-us                    200 /sms/pricing
-200 /careers                       200 /sms/sms-api-pakistan
+200 /company/careers                       200 /sms/sms-api-pakistan
 ```
 
 2. TypeScript typecheck passes with zero errors across all three merged brands (parent, `/cloud`, `/sms`).

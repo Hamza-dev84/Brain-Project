@@ -9,7 +9,7 @@ const guides = [
     title: 'Payment Guides',
     description: 'Step-by-step instructions for making payments through various methods including EasyPaisa, JazzCash, BPAY, and 1Link.',
     icon: CreditCard,
-    path: '/resources/payment-guides',
+    path: '/resources/customer-guides/payment-guides',
     color: 'text-blue-600 dark:text-blue-400'
   },
   // Future guides can be added here

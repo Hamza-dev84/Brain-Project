@@ -22,7 +22,7 @@ import HomeInternetSchema from "@/pages/schemaFiles/internet-schema-files/HomeIn
 // const description =
 //   "Fast, reliable fiber optic home internet in Lahore with free installation and a 6-month speed boost. Check availability in your area.";
 
-export const Route = createFileRoute("/services/internet/home-internet")({
+export const Route = createFileRoute("/services/internet/home-internet-services-lahore")({
   // head: () => ({
   //   meta: [
   //     { title },

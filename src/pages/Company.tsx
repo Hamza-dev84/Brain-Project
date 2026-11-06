@@ -57,7 +57,7 @@ const company = [
   },
   {
     title: "Careers",
-    path: "/careers",
+    path: "/company/careers",
     icon: Briefcase,
     description:
       "Explore opportunities to grow, contribute, and innovate with BrainTEL.",
@@ -73,7 +73,7 @@ const company = [
   },
     {
     title: "Payment Guides",
-    path: "/resources/payment-guides",
+    path: "/resources/customer-guides/payment-guides",
     icon: CreditCard,
     description:
       "Step-by-step instructions to make payments easily and securely across our services.",

@@ -23,7 +23,7 @@ const title = "Fiber Internet Coverage Areas in Lahore | BrainNET";
 const description =
   "Check if BrainNET fiber optic internet is available in your area. A 100% fiber network covering 50+ areas and 150+ suburbs across Lahore.";
 
-export const Route = createFileRoute("/services/internet/coverage-area")({
+export const Route = createFileRoute("/services/internet/coverage-areas")({
   // head: () => ({
   //   meta: [
   //     { title },

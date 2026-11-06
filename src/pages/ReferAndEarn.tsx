@@ -130,7 +130,7 @@ export default function ReferAndEarn() {
               <p className="text-lg text-neutral-medium">
                 Share The Joy Of
                 <a
-                  href="/services/internet/home-internet"
+                  href="/services/internet/home-internet-services-lahore"
                   className="
     text-[#2563EB]
     hover:text-[#1D4ED8]

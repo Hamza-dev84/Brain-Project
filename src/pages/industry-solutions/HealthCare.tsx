@@ -38,7 +38,7 @@ function HealthCareContent() {
         <>
           Letting the loading times control the time makes it exhausting for the consultant and the patient. BrainNET Fiber aims to resolve these issues by providing
           <a
-            href="/services/internet/business-internet"
+            href="/services/internet/dedicated-internet-lahore"
             className="
      text-[#2563EB]
     hover:text-[#1D4ED8]
@@ -124,7 +124,7 @@ function HealthCareContent() {
         <>
           No more missed appointments, remain up to date with our BSMS's
           <a
-            href="/services/sms/otp-service-pakistan"
+            href="/services/sms/otp-sms-service-pakistan"
             className="
      text-[#2563EB]
     hover:text-[#1D4ED8]

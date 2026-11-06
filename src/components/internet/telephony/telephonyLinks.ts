@@ -43,7 +43,7 @@ export const telephonyLinks: TelephonyLink[] = [
 
 export const internetLinks: TelephonyLink[] = [
   {
-    path: "/services/internet/business-internet",
+    path: "/services/internet/dedicated-internet-lahore",
     label: "Dedicated Internet",
     blurb: "Uncontended 1:1 fiber with a written 99.9% uptime SLA.",
   },

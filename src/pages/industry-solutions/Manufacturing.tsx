@@ -38,7 +38,7 @@ function ManufacturingContent() {
         <>
           A network failure can stop your automated production line, costing thousands per minute. BrainNET Fiber's
           <a
-            href="/services/internet/business-internet"
+            href="/services/internet/dedicated-internet-lahore"
             className="
      text-[#2563EB]
     hover:text-[#1D4ED8]

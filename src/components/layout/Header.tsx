@@ -75,9 +75,9 @@ const navigationData = {
     { title: 'Corporate Social Responsibility', path: '/company/csr', icon: HandHeart, description: 'Our commitment to society' },
     { title: 'Strategic Corporate Alliances', path: '/company/strategic-corporate-alliances', icon: Handshake, description: 'Partnership ecosystem' },
     { title: 'About Us', path: '/company/about-us', icon: Info, description: 'Our story and mission' },
-    { title: 'Careers', path: '/careers', icon: Briefcase, description: 'Join our team' },
+    { title: 'Careers', path: '/company/careers', icon: Briefcase, description: 'Join our team' },
     { title: 'Our Technology Partners', path: '/company/tech-partners', icon: Network, description: 'Technology partnerships' },
-    { title: 'Payment Guides', path: '/resources/payment-guides', icon: CreditCard, description: 'Secure payment methods and guides' },
+    { title: 'Payment Guides', path: '/resources/customer-guides/payment-guides', icon: CreditCard, description: 'Secure payment methods and guides' },
   ],
   resources: [
     { title: 'Customer Guides', path: '/resources/customer-guides', icon: BookOpen, description: 'Helpful guides and manuals' },

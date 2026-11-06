@@ -21,7 +21,7 @@ const title = "HDTV Bundles Lahore | 200+ Channels | BrainTV";
 const description =
   "Watch 200+ live HD channels on any device with BrainTV bundles from Rs. 399/month. Stream on mobile, tablet, TV and laptop.";
 
-export const Route = createFileRoute("/services/internet/hdtv-bundles")({
+export const Route = createFileRoute("/services/internet/iptv-lahore")({
   // head: () => ({
   //   meta: [
   //     { title },

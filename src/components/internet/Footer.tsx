@@ -21,10 +21,10 @@ const Footer = () => {
     {
       title: 'Services',
       links: [
-        { label: 'Home Internet', href: '/services/internet/home-internet', type: 'route' },
-        { label: 'Dedicated Internet', href: '/services/internet/business-internet', type: 'route' },
+        { label: 'Home Internet', href: '/services/internet/home-internet-services-lahore', type: 'route' },
+        { label: 'Dedicated Internet', href: '/services/internet/dedicated-internet-lahore', type: 'route' },
         { label: 'Voice Plans', href: '/services/internet/voice-plans', type: 'route' },
-        { label: 'HDTV Bundles', href: '/services/internet/hdtv-bundles', type: 'route' },
+        { label: 'HDTV Bundles', href: '/services/internet/iptv-lahore', type: 'route' },
       ],
     },
     {
@@ -42,8 +42,8 @@ const Footer = () => {
       title: 'Company',
       links: [
         { label: 'About Us', href: '/company/about-us', type: 'route' },
-        { label: 'Careers', href: '/careers' },
-        { label: 'Coverage Areas', href: '/services/internet/coverage-area', type: 'route' },
+        { label: 'Careers', href: '/company/careers' },
+        { label: 'Coverage Areas', href: '/services/internet/coverage-areas', type: 'route' },
         { label: 'Refer & Earn', href: '/refer-and-earn', type: 'route' },
       ],
     },

@@ -38,7 +38,7 @@ function CallCentersContent() {
         <>
           An unreliable connection means countless dropped calls and poor audio quality. BrainNET Fiber promises a symmetric
           <a
-            href="/services/internet/business-internet"
+            href="/services/internet/dedicated-internet-lahore"
             className="
      text-[#2563EB]
     hover:text-[#1D4ED8]
@@ -113,7 +113,7 @@ function CallCentersContent() {
           </a>
           with DDoS mitigation. Additionally, a reliable delivery of OTPs and alerts is promised by our
           <a
-            href="/services/sms/otp-service-pakistan"
+            href="/services/sms/otp-sms-service-pakistan"
             className="
      text-[#2563EB]
     hover:text-[#1D4ED8]

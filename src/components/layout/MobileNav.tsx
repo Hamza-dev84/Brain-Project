@@ -83,7 +83,7 @@ const navigationGroups = [
       { title: 'About Us', path: '/company/about-us', icon: Info },
       { title: 'Our History', path: '/company/history', icon: Clock },
       { title: 'Our Technology Partners', path: '/company/tech-partners', icon: Network },
-      { title: 'Payment Guides', path: '/resources/payment-guides', icon: CreditCard },
+      { title: 'Payment Guides', path: '/resources/customer-guides/payment-guides', icon: CreditCard },
     ]
   },
   {
@@ -185,7 +185,7 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
               <span className="font-medium">Contact Us</span>
             </Link>
             <a
-              href="https://careers.brain.net.pk"
+              href="https://company/careers.brain.net.pk"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}

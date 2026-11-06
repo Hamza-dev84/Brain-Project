@@ -276,7 +276,7 @@ function VirtualPBX() {
             {[
               { to: "/services/internet/sip-trunk", title: "SIP Trunk", body: "Licensed channels carrying calls into your cloud tenant, sized to your busy hour." },
               { to: "/services/internet/ivr-services", title: "IVR Services", body: "Urdu and English auto-attendant menus, queues and skills-based routing on top of your tenant." },
-              { to: "/services/internet/business-internet", title: "Dedicated Internet", body: "Uncontended 1:1 fiber with QoS on voice traffic, on one invoice with your telephony." },
+              { to: "/services/internet/dedicated-internet-lahore", title: "Dedicated Internet", body: "Uncontended 1:1 fiber with QoS on voice traffic, on one invoice with your telephony." },
             ].map((c) => (
               <Link key={c.to} to={c.to} className="bn-tile p-7 flex flex-col gap-3 group">
                 <h3 className="font-display font-semibold text-xl text-[hsl(var(--bn-ink))] group-hover:text-[hsl(var(--bn-violet-soft))] transition-colors">

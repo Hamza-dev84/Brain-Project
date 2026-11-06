@@ -83,7 +83,7 @@ function RestaurantsContent() {
           </a>
           Directly send orders to the kitchen printer or display screen without human intervention or error. Spice things up with
           <a
-            href="/services/internet/business-internet"
+            href="/services/internet/dedicated-internet-lahore"
             className="
      text-[#2563EB]
     hover:text-[#1D4ED8]

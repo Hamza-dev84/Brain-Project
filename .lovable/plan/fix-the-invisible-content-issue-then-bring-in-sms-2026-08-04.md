@@ -36,7 +36,7 @@ Routes to port (each becomes `src/routes/sms/...`):
 /sms/sms-api-pakistan
 /sms/sms-marketing-pakistan
 /sms/branded-sms-pakistan
-/sms/otp-service-pakistan
+/sms/otp-sms-service-pakistan
 /sms/otp-sms-service-pakistan
 /sms/privacy-policy
 /sms/terms-of-service

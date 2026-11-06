@@ -120,7 +120,7 @@ const INCLUDED = [
       <>
         We don't lock you into a single ISP. As a carrier-neutral facility, you can access
         <a
-          href="/services/internet/business-internet"
+          href="/services/internet/dedicated-internet-lahore"
           className="
     text-[#15803d]
     hover:text-[#166534]

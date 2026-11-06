@@ -23,7 +23,7 @@ const footerLinks = {
   company: [
     { title: 'About Us', path: '/company/about-us', type: 'route' },
     { title: 'Contact Us', path: '/contact-us', type: 'route' },
-    { title: 'Careers', path: '/careers', type: 'route' },
+    { title: 'Careers', path: '/company/careers', type: 'route' },
     { title: 'Refer & Earn', path: '/refer-and-earn', type: 'route' },
     {
       title: 'Company Profile',
