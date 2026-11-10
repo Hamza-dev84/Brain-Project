@@ -43,7 +43,7 @@ const OTPFAQ = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
             <HelpCircle className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary">
+          <h2 className="font-heading font-bold! text-3xl! md:text-4xl! text-primary">
             Frequently Asked Questions
           </h2>
         </div>
@@ -54,7 +54,7 @@ const OTPFAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-2 border-primary/30 rounded-xl px-6 hover:border-primary/50 transition-colors"
+                className="border-2 border-primary/30 rounded-md px-6 hover:border-primary/50 transition-colors"
               >
                 <AccordionTrigger className="text-left font-heading font-bold text-lg text-primary py-6">
                   {faq.question}

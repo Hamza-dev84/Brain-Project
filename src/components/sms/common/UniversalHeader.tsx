@@ -533,7 +533,7 @@ const UniversalHeader: React.FC = () => {
               href="https://portal.bsms.pk"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-accent text-accent-foreground font-body font-semibold px-5 py-2.5 rounded-lg hover:bg-accent/90 hover:shadow-lg transition-all hover:scale-105 flex items-center gap-2"
+              className="bg-accent text-accent-foreground font-body font-semibold px-5 py-2.5 rounded-sm hover:bg-accent/90 hover:shadow-lg transition-all hover:scale-105 flex items-center gap-2"
             >
               <img
                 src="https://api.builder.io/api/v1/image/assets/5e0ce357902e465698cec931fbe28c36/2272085c3feac778c55b17b72fcd4d20996dcbdc?placeholderIfAbsent=true"
@@ -546,7 +546,7 @@ const UniversalHeader: React.FC = () => {
               href="https://pay.brain.net.pk"
               target="_blank"
               rel="noopener noreferrer"
-              className="border-2 border-border text-foreground font-body font-semibold px-5 py-2.5 rounded-lg hover:bg-muted transition-all hover:scale-105"
+              className="border-2 border-border text-foreground font-body font-semibold px-5 py-2.5 rounded-sm hover:bg-muted transition-all hover:scale-105"
             >
               Pay Your Bill
             </a>

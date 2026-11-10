@@ -11,7 +11,7 @@ const PricingCTA: React.FC = () => {
             <Wallet className="w-10 h-10 text-white" />
           </div>
 
-          <h2 className="text-3xl md:text-5xl font-bold font-raleway text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold! font-raleway text-white mb-6">
             Ready to Get Started?
           </h2>
 
@@ -37,15 +37,15 @@ const PricingCTA: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               to="/services/sms/pricing"
-              className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-lg font-lato font-semibold hover:bg-white/90 transition-all hover:scale-105 shadow-lg group"
+              className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-sm font-lato font-semibold hover:bg-white/90 transition-all hover:scale-105 shadow-lg group"
             >
-              <span>View Our Pricing</span>
+              <span>View Pricing</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <Link
               to="/services/sms/contact"
-              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xs text-white border-2 border-white px-8 py-4 rounded-lg font-lato font-semibold hover:bg-white/20 transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-xs text-white border-2 border-white px-8 py-4 rounded-sm font-lato font-semibold hover:bg-white/20 transition-all hover:scale-105"
             >
               <span>Contact Sales</span>
             </Link>

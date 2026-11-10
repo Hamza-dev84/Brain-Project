@@ -53,14 +53,14 @@ const TemplatesLogsSection = () => {
             {templates.map((template, i) => (
               <div
                 key={i}
-                className={`p-4 rounded-lg border transition-all cursor-pointer ${
+                className={`p-4 rounded-sm border transition-all cursor-pointer ${
                   template.selected
                     ? "bg-primary/10 border-primary/40 shadow-md"
                     : "bg-card/50 border-border/30 hover:border-primary/30"
                 }`}
               >
                 <div className="flex items-start justify-between mb-2">
-                  <h4 className="font-semibold text-sm">{template.name}</h4>
+                  <h4 className="font-semibold! text-sm!">{template.name}</h4>
                   {template.selected && (
                     <Badge className="bg-primary text-primary-foreground text-xs">Selected</Badge>
                   )}
@@ -104,7 +104,7 @@ const TemplatesLogsSection = () => {
               >
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1">
-                    <h4 className="font-semibold text-sm mb-1">{campaign.name}</h4>
+                    <h4 className="font-semibold! text-sm! mb-1">{campaign.name}</h4>
                     <p className="text-xs text-muted-foreground">{campaign.date}</p>
                   </div>
                   <Badge

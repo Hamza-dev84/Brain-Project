@@ -165,7 +165,7 @@ const OTPFooter = () => {
           {/* Footer Links */}
           {footerSections.map((section, index) => (
             <div key={index} className="space-y-4">
-              <h3 className="font-heading font-bold text-lg text-primary-foreground">
+              <h3 className="font-heading font-bold text-lg! text-primary-foreground">
                 {section.title}
               </h3>
               <nav className="flex flex-col space-y-2">
@@ -196,7 +196,7 @@ const OTPFooter = () => {
 
           {/* Newsletter & Social */}
           <div className="space-y-4">
-            <h4 className="text-white font-bold text-m3-on-surface">
+            <h4 className="text-white text-lg! font-bold! text-m3-on-surface">
               Newsletter
             </h4>
             <p className="font-body text-base text-primary-foreground/80 hover:text-primary-foreground transition-colors">
@@ -212,11 +212,11 @@ const OTPFooter = () => {
                   value={email}
                   onChange={handleChange}
                   placeholder="Enter Your Email"
-                  className="flex-1 px-3 py-2 text-sm bg-m3-surface-container border border-m3-outline rounded-lg text-white placeholder:text-white focus:outline-none focus:border-m3-primary"
+                  className="flex-1 px-3 py-2 text-sm bg-m3-surface-container border border-m3-outline rounded-sm text-white placeholder:text-white focus:outline-none focus:border-m3-primary"
                 />
                 <button
                   type="submit"
-                  className="bg-white/20 text-white p-3 rounded-lg hover:scale-110 hover:shadow-lg transition-all duration-300"
+                  className="bg-white/20 text-white p-3 rounded-sm hover:scale-110 hover:shadow-lg transition-all duration-300"
                   aria-label="Send Mail"
                 >
                   <Send className="w-5 h-5" />
@@ -264,7 +264,7 @@ const OTPFooter = () => {
   "
         >
           {/* Phone */}
-          <div className="flex gap-3 bg-white/5 p-4 rounded-xl hover:bg-white/10 transition lg:flex-shrink-0 lg:min-w-[260px]">
+          <div className="flex gap-3 bg-white/5 p-4 rounded-md hover:bg-white/10 transition lg:flex-shrink-0 lg:min-w-[260px]">
             <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-white" />
             <div className="space-y-1">
               <a href="tel:042111222888" className="block hover:text-white transition">
@@ -279,7 +279,7 @@ const OTPFooter = () => {
           </div>
 
           {/* Email */}
-          <div className="flex gap-3 bg-white/5 p-4 rounded-xl hover:bg-white/10 transition">
+          <div className="flex gap-3 bg-white/5 p-4 rounded-md hover:bg-white/10 transition">
             <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-white" />
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=support@brain.net.pk"
@@ -292,7 +292,7 @@ const OTPFooter = () => {
           </div>
 
           {/* Address */}
-          <div className="flex gap-3 bg-white/5 p-4 rounded-xl hover:bg-white/10 transition lg:flex-shrink-0 lg:min-w-[300px]">
+          <div className="flex gap-3 bg-white/5 p-4 rounded-md hover:bg-white/10 transition lg:flex-shrink-0 lg:min-w-[300px]">
             <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-white" />
             <a
               href="https://maps.app.goo.gl/rwFjoFNkDDi6Dv8a6"
@@ -305,7 +305,7 @@ const OTPFooter = () => {
           </div>
 
           {/* Working Hours */}
-          <div className="flex gap-3 bg-white/5 p-4 rounded-xl lg:flex-shrink-0 lg:min-w-[220px]">
+          <div className="flex gap-3 bg-white/5 p-4 rounded-md lg:flex-shrink-0 lg:min-w-[220px]">
             <Clock className="h-4 w-4 mt-0.5 flex-shrink-0 text-white" />
             <span>Mon–Sat, 9:00 AM – 5:30 PM</span>
           </div>

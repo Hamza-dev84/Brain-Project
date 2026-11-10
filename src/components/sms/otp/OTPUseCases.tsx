@@ -64,7 +64,7 @@ const OTPUseCases = () => {
     <section className="w-full py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-3xl md:text-5xl text-primary">
+          <h2 className="font-heading font-bold! text-3xl md:text-5xl text-primary">
             Enterprise Use Cases
           </h2>
         </div>
@@ -88,7 +88,7 @@ const OTPUseCases = () => {
               </div>
 
               <div className="p-8">
-                <h3 className="font-heading font-bold text-2xl text-primary mb-3">
+                <h3 className="font-heading font-bold! text-2xl! text-primary mb-3">
                   {useCase.title}
                 </h3>
                 <p className="font-body text-base text-primary/80 leading-relaxed">

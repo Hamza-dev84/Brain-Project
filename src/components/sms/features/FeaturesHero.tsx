@@ -34,13 +34,13 @@ const FeaturesHero = () => {
             </Badge>
 
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl! font-bold font-raleway">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                   BSMS Client Portal
                 </span>{" "}
                 <span className="text-primary">Features</span>
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold text-primary/80 font-raleway">
+              <h2 className="text-2xl md:text-3xl! font-semibold! text-primary/80 font-raleway">
                 Take Total Control Over SMS Campaigns
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -50,10 +50,10 @@ const FeaturesHero = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" onClick={scrollToFeatures}>
+              <Button size="lg" className="rounded-sm" onClick={scrollToFeatures}>
                 Explore Features
               </Button>
-              <Button variant="outlined" size="lg" asChild>
+              <Button variant="outlined" size="lg" className="rounded-sm" asChild>
                 <a href="https://portal.bsms.pk" target="_blank" rel="noopener noreferrer">
                   Login to Portal
                 </a>

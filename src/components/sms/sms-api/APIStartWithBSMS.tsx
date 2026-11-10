@@ -246,7 +246,7 @@ const StartWithBSMS = () => {
     <section className="py-20 bg-white" aria-labelledby="start-with-bsms">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 id="start-with-bsms" className="text-[#145265] text-4xl md:text-5xl font-bold font-raleway">
+          <h2 id="start-with-bsms" className="text-[#145265] text-4xl md:text-5xl font-bold! font-raleway">
             Start with BSMS Today
           </h2>
         </div>

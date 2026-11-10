@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Title */}
-          <h3 className="text-lg font-bold text-primary mb-2">{title}</h3>
+          <h3 className="text-lg! font-bold! text-primary mb-2">{title}</h3>
 
           {/* Render info lines */}
           {infoLines.map((line, idx) =>
@@ -343,7 +343,7 @@ const Contact: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Contact Form */}
               <div className="bg-card rounded-2xl p-8 md:p-10 shadow-lg">
-                <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+                <h2 className="font-heading font-bold! text-3xl md:text-4xl! text-primary mb-4">
                   Send Us a Message
                 </h2>
                 <p className="font-body text-base text-muted-foreground mb-8">
@@ -515,7 +515,7 @@ const Contact: React.FC = () => {
               <div className="bg-white/10 rounded-2xl shadow-2xl overflow-hidden">
                 <div className="p-6 max-md:p-4">
                   {/* <h2 className="font-raleway text-3xl md:text-4xl font-bold text-brand-dark mb-4"> */}
-                  <h2 className="font-raleway text-3xl md:text-4xl font-bold leading-tight mb-4">
+                  <h2 className="font-raleway text-3xl md:text-4xl! font-bold! leading-tight mb-4">
                     Find Us on Map
                   </h2>
                   <p className="font-lato leading-tight text-lg">
@@ -543,7 +543,7 @@ const Contact: React.FC = () => {
         {/* Trust Section */}
         <section className="border-b border-primary-foreground/20 py-16 bg-primary text-primary-foreground">
           <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
-            <h2 className="text-white font-heading font-bold text-2xl md:text-3xl mb-4">
+            <h2 className="text-white font-heading font-bold! text-2xl md:text-3xl! mb-4">
               Trusted by Leading Businesses Across Pakistan
             </h2>
             <p className="font-body text-lg text-primary-foreground/90 mb-6">

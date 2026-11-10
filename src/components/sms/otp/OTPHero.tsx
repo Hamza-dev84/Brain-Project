@@ -24,7 +24,7 @@ const OTPHero: React.FC = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-none! tracking-tighter!">
               Enterprise{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 OTP SMS Service in Pakistan
@@ -82,7 +82,7 @@ const OTPHero: React.FC = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-start gap-4">
 
-              <Button onClick={() => setIsPopupOpen(true)} size="lg">
+              <Button onClick={() => setIsPopupOpen(true)} className="rounded-sm" size="lg">
                 <MessageSquare size={20} />
                 <span>Start Sending OTPs Today</span>
                 <ArrowRight size={20} />
@@ -92,7 +92,7 @@ const OTPHero: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="group border-2 border-border text-foreground font-lato font-semibold text-base px-8 py-4 rounded-lg hover:bg-muted transition-all flex items-center gap-2">
+                <button className="group border-2 border-border text-foreground font-lato font-semibold text-base px-8 py-4 rounded-sm hover:bg-muted transition-all flex items-center gap-2">
                   <Phone size={20} className="text-primary" />
                   <span>Talk to An Expert</span>
                 </button>

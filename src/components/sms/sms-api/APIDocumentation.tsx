@@ -27,16 +27,208 @@ const documentationSections = [
   },
 ];
 
+// const codeSamples: Array<{
+//   value: string;
+//   label: string;
+//   language: "bash" | "json" | "java" | "javascript" | "swift" | "csharp" | "python" | "php";
+//   code: string;
+// }> = [
+//     {
+//       value: "android",
+//       label: "ANDROID",
+//       language: "java",
+//       code: `StringRequest registerRequest = new StringRequest(Request.Method.POST, "https://cp.bsms.pk/api/quick/message",
+//     new Response.Listener() {
+//         @Override
+//         public void onResponse(String response) {
+//             pDialog.dismiss();
+//             try {
+//                 JSONObject object = new JSONObject(response);
+//                 Log.d("Response from API", "onResponse: " + response);
+//             } catch (JSONException e) {
+//                 e.printStackTrace();
+//             }
+//         }
+//     },
+//     new Response.ErrorListener() {
+//         @Override
+//         public void onErrorResponse(VolleyError error) {
+//             new VolleyErrorManager(error, mContext,"Exception: ");
+//         }
+//     }
+// ) {
+//     @Override
+//     protected Map getParams() {
+//         Map params = new HashMap();
+//         params.put("user", "username");
+//         params.put("password", "secret");
+//         params.put("to", "923123456789");
+//         params.put("mask", "BrainTEL");
+//         params.put("message", "Your message");
+
+//         return params;
+//     }
+// };`,
+//     },
+//     {
+//       value: "nodejs",
+//       label: "NODE.JS",
+//       language: "javascript",
+//       code: `var Request = require("request");
+
+// Request.post({
+//     "headers": { "content-type": "application/json" },
+//     "url": "https://cp.bsms.pk/api/quick/message",
+//     "body": JSON.stringify({
+//         "user": "username", "password": "secret", "to": "923123456789", "mask": "BrainTEL", "message": "Your message"
+//     })
+// }, (error, response, body) => {
+//     if(error) {
+//         return console.dir(error);
+//     }
+//     console.dir(JSON.parse(body));
+// });`,
+//     },
+//     {
+//       value: "swift",
+//       label: "SWIFT",
+//       language: "swift",
+//       code: `let params = ["user": "username", "password": "secret", "to": "923123456789", "mask": "BrainTEL", "message": "Your message"] as Dictionary
+
+// var request = URLRequest(url: URL(string: "https://cp.bsms.pk/api/quick/message")!)
+// request.httpMethod = "POST"
+// request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+// request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+// let session = URLSession.shared
+// let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+//     do {
+//         let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary
+//         print(json)
+//     } catch {
+//         print("error")
+//     }
+// })
+// task.resume()`,
+//     },
+//     {
+//       value: "dotnet",
+//       label: ".NET",
+//       language: "csharp",
+//       code: `using System;
+// using System.Net.Http;
+// using System.Net.Http.Headers;
+// using System.Threading.Tasks;
+
+// namespace HttpClientSample
+// {
+//     public class Message
+//     {
+//         public string user { get; set; }
+//         public string password { get; set; }
+//         public string to { get; set; }
+//         public string mask { get; set; }
+//         public string message { get; set; }
+//     }
+
+//     class Program
+//     {
+//         static HttpClient client = new HttpClient();
+
+//         static async Task CreateMessageAsync(Message message)
+//         {
+//             HttpResponseMessage response = await client.PostAsJsonAsync(
+//                 "api/quick/message", message);
+//             response.EnsureSuccessStatusCode();
+//             return response.Headers.Location;
+//         }
+
+//         static void Main()
+//         {
+//             RunAsync().GetAwaiter().GetResult();
+//         }
+
+//         static async Task RunAsync()
+//         {
+//             client.BaseAddress = new Uri("https://cp.bsms.pk/");
+//             client.DefaultRequestHeaders.Accept.Clear();
+//             client.DefaultRequestHeaders.Accept.Add(
+//             new MediaTypeWithQualityHeaderValue("application/json"));
+
+//             try {
+//                 Message message = new Message
+//                 {
+//                     user = "username",
+//                     password = "secret",
+//                     to = "923123456789",
+//                     mask = "BrainTEL",
+//                     message = "Your Message"
+//                 };
+//                 var url = await CreateMessageAsync(message);
+//                 Console.WriteLine($"Created at {url}");
+//             }
+//             catch (Exception e) {
+//                 Console.WriteLine(e.Message);
+//             }
+//             Console.ReadLine();
+//         }
+//     }
+// }`,
+//     },
+//     {
+//       value: "python",
+//       label: "PYTHON",
+//       language: "python",
+//       code: `import requests
+// payload = {'user': 'username', 'password': 'secret', 'to': '923123456789', 'mask': 'BrainTEL', 'message': 'Your message'}
+// r = requests.get('https://cp.bsms.pk/api/quick/message', params=payload)
+// r.text`,
+//     },
+//     {
+//       value: "php",
+//       label: "PHP",
+//       language: "php",
+//       code: `function httpPost($url,$params)
+// {
+//     $postData = '';
+//     foreach($params as $k => $v) {
+//         $postData .= $k . '='.$v.'&';
+//     }
+//     $postData = rtrim($postData, '&');
+
+//     $ch = curl_init();
+//     curl_setopt($ch,CURLOPT_URL,$url);
+//     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
+//     curl_setopt($ch,CURLOPT_HEADER, false);
+//     curl_setopt($ch, CURLOPT_POST, count($postData));
+//     curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+//     $output = curl_exec($ch);
+//     curl_close($ch);
+//     return $output;
+// }
+
+// $url = "https://cp.bsms.pk/api/quick/message";
+// $params = [
+//     "user" => "username",
+//     "password" => "password",
+//     "mask" => "BrainTEL",
+//     "to" => "923123456789",
+//     "message" => "Your Message",
+// ];
+// httpPost($url,$params);`,
+//     },
+//   ];
+
 const codeSamples: Array<{
   value: string;
   label: string;
-  language: "bash" | "json" | "java" | "javascript" | "swift" | "csharp" | "python" | "php";
+  language: 'bash' | 'json' | 'java' | 'javascript' | 'swift' | 'csharp' | 'python' | 'php';
   code: string;
 }> = [
     {
       value: "android",
       label: "ANDROID",
-      language: "java",
+      language: "java" as const,
       code: `StringRequest registerRequest = new StringRequest(Request.Method.POST, "https://cp.bsms.pk/api/quick/message",
     new Response.Listener() {
         @Override
@@ -73,7 +265,7 @@ const codeSamples: Array<{
     {
       value: "nodejs",
       label: "NODE.JS",
-      language: "javascript",
+      language: "javascript" as const,
       code: `var Request = require("request");
 
 Request.post({
@@ -92,7 +284,7 @@ Request.post({
     {
       value: "swift",
       label: "SWIFT",
-      language: "swift",
+      language: "swift" as const,
       code: `let params = ["user": "username", "password": "secret", "to": "923123456789", "mask": "BrainTEL", "message": "Your message"] as Dictionary
 
 var request = URLRequest(url: URL(string: "https://cp.bsms.pk/api/quick/message")!)
@@ -114,8 +306,9 @@ task.resume()`,
     {
       value: "dotnet",
       label: ".NET",
-      language: "csharp",
+      language: "csharp" as const,
       code: `using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -126,7 +319,7 @@ namespace HttpClientSample
     {
         public string user { get; set; }
         public string password { get; set; }
-        public string to { get; set; }
+        public int to { get; set; }
         public string mask { get; set; }
         public string message { get; set; }
     }
@@ -143,6 +336,17 @@ namespace HttpClientSample
             return response.Headers.Location;
         }
 
+        static async Task SendMessageAsync(string path)
+        {
+            Message message = null;
+            HttpResponseMessage response = await client.GetAsync(path);
+            if (response.IsSuccessStatusCode)
+            {
+                message = await response.Content.ReadAsStringAsync();
+            }
+            return message;
+        }
+        
         static void Main()
         {
             RunAsync().GetAwaiter().GetResult();
@@ -166,6 +370,9 @@ namespace HttpClientSample
                 };
                 var url = await CreateMessageAsync(message);
                 Console.WriteLine($"Created at {url}");
+
+                message = await GetProductAsync(url.PathAndQuery);
+                Console.WriteLine(message);
             }
             catch (Exception e) {
                 Console.WriteLine(e.Message);
@@ -178,7 +385,7 @@ namespace HttpClientSample
     {
       value: "python",
       label: "PYTHON",
-      language: "python",
+      language: "python" as const,
       code: `import requests
 payload = {'user': 'username', 'password': 'secret', 'to': '923123456789', 'mask': 'BrainTEL', 'message': 'Your message'}
 r = requests.get('https://cp.bsms.pk/api/quick/message', params=payload)
@@ -187,7 +394,7 @@ r.text`,
     {
       value: "php",
       label: "PHP",
-      language: "php",
+      language: "php" as const,
       code: `function httpPost($url,$params)
 {
     $postData = '';
@@ -228,7 +435,7 @@ const APIDocumentation = () => {
             <FileText size={16} />
             <span>Complete Documentation</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-raleway text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold! font-raleway text-primary mb-4">
             API Documentation
           </h2>
           <p className="text-lg text-muted-foreground font-lato max-w-3xl mx-auto">
@@ -246,7 +453,7 @@ const APIDocumentation = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
                 {section.icon}
               </div>
-              <h3 className="text-lg font-bold font-raleway text-foreground mb-2">
+              <h3 className="text-lg! font-bold! font-raleway text-foreground mb-2">
                 {section.title}
               </h3>
               <p className="text-sm text-muted-foreground font-lato leading-relaxed">
@@ -258,7 +465,7 @@ const APIDocumentation = () => {
 
         <div className="mb-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold font-raleway text-foreground mb-3">
+            <h3 className="text-2xl md:text-3xl font-bold! font-raleway text-foreground mb-3">
               Getting Started
             </h3>
             <p className="text-muted-foreground font-lato max-w-2xl mx-auto">
@@ -273,7 +480,7 @@ const APIDocumentation = () => {
                   <TabsTrigger
                     key={sample.value}
                     value={sample.value}
-                    className="text-xs md:text-sm font-semibold"
+                    className="text-xs md:text-sm font-semibold data-[state=active]:bg-accent data-[state=active]:text-accent-foreground"
                   >
                     {sample.label}
                   </TabsTrigger>
@@ -283,9 +490,9 @@ const APIDocumentation = () => {
               {codeSamples.map((sample) => (
                 <TabsContent key={sample.value} value={sample.value} className="mt-0">
                   <div className="mb-4">
-                    <h4 className="text-lg md:text-xl font-bold font-raleway text-foreground">
+                    <h4 className="text-lg md:text-xl! font-bold! font-raleway text-foreground">
                       {sample.label}{" "}
-                      <span className="text-muted-foreground font-normal text-base">
+                      <span className="text-muted-foreground! font-normal! text-base!">
                         Sample Code
                       </span>
                     </h4>
@@ -303,7 +510,7 @@ const APIDocumentation = () => {
               <div className="w-20 h-20 bg-white/10 backdrop-blur-xs rounded-full flex items-center justify-center mx-auto mb-6">
                 <FileText className="w-10 h-10 text-primary-foreground" />
               </div>
-              <h3 className="text-3xl font-bold font-raleway text-primary-foreground mb-4">
+              <h3 className="text-3xl font-bold! font-raleway text-primary-foreground mb-4">
                 Download Full API Documentation
               </h3>
               <p className="text-lg text-primary-foreground/90 font-lato mb-8">

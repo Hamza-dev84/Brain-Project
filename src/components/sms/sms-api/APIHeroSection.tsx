@@ -25,7 +25,7 @@ const APIHeroSection: React.FC = () => {
               <span>PTA Certified SMS API Provider</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-none!">
               Our Developer-Friendly{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 SMS API in Pakistan

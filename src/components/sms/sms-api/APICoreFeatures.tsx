@@ -35,11 +35,11 @@ const APICoreFeatures = () => {
         <div className="text-center mb-16">
           <h2
             id="core-features"
-            className="leading-tight text-4xl md:text-5xl font-bold font-raleway mb-4"
+            className="leading-tight text-4xl md:text-5xl font-bold! font-raleway mb-4 text-[#145265]!"
           >
             Core Features
           </h2>
-          <h3 className="leading-tight text-2xl md:text-3xl font-semibold font-raleway">
+          <h3 className="leading-tight text-2xl md:text-3xl font-semibold font-raleway text-[#145265]!">
             of Our SMS API in Pakistan
           </h3>
         </div>
@@ -62,7 +62,7 @@ const APICoreFeatures = () => {
                     />
                   </div>
 
-                  <h4 className="text-[#145265] text-xl font-bold! font-raleway mb-3">
+                  <h4 className="text-[#145265] text-xl! font-bold! font-raleway mb-3">
                     {feature.title}
                   </h4>
 

@@ -44,7 +44,7 @@ const WhyChoose = () => {
             <p className="text-primary font-heading font-semibold text-xl md:text-2xl mb-2">
               Built To Win
             </p>
-            <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">
+            <h2 className="text-primary font-heading font-bold! text-3xl! md:text-5xl!">
               Why Choose Us?
             </h2>
           </div>
@@ -62,7 +62,7 @@ const WhyChoose = () => {
                 <r.icon className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-sm mb-1.5">
+                <h3 className="font-semibold! text-base! mb-1.5">
                   {r.title}
                 </h3>
                 <p className="text-sm text-primary">{r.desc}</p>

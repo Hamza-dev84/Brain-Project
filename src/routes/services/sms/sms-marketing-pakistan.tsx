@@ -81,7 +81,7 @@ function SMSMarketingPakistan() {
         <section className="py-20">
           <div className="container mx-auto px-6 lg:px-12">
             <AnimateOnScroll animation="fade-up">
-              <h2 className="text-3xl md:text-5xl font-bold font-raleway text-center text-primary mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold! font-raleway text-center text-primary mb-16">
                 Why Choose Our SMS Marketing Service in Pakistan?
               </h2>
             </AnimateOnScroll>
@@ -93,12 +93,12 @@ function SMSMarketingPakistan() {
               {highlights.map((item) => (
                 <div
                   key={item.title}
-                  className="text-center p-6 rounded-lg bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-lg transition-all"
+                  className="text-center p-6 rounded-sm bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-lg transition-all"
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <item.icon className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold font-raleway text-primary mb-2">
+                  <h3 className="text-xl! font-semibold font-raleway text-primary mb-2">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground font-lato">{item.text}</p>
@@ -115,7 +115,7 @@ function SMSMarketingPakistan() {
         <section className="py-20 bg-gradient-to-br from-primary via-primary to-accent relative overflow-hidden">
           <div className="container mx-auto px-6 lg:px-12 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-8">
-              <h2 className="text-3xl md:text-5xl font-bold font-raleway text-primary-foreground">
+              <h2 className="text-3xl md:text-5xl font-bold! font-raleway text-primary-foreground leading-none!">
                 Ready to Transform Your Customer Engagement?
               </h2>
               <p className="text-xl text-primary-foreground/90 font-lato leading-relaxed">
@@ -125,7 +125,7 @@ function SMSMarketingPakistan() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link
                   to="/services/sms/pricing"
-                  className="inline-flex items-center justify-center gap-2 bg-background text-primary hover:bg-background/90 px-8 py-4 rounded-lg font-semibold font-raleway text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-background text-primary hover:bg-background/90 px-8 py-4 rounded-sm font-semibold font-raleway text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                   View Pricing Plans
                   <ArrowRight className="w-5 h-5" />
@@ -134,7 +134,7 @@ function SMSMarketingPakistan() {
                   href="https://wa.me/923276222888"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 px-8 py-4 rounded-lg font-semibold font-raleway text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 px-8 py-4 rounded-sm font-semibold font-raleway text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
                 >
                   Talk to An Expert
                 </a>

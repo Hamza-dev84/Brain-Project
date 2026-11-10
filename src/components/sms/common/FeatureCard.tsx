@@ -40,7 +40,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         )}
 
         <div className="flex flex-col items-start gap-4 w-full">
-          <h3 className={cn(typography.cardH3, "text-primary text-center w-full")}>{title}</h3>
+          <h3 className={cn(typography.cardH3, "text-primary text-2xl! font-bold! text-center w-full")}>{title}</h3>
           <p className={cn(typography.bodyText, "text-foreground text-justify w-full")}>
             {description}
           </p>

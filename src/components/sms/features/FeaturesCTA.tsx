@@ -4,9 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Zap, Headphones, TrendingUp, MessageSquare } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import SMSCampaignPlannerDialog from "@/components/sms/campaign-planner/SMSCampaignPlannerDialog";
+import GetStartedPopup from "../Popup-Form/GetStartedPopup";
 
 const FeaturesCTA = () => {
   const [isPlannerOpen, setIsPlannerOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <section className="relative py-20 overflow-hidden">
@@ -37,9 +39,10 @@ const FeaturesCTA = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <Button
               size="lg"
-              onClick={() => setIsPlannerOpen(true)}
+              // onClick={() => setIsPlannerOpen(true)}
+              onClick={() => setIsPopupOpen(true)}
               variant="secondary"
-              className="shadow-xl hover:shadow-2xl hover:scale-105 transition-all font-semibold"
+              className="shadow-xl hover:shadow-2xl hover:scale-105 transition-all font-semibold! rounded-sm"
             >
               Get Started Today
             </Button>
@@ -47,7 +50,7 @@ const FeaturesCTA = () => {
               size="lg"
               variant="outlined"
               asChild
-              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-all font-semibold"
+              className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-all font-semibold! rounded-sm"
             >
               <Link to="/services/sms/contact">Schedule a Demo</Link>
             </Button>
@@ -70,7 +73,8 @@ const FeaturesCTA = () => {
         </div>
       </div>
 
-      <SMSCampaignPlannerDialog open={isPlannerOpen} onOpenChange={setIsPlannerOpen} />
+      {/* <SMSCampaignPlannerDialog open={isPlannerOpen} onOpenChange={setIsPlannerOpen} /> */}
+      <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
     </section>
   );
 };

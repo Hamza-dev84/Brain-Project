@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section id="cta" className="py-10 md:py-20 bg-primary/90 text-white">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-white text-3xl md:text-5xl font-bold">
+        <h2 className="text-white text-3xl md:text-5xl font-bold!">
           Start Sending Branded SMS Today
         </h2>
         <p className="mt-5 text-lg opacity-90 max-w-2xl mx-auto">
@@ -18,7 +18,7 @@ const CTA = () => {
   {/* View Pricing */}
   <a
     href="#pricing"
-    className="w-full sm:w-44 flex items-center justify-center border-2 border-white/40 text-white py-3.5 rounded-lg font-semibold hover:bg-white/10 transition"
+    className="w-full sm:w-44 flex items-center justify-center border-2 border-white/40 text-white py-3.5 rounded-sm font-semibold hover:bg-white/10 transition"
   >
     View Pricing
   </a>
@@ -29,7 +29,7 @@ const CTA = () => {
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chat on WhatsApp"
-    className="w-full sm:w-44 flex items-center justify-center gap-2 py-3.5 rounded-lg border-2 border-white/40 hover:opacity-90 hover:scale-105 transition-all duration-300"
+    className="w-full sm:w-44 flex items-center justify-center gap-2 py-3.5 rounded-sm border-2 border-white/40 hover:opacity-90 hover:scale-105 transition-all duration-300"
   >
     <span className="text-white font-semibold text-sm sm:text-base whitespace-nowrap">
       Talk To Sales

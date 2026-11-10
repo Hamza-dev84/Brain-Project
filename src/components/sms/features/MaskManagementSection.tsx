@@ -29,7 +29,7 @@ const MaskManagementSection = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-primary font-raleway">
+                <h3 className="text-2xl! font-bold! text-primary font-raleway">
                   Sender ID Management
                 </h3>
                 <p className="text-sm text-muted-foreground">
@@ -37,7 +37,7 @@ const MaskManagementSection = () => {
                 </p>
               </div>
             </div>
-            <Button className="gap-2">
+            <Button className="gap-2 rounded-sm">
               <Plus className="w-4 h-4" />
               Request New Sender ID
             </Button>
@@ -99,7 +99,7 @@ const MaskManagementSection = () => {
                             </Button>
                           </>
                         ) : mask.status === "Rejected" ? (
-                          <Button variant="outlined" size="sm" className="gap-2">
+                          <Button variant="outlined" size="sm" className="gap-2 rounded-sm">
                             <Plus className="w-4 h-4" />
                             Resubmit
                           </Button>
@@ -118,13 +118,13 @@ const MaskManagementSection = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 bg-gradient-to-br from-primary/5 to-transparent rounded-lg border border-primary/10">
+            <div className="p-6 bg-gradient-to-br from-primary/5 to-transparent rounded-sm border border-primary/10">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-sm bg-primary/10 flex items-center justify-center shrink-0">
                   <Plus className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Request New Sender IDs</h4>
+                  <h4 className="font-semibold! text-base! mb-2">Request New Sender IDs</h4>
                   <p className="text-sm text-muted-foreground">
                     Submit new sender ID requests directly through the portal. Our team will handle
                     PTA approval workflow for you.
@@ -135,11 +135,11 @@ const MaskManagementSection = () => {
 
             <div className="p-6 bg-gradient-to-br from-accent/5 to-transparent rounded-lg border border-accent/10">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-sm bg-accent/10 flex items-center justify-center shrink-0">
                   <ShieldPlus className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">PTA Approved Aliases</h4>
+                  <h4 className="font-semibold! text-base! mb-2">PTA Approved Aliases</h4>
                   <p className="text-sm text-muted-foreground">
                     All sender IDs are registered with Pakistan Telecommunication Authority for
                     legitimate business communication.

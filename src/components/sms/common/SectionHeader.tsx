@@ -17,7 +17,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   if (variant === "single") {
     return (
       <div className={cn("text-center mb-16", className)}>
-        <h2 className="text-3xl md:text-5xl font-bold font-raleway text-primary">{title}</h2>
+        <h2 className="text-3xl md:text-5xl font-bold! font-raleway text-primary">{title}</h2>
       </div>
     );
   }

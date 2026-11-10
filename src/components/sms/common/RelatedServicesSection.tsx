@@ -60,7 +60,7 @@ const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({ current
     <section className="py-20 bg-gradient-to-b from-primary/5 to-transparent">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-raleway text-primary mb-4">
+          <h2 className="text-3xl! md:text-4xl! font-bold! font-raleway text-primary mb-4">
             Explore Our Other Services
           </h2>
           <p className="text-lg text-muted-foreground font-lato max-w-2xl mx-auto">
@@ -78,10 +78,10 @@ const RelatedServicesSection: React.FC<RelatedServicesSectionProps> = ({ current
                 to={service.link}
                 className="group bg-card border border-border rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-primary/10 rounded-md flex items-center justify-center mb-4 text-primary group-hover:scale-110 transition-transform duration-300">
                   <Icon />
                 </div>
-                <h3 className="text-xl font-bold font-raleway text-primary mb-3 group-hover:text-accent transition-colors">
+                <h3 className="text-xl! font-bold! font-raleway text-primary mb-3 group-hover:text-accent transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground font-lato mb-4 leading-relaxed">

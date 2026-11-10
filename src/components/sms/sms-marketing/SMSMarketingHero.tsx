@@ -20,7 +20,7 @@ const SMSMarketingHero: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway text-primary leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-raleway text-primary leading-none!">
               Dominate The Market with High Impact
               <span className="block text-accent mt-2">SMS Marketing in Pakistan</span>
             </h1>

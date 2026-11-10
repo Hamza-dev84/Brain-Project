@@ -43,7 +43,7 @@ const SMSMarketingFAQ = () => {
     <section className="py-20 bg-gradient-to-b from-primary/5 to-transparent">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-bold font-raleway text-primary mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold! font-raleway text-primary mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-muted-foreground font-lato max-w-3xl mx-auto">
@@ -57,7 +57,7 @@ const SMSMarketingFAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-2 border-primary/30 rounded-xl px-6 animate-fade-in hover:border-primary/50 transition-colors"
+                className="border-2 border-primary/30 rounded-md px-6 animate-fade-in hover:border-primary/50 transition-colors"
               >
                 <AccordionTrigger className="text-left font-heading font-bold text-lg text-primary py-6">
                   {faq.question}

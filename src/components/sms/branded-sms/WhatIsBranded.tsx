@@ -10,7 +10,7 @@ const WhatIsBranded = () => {
             <p className="text-primary font-heading font-semibold text-xl md:text-2xl mb-2">
               Definition
             </p>
-            <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">
+            <h2 className="text-primary font-heading font-bold! text-3xl md:text-5xl">
               What Is Branded SMS?
             </h2>
             <p className="mt-3 text-primary">

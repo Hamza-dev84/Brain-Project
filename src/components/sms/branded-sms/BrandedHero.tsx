@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-raleway">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-raleway leading-none! tracking-tighter!">
               Branded SMS Service in Pakistan —{" "}
               <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Send SMS
@@ -71,8 +71,8 @@ const Hero: React.FC = () => {
                 <span>Start Sending Branded SMS Today</span>
                 <ArrowRight size={20} />
               </Button> */}
-              {/* <Button onClick={() => setIsPopupOpen(true)} size="lg"> */}
-              <Button onClick={() => setIsPlannerOpen(true)} size="lg">
+              <Button onClick={() => setIsPopupOpen(true)} size="lg">
+              {/* <Button onClick={() => setIsPlannerOpen(true)} size="lg"> */}
                 <MessageSquare size={20} />
                 <span>Start Sending Branded SMS Today</span>
                 <ArrowRight size={20} />
@@ -141,12 +141,12 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Dialog */}
-      <SMSCampaignPlannerDialog
+      {/* <SMSCampaignPlannerDialog
         open={isPlannerOpen}
         onOpenChange={setIsPlannerOpen}
-      />
+      /> */}
 
-      {/* <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} /> */}
+      <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
     </section>
   );
 };

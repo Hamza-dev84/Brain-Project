@@ -44,7 +44,7 @@ const PricingCategories = () => {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={cn(
-                  "flex items-center gap-3 px-6 py-4 rounded-xl font-semibold transition-all duration-300 border-2",
+                  "flex items-center gap-3 px-6 py-4 rounded-md font-semibold transition-all duration-300 border-2",
                   isActive
                     ? "bg-primary text-primary-foreground border-primary shadow-glow"
                     : "bg-card text-muted-foreground border-border hover:border-primary/50 hover:shadow-md"
@@ -91,7 +91,7 @@ const PricingCategories = () => {
             <div className="mt-12">
               <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-8 md:p-12 border-2 border-primary/20 shadow-elegant hover:shadow-glow transition-all duration-300">
                 <div className="max-w-3xl mx-auto text-center space-y-6">
-                  <h3 className="text-3xl md:text-4xl font-bold font-raleway text-primary">
+                  <h3 className="text-3xl md:text-4xl! font-bold! font-raleway text-primary">
                     Custom Branded SMS Package
                   </h3>
                   <p className="text-lg text-muted-foreground">
@@ -113,7 +113,7 @@ const PricingCategories = () => {
                     </Link> */}
                     <Button
                       onClick={() => setIsPopupOpen(true)}
-                      className="btn-primary px-8 py-4 rounded-lg text-lg font-semibold"
+                      className="btn-primary px-8 py-4 rounded-sm! text-lg! font-semibold!"
                     >
                       Contact Sales
                     </Button>
@@ -126,7 +126,7 @@ const PricingCategories = () => {
                       Schedule Consultation
                     </a> */}
                     <Link to="/services/sms/contact">
-                      <button className="border-2 border-primary text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/10 transition-colors">
+                      <button className="border-2 border-primary text-primary px-8 py-4 rounded-sm text-lg! font-semibold! hover:bg-primary/10 transition-colors">
                         Schedule Consultation
                       </button>
                     </Link>

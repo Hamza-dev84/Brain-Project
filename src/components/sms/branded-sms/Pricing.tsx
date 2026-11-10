@@ -246,7 +246,7 @@ const Pricing = () => {
               Transparent Pricing
             </p>
 
-            <h2 className="text-primary font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="text-primary font-bold! text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
               BSMS Pricing Plans
             </h2>
           </div>
@@ -329,7 +329,7 @@ const Pricing = () => {
                   </div>
                 )}
 
-                <h3 className="font-bold text-lg sm:text-xl">{p.name}</h3>
+                <h3 className="font-bold! text-lg! sm:text-xl!">{p.name}</h3>
 
                 <div className="text-xs sm:text-sm text-muted-foreground">
                   {p.sms} SMS • {p.validity}

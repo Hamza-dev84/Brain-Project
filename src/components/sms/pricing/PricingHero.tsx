@@ -81,7 +81,7 @@ const PricingHero = () => {
               <Button
                 size="lg"
                 onClick={scrollToPlans}
-                className="bg-gradient-to-r from-primary to-accent hover:shadow-glow"
+                className="bg-gradient-to-r from-primary to-accent rounded-sm hover:shadow-glow"
               >
                 View Pricing Plans
               </Button>

@@ -84,7 +84,7 @@ const WhoUses = () => {
             <p className="text-primary font-heading font-semibold text-xl md:text-2xl mb-4">
               Industries
             </p>
-            <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">
+            <h2 className="text-primary font-heading font-bold! text-3xl md:text-5xl">
               Who Uses Branded SMS in Pakistan?
             </h2>
           </div>
@@ -96,10 +96,10 @@ const WhoUses = () => {
               key={i.title}
               className="bg-white rounded-2xl p-6 border border-border hover:shadow-lg hover:border-brand transition"
             >
-              <div className="w-11 h-11 rounded-lg bg-primary/10 grid place-items-center mb-4">
+              <div className="w-11 h-11 rounded-sm bg-primary/10 grid place-items-center mb-4">
                 <i.icon className="w-5 h-5 text-primary" />
               </div>
-              <h3 className="font-semibold text-sm mb-3">{i.title}</h3>
+              <h3 className="font-semibold text-base! mb-3">{i.title}</h3>
               <ul className="space-y-1.5 text-sm text-muted-foreground">
                 {i.items.map((it) => (
                   <li key={it} className="flex items-start gap-1.5">

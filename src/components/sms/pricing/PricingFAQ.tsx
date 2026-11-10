@@ -51,7 +51,7 @@ const PricingFAQ = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
               <HelpCircle className="w-8 h-8 text-primary" />
             </div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 font-raleway">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold! text-primary mb-4 font-raleway">
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

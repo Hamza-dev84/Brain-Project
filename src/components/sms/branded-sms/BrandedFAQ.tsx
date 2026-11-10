@@ -64,7 +64,7 @@ const BrandedFAQ: React.FC = () => {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
             <HelpCircle className="w-8 h-8 text-primary" />
           </div>
-          <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">
+          <h2 className="text-primary font-heading font-bold! text-3xl md:text-5xl">
             Frequently Asked Questions
           </h2>
         </div>

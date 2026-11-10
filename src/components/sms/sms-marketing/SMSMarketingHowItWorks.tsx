@@ -51,7 +51,7 @@ const SMSMarketingHowItWorks = () => {
               </div>
             </div>
 
-            <h3 className="text-xl font-bold font-raleway text-primary mb-2">{step.title}</h3>
+            <h3 className="text-xl! font-bold! font-raleway text-primary mb-2">{step.title}</h3>
             <p className="text-muted-foreground font-lato text-sm leading-relaxed">
               {step.description}
             </p>

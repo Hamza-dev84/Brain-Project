@@ -39,7 +39,7 @@ const APIHowToSendSMS = () => {
     <section className="py-20 bg-gradient-to-b from-white to-gray-50" aria-labelledby="how-to-send-sms">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 id="how-to-send-sms" className="text-[#145265] text-4xl md:text-5xl font-bold font-raleway mb-3">
+          <h2 id="how-to-send-sms" className="text-[#145265] text-4xl md:text-5xl font-bold! font-raleway mb-3">
             How to Send SMS
           </h2>
           <h3 className="text-[#145265] text-2xl md:text-3xl font-semibold font-raleway">
@@ -80,7 +80,7 @@ const APIHowToSendSMS = () => {
                   />
                 </div>
 
-                <h4 className="text-[#145265] text-lg font-bold font-raleway mb-3 text-center">
+                <h4 className="text-[#145265] text-lg! font-bold! font-raleway mb-3 text-center">
                   {step.title}
                 </h4>
 

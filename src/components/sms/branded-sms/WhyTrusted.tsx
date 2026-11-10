@@ -10,7 +10,7 @@ const WhyTrusted = () => {
           <p className="text-primary font-heading font-semibold text-xl md:text-2xl mb-2">
             Why It Matters
           </p>
-          <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">Pakistan's Most Trusted Branded SMS Provider</h2>
+          <h2 className="text-primary font-heading font-bold! text-3xl md:text-5xl">Pakistan's Most Trusted Branded SMS Provider</h2>
         </div>
       </AnimateOnScroll>
 

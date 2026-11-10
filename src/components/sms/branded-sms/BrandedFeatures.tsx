@@ -44,7 +44,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       />
       <div className="flex-1 space-y-3">
         <IconContainer icon={icon} size="medium" />
-        <h3 className="text-primary text-2xl font-heading font-bold">
+        <h3 className="text-primary text-2xl! font-heading font-bold!">
           {title}
         </h3>
         {/* main description */}
@@ -199,7 +199,7 @@ const Features: React.FC = () => {
           <p className="text-primary font-heading font-semibold text-2xl md:text-3xl mb-2">
             What We Offer
           </p>
-          <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">
+          <h2 className="text-primary font-heading font-bold! text-3xl md:text-5xl">
             Branded SMS Service in Pakistan?
           </h2>
         </div>

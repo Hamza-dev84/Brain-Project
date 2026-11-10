@@ -43,7 +43,7 @@ const OTPFeatures = () => {
     <section className={cn("w-full", spacing.sectionVertical)}>
       <div className={cn(container.standard, spacing.containerHorizontal)}>
         <SectionHeader
-          title="Why Pakistan's Top Enterprises Choose Us for OTP SMS Services"
+          title="Why Pakistan's Top Businesses Choose BSMS for OTP SMS Services"
           variant="single"
         />
 
@@ -65,7 +65,7 @@ const OTPFeatures = () => {
 
         <div className="flex justify-center mt-12">
           <Link to="/services/sms/contact">
-            <CTAButton variant="secondary" size="large" className="cursor-pointer">
+            <CTAButton variant="secondary" size="large" className="cursor-pointer font-bold rounded-sm tracking-wide">
               See How It Works →
             </CTAButton>
           </Link>

@@ -37,7 +37,7 @@ const OTPComparisonTable = () => {
     <section className="container mx-auto px-6 lg:px-12 py-20">
       <AnimateOnScroll animation="fade-up">
         <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-3xl md:text-5xl text-primary mb-4">
+          <h2 className="font-heading font-bold! text-3xl md:text-5xl text-primary mb-4">
             Why BSMS Outperforms Competitors
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">

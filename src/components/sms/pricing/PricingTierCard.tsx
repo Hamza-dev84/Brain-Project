@@ -95,7 +95,7 @@ const PricingTierCard = ({
           {getIcon()}
         </div>
 
-        <h3 className="text-2xl font-bold font-raleway text-foreground">{tierName}</h3>
+        <h3 className="text-2xl! font-bold! font-raleway text-foreground">{tierName}</h3>
 
         <div className="space-y-1">
           <p className="text-4xl md:text-5xl font-bold text-primary font-raleway">{smsVolume}</p>

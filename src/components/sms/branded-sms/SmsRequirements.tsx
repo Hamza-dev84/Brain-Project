@@ -46,7 +46,7 @@ const SmsRequirements = () => {
               Before You Apply
             </p>
 
-            <h2 className="text-primary font-heading font-bold text-3xl md:text-5xl">
+            <h2 className="text-primary font-heading font-bold! text-3xl md:text-5xl">
               Branded SMS Registration Requirements
             </h2>
 
@@ -63,11 +63,11 @@ const SmsRequirements = () => {
               key={item.title}
               className="rounded-2xl border border-border bg-white p-6 hover:border-brand transition"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-primary/10">
                 <item.icon className="h-6 w-6 text-primary" />
               </div>
 
-              <h3 className="mb-2 font-semibold text-sm">
+              <h3 className="mb-2 font-semibold text-base!">
                 {item.title}
               </h3>
 
@@ -80,7 +80,7 @@ const SmsRequirements = () => {
             <AlertTriangle className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 flex-shrink-0 -mt-1" />
 
             <div>
-              <h4 className="text-sm sm:text-base font-semibold text-amber-900">
+              <h4 className="text-base! sm:text-base font-semibold! text-amber-900">
                 Important
               </h4>
 
