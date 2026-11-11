@@ -91,83 +91,114 @@ export const Route = createFileRoute("/services/cloud/colocation-services-pakist
 const INCLUDED = [
   {
     icon: Server,
-    title: "1U, 2U, 4U & Half/Full Rack Colocation",
-    body: "Flexible rack space options — from a single 1U server to a full cabinet. Choose the footprint that fits, expand anytime.",
+    title: "Rack space from individual servers to larger deployments",
+    body: "Tell us your required rack units, server dimensions, weight and expected growth. We’ll check the right space and availability. This applies if you need room for a few servers, a rack, or a larger setup.",
+    body2: "Your quote will specify:",
     list: [
-      "1U Colocation",
-      "2U Colocation",
-      "4U Colocation",
-      "Quarter Rack (10U)",
-      "Half Rack (20U)",
-      "Full Rack (42U)",
-      "Private Cage / Suite",
+      "Usable rack space and cabinet dimensions",
+      "Rack depth and equipment compatibility",
+      "Access arrangements",
+      "Options for adding hardware later"
+
     ],
+    para: ""
   },
   {
     icon: Zap,
-    title: "Redundant Power — No Single Point of Failure",
-    body: "Every colocation cabinet has dual power feeds, industrial UPS systems, and diesel generator backup. If the grid goes down, your servers keep running.",
+    title: "Power and backup",
+    body: "Send the typical and maximum power draw of your equipment, along with the number and type of power supplies.",
+    body2: "We’ll confirm:",
     list: [
-      "N+1 power redundancy as standard",
-      "Metered and managed PDUs per rack",
-      "Custom high-density power available",
+      "Allocated power and any usage limits",
+      "Available power feeds and PDU connections",
+      "UPS and generator backup arrangements",
+      "Whether power is included or metered separately",
+      "Additional requirements for high-density or GPU hardware",
     ],
+    para: "Servers with one power supply need a different setup than those with two. We’ll review this before installation."
   },
   {
     icon: Globe,
-    title: "High-Speed, Carrier-Neutral Connectivity",
-    body: (
-      <>
-        We don't lock you into a single ISP. As a carrier-neutral facility, you can access
-        <a
-          href="/services/internet/dedicated-internet-lahore"
-          className="
+    title: "Connectivity",
+    body: "Tell us your required port speed, expected traffic and whether you need a particular carrier.",
+    body2: "Your quote will confirm:",
+    list: [
+      "Available carriers and port speeds",
+      "Included bandwidth or data transfer",
+      "IP address allocation",
+      "Cross-connect availability and charges",
+      "Private connectivity options, where available"
+    ],
+    para: "A port’s speed is different from the bandwidth included in your plan. Both will be listed separately."
+  },
+  {
+    icon: Lock,
+    title: "Physical Security and access",
+    body: "We’ll cover the facility’s access controls before you book. This includes visitor authorization, ID requirements, appointment setups, and escort needs.",
+    body2: "Check facility details first. Your organization should verify physical security before placing any equipment.",
+    list: [
+    ],
+    para: ""
+  },
+  {
+    icon: Snowflake,
+    title: "Cooling",
+    body: "Cooling requirements depend on the equipment and its power density. Please send your hardware specs, airflow direction, and expected heat load. This will help us check if it's suitable.",
+    body2: "",
+    list: [
+    ],
+    para: "GPU servers and high-density equipment need a capacity check before we agree on space."
+  },
+  {
+    icon: Wrench,
+    title: "Remote Hands & Smart Hands Support",
+    body: "Remote hands provides physical help with your equipment. Depending on the agreed scope, tasks can include:",
+    list: [
+      "Checking indicator lights and cable connections",
+      "Carrying out an authorised reboot",
+      "Connecting or replacing cables",
+      "Replacing customer-supplied parts",
+      "Assistance with installation, updates, or troubleshooting"
+
+    ],
+
+    para: <>
+      Your quote will state support hours, response targets, included time and more charges. OS installation and other technical work must be agreed separately.Colocation does not automatically include operating-system management, patching, backups or application support.Looking for hardware supplied by us instead? See{" "}
+      <a
+        href="/services/cloud/dedicated-server-hosting-pakistan"
+        className="
     text-[#15803d]
     hover:text-[#166534]
     active:text-[#14532D]
     transition-colors
   "
-        >
-          multiple Tier 1 internet providers
-        </a>
-        with competitive bandwidth pricing and real redundancy.
-      </>
-    ),
-    list: [
-      "1Gbps and 10Gbps port options",
-      "Unmetered bandwidth plans available",
-      "Low-latency private interconnects within Lahore",
-    ],
-  },
-  {
-    icon: Lock,
-    title: "Physical Security, 24/7/365.",
-    body: "Your hardware gets layers of physical security most businesses can't match.",
-    list: [
-      "Biometric access control",
-      "24/7 CCTV surveillance with offsite backup",
-      "24/7 access to data center available",
-      "Strict visitor logging and escort policies",
-      "On-site security personnel",
-    ],
-  },
-  {
-    icon: Snowflake,
-    title: "Precision Cooling — Optimized for Your Workloads",
-    body: "Advanced hot-aisle/cold-aisle design and precision climate control maintain optimal temperature and humidity, protecting your equipment and ensuring peak performance.",
-    list: [],
-  },
-  {
-    icon: Wrench,
-    title: "Remote Hands & Smart Hands Support",
-    body: "You can't always be on-site. Our certified 24/7/365 Technical Support Team handles server reboots, cable organization, hardware swaps, and OS installations.",
-    list: [
-      "24/7 Remote Hands support",
-      "Scheduled and emergency Smart Hands available",
-      "Detailed work logs and photo documentation",
-    ],
+      >
+        Dedicated Server Hosting.
+      </a>
+      {" "} For a broader facility overview, see{" "}
+      <a
+        href="/services/cloud/data-center-solutions-pakistan"
+        className="
+    text-[#15803d]
+    hover:text-[#166534]
+    active:text-[#14532D]
+    transition-colors
+  "
+      >
+        Data Center Solutions.
+      </a>
+    </>
   },
 ];
+
+const whatSets = [
+  "List covered services",
+  "Explain how to measure them",
+  "Note exclusions",
+  "Describe the claim process",
+  "Include any service credits"
+
+]
 
 const CLOUD_BENEFITS = [
   { t: "Data Sovereignty", d: "Sensitive data stays on your hardware, under your control" },
@@ -178,11 +209,21 @@ const CLOUD_BENEFITS = [
 ];
 
 const USE_CASES = [
-  "Hybrid cloud colocation for enterprises balancing on-prem and cloud workloads",
-  "Disaster recovery with cloud failover capabilities",
-  "AI and HPC workloads requiring GPU-dense, high-power rack deployments",
-  "Edge computing for latency-sensitive applications",
-  "Private cloud hosted in a secure, compliant colocation environment",
+  <>
+    <b>Existing business systems.</b> Host servers you already own without maintaining a server room in your office.
+  </>,
+  <>
+    <b>Disaster recovery.</b> Place recovery infrastructure away from your main site. Replication, backups, recovery targets and failover testing need a separate plan.
+  </>,
+  <>
+    <b>AI and HPC.</b>House specialist hardware where suitable power, cooling and rack capacity are available. High-density deployments require assessment first. Prefer to rent GPU resources.,
+  </>,
+  <>
+    <b>Network-sensitive applications.</b> Choose connectivity based on the carriers, routes and users your application needs to reach.
+  </>,
+  <>
+    <b>Private cloud.</b> Run your own virtualisation platform on hardware you control, with management responsibilities agreed separately.
+  </>
 ];
 
 const PLANS: PricingTier[] = [
@@ -218,29 +259,105 @@ const PLANS: PricingTier[] = [
 ];
 
 const WHY = [
-  { icon: BadgeCheck, t: "99% Uptime SLA", d: "Backed by a written contract with financial penalties if we miss it — not a number pulled from a marketing slide." },
-  { icon: Network, t: "Carrier-Neutral Facility", d: "Freedom to choose your ISP. No vendor lock-in on bandwidth." },
-  { icon: Banknote, t: "Transparent Pricing", d: "You know exactly what you're paying before you sign." },
-  { icon: TrendingUp, t: "Scalable from Day One", d: "Start with 1U and grow to a private suite — all under one roof, one relationship." },
-  { icon: ShieldCheck, t: "Compliance-Ready", d: "PTA CTDISR audited, ISO 27001 aligned, and PCI-DSS capable — the paperwork banks, fintechs, and healthcare clients actually ask for before signing." },
-  { icon: Headphones, t: "Real 24/7 Technical Support", d: "Engineers who pick up the phone, not just a chatbot ticket system." },
+  { icon: BadgeCheck, t: "Local service and PKR quotes", d: "Review the charges, billing terms and any adjustment clauses before committing." },
+  { icon: Network, t: "A clear division of responsibilities", d: "Know which tasks remain with your team and which BrainCLOUD will handle." },
+  { icon: Banknote, t: "Capacity reviewed before delivery", d: "Space, power, cooling and connectivity requirements are checked before equipment is sent." },
+  { icon: TrendingUp, t: "Documented service terms", d: "Ask for the applicable SLA, support scope and access arrangements." },
+  { icon: ShieldCheck, t: "Room for future planning", d: "Discuss additional equipment and capacity requirements before your deployment grows." },
 ];
 
 const INDUSTRIES = [
-  { icon: Banknote, t: "Financial Services", d: "Low-latency trading, PCI-DSS compliance, secure data environments" },
-  { icon: HeartPulse, t: "Healthcare", d: "HIPAA-compliant colocation for patient data and medical applications" },
-  { icon: ShoppingCart, t: "E-Commerce", d: "High-availability infrastructure for peak traffic demands" },
-  { icon: Cloud, t: "SaaS Companies", d: "Reliable, scalable hosting for software platforms" },
-  { icon: Clapperboard, t: "Media & Gaming", d: "High-bandwidth, low-latency environments for streaming and online gaming" },
-  { icon: Landmark, t: "Government & Public Sector", d: "Secure, FedRAMP-capable colocation options" },
+  { icon: Banknote, t: "Financial Services", d: " deployments requiring documented access controls, service terms and audit evidence" },
+  { icon: HeartPulse, t: "Healthcare", d: " infrastructure for patient systems, with data access, backups and security responsibilities clearly assigned" },
+  { icon: ShoppingCart, t: "E-Commerce", d: "capacity planning for busy sales periods and the systems supporting online orders" },
+  { icon: Cloud, t: "SaaS Companies", d: "infrastructure matched to application, storage and network requirements" },
+  { icon: Clapperboard, t: "Media and gaming", d: "deployments assessed for traffic volumes, routing and bandwidth needs" },
+  { icon: Landmark, t: "Government & Public Sector", d: "projects with specified hosting locations, procurement requirements and security controls" },
 ];
 
 const FAQS = [
-  { q: "How much does colocation cost?", a: "Colocation pricing varies based on rack space, power requirements, and bandwidth. BrainCLOUD offers transparent pricing — contact us for a custom quote." },
-  { q: "Do you offer managed colocation services?", a: "Yes. BrainCLOUD goes beyond standard colocation. We provide managed services including remote hands, server monitoring, firewall management, and OS-level support — so your team can focus on your business, not your infrastructure." },
-  { q: "What happens if there is a power outage?", a: "BrainCLOUD data centers feature N+1 backup UPS systems, dual utility power feeds, and diesel generator backup. Your servers remain online even during extended grid outages." },
-  { q: "Can I visit my equipment?", a: "Yes. Clients have secure, 24/7 access to their colocation space with prior scheduling. Remote hands services are also available for tasks you'd rather not travel for." },
-  { q: "Is colocation good for disaster recovery?", a: "Colocation is a key part of disaster recovery planning. Our facility supports a dedicated area for backup hardware, failover systems, and off-site data replication." },
+  { q: "How much does colocation cost?", a: "Pricing depends on rack space (1U up to a full 42U rack or private cage), power draw, and bandwidth. Many Pakistani businesses begin with a quarter or half rack. Share your hardware specs, and we will provide a written quote in 24 hours" },
+  { q: "Do you offer managed colocation services?", a: "Yes. Our Remote Hands and Smart Hands team goes beyond space, power, and connectivity. They can manage reboots, cabling, hardware swaps, and OS installs. This means you don’t need someone on-site for every issue that comes up." },
+  { q: "What happens if there is a power outage?", a: "Every rack has dual power feeds, N+1 UPS redundancy, and diesel generator backup. If the grid goes down, your servers keep running without interruption." },
+  { q: "Can I visit my equipment?", a: "Yes. Colocation clients can enter the data center if they schedule ahead. This is part of our visitor logging and escort policy. 24/7 access is also available for select plans." },
+  { q: "Is colocation good for disaster recovery?", a: "Yes — it's one of the most common reasons Pakistani businesses colocate. Keeping a DR copy of your infrastructure in our facility protects you. If your main site loses power, connectivity, or has other problems, you’re safe." },
+  { q: "What is colocation, and how is it different from cloud hosting?", a: "Colocation means putting your own servers in our data center. You get power, cooling, security, and connectivity. But you own and control the hardware. Cloud hosting, by contrast, means renting virtual resources on hardware we own. Colocation is great for businesses that have their own hardware. It’s ideal if they want full control or need to meet compliance rules by keeping their equipment." },
+  {
+    q: "What hardware details do you need for a quote?",
+    a: (
+      <>
+        <p>Please provide the following details:</p>
+
+        <ul className="mt-3 space-y-2">
+          {[
+            "Make and model",
+            "Rack units",
+            "Dimensions",
+            "Weight",
+            "Typical and greatest power draw",
+            "Power-supply connections",
+            "Required network ports",
+          ].map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-2 text-sm"
+            >
+              <Check
+                className="mt-0.5 h-4 w-4 flex-none text-green"
+                strokeWidth={3}
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-3">
+          Include any storage, GPU or unusual cooling requirements.
+        </p>
+      </>
+    ),
+  },
+  { q: "Who replaces a failed server component?", a: "You remain responsible for your hardware unless another arrangement is agreed. Our team can help with physical replacements through the remote-hands service. This depends on available support, your approval, and a suitable replacement part." },
+  { q: "Can I keep spare parts at the facility?", a: "Ask before sending them. Storage availability, labelling, access and any charges need to be agreed separately." },
+  { q: "Can I visit or remove my equipment?", a: "Access and equipment removal must follow the agreed authorisation process. Your equipment will be available for access 24/7/365 provided that the authorised person comes to access the servers. However, it’s better to confirm access requirements, identification, and removal procedures before booking so we can better help you during your visit." },
+  {
+    q: "Are backups included?",
+    a: (
+      <>
+        <p>Yes, we offer backups provided that they’re included.</p>
+
+        <p className="mt-3">Your quote should include:</p>
+
+        <ul className="mt-3 space-y-2">
+          {[
+            "Any backup service",
+            "Retention period",
+            "Storage location",
+            "Restore responsibilities",
+          ].map((item) => (
+            <li
+              key={item}
+              className="flex items-start gap-2 text-sm"
+            >
+              <Check
+                className="mt-0.5 h-4 w-4 flex-none text-green"
+                strokeWidth={3}
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mt-3">
+          Otherwise, backups remain your responsibility.
+        </p>
+      </>
+    ),
+  },
+  { q: "Can you help move servers from another facility?", a: "Send the equipment list, current setup and acceptable downtime. We’ll confirm what help is available. Then we’ll agree who handles shutdown, transport, installation and testing." },
+  { q: "What happens if I need more power or rack space later?", a: "Request a capacity review before adding equipment. More space, power, and cooling depend on what's available. This may change your monthly charges." },
+  { q: "Ready to plan your colocation deployment?", a: "Send your hardware specifications, rack space, power and bandwidth needs. We’ll confirm the available options and provide a written PKR quote before you commit." },
+
 ];
 
 /* ----------------------------- page ----------------------------- */
@@ -284,11 +401,11 @@ function ColocationPage() {
 
           <div className="container-x section-y relative z-10">
             <h1 className="max-w-4xl font-display text-hero font-extrabold leading-[1.05] tracking-[-0.02em] text-navy">
-              Colocation Services & Cloud Colocation, For Businesses That{" "}
-              <span className="text-green">Can't Afford Downtime.</span>
+              Colocation Services in Pakistan for Businesses That{" "}
+              <span className="text-green">Need Reliable Infrastructure.</span>
             </h1>
             <p className="mt-7 max-w-2xl text-lede text-navy/70">
-              Your IT infrastructure needs more than a shared shelf in a crowded rack. BrainCLOUD offers colocation services in Pakistan. You can rent space in a Tier III, PTA-licensed data center in Lahore. It features redundant power, carrier-neutral connectivity, and 24/7 physical security. This way, you fully control your hardware. You avoid the high costs and long waits of building your own data center.
+              Colocation is about placing your servers in a data center. Our Tier 3 data center offers the rack space, power, cooling, physical security, and connectivity which your servers need. You keep ownership of your hardware and control of your systems. BrainCLOUD provides colocation services for your business in Pakistan. BrainCLOUD and its customers decide on rack space, power, network connection, and support before installation.
             </p>
             <CTAPair
               className="mt-9"
@@ -317,13 +434,14 @@ function ColocationPage() {
               title="Our Colocation Services"
             />
             <p className="mt-7 max-w-2xl text-lede text-navy/70">
-              Your IT infrastructure needs more than a shared shelf in a crowded rack. BrainCLOUD offers colocation services in Pakistan. You can rent space in a Tier III, PTA-licensed data center in Lahore. It features redundant power, carrier-neutral connectivity, and 24/7 physical security. This way, you fully control your hardware. You avoid the high costs and long waits of building your own data center.
+              Your quote details the space, power, connectivity, and support for your installation.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {INCLUDED.map((f) => (
               <FeatureCard key={f.title} icon={f.icon} title={f.title}>
                 <p>{f.body}</p>
+                <p>{f.body2}</p>
                 {f.list.length > 0 && (
                   <ul className="mt-4 space-y-1.5">
                     {f.list.map((item) => (
@@ -340,6 +458,7 @@ function ColocationPage() {
                     ))}
                   </ul>
                 )}
+                <p>{f.para}</p>
               </FeatureCard>
             ))}
           </div>
@@ -406,8 +525,8 @@ function ColocationPage() {
             <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
               <SectionHeading
                 eyebrow="USE CASES"
-                title="Where Cloud Colocation Fits Best"
-                lede="From hybrid cloud to AI workloads, our colocation services support the most demanding modern enterprise scenarios."
+                title="Where Colocation Fits Best"
+                lede=" "
               />
             </div>
             <ol className="lg:col-span-7">
@@ -470,8 +589,8 @@ function ColocationPage() {
           <div className="mb-14">
             <SectionHeading
               eyebrow="WHAT SETS US APART"
-              title="What Sets Us Apart"
-              lede="The colocation market in Pakistan is crowded. It features telecom operator data centers and generic resellers. BrainCLOUD stands out from a shared rack with another name on the door."
+              title="What Sets BrainCLOUD Apart"
+              lede=" "
             />
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -497,6 +616,26 @@ function ColocationPage() {
               );
             })}
           </div>
+          <p className="mt-5 text-navy/75">
+            For availability commitments, review the actual SLA.
+          </p>
+          <ul className="mt-4 space-y-1.5">
+            {whatSets.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-2 text-sm text-navy/75"
+              >
+                <Check
+                  className="mt-0.5 h-4 w-4 flex-none text-green"
+                  strokeWidth={3}
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-navy/75">
+            Request the current certifications or audit documents your organization needs. Then, check their facility and service scope. Network licensing does not replace a review of the controls your business needs.
+          </p>
         </Section>
 
 
@@ -510,7 +649,7 @@ function ColocationPage() {
             <SectionHeading
               eyebrow="INDUSTRIES"
               title="Industries We Serve"
-              lede="BrainCLOUD colocation and cloud colocation services support businesses across:"
+              lede=" "
             />
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -532,6 +671,9 @@ function ColocationPage() {
               );
             })}
           </div>
+          <p className="mt-5 text-navy/75">
+            Colocation alone does not make an application or organisation compliant. Requirements must be checked against the complete deployment.
+          </p>
         </Section>
 
         {/* TESTIMONIALS */}

@@ -60,14 +60,14 @@ export default defineConfig({
       // Route the SSR entry through src/server.ts (our error-page wrapper).
       server: { entry: "server" },
     }),
-    netlify(),
-    // netlify({
-    //   dev: {
-    //     edgeFunctions: {
-    //       enabled: false,
-    //     },
-    //   },
-    // }),
+    // netlify(),
+    netlify({
+      dev: {
+        edgeFunctions: {
+          enabled: false,
+        },
+      },
+    }),
     viteReact(),
     nitro(nitroOptions),
     ...(isLovableSandbox ? [stripRedundantNodejsCompatFlag()] : []),

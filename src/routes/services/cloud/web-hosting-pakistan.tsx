@@ -174,163 +174,107 @@ const PLANS: Plan[] = [
 const WHY = [
   {
     icon: ShieldCheck,
-    title: "Your Website, Always Online",
-    body: (
-      <>
-        We back every hosting account with a{" "}
-        <strong>99.982% uptime guarantee</strong>. That means your website stays
-        live, your customers can reach you, and your business doesn't stop
-        because of
-        <a
-          href="/services/cloud/contact"
-          className="
-    text-[#15803d]
-    hover:text-[#166534]
-    active:text-[#14532D]
-    transition-colors
-  "
-        >
-          {" "}server issues. {" "}
-        </a>
-        If we ever fall short, we make it right — no
-        arguments.
-      </>
-    ),
+    title: "Locally hosted infrastructure",
+    body: "BrainTEL describes its data centers in Pakistan as Tier III compliant. Confirm the location available for your hosting plan."
   },
   {
     icon: Gauge,
-    title: "Servers That Actually Load Fast",
-    body: (
-      <>
-        BrainCLOUD has a
-        <a
-          href="/services/cloud/data-center-solutions-pakistan"
-          className="
-    text-[#15803d]
-    hover:text-[#166534]
-    active:text-[#14532D]
-    transition-colors
-  "
-        >
-          {" "}data center in Lahore.{" "}
-        </a>
-        This means we provide our
-        service from a local server. You’ll experience faster speeds than those
-        who usually resell from international providers, we use{" "}
-        <strong>NVMe SSD-powered servers</strong> for faster read/write speeds
-        compared to standard SSDs. Every hosting plan is optimized for Pakistani
-        traffic, so your visitors in Islamabad, Karachi, and Lahore experience
-        consistently quick load times — not the lag you get with servers hosted
-        oceans away.
-      </>
-    ),
+    title: "Plans you can compare",
+    body: "Storage, data transfer and support options are listed below."
   },
   {
     icon: ShieldCheck,
-    title: "Free SSL — On Every Plan, No Exceptions",
-    body: "SSL isn't an add-on here. Every BrainCLOUD plan includes a free SSL certificate from day one. Your website shows the padlock in every browser, customers trust it, and Google rewards it in rankings.",
+    title: "Billing in PKR",
+    body: "Check the total payable, applicable taxes and renewal charges before ordering.",
   },
   {
     icon: Headphones,
-    title: "Support That Speaks Your Language",
-    body: (
-      <>
-        Our support team is based in Pakistan. You can reach us 24/7 via{" "}
-        <strong>live chat, WhatsApp, or phone</strong> — in Urdu or English.
-        Whether it's a billing question or a server issue late at night, someone
-        is always there to help. No ticket queues that take countless days. No
-        outsourced call centers.
-      </>
-    ),
+    title: "Support for your website",
+    body: "Choose the support hours and channels that suit your business."
   },
   {
     icon: RefreshCcw,
-    title: "Free Website Migration",
-    body: "Already hosting somewhere else? Our team will move your website, emails, and databases to BrainCLOUD for free — with zero downtime. Just share your login details, and we'll handle the rest.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "7-Day Money-Back Guarantee",
-    body: "Not satisfied in the first 7 days? We'll refund you in full. No questions, no fine print. We're confident in what we offer, and we want you to be too.",
+    title: "Help with migration",
+    body: "Ask us to review your existing website and confirm migration scope, eligibility and any charges before the move.",
   },
 ];
 
 const INCLUDED_TABLE: Array<[string, string]> = [
-  ["Free SSL Certificate", "✅ Yes"],
-  ["cPanel Control Panel", "✅ Yes"],
-  ["Daily Automatic Backups", "✅ Yes"],
-  ["Free Website Migration", "✅ Yes"],
-  ["Unmetered Bandwidth", "✅ Yes"],
-  ["24/7 WhatsApp & Phone Support", "✅ Yes"],
-  ["Email Hosting", "✅ Yes"],
-  ["One-Click App Installer", "✅ Yes (WordPress, Joomla & more)"],
+  ["SSL Certificate", "Whether included, supported domains and renewal arrangements"],
+  ["Control Panel", "cPanel for applicable Linux plans; the specified panel for Windows plans"],
+  ["Automatic Backups", "Frequency, retention period, storage location and coverage"],
+  ["Website Migration", "Eligibility, supported platforms, scope and any charges"],
+  ["Business email", "Mailbox count, storage, sending limits and supported access methods"],
+  ["App installer", "Available applications and supported versions"],
+  ["Urdu and English support", "Available channels, days and hours"],
+  ["Refund policy", "Whether the advertised seven-day guarantee applies, with its eligibility rules and exclusions"],
 ];
 
 const LOCAL_VS_INTL = [
   {
-    title: "Speed",
-    body: "Servers hosted internationally add latency for your Pakistani visitors. A website hosted in Pakistan or on a local-optimized server loads faster for users in Karachi, Lahore, or Islamabad.",
+    title: "Mostly Pakistani visitors",
+    body: "Hosting in Pakistan may reduce network latency, depending on routing and the visitor’s connection.",
   },
   {
-    title: "Payment",
-    body: "International providers often require credit cards in USD. BrainCLOUD accepts bank transfer, JazzCash, EasyPaisa, and other local payment methods — in Pakistani Rupees.",
+    title: "Visitors in several countries",
+    body: "Compare performance from those locations and consider a CDN for suitable website content.",
   },
   {
-    title: "Support",
-    body: "When there is an issue late at night in Pakistan, an international support team is in a different timezone. Our team is awake when you need them.",
+    title: "Dynamic websites",
+    body: "Shops, dashboards and logged-in pages also depend on application code, database performance and server resources.",
   },
   {
-    title: "SEO",
-    body: "Faster local load speeds contribute to better Core Web Vitals — and that directly impacts your Google ranking in Pakistan.",
+    title: "Search performance",
+    body: "A suitable hosting setup can support faster pages, but local hosting alone does not guarantee better rankings.",
   },
 ];
 
 const AUDIENCE = [
-  { title: "Small businesses", body: "setting up their first online presence" },
-  { title: "Freelancers and agencies", body: "managing client websites" },
-  { title: "E-commerce stores", body: "running on WooCommerce or OpenCart" },
+  { title: "Small businesses", body: "needing a website and domain-based email" },
+  { title: "Freelancers and agencies", body: "managing their own or client websites" },
+  { title: "Online stores", body: "running supported platforms such as WooCommerce or OpenCart" },
   {
     title: "Educational institutions",
-    body: "needing reliable .edu.pk hosting",
+    body: "hosting public websites",
   },
   {
     title: "Developers and startups",
-    body: "who need VPS flexibility",
+    body: "that may later need VPS resources",
   },
 ];
 
 const FAQS = [
   {
     q: "What is web hosting and why do I need it?",
-    a: "Web hosting is the service that stores your website's files on a server and makes them accessible to anyone on the internet. Without hosting, your website can't go live. Think of it as the physical space your website lives in online.",
+    a: "Web hosting provides server resources for your website’s files, database and applications. Your domain directs visitors to that hosting service.",
   },
   {
-    q: "Which hosting plan is right for me?",
-    a: "If you're starting a blog, portfolio, or small business site, Shared Hosting at Rs. 2,250/month is the right fit. If you're running WordPress or a small e-commerce store, go with WordPress Hosting. If you're expecting high traffic or need technical control, choose VPS. For large enterprises and high-traffic platforms, Dedicated Hosting gives you full control and maximum performance.",
+    q: "Can I use a domain I already own?",
+    a: "Ask us to confirm the required DNS changes. Moving website hosting does not necessarily require the domain registration. You should check the existing email settings before making any changes.",
   },
   {
     q: "Can I upgrade my plan later?",
-    a: "Absolutely. You can upgrade from Shared to VPS to Dedicated at any time without losing your data or going through a complex migration. We handle the upgrade process for you.",
+    a: " Contact us when you need more resources. We'll check the available plan and any price differences. We'll also see if the move needs a service interruption. A move to VPS hosting may also require more system management.",
   },
   {
-    q: "Do you offer email hosting?",
-    a: "Yes. Every hosting plan includes email hosting so you can create and manage professional business email addresses.",
+    q: "Who updates WordPress, themes and plugins?",
+    a: "Check your plan’s management scope. Installing WordPress doesn’t automatically include updates, plugin fixes, or site maintenance.",
   },
   {
-    q: "What payment methods do you accept?",
-    a: "We accept bank transfer, JazzCash, EasyPaisa, credit/debit cards, and other local payment methods — all in Pakistani Rupees.",
-  },
-  {
-    q: "Is my website data backed up?",
-    a: "Yes. BrainCLOUD performs automatic daily backups of all websites. If anything goes wrong, we can restore your site quickly.",
-  },
-  {
-    q: "Do you offer a money-back guarantee?",
-    a: "Yes. We offer a full 7-day money-back guarantee. If you're not happy in the first 7 days, we'll refund you completely.",
+    q: "How do I restore a backup?",
+    a: "Use the restore method available with your plan or contact support. Check the available recovery dates. Also, find out the restore charges. Lastly, confirm whether the backup includes files, databases, and email.",
   },
   {
     q: "Can you migrate my existing website?",
-    a: "Yes, and it's free. Our team migrates your website, emails, and databases from any host to BrainCLOUD with zero downtime.",
+    a: "Ask for a migration review before ordering. We’ll confirm compatibility, access requirements, timing and any charges. Provide authorized access through the agreed secure process. Busy stores and sites receiving new submissions may need a planned cutover.",
+  },
+  {
+    q: "What happens if I exceed my plan’s limits?",
+    a: "The result depends on the limit and service terms. Check if using a lot of data causes extra charges or throttling. Also, see if you need an upgrade before picking your plan.",
+  },
+  {
+    q: "Is a domain included in the hosting price?",
+    a: "Check the order summary. Domain registration, renewal, and hosting are separate services. Only if the chosen offer states otherwise are they bundled together.",
   },
 ];
 
@@ -361,33 +305,15 @@ function Hero() {
             Locally hosted in Lahore · From Rs 2,250/mo
           </Eyebrow>
           <h1 className="mt-5 font-display text-hero font-extrabold! leading-[1.05] tracking-[-0.02em] text-navy">
-            Web Hosting in Pakistan — Fast, Secure &{" "}
-            <span className="text-green">Made for Pakistani Websites</span>
+            Web Hosting in Pakistan for Business Websites, Blogs and{" "}
+            <span className="text-green">Online Stores</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lede text-navy/75">
-            Getting your website online in Pakistan has never been simpler.
-            BrainCLOUD is a trusted Pakistani web hosting provider offering
-            plans starting at just Rs 2,250/month — with cPanel included, a free
-            SSL certificate on every plan, free email hosting, and a support
-            team available in both Urdu and English. Whether you are launching
-            your first blog or scaling an
-            <a
-              href="/services/software/web-development-pakistan"
-              className="
-    text-[#15803d]
-    hover:text-[#166534]
-    active:text-[#14532D]
-    transition-colors
-  "
-            >
-              {" "} e-commerce business, {" "}
-            </a>
-            we are here to
-            keep your website running.
+            BrainCLOUD provides web hosting for Pakistani websites. Plans start at Rs 2,250 per month, billed yearly at Rs 27,000. Compare the options for storage, data transfer, email, and support below. Then, check the features and billing terms for your chosen plan before you order.
           </p>
           <p className="mt-4 max-w-2xl text-lg font-bold text-navy">
-            The best part?{" "}
-            <span className="text-green">We are locally hosted.</span>
+            At a glance:{" "}
+            <span className="text-green">plans from Rs 2,250/mo, billed yearly · PKR billing · Linux and Windows options · Support hours depend on your plan.</span>
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a href="#plans" className={CTA_PRIMARY}>
@@ -415,7 +341,7 @@ function WhyChoose() {
       <SectionHeading
         eyebrow="WHY PAKISTANI BUSINESSES CHOOSE US"
         title="Why Pakistani Businesses Choose BrainCLOUD"
-        lede="Thousands of Pakistani websites — from small shops in Lahore to corporate portals in Karachi — run on BrainCLOUD infrastructure. Here's what makes us different from the crowd."
+        lede="Choose hosting around what your website needs: suitable resources, clear billing and support you can reach."
       />
       <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {WHY.map((w) => (
@@ -554,14 +480,12 @@ function Plans() {
     <Section tone="white" id="plans">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <div className="max-w-3xl">
-          <Eyebrow tone="green">Web hosting plans</Eyebrow>
+          <Eyebrow tone="green">WEB HOSTING PLANS</Eyebrow>
           <h2 className="mt-4 font-display text-h2 font-extrabold text-navy">
-            Our Web Hosting Plans & Pricing in Pakistan
+            Web hosting plans and pricing in Pakistan
           </h2>
           <p className="mt-4 text-base leading-relaxed text-navy/70">
-            Every plan is billed in Pakistani Rupees and includes free SSL,
-            daily backups, and 24/7 local support. Subscription is payable
-            yearly — save 5% on 2-year and 10% on 3-year commitments.
+            The prices below are monthly equivalents, paid annually in PKR. Confirm applicable taxes, renewal prices and any longer-term discount before ordering.
           </p>
         </div>
         <OsToggle value={os} onChange={setOs} />
@@ -717,7 +641,7 @@ function UpperTiers() {
             <span className="text-green">dedicated hardware?</span>
           </>
         }
-        lede="Compare BrainCLOUD's VPS and Dedicated Servers if shared hosting isn't quite the right fit."
+        lede="If your website needs more power than shared hosting, try VPS Hosting or Dedicated Server Hosting. Small websites usually stay on shared hosting. When a site outgrows its resource limits, a VPS offers more resources and control, and a dedicated server is a whole server for large or high-traffic sites."
       />
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         <TierIntro
@@ -957,14 +881,15 @@ function IncludedTable() {
     <Section tone="white" id="included">
       <SectionHeading
         eyebrow="INCLUDED IN EVERY PLAN"
-        title="What's Included in Every BrainCLOUD Hosting Plan"
+        title="What your hosting plan includes"
+        lede="Check these details for the plan and operating system you choose."
       />
       <div className="mt-10 overflow-hidden rounded-[var(--radius-card)] border border-hairline">
         <table className="w-full text-left">
           <thead className="bg-navy text-white ">
             <tr>
               <th className="px-6 py-4 text-eyebrow">Feature</th>
-              <th className="px-6 py-4 text-eyebrow">Included?</th>
+              <th className="px-6 py-4 text-eyebrow">Details to confirm</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-hairline bg-white">
@@ -1003,8 +928,8 @@ function LocalVsIntl() {
         <div className="max-w-2xl">
           <SectionHeading
             eyebrow="LOCAL VS INTERNATIONAL"
-            title="Local Hosting vs. International Hosting — What's the Difference for Pakistani Websites?"
-            lede="Many Pakistani businesses make the mistake of hosting their websites on international servers, because they look affordable at first glance. But there are real tradeoffs:"
+            title="Local Hosting vs. International Hosting"
+            lede="The right location depends on where your visitors are and how their networks reach your server."
           />
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -1019,6 +944,9 @@ function LocalVsIntl() {
             </div>
           ))}
         </div>
+        <p className="mt-4 text-base leading-relaxed text-navy/70">
+          An SSL certificate encrypts traffic between a visitor and your website. Website security depends on updates, strong passwords, access controls, and the apps you use.
+        </p>
       </div>
     </section>
   );
@@ -1111,15 +1039,13 @@ function ReadyCTA() {
     <Section tone="surface" id="ready">
       <div className="mx-auto max-w-3xl text-center">
         <Eyebrow tone="green" withDot>
-          Ready when you are
+          READY WHEN YOU ARE
         </Eyebrow>
         <h2 className="mt-5 font-display text-h2 font-extrabold text-navy">
           Ready to Get Your Website Live?
         </h2>
         <p className="mt-5 text-lede text-navy/75">
-          Starting a new website or switching from another host — BrainCLOUD
-          makes it simple. Choose your plan, pick a domain, and our team sets
-          everything up for you.
+          Choose a plan or send us your website requirements. We’ll check the operating system, resources, features, and total cost. Then you can order.
         </p>
         <div className="mt-8 flex justify-center">
           <CTAPair
