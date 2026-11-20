@@ -5,9 +5,11 @@ import BrowserMockup from "@/components/sms/branded-sms/BrowserMockup";
 import FloatingIcons from "@/components/sms/branded-sms/FloatingIcons";
 import SMSCampaignPlannerDialog from "@/components/sms/campaign-planner/SMSCampaignPlannerDialog";
 import AnimatedCounter from "@/components/sms/animations/AnimatedCounter";
+import GetStartedPopup from "./Popup-Form/GetStartedPopup";
 
 const MainHero: React.FC = () => {
   const [isPlannerOpen, setIsPlannerOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-background">
@@ -49,7 +51,8 @@ const MainHero: React.FC = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row items-start gap-4">
-              <Button onClick={() => setIsPlannerOpen(true)} size="lg">
+              {/* <Button onClick={() => setIsPlannerOpen(true)} size="lg"> */}
+              <Button onClick={() => setIsPopupOpen(true)} size="lg">
                 <MessageSquare size={20} />
                 <span>Get Started Today</span>
                 <ArrowRight size={20} />
@@ -90,7 +93,8 @@ const MainHero: React.FC = () => {
         </div>
       </div>
 
-      <SMSCampaignPlannerDialog open={isPlannerOpen} onOpenChange={setIsPlannerOpen} />
+      {/* <SMSCampaignPlannerDialog open={isPlannerOpen} onOpenChange={setIsPlannerOpen} /> */}
+      <GetStartedPopup isOpen={isPopupOpen} setIsOpen={setIsPopupOpen} />
     </section>
   );
 };

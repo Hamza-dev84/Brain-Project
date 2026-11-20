@@ -60,4 +60,5 @@ export const getStartedSchema = yup.object({
   referral: yup
     .string()
     .optional(),
+    service: yup.string().required("Please select a service"),
 });

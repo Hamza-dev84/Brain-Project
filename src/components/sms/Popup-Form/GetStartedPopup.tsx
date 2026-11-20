@@ -8,7 +8,7 @@ import { bsmsCompaignFormApi } from "@/pages/services/bsmsFormsApi";
 
 const GetStartedPopup = ({ isOpen, setIsOpen }) => {
   const { toast } = useToast();
-  
+
   const {
     register,
     handleSubmit,
@@ -23,6 +23,7 @@ const GetStartedPopup = ({ isOpen, setIsOpen }) => {
       smsRequired: "",
       secpRegistered: "",
       referral: "",
+      service: ""
     },
   });
 
@@ -32,7 +33,7 @@ const GetStartedPopup = ({ isOpen, setIsOpen }) => {
       if (apiResponse.success) {
         setIsOpen(false);
         reset();
-         toast({
+        toast({
           title: "Request Received",
           description: "Request received successfully",
           //   variant: "destructive",
@@ -157,9 +158,23 @@ const GetStartedPopup = ({ isOpen, setIsOpen }) => {
           </div>
 
           <div className="custom-input-group">
+            <label className="custom-label">Services</label>
+
+            <select className="custom-select" {...register("service")}>
+              <option value="" disabled hidden>Select a Service</option>
+              <option value="Promotional SMS">Branded SMS</option>
+              <option value="Transactional SMS">SMS Marketing</option>
+              <option value="OTP SMS">OTP SMS</option>
+              <option value="Other">Others</option>
+            </select>
+
+            <p className="error">{errors.service?.message}</p>
+          </div>
+
+          <div className="custom-input-group">
             <label className="custom-label">How did you hear about us?(Optional)</label>
             <select className="custom-select" {...register("referral")}>
-              <option value="">Select an option</option>
+              <option value="" disabled hidden>Select an option</option>
               <option value="Web Search">Web Search (Google, Bing, etc.)</option>
               <option value="AI Search">Al Search (ChatGPT, Gemini, Etc.)</option>
               <option value="Social Media">Social Media</option>

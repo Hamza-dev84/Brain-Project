@@ -20,6 +20,16 @@ interface ProposalModalProps {
   projectData: Partial<FormData>;
 }
 
+const HEARD_ABOUT_US_OPTIONS = [
+  "Web Search (Google, Bing, etc.)",
+  "AI Search (ChatGPT, Gemini, etc.)",
+  "Social Media",
+  "Brochure, Flyer, Banner",
+  "Referral",
+  "Salesperson",
+  "Other",
+] as const;
+
 export const ProposalModal: React.FC<ProposalModalProps> = ({
   isOpen,
   onClose,
@@ -28,6 +38,8 @@ export const ProposalModal: React.FC<ProposalModalProps> = ({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
+    hearAboutUs: "",
   });
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -66,24 +78,25 @@ Please send me a custom proposal with pricing and timeline details.`;
         ...projectData,
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
+        hearAboutUs: formData.hearAboutUs,
         message: preFilledMessage,
-        hearAboutUs: "Interactive Project Planner",
         selectedFeatures: projectData.selectedFeatures ?? [],
       });
 
-       if (apiResponse.success) {
-         setIsSuccess(true);
-         toast.success("Request received!", {
-        description: "Our team will reach out within 24 hours.",
-      });
-      setFormData({ name: "", email: "" });
+      if (apiResponse.success) {
+        setIsSuccess(true);
+        toast.success("Request received!", {
+          description: "Our team will reach out within 24 hours.",
+        });
+        setFormData({ name: "", email: "", phone: "", hearAboutUs: "" });
       } else {
-        toast.error("Error while sending proposal",{
+        toast.error("Error while sending proposal", {
           description: "Please try again later or call us directly.",
         });
       }
-     
-      
+
+
     } catch (err) {
       console.error(err);
       toast.error("Something went wrong", {
@@ -97,7 +110,7 @@ Please send me a custom proposal with pricing and timeline details.`;
   const handleClose = () => {
     setIsSuccess(false);
     setCurrentStep(1);
-    setFormData({ name: "", email: "" });
+    setFormData({ name: "", email: "", phone: "", hearAboutUs: "" });
     onClose();
   };
 
@@ -120,10 +133,10 @@ Please send me a custom proposal with pricing and timeline details.`;
               <DialogDescription className="font-lato text-neutral-medium">
                 {currentStep === 1 ? "Just 2 quick fields to get your custom proposal" : "Review your project details"}
               </DialogDescription>
-              
+
               {/* Progress Bar */}
               <div className="mt-4 h-2 bg-neutral-200 rounded-full overflow-hidden">
-                <div 
+                <div
                   className="h-full bg-gradient-to-r from-brand-primary to-brand-secondary transition-all duration-500"
                   style={{ width: `${(currentStep / totalSteps) * 100}%` }}
                 />
@@ -164,6 +177,51 @@ Please send me a custom proposal with pricing and timeline details.`;
                       placeholder="your@email.com"
                       className="h-12"
                     />
+                  </div>
+
+                  {/* Phone Number */}
+                  <div>
+                    <label className="font-lato font-semibold text-sm text-brand-dark mb-2 block">
+                      Phone *
+                    </label>
+
+                    <Input
+                      required
+                      type="tel"
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      placeholder="+92 300 0000000"
+                      className="h-12"
+                    />
+                  </div>
+
+                  {/* How did you hear about us? */}
+                  <div>
+                    <label className="font-lato font-semibold text-sm text-brand-dark mb-2 block">
+                      How did you hear about us? *
+                    </label>
+
+                    <select
+                      required
+                      value={formData.hearAboutUs}
+                      onChange={(e) =>
+                        setFormData({ ...formData, hearAboutUs: e.target.value })
+                      }
+                      className="w-full h-12 rounded-md border border-input bg-background px-3 text-sm"
+                    >
+
+                      <option value="" disabled hidden>
+                        Select an option
+                      </option>
+
+                      {HEARD_ABOUT_US_OPTIONS.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </div>
 
                   <div className="flex items-start gap-2 p-3 bg-brand-primary/5 rounded-lg border border-brand-primary/20">
@@ -234,7 +292,7 @@ Please send me a custom proposal with pricing and timeline details.`;
                     Back
                   </Button>
                 )}
-                
+
                 <Button
                   type="submit"
                   disabled={!isStepValid() || (currentStep === totalSteps && isSubmitting)}

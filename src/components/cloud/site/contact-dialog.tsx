@@ -35,6 +35,17 @@ const SERVICES = [
 ] as const;
 type Service = (typeof SERVICES)[number];
 
+const HEARD_ABOUT_US_OPTIONS = [
+  "Web Search (Google, Bing, etc.)",
+  "AI Search (ChatGPT, Gemini, etc.)",
+  "Social Media",
+  "Brochure, Flyer, Banner",
+  "Referral",
+  "Salesperson",
+  "Other",
+] as const;
+type HeardAboutUs = (typeof HEARD_ABOUT_US_OPTIONS)[number];
+
 const leadSchema = z.object({
   name: z.string().trim().min(2, "Please enter your name").max(100),
   email: z.string().trim().email("Enter a valid work email").max(255),
@@ -46,6 +57,7 @@ const leadSchema = z.object({
     .max(30)
     .regex(/^[0-9+\-\s()]+$/, "Numbers, spaces, +, - and () only"),
   service: z.enum(SERVICES),
+  heardAboutUs: z.enum(HEARD_ABOUT_US_OPTIONS),
   message: z.string().trim().max(1000).optional().or(z.literal("")),
 });
 
@@ -134,6 +146,7 @@ export function ContactDialogProvider({ children }: { children: React.ReactNode 
       phone: String(form.get("phone") ?? ""),
       service: String(form.get("service") ?? "") as Service,
       message: String(form.get("message") ?? ""),
+      heardAboutUs: String(form.get("heardAboutUs") ?? "") as HeardAboutUs,
     };
     const parsed = leadSchema.safeParse(formData);
 
@@ -252,6 +265,28 @@ export function ContactDialogProvider({ children }: { children: React.ReactNode 
                     {SERVICES.map((s) => (
                       <option key={s} value={s}>
                         {s}
+                      </option>
+                    ))}
+                  </select>
+                </Field>
+                <Field label="How did you hear about us?" error={errors.heardAboutUs}>
+                  <select
+                    name="heardAboutUs"
+                    defaultValue=""
+                    required
+                    className={cn(
+                      "block h-11 w-full appearance-none border border-navy/15 bg-white px-3 text-sm text-navy",
+                      FOCUS_RING,
+                    )}
+                  >
+
+                    <option value="" disabled hidden>
+                      Select an option
+                    </option>
+
+                    {HEARD_ABOUT_US_OPTIONS.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
                       </option>
                     ))}
                   </select>
