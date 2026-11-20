@@ -1,376 +1,80 @@
-import { useState } from "react";
+
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@/lib/router-compat";
-import {
-  Server,
-  Cloud,
-  Users,
-  Gauge,
-  Phone,
-  Cable,
-  Wrench,
-  ShieldCheck,
-  Calculator,
-  Layers,
-} from "lucide-react";
-
+import { ArrowRight, MessageCircle, Check, Calculator, Gauge, Phone, Cloud, Laptop, Layers } from "lucide-react";
 import Header from "@/components/internet/Header";
 import Footer from "@/components/internet/Footer";
 import { Breadcrumb } from "@/components/internet/Breadcrumb";
 import { ClientLogoSlider } from "@/components/internet/ClientLogoSlider";
-import { AvailabilityCheckerModal } from "@/components/internet/AvailabilityCheckerModal";
-import FinalCTASection from "@/components/internet/home/FinalCTASection";
+import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/internet/home/SectionHeader";
-import { ScrollReveal } from "@/components/internet/animations/ScrollReveal";
-import { StaggerContainer, StaggerItem } from "@/components/internet/animations/StaggerContainer";
-
-import TelephonyHero from "@/components/internet/telephony/TelephonyHero";
-import ComparisonTable from "@/components/internet/telephony/ComparisonTable";
-import CostDrivers from "@/components/internet/telephony/CostDrivers";
 import TelephonyFAQ from "@/components/internet/telephony/TelephonyFAQ";
 import RelatedServices from "@/components/internet/telephony/RelatedServices";
-import CTABand from "@/components/internet/telephony/CTABand";
-import ImagePlaceholder from "@/components/internet/telephony/ImagePlaceholder";
-import { buildTelephonyJsonLd } from "@/components/internet/telephony/telephonySeo";
+import { WHATSAPP } from "@/components/internet/telephony/telephonyLinks";
+import { pbxPriceTerms as terms, pbxPriceListings as listings, pbxPriceCostItems as costItems, pbxPriceTypes as types, pbxPriceChecks as checks, pbxPriceFaqs as faqs } from "@/components/internet/telephony/pbxPriceContent";
+import hero from "@/assets/internet/pbx-price-hero.webp";
+import equipment from "@/assets/internet/pbx-price-equipment.webp";
+import "@/components/internet/telephony/pbx-price-page.css";
 
 const PATH = "/services/internet/pbx-price-in-pakistan";
-
-const title = "PBX Price in Pakistan | PBX & PABX System Cost Guide — BrainNET";
-const description =
-  "What a PBX system costs in Pakistan. Compare analogue PABX, IP PBX and cloud virtual PBX pricing, see every cost driver, and get an itemised quote for your site.";
-
+const SITE = "https://brain.net.pk";
+const title = "PBX Price in Pakistan: What a Business Phone System Really Costs | BrainNET";
+const description = "Compare public PBX hardware prices in Pakistan, all-in costs and IP vs virtual PBX over three years. Get an itemised written PKR quote from BrainNET within 24 hours.";
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "Service", name: "PBX Pricing in Pakistan", serviceType: "PBX supply, installation and itemised pricing", description, url: `${SITE}${PATH}`, provider: { "@type": "Organization", name: "BrainNET", url: SITE }, areaServed: { "@type": "Country", name: "Pakistan" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE }, { "@type": "ListItem", position: 2, name: "Internet Services", item: `${SITE}/services/internet` }, { "@type": "ListItem", position: 3, name: "PBX Price in Pakistan", item: `${SITE}${PATH}` }] },
+];
 export const Route = createFileRoute("/services/internet/pbx-price-in-pakistan")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => ({ meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }] }),
   component: PBXPrice,
 });
-
-const systemTypes = [
-  {
-    Icon: Cable,
-    title: "Analogue PABX",
-    who: "Very small offices, legacy sites",
-    cost: "Lowest upfront, highest per-feature",
-    body: "A traditional PABX system switches calls over copper pairs. Cheap to buy, but IVR, recording and reporting are bolt-on cards — and analogue line rental keeps climbing while SIP keeps falling.",
-    verdict: "Only worth it if you are keeping existing analogue lines and handsets.",
-  },
-  {
-    Icon: Server,
-    title: "On-premise IP PBX",
-    who: "25–200+ extensions, compliance-driven sites",
-    cost: "Capital purchase + annual maintenance",
-    body: "Hardware and extension licences bought once, installed in your rack. Recordings and call data stay in your building, and internal calling survives an internet outage.",
-    verdict: "Best five-year cost at scale, and mandatory where data must stay on site.",
-    link: "/services/internet/ip-pbx",
-  },
-  {
-    Icon: Cloud,
-    title: "Virtual / cloud PBX",
-    who: "Distributed teams, fast-growing SMEs",
-    cost: "Monthly per extension, no capital",
-    body: "The system runs in our data centre. No hardware, no maintenance window, extensions added or dropped each month, and staff answer the office number on mobile.",
-    verdict: "Lowest entry cost and the fastest to deploy — usually live within a week.",
-    link: "/services/internet/virtual-pbx",
-  },
+function Section({ eyebrow, heading, kicker, children }: { eyebrow: string; heading: string; kicker?: ReactNode; children: ReactNode }) {
+  return <section className="pbxprice-section"><div className="max-w-screen-xl mx-auto px-5"><SectionHeader eyebrow={eyebrow} title={heading} kicker={kicker} /><div className="mt-10">{children}</div></div></section>;
+}
+function Table({ columns, rows, caption }: { columns: string[]; rows: string[][]; caption: string }) {
+  return <div className="pbxprice-table-wrap" role="region" aria-label={caption} tabIndex={0}><table className="pbxprice-table font-dm"><caption className="sr-only">{caption}</caption><thead><tr>{columns.map(c => <th key={c} scope="col">{c}</th>)}</tr></thead><tbody>{rows.map(row => <tr key={row[0]}>{row.map((cell, i) => i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>)}</tr>)}</tbody></table></div>;
+}
+function QuoteButtons() {
+  const email = `mailto:info@brain.net.pk?subject=${encodeURIComponent("PBX — All-In PKR Quote")}&body=${encodeURIComponent("Please send an itemised PKR PBX quote and three-year cost comparison.\n\nCompany:\nContact number:\nHeadcount and branches:\nExisting lines and phones:\nConcurrent calls and call volume:\n")}`;
+  return <div className="flex flex-col sm:flex-row gap-3"><Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-display rounded-lg px-5"><a href={email}>Get an All-In PBX Quote <ArrowRight /></a></Button><Button asChild variant="outlined" size="lg" className="pbxprice-outline rounded-lg px-5"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer"><MessageCircle />Talk to a PBX Expert</a></Button></div>;
+}
+const savings = [
+  { Icon: Gauge, title: "Size by concurrent calls, not headcount", body: `Plan ${terms.concurrencyPercent} of users on a call at once (approximate; confirm your actual busy-hour demand).` },
+  { Icon: Phone, title: "Reuse what you have", body: "Keep SIP-capable phones and analog lines." },
+  { Icon: Cloud, title: "Start virtual, grow later", body: "A virtual PBX avoids hardware if headcount is small or changing." },
+  { Icon: Laptop, title: "Use softphones", body: "Use softphones for staff who are rarely at a desk." },
+  { Icon: Layers, title: "Bundle with one provider", body: "Bundle PBX, SIP trunk and IVR from one provider to cut setup and support overlap." },
 ];
-
-const drivers = [
-  { Icon: Users, title: "Number of extensions", body: "The primary driver in every quote. On-premise systems licence in bands (25 / 50 / 100 users), so crossing a band creates a step change. Cloud scales smoothly per seat.", impact: "Highest impact" },
-  { Icon: Gauge, title: "Concurrent call capacity", body: "How many calls run at once decides hardware class, transcoding licences and SIP channel count. A 50-seat call centre costs far more than a 50-seat back office.", impact: "High impact" },
-  { Icon: Phone, title: "Handsets & endpoints", body: "IP desk phones are often the largest single line item after the system. Softphones and mobile apps cost nothing extra, which is why hybrid rollouts land cheaper.", impact: "High impact" },
-  { Icon: Layers, title: "Features & licences", body: "Multi-level IVR, call recording with long retention, queue analytics and CRM integration are licensed separately on most on-premise platforms, and tiered on cloud.", impact: "Medium impact" },
-  { Icon: Cable, title: "Cabling, gateways & UPS", body: "Structured cabling, PoE switches, FXO/FXS gateways for legacy analogue lines and UPS provisioning are real installation costs that quotes often omit.", impact: "Medium impact" },
-  { Icon: Wrench, title: "Installation & maintenance", body: "Site survey, configuration, rollout and an annual maintenance contract. Skipping maintenance is the most common false economy we see in Pakistani deployments.", impact: "Medium impact" },
-];
-
-const budgetBands = [
-  {
-    band: "Small office",
-    seats: "Up to 25 extensions",
-    cloud: "Lowest monthly outlay — no hardware, live in days",
-    onprem: "Compact appliance, one-time purchase, pays back over 3–4 years",
-    note: "At this size, cloud almost always wins unless recordings must stay on site.",
-  },
-  {
-    band: "Growing business",
-    seats: "25–100 extensions",
-    cloud: "Predictable per-seat cost, scales with hiring",
-    onprem: "Rack server plus licence band, lower five-year total",
-    note: "The genuine crossover point. We model both over five years before recommending.",
-  },
-  {
-    band: "Contact centre / enterprise",
-    seats: "100+ extensions",
-    cloud: "Attractive where teams are remote or multi-city",
-    onprem: "Usually the lowest total cost, with HA and full data control",
-    note: "Redundancy, SLA and integration work dominate the quote more than seat count.",
-  },
-];
-
-const comparisonRows = [
-  { label: "Upfront capital cost", values: ["Low", "Medium", "High"] },
-  { label: "Monthly recurring cost", values: ["Medium (per seat)", "Low (line rental)", "Low (maintenance)"] },
-  { label: "IVR & call recording included", values: ["yes", "no", "partial"] },
-  { label: "Remote & mobile extensions", values: ["yes", "no", "partial"] },
-  { label: "Data & recordings stay on your premises", values: ["no", "yes", "yes"] },
-  { label: "Typical time to deploy", values: ["Days", "1–2 weeks", "2–4 weeks"] },
-  { label: "Hardware refresh to budget for", values: ["no", "yes", "yes"] },
-  { label: "Lowest five-year cost at 100+ seats", values: ["partial", "no", "yes"] },
-];
-
-const faqs = [
-  { question: "How much does a PBX system cost in Pakistan?", answer: "There is no single figure, because a PBX quote is really a bill of materials. The three things that decide it are the number of extensions, the number of concurrent calls, and whether you buy an on-premise system outright or subscribe to a cloud one per seat. On top of that sit handsets, cabling, gateways for legacy lines, feature licences and an annual maintenance contract. We publish the drivers rather than a headline price so you can sanity-check any quote you receive, including ours." },
-  { question: "What is the difference between PBX price and PABX price in Pakistan?", answer: "In practice the terms are used interchangeably. PABX (Private Automatic Branch Exchange) usually refers to older analogue systems switching calls over copper, while PBX today generally means an IP-based system running over your data network. An analogue PABX looks cheaper on the invoice, but IVR, recording and reporting are paid add-on cards, and analogue line rental costs more per channel than SIP — so the total cost usually inverts within two to three years." },
-  { question: "Is an IP PBX price higher than a virtual PBX?", answer: "Upfront, yes — an IP PBX is a capital purchase covering the appliance or server, extension licences, handsets and installation, while a virtual PBX has almost no entry cost. Over five years the picture reverses at scale: once the on-premise hardware is paid off you are only funding maintenance and SIP trunking, whereas cloud keeps billing per seat. The crossover typically sits somewhere between 25 and 100 extensions, depending on your feature mix." },
-  { question: "What is included in a BrainNET PBX quote?", answer: "Every quote is itemised: the system itself (appliance, server or cloud tenant), extension licences or seat count, IP handsets, any FXO/FXS gateways needed for legacy analogue equipment, structured cabling and PoE requirements, the SIP trunk and DID numbers, installation and configuration labour, staff training, and the annual maintenance contract. Nothing material is left to 'to be advised'." },
-  { question: "Do I need to buy handsets, or can staff use their phones?", answer: "You can mix both, and most clients do. Reception, meeting rooms and heavy phone users get IP desk handsets; everyone else uses a desktop softphone or the mobile app on the same extension. Because softphones cost nothing extra, a hybrid rollout is usually the single largest saving available on a PBX project." },
-  { question: "Are there hidden costs in a PBX system?", answer: "The ones that catch people out are structured cabling and PoE switching, UPS capacity for the rack, FXO/FXS gateways to keep fax, lift and door phones alive, feature licences for recording retention or extra IVR levels, and the maintenance contract from year two. We list all of these in the initial proposal so the second-year budget is not a surprise." },
-  { question: "Can I upgrade an existing PABX instead of replacing it?", answer: "Sometimes. If your analogue PABX is healthy and handsets are serviceable, we can front it with a SIP gateway so you get cheaper SIP trunking without replacing the system. That buys time, but you will not get modern IVR, recording or remote extensions until the switch itself is replaced." },
-  { question: "How do I get an accurate PBX price for my business?", answer: "Give us four numbers: total extensions, expected concurrent calls at your busy hour, how many staff are remote or field-based, and whether recordings must stay on your premises. With those we can produce an itemised quote for both an on-premise and a cloud option, modelled over five years, usually within two working days." },
-];
-
 function PBXPrice() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openQuote = () => setIsModalOpen(true);
-
-  const jsonLd = buildTelephonyJsonLd({
-    path: PATH,
-    name: "PBX Systems & Pricing in Pakistan",
-    serviceType: "PBX and PABX system supply, installation and pricing",
-    description:
-      "PBX price guide for Pakistan — what analogue PABX, on-premise IP PBX and cloud virtual PBX systems cost, the factors that drive the quote, and how to budget accurately.",
-    breadcrumbLabel: "PBX Price in Pakistan",
-    faqs,
-    offers: systemTypes.map((s) => ({ name: s.title, description: s.who })),
-  });
-
-  return (
-    <div className="bn-home min-h-screen relative overflow-x-hidden">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Header />
-
-      <div className="pt-24 max-w-screen-xl mx-auto px-5 relative z-10">
-        <Breadcrumb />
-      </div>
-
-      <TelephonyHero
-        eyebrow="PBX Price in Pakistan"
-        headline="PBX price in Pakistan."
-        headlineAccent="Every cost, before you sign."
-        subcopy={
-          <>
-            A straight guide to what PBX and PABX systems actually cost in Pakistan — analogue,
-            on-premise IP PBX and cloud — plus the drivers behind every quote and an itemised
-            proposal for your own site.
-          </>
-        }
-        badges={[
-          { Icon: Calculator, label: "Itemised, no 'TBA' lines" },
-          { Icon: Layers, label: "Cloud vs on-premise modelled" },
-          { Icon: ShieldCheck, label: "Five-year cost comparison" },
-        ]}
-        imageLabel="Hero Banner Image"
-        imageHint="Cinematic still-life of a PBX appliance, IP handset and printed quote on a dark desk, deep indigo with red rim light — 1920×900"
-        onQuote={openQuote}
-      />
-
-      <ClientLogoSlider />
-
-      {/* ---------- Why no sticker price ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <ScrollReveal className="lg:col-span-6">
-              <span className="bn-eyebrow">Read this first</span>
-              <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] bn-display mt-5">
-                Anyone quoting a PBX price <span className="bn-display-accent">without asking questions is guessing.</span>
-              </h2>
-              <div className="flex flex-col gap-4 mt-6 font-dm text-[hsl(var(--bn-ink-soft))] leading-relaxed">
-                <p>
-                  A PBX quote is a bill of materials, not a product with a shelf price. The same
-                  "50-extension system" can differ several times over in cost depending on concurrent
-                  calls, handset choice, whether recordings must stay on site, and how much structured
-                  cabling the building already has.
-                </p>
-                <p>
-                  So instead of a headline number, this page lays out every driver that moves the
-                  figure. Use it to interrogate any quote you receive — including ours — and to spot
-                  the costs that tend to appear in year two rather than on the first invoice.
-                </p>
-                <p>
-                  Then send us four numbers and we'll model both an on-premise and a cloud option over
-                  five years, itemised line by line.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.15} className="lg:col-span-6">
-              <ImagePlaceholder
-                label="Cost Breakdown Infographic"
-                hint="Stacked cost bar broken into system, licences, handsets, cabling, installation and maintenance, indigo gradient with red highlight — 1200×900"
-                aspect="aspect-[4/3]"
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- System types ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bn-grid-bg opacity-40 pointer-events-none" />
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <SectionHeader
-            eyebrow="Three ways to buy"
-            title={<>Analogue PABX, IP PBX, <span className="bn-display-accent">or cloud.</span></>}
-            kicker="The system type you choose sets the shape of the cost far more than the brand does."
-          />
-
-          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14">
-            {systemTypes.map((s) => (
-              <StaggerItem key={s.title}>
-                <article className="bn-tile p-7 h-full flex flex-col gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[hsl(var(--bn-violet)/0.15)] border border-[hsl(var(--bn-violet)/0.4)] flex items-center justify-center">
-                    <s.Icon className="w-7 h-7 text-[hsl(var(--bn-violet-soft))]" />
-                  </div>
-                  <h3 className="font-display font-semibold text-2xl text-[hsl(var(--bn-ink))]">{s.title}</h3>
-                  <dl className="flex flex-col gap-2 py-3 border-y border-[hsl(var(--bn-line)/0.5)]">
-                    <div className="flex flex-col">
-                      <dt className="font-dm text-xs uppercase tracking-wide text-[hsl(var(--bn-ink-soft))]">Best for</dt>
-                      <dd className="font-dm text-sm text-[hsl(var(--bn-ink))]">{s.who}</dd>
-                    </div>
-                    <div className="flex flex-col">
-                      <dt className="font-dm text-xs uppercase tracking-wide text-[hsl(var(--bn-ink-soft))]">Cost shape</dt>
-                      <dd className="font-dm text-sm text-[hsl(var(--bn-violet-soft))]">{s.cost}</dd>
-                    </div>
-                  </dl>
-                  <p className="font-dm text-sm text-[hsl(var(--bn-ink-soft))] leading-relaxed flex-1">{s.body}</p>
-                  <p className="font-dm text-sm text-[hsl(var(--bn-ink))] italic">{s.verdict}</p>
-                  {s.link && (
-                    <Link
-                      to={s.link}
-                      className="font-display font-semibold text-sm text-[hsl(var(--bn-violet-soft))] underline underline-offset-4"
-                    >
-                      See {s.title} details →
-                    </Link>
-                  )}
-                </article>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      <ComparisonTable
-        title={<>Cost shape, <span className="bn-display-accent">side by side.</span></>}
-        kicker="How the three system types compare on the dimensions that actually change your budget."
-        columns={["Cloud virtual PBX", "Analogue PABX", "On-premise IP PBX"]}
-        rows={comparisonRows}
-        highlightIndex={2}
-        caption="Cost comparison of cloud virtual PBX, analogue PABX and on-premise IP PBX systems in Pakistan"
-      />
-
-      <CostDrivers
-        eyebrow="Cost drivers"
-        title={<>Six things that move <span className="bn-display-accent">the number.</span></>}
-        kicker="Check every quote you receive against this list — including the ones that leave items off."
-        drivers={drivers}
-        imageLabel="Quote Anatomy Visual"
-        imageHint="Vertical infographic annotating a PBX quote document with callouts for licences, handsets, cabling and maintenance — 900×1125"
-      />
-
-      {/* ---------- Budget bands ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bn-grid-bg opacity-40 pointer-events-none" />
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <SectionHeader
-            eyebrow="Budgeting by size"
-            title={<>What to expect <span className="bn-display-accent">at your scale.</span></>}
-            kicker="Where cloud tends to win, where on-premise takes over, and where it genuinely depends."
-          />
-
-          <StaggerContainer className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14">
-            {budgetBands.map((b) => (
-              <StaggerItem key={b.band}>
-                <article className="bn-tile p-7 h-full flex flex-col gap-4">
-                  <span className="bn-eyebrow">{b.seats}</span>
-                  <h3 className="font-display font-semibold text-2xl text-[hsl(var(--bn-ink))]">{b.band}</h3>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-start gap-3">
-                      <Cloud className="w-5 h-5 mt-0.5 text-[hsl(var(--bn-violet-soft))] shrink-0" />
-                      <p className="font-dm text-sm text-[hsl(var(--bn-ink-soft))]">{b.cloud}</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Server className="w-5 h-5 mt-0.5 text-accent shrink-0" />
-                      <p className="font-dm text-sm text-[hsl(var(--bn-ink-soft))]">{b.onprem}</p>
-                    </div>
-                  </div>
-                  <p className="font-dm text-sm text-[hsl(var(--bn-ink))] mt-auto pt-3 border-t border-[hsl(var(--bn-line)/0.5)]">
-                    {b.note}
-                  </p>
-                </article>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      <CTABand
-        title="Send us four numbers, get an itemised quote."
-        body="Extensions, busy-hour concurrent calls, remote staff, and whether recordings must stay on site."
-        onQuote={openQuote}
-        showWhatsApp
-      />
-
-      {/* ---------- What's in a BrainNET quote ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <SectionHeader
-            eyebrow="Our quotes"
-            title={<>Itemised, <span className="bn-display-accent">with no 'to be advised'.</span></>}
-            kicker="Every proposal we issue lists all of the following, so year two holds no surprises."
-          />
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
-            {[
-              { Icon: Server, t: "System & licences", b: "Appliance, server or cloud tenant plus the exact extension licence band." },
-              { Icon: Phone, t: "Handsets & endpoints", b: "Model-by-model handset list, with softphone seats shown as zero-cost alternatives." },
-              { Icon: Cable, t: "Cabling & gateways", b: "Structured cabling, PoE switching, UPS sizing and FXO/FXS gateways for legacy lines." },
-              { Icon: Wrench, t: "Installation & maintenance", b: "Survey, configuration, rollout, staff training and the annual maintenance contract." },
-            ].map((c) => (
-              <StaggerItem key={c.t}>
-                <article className="bn-tile p-6 h-full flex flex-col gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[hsl(var(--bn-red)/0.12)] border border-[hsl(var(--bn-red)/0.35)] flex items-center justify-center">
-                    <c.Icon className="w-6 h-6 text-accent" />
-                  </div>
-                  <h3 className="font-display font-semibold text-lg text-[hsl(var(--bn-ink))]">{c.t}</h3>
-                  <p className="font-dm text-sm text-[hsl(var(--bn-ink-soft))] leading-relaxed">{c.b}</p>
-                </article>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      <TelephonyFAQ
-        id="pbxprice"
-        title={<>PBX pricing in Pakistan, <span className="bn-display-accent">answered plainly.</span></>}
-        kicker="The questions buyers ask us right before they compare quotes."
-        faqs={faqs}
-      />
-
-      <RelatedServices currentPath={PATH} />
-
-      <FinalCTASection />
-      <Footer />
-
-      <AvailabilityCheckerModal open={isModalOpen} onOpenChange={setIsModalOpen} />
-    </div>
-  );
+  return <div className="bn-home pbxprice-page min-h-screen overflow-x-hidden"><Header /><div className="py-2 max-w-screen-xl mx-auto px-5"><Breadcrumb /></div><main id="main-content">
+    <section className="pbxprice-hero"><img className="pbxprice-photo" src={hero} alt="IP desk phone, compact PBX appliance and network cables on an office desk" width={1536} height={864} fetchPriority="high" /><div className="max-w-screen-xl mx-auto px-5 py-10 md:py-12"><div className="max-w-2xl"><span className="bn-eyebrow">BrainNET Fiber · Business phone system costs</span><h1 className="font-display font-bold mt-6">PBX Price in Pakistan: <span className="bn-display-accent">What a Business Phone System Really Costs</span></h1><p className="pbxprice-muted font-dm text-base md:text-lg leading-relaxed mt-6">PBX prices in Pakistan range from about Rs. 105,000 for a 20-user IP PBX appliance to over Rs. 334,000 for a 100-user system, based on public shop listings on {terms.listingDate}. That is the box only: phones, lines, installation and support are extra.</p><p className="font-dm leading-relaxed mt-4">A virtual PBX has no hardware cost and is billed per user per month. BrainNET gives you the all-in price in {terms.currency}, sized to your team, within {terms.quoteWithinHours} hours.</p><div className="mt-7"><QuoteButtons /></div></div></div></section>
+    <div className="pbxprice-band"><div className="max-w-screen-xl mx-auto px-5 py-7 grid grid-cols-2 lg:grid-cols-4 gap-5">{["IP PBX appliance from about Rs. 105,000 (20 users)", "Virtual PBX billed per user per month", "Phones, lines, setup and support quoted separately", "One all-in PKR quote from BrainNET"].map(text => <div key={text} className="flex gap-2 text-sm font-dm"><Check className="pbxprice-accent w-4 h-4 shrink-0 mt-0.5" />{text}</div>)}</div></div>
+    <ClientLogoSlider />
+    <Section eyebrow="Market benchmarks" heading="PBX price by team size" kicker={`Hardware is the first number buyers see. These are public listings read on ${terms.listingDate} and show how price rises with users and concurrent calls.`}>
+      <p className="pbxprice-note font-dm text-sm leading-relaxed mb-7"><strong>Market anchors for the box only, not BrainNET prices.</strong> Phones, lines, installation and support are extra.</p>
+      <Table columns={["Team size", "Model (listing)", "Users", "Concurrent calls", "Box price (Rs.)"]} rows={listings.map(p => [p.team, p.model, p.users, p.calls, p.price.toLocaleString("en-PK")])} caption="Public PBX appliance prices by team size on 22 Oct 2026" />
+      <p className="pbxprice-muted font-dm mt-6 leading-relaxed">The UCM6308A lists below the P560 yet states a higher user capacity, so price does not track capacity across brands. Do not pick by price alone: size by users, concurrent calls and ports.</p>
+    </Section>
+    <Section eyebrow="The full bill" heading="What goes into the total PBX price" kicker="The box is only one line of a real quote.">
+      <div className="grid md:grid-cols-2 gap-10 items-center mb-9"><img src={equipment} alt="Technician connecting business phones, network switches and power backup equipment" width={1200} height={800} loading="lazy" className="w-full rounded-lg aspect-[3/2] object-cover" /><p className="pbxprice-muted font-dm leading-relaxed">A telephone-exchange tender from the Securities and Exchange Commission of Pakistan shows how a buyer itemises it: the exchange, an operator console, batteries, cabling and an MDF box, installation quoted separately, a one-year warranty and taxes.</p></div>
+      <Table columns={["Cost item", "One-time or monthly", "What it covers"]} rows={costItems} caption="Complete PBX cost items and billing frequency" />
+    </Section>
+    <Section eyebrow="Compare your options" heading="PBX price by type"><Table columns={["Type", "How you pay", "Cost pattern", "Best for"]} rows={types} caption="Traditional, IP and virtual PBX cost comparison" /><p className="font-dm mt-6 leading-relaxed">Explore <Link className="pbxprice-link" to="/services/internet/ip-pbx">IP PBX systems</Link> or <Link className="pbxprice-link" to="/services/internet/virtual-pbx">Virtual PBX</Link> for your team.</p>
+      <p className="pbxprice-muted font-dm mt-8 mb-6">To compare fairly, work out the three-year cost of each option:</p>
+      <div className="pbxprice-formula font-display text-center" aria-label="Three-year cost equals upfront plus 36 times monthly cost"><div><strong>3-year cost</strong><small>Total ownership cost</small></div><span className="pbxprice-accent text-2xl">=</span><div><strong>Upfront</strong><small>One-time costs</small></div><span className="pbxprice-accent text-2xl">+</span><div><strong>{terms.comparisonMonths} × monthly</strong><small>Recurring costs</small></div></div>
+      <p className="pbxprice-muted font-dm leading-relaxed mt-6">IP PBX has a high upfront and low monthly; virtual PBX is the reverse. The cheaper option depends on headcount and how long you keep the system. We run this comparison for you in the quote.</p>
+    </Section>
+    <Section eyebrow="Compare every line" heading="Why two PBX quotes for the same team can differ by a lot" kicker="Check these before you compare quotes."><Table columns={["Check", "Why it changes the price"]} rows={checks} caption="Checks that explain differences between PBX quotes" /></Section>
+    <Section eyebrow="Spend smarter" heading="How to lower your PBX cost"><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">{savings.map(({ Icon, title: name, body }) => <article key={name} className="border-t border-border pt-5"><Icon className="pbxprice-accent w-7 h-7" /><h3 className="font-display font-semibold text-xl mt-5">{name}</h3><p className="pbxprice-muted font-dm text-sm mt-3 leading-relaxed">{body}</p></article>)}</div><p className="font-dm mt-8">Connect your PBX with <Link className="pbxprice-link" to="/services/internet/sip-trunk">SIP trunk lines</Link> and <Link className="pbxprice-link" to="/services/internet/ivr-services">IVR services</Link>.</p></Section>
+    <Section eyebrow="One itemised proposal" heading="How we quote your PBX"><ol className="grid md:grid-cols-3 gap-8">{[
+      { title: "Share", body: "Your headcount, branches, existing lines and phones." },
+      { title: "We size", body: "Users, concurrent calls, ports, and whether IP or virtual fits better." },
+      { title: "You receive", body: `One written ${terms.currency} quote with system, phones, lines, installation and support itemised, plus a three-year cost comparison. Normally within ${terms.quoteWithinHours} hours.` },
+    ].map((step, i) => <li key={step.title} className="border-t border-border pt-5"><span className="pbxprice-accent font-display text-3xl font-bold">0{i + 1}</span><h3 className="font-display font-semibold text-xl mt-5">{step.title}</h3><p className="pbxprice-muted font-dm text-sm mt-3 leading-relaxed">{step.body}</p></li>)}</ol><div className="mt-8"><QuoteButtons /></div></Section>
+    <TelephonyFAQ id="pbxprice" title="PBX Price FAQs" faqs={faqs} />
+    <RelatedServices currentPath={PATH} />
+    <section className="pbxprice-band pbxprice-section"><div className="max-w-screen-xl mx-auto px-5 text-center"><Calculator className="pbxprice-accent w-10 h-10 mx-auto mb-5" /><h2 className="font-display font-bold">Ready for a clear PBX price?</h2><p className="pbxprice-muted font-dm text-lg max-w-2xl mx-auto mt-5 leading-relaxed">Tell us your team size, lines and phones, and we will send one itemised {terms.currency} quote within {terms.quoteWithinHours} hours.</p><div className="flex justify-center mt-8"><QuoteButtons /></div></div></section>
+  </main><Footer /></div>;
 }

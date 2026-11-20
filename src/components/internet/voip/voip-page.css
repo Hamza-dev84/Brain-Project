@@ -1,0 +1,31 @@
+.brand-internet .voip-page { color: hsl(var(--bn-ink)); }
+.brand-internet .voip-page .font-display { letter-spacing: 0; }
+.brand-internet .voip-hero { position: relative; isolation: isolate; background: hsl(var(--bn-bg-deep)); }
+.brand-internet .voip-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, hsl(var(--bn-bg-deep) / .95), hsl(var(--bn-bg-deep) / .8) 40%, hsl(var(--bn-bg-deep) / .15)); }
+.brand-internet .voip-hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.brand-internet .voip-page h1 { font-size: 48px; line-height: 1.12; }
+.brand-internet .voip-page h2 { font-size: 36px; }
+.brand-internet .voip-muted { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .voip-highlight { color: hsl(var(--bn-violet-soft)); }
+.brand-internet .voip-link { color: hsl(var(--bn-violet-soft)); transition: color .15s; }
+.brand-internet .voip-link:hover { color: hsl(var(--bn-ink)); }
+.brand-internet .voip-section { padding-block: 80px; }
+.brand-internet .voip-table { width: 100%; min-width: 700px; border-collapse: collapse; font-size: 14px; line-height: 1.7; }
+.brand-internet .voip-table th, .brand-internet .voip-table td { padding: 20px; text-align: left; border-bottom: 1px solid hsl(var(--bn-line) / .65); vertical-align: top; }
+.brand-internet .voip-table thead { background: hsl(var(--bn-violet) / .13); }
+.brand-internet .voip-table td { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .voip-table tbody th { font-weight: 600; }
+.brand-internet .voip-table tr:last-child td, .brand-internet .voip-table tr:last-child th { border-bottom: 0; }
+.brand-internet .voip-table .voip-featured { background: hsl(var(--bn-violet) / .07); color: hsl(var(--bn-ink)); }
+.brand-internet .voip-surface { border: 1px solid hsl(var(--bn-line)); border-radius: 8px; overflow: hidden; }
+.brand-internet .voip-number { color: hsl(var(--bn-violet-soft)); border-bottom: 2px solid hsl(var(--accent)); }
+.brand-internet .voip-band { background: hsl(var(--bn-violet) / .1); border-block: 1px solid hsl(var(--bn-line)); }
+.brand-internet .voip-secondary-button { color: hsl(var(--bn-ink)); border-color: hsl(var(--bn-ink-soft) / .55); }
+.brand-internet .voip-secondary-button:hover { background: hsl(var(--bn-ink) / .1); }
+@media(max-width: 768px) {
+ .brand-internet .voip-page h1 { font-size: 34px; }
+ .brand-internet .voip-page h2 { font-size: 28px; }
+ .brand-internet .voip-section { padding-block: 56px; }
+ .brand-internet .voip-hero::after { background: hsl(var(--bn-bg-deep) / .82); }
+ .brand-internet .voip-hero-photo { object-position: 65% center; }
+}

@@ -128,9 +128,9 @@
   -webkit-backdrop-filter: none !important;
 }
 
-.bn-logo-slider-track {
+/* .bn-logo-slider-track {
   animation: none !important;
-}
+} */
 
 /* Headline gradient utilities intentionally keep their own paint */
 .brand-internet .gradient-text,

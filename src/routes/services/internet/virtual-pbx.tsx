@@ -1,307 +1,98 @@
-import { useState } from "react";
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@/lib/router-compat";
-import {
-  Cloud,
-  Smartphone,
-  Users,
-  Zap,
-  Globe2,
-  Headphones,
-  ShieldCheck,
-  Layers,
-  Clock,
-} from "lucide-react";
-
+import { ArrowRight, MessageCircle, Cloud, Phone, Smartphone, Laptop, Network, Users, GitBranch, Headphones, ShieldCheck, BatteryCharging, Wifi, Check } from "lucide-react";
 import Header from "@/components/internet/Header";
 import Footer from "@/components/internet/Footer";
 import { Breadcrumb } from "@/components/internet/Breadcrumb";
 import { ClientLogoSlider } from "@/components/internet/ClientLogoSlider";
-import { AvailabilityCheckerModal } from "@/components/internet/AvailabilityCheckerModal";
-import FinalCTASection from "@/components/internet/home/FinalCTASection";
+import { Button } from "@/components/ui/button";
 import SectionHeader from "@/components/internet/home/SectionHeader";
-import { ScrollReveal } from "@/components/internet/animations/ScrollReveal";
-
-import TelephonyHero from "@/components/internet/telephony/TelephonyHero";
-import FeatureGrid from "@/components/internet/telephony/FeatureGrid";
-import ComparisonTable from "@/components/internet/telephony/ComparisonTable";
-import ProcessTimeline from "@/components/internet/telephony/ProcessTimeline";
-import PricingTiers from "@/components/internet/telephony/PricingTiers";
 import TelephonyFAQ from "@/components/internet/telephony/TelephonyFAQ";
 import RelatedServices from "@/components/internet/telephony/RelatedServices";
-import CTABand from "@/components/internet/telephony/CTABand";
-import ImagePlaceholder from "@/components/internet/telephony/ImagePlaceholder";
-import { buildTelephonyJsonLd } from "@/components/internet/telephony/telephonySeo";
+import { WHATSAPP } from "@/components/internet/telephony/telephonyLinks";
+import { virtualPBXFaqs as faqs, virtualPBXPlans as plans, virtualPBXTerms as terms } from "@/components/internet/telephony/virtualPBXContent";
+import hero from "@/assets/internet/virtual-pbx-office.webp";
+import remote from "@/assets/internet/virtual-pbx-remote.webp";
+import "@/components/internet/telephony/virtual-pbx-page.css";
 
-const PATH = "/services/internet/virtual-pbx-pakistan";
-
-const title = "Virtual PBX in Pakistan | Cloud Phone System — BrainNET";
-const description =
-  "Virtual PBX in Pakistan — a cloud phone system with IVR, queues, recording and mobile extensions. No hardware, per-extension billing, live in days.";
-
+const PATH = "/services/internet/virtual-pbx";
+const SITE = "https://brain.net.pk";
+const title = "Virtual PBX in Pakistan: A Full Business Phone System, No PBX Hardware | BrainNET";
+const description = "Hosted Virtual PBX in Pakistan with extensions, Urdu and English IVR, queues, recording and mobile apps. Per-user PKR pricing and free written quotes within 24 hours.";
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "Service", name: "Virtual PBX in Pakistan", serviceType: "Hosted business phone system", description, url: `${SITE}${PATH}`, provider: { "@type": "Organization", name: "BrainNET", url: SITE }, areaServed: { "@type": "Country", name: "Pakistan" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE }, { "@type": "ListItem", position: 2, name: "Internet Services", item: `${SITE}/services/internet` }, { "@type": "ListItem", position: 3, name: "Virtual PBX in Pakistan", item: `${SITE}${PATH}` }] },
+];
 export const Route = createFileRoute("/services/internet/virtual-pbx")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => ({ meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }] }),
   component: VirtualPBX,
 });
-
-const features = [
-  { Icon: Zap, title: "Live the same week", body: "No rack, no cabling, no lead time on hardware. Extensions are provisioned in the portal and your team is dialling within days." },
-  { Icon: Smartphone, title: "Softphone, desk phone or mobile", body: "The same extension rings a desk handset, a laptop app and a mobile — staff answer the office number wherever they are." },
-  { Icon: Users, title: "Per-extension billing", body: "Pay only for the seats you use. Add extensions for a seasonal team and remove them again the following month." },
-  { Icon: Globe2, title: "Branches on one dial plan", body: "Lahore, Karachi and a remote team share one numbering scheme with free internal dialling between every site." },
-  { Icon: Headphones, title: "IVR, queues & recording included", body: "Auto attendant, call queues, ring groups, voicemail-to-email and recording come with the platform rather than as licensed add-ons." },
-  { Icon: ShieldCheck, title: "Redundant, monitored platform", body: "Hosted in our own carrier-grade core with redundant power and diverse fiber paths behind a 99.9% uptime SLA." },
-  { Icon: Layers, title: "Self-service admin portal", body: "Move an extension, change a greeting, add a queue member or pull a call report without raising a ticket." },
-  { Icon: Clock, title: "Zero maintenance windows", body: "Platform upgrades, security patches and feature releases are handled by us, out of hours, with nothing for your IT team to schedule." },
+const featureRows = [
+  ["Extensions and ring groups", "Gives each person or team a number inside your system", "Add or remove staff in minutes"],
+  ["IVR auto attendant", "Greets callers in Urdu or English and routes them", "Fewer missed or misrouted calls"],
+  ["Call queues", "Holds callers and rings agents in order or all at once", "Fair, measurable call handling"],
+  ["Call forwarding and transfer", "Sends calls to mobiles, desks or other branches", "Reachable when away from the desk"],
+  ["Call recording", "Stores calls for review. Tell callers they are recorded.", "Training and dispute records"],
+  ["Conferencing", "Audio multi-party calls from one number", "Meetings without a separate conferencing tool"],
+  ["Mobile and desktop apps", "Business number on any device", "Remote and branch staff on one system"],
+  ["Reports and analytics", "Call volume, answer time, missed calls", "Staffing based on data"],
 ];
-
 const comparisonRows = [
-  { label: "Upfront cost", values: ["Low (no hardware)", "Higher (appliance + licences)"] },
-  { label: "Deployment time", values: ["Days", "2–4 weeks"] },
-  { label: "Remote & work-from-home staff", values: ["yes", "partial"] },
-  { label: "Requires rack space, power & UPS", values: ["no", "yes"] },
-  { label: "Recordings stored on your premises", values: ["no", "yes"] },
-  { label: "Internal calls survive an internet outage", values: ["no", "yes"] },
-  { label: "Scale up or down per month", values: ["yes", "no"] },
-  { label: "Hardware refresh cycle to budget for", values: ["no", "yes"] },
+  ["Where it runs", "Provider’s data center", "A server in your office", "A box in your office"],
+  ["Upfront cost", "Low; mostly setup", "Server and setup; licences vary", "High hardware cost"],
+  ["Monthly cost", "Per user", "Support plus trunk and call charges", "Line rental, maintenance"],
+  ["Adding users", "Minutes", "Licence and phone", "Cards and wiring"],
+  ["Multi-branch and remote", "Native", "Needs VPN or trunks", "Difficult"],
+  ["Needs internet to work", "Yes", "Only for external calls", "No"],
+  ["Best for", "SMEs, branches, remote teams", "Larger offices wanting control", "Legacy sites"],
 ];
-
+const resilience = [
+  { Icon: GitBranch, title: "Failover routing", body: "Set rules to forward calls to mobile numbers if your office line is down (forwarded calls are billed as outbound calls)." },
+  { Icon: Smartphone, title: "Mobile app", body: "Staff can keep taking calls on their phones over mobile data." },
+  { Icon: Wifi, title: "Backup connection", body: "A second internet line, ideally from a different provider, removes the single point of failure. A Dedicated Internet link can be one of the two." },
+  { Icon: BatteryCharging, title: "Power", body: "A UPS on your router, PoE switch and desk phones covers short load-shedding gaps." },
+];
+const industries = [
+  { Icon: Users, title: "Small office or startup", setup: "3 to 10 users, one main number, IVR", gain: "A professional front desk without a receptionist" },
+  { Icon: Network, title: "Multi-branch company", setup: "One system, extension dialing between branches", gain: "Free internal calls across cities" },
+  { Icon: Laptop, title: "Remote or hybrid team", setup: "Mobile and desktop apps", gain: "Staff answer the business number anywhere" },
+  { Icon: Headphones, title: "Call center or sales team", setup: "Queues, recording, CRM integration via API", gain: "Scale seats up or down by season" },
+  { Icon: ShieldCheck, title: "Clinics, schools, showrooms", setup: "Department extensions and after-hours routing", gain: "No missed calls when the office is closed" },
+];
 const steps = [
-  { n: "01", title: "Seat & flow discovery", body: "We agree extension count, departments, call flow and which staff need desk phones versus softphones or mobile apps." },
-  { n: "02", title: "Numbers provisioned", body: "New city DIDs are issued or your existing numbers are ported, and the main line, departmental numbers and hunt groups are mapped." },
-  { n: "03", title: "Tenant build", body: "Your cloud tenant is configured — extensions, IVR menus, queues, time conditions, voicemail and permissions." },
-  { n: "04", title: "Device rollout & training", body: "Softphones installed, any desk handsets auto-provisioned, and a short walkthrough so staff know transfer, hold and queue etiquette." },
-  { n: "05", title: "Go live & tune", body: "You go live under a 99.9% uptime SLA, with a review after the first month to adjust routing based on real call data." },
+  { title: "Plan", body: "We map users, numbers, departments and call rules." },
+  { title: "Configure", body: "Extensions, IVR, queues and recording are built on our platform." },
+  { title: "Connect", body: "Desk phones, apps or softphones are provisioned, and your numbers are connected." },
+  { title: "Test and launch", body: "Test calls on every path, staff training, then go-live." },
 ];
-
-const tiers = [
-  {
-    badge: "STARTER",
-    title: "Up to 10 extensions",
-    scale: "Small teams and single offices",
-    from: "Monthly per extension",
-    fromNote: "No hardware, no setup capital",
-    points: ["1 main number included", "Auto attendant & voicemail-to-email", "Softphone apps for desktop and mobile", "Business-hours onboarding"],
-  },
-  {
-    badge: "MOST POPULAR",
-    title: "10–50 extensions",
-    scale: "Multi-department, multi-branch teams",
-    from: "Volume per-extension pricing",
-    fromNote: "Bundled discount with dedicated fiber and SIP trunking",
-    points: [
-      "Multi-level IVR & call queues",
-      "Call recording with retention",
-      "Branch-to-branch free dialling",
-      "Live analytics & call reports",
-      "Priority 24/7 support",
-    ],
-    featured: true,
-  },
-  {
-    badge: "ENTERPRISE",
-    title: "50+ extensions",
-    scale: "Contact centres and national groups",
-    from: "Custom quote",
-    fromNote: "Committed seat pricing with named account manager",
-    points: [
-      "Supervisor dashboards & barge-in",
-      "CRM integration and screen pop",
-      "Custom international termination rates",
-      "Signed 99.9% uptime SLA with credits",
-      "Quarterly service reviews",
-    ],
-  },
-];
-
-const faqs = [
-  { question: "What is a virtual PBX?", answer: "A virtual PBX — also called a hosted or cloud PBX — is a phone system that runs in the provider's data centre instead of on hardware at your office. Your extensions, IVR menus, queues and recordings all live in the cloud, and staff connect using IP desk phones, desktop softphones or a mobile app. There is nothing to rack, power or maintain on your side." },
-  { question: "How much does a virtual PBX cost in Pakistan?", answer: "Virtual PBX is billed monthly per extension, with a small rental for each direct-dial number and per-minute charges for outbound calls. There is no hardware purchase, so the upfront cost is limited to any desk handsets you choose to buy. Exact pricing depends on seat count, the feature tier you need and whether it is bundled with BrainNET internet or SIP trunking." },
-  { question: "Virtual PBX or on-premise IP PBX — which should I choose?", answer: "Choose virtual PBX if you have remote or multi-branch staff, want to be live in days, have no rack space, and prefer a predictable monthly cost. Choose an on-premise IP PBX if recordings must stay inside your building for compliance, if you need internal calling to survive an internet outage, or if your finance team prefers a one-time capital purchase." },
-  { question: "Can my staff use their mobiles as office extensions?", answer: "Yes. Each extension can ring a desk phone, a desktop softphone and a mobile app simultaneously, or in sequence. Staff dial out showing the company caller ID from anywhere, and calls between colleagues stay internal and free regardless of where they are." },
-  { question: "What happens to calls if our office internet fails?", answer: "Because the phone system itself is in our cloud, inbound calls keep arriving and can automatically reroute to mobile numbers, an alternate branch or voicemail. That is the key resilience advantage over an on-premise system, where an outage at the office takes the whole PBX offline." },
-  { question: "Can I keep my existing numbers?", answer: "Yes. We port your existing landline numbers onto the platform and coordinate the cutover with your current operator, running both in parallel so no calls are missed. New city DIDs can be added alongside them at any time." },
-  { question: "How many extensions can I add, and how quickly?", answer: "There is no practical ceiling — deployments range from five extensions to several hundred. Adding or removing seats is done in the admin portal and takes effect immediately, with billing adjusted from the following cycle. That elasticity is the main reason seasonal and campaign-driven teams choose cloud." },
-  { question: "Do I need BrainNET internet to use the virtual PBX?", answer: "No, it works over any decent broadband connection. But voice quality depends on consistent latency and jitter, so most clients pair it with a BrainNET dedicated fiber link where voice traffic is prioritised — and get internet plus telephony on a single invoice." },
-];
-
+function Section({ eyebrow, heading, kicker, children }: { eyebrow: string; heading: string; kicker?: ReactNode; children: ReactNode }) {
+  return <section className="vpbx-section"><div className="max-w-screen-xl mx-auto px-5"><SectionHeader eyebrow={eyebrow} title={heading} kicker={kicker} /><div className="mt-10">{children}</div></div></section>;
+}
+function Table({ columns, rows, caption }: { columns: string[]; rows: string[][]; caption: string }) {
+  return <div className="vpbx-table-wrap" role="region" aria-label={caption} tabIndex={0}><table className="vpbx-table"><caption className="sr-only">{caption}</caption><thead><tr>{columns.map(c => <th key={c} scope="col">{c}</th>)}</tr></thead><tbody>{rows.map(row => <tr key={row[0]}>{row.map((cell,i) => i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>)}</tr>)}</tbody></table></div>;
+}
+function QuoteButtons() {
+  const email = `mailto:info@brain.net.pk?subject=${encodeURIComponent("Virtual PBX — Free PKR Quote")}&body=${encodeURIComponent("Please send a written PKR quote for Virtual PBX.\n\nCompany:\nContact number:\nHeadcount:\nBranches:\nConcurrent calls and monthly call volume:\nExisting numbers and phones:\n")}`;
+  return <div className="flex flex-col sm:flex-row gap-3"><Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-display rounded-lg px-5"><a href={email}>Get a Free Virtual PBX Quote <ArrowRight /></a></Button><Button asChild variant="outlined" size="lg" className="vpbx-outline rounded-lg px-5"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer"><MessageCircle /> Talk to a PBX Expert</a></Button></div>;
+}
 function VirtualPBX() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openQuote = () => setIsModalOpen(true);
-
-  const jsonLd = buildTelephonyJsonLd({
-    path: PATH,
-    name: "Virtual PBX in Pakistan",
-    serviceType: "Hosted cloud PBX",
-    description:
-      "Virtual PBX provider in Pakistan. Cloud phone system with IVR, call queues, recording, softphone and mobile extensions billed monthly, on BrainNET's own network.",
-    breadcrumbLabel: "Virtual PBX in Pakistan",
-    faqs,
-    offers: tiers.map((t) => ({ name: t.title, description: t.scale })),
-  });
-
-  return (
-    <div className="bn-home min-h-screen relative overflow-x-hidden">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Header />
-
-      <div className="pt-24 max-w-screen-xl mx-auto px-5 relative z-10">
-        <Breadcrumb />
-      </div>
-
-      <TelephonyHero
-        eyebrow="Virtual PBX in Pakistan"
-        headline="Virtual PBX in Pakistan."
-        headlineAccent="A phone system with nothing to rack."
-        subcopy={
-          <>
-            A hosted cloud PBX with IVR, queues, recording and mobile extensions — billed per seat and
-            live in days. Need the hardware on site instead? Compare it with{" "}
-            <Link to="/services/internet/ip-pbx" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
-              on-premise IP PBX
-            </Link>
-            .
-          </>
-        }
-        badges={[
-          { Icon: Cloud, label: "No hardware to buy" },
-          { Icon: Smartphone, label: "Desk, desktop or mobile" },
-          { Icon: Zap, label: "Live within days" },
-        ]}
-        imageLabel="Hero Banner Image"
-        imageHint="Cinematic composite of a cloud PBX network graph over a modern Lahore office floor, deep indigo with red accent lighting — 1920×900"
-        onQuote={openQuote}
-      />
-
-      <ClientLogoSlider />
-
-      {/* ---------- Why cloud ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <ScrollReveal className="lg:col-span-6">
-              <span className="bn-eyebrow">Why cloud</span>
-              <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] bn-display mt-5">
-                Your team moved. <span className="bn-display-accent">Your phone system didn't.</span>
-              </h2>
-              <div className="flex flex-col gap-4 mt-6 font-dm text-[hsl(var(--bn-ink-soft))] leading-relaxed">
-                <p>
-                  Most phone systems in Pakistan were designed around a single building with everyone
-                  at a desk. That assumption broke the moment sales started working from client sites,
-                  support ran a night shift from home, and the business opened a second branch.
-                </p>
-                <p>
-                  A virtual PBX puts the system in our data centre instead of your rack. The extension
-                  follows the person — desk phone, laptop, mobile — and every branch shares one dial
-                  plan with free internal calling between them.
-                </p>
-                <p>
-                  There's no capital outlay, no maintenance window and no hardware refresh to budget
-                  for in year five. You add a seat when you hire and drop it when you don't.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.15} className="lg:col-span-6">
-              <ImagePlaceholder
-                label="Cloud PBX Architecture Diagram"
-                hint="Neon line-art: cloud PBX core radiating to desk phone, laptop softphone, mobile app and a second branch, indigo on deep navy — 1200×900"
-                aspect="aspect-[4/3]"
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <FeatureGrid
-        eyebrow="What's included"
-        title={<>Enterprise features, <span className="bn-display-accent">no enterprise hardware.</span></>}
-        kicker="Everything below ships with the platform — not as a licensed extra."
-        items={features}
-        columns={4}
-      />
-
-      <ComparisonTable
-        title={<>Cloud virtual PBX vs <span className="bn-display-accent">on-premise IP PBX.</span></>}
-        kicker="The honest trade-offs. We sell both, so we have no reason to bend this table."
-        columns={["Virtual (cloud) PBX", "On-premise IP PBX"]}
-        rows={comparisonRows}
-        highlightIndex={0}
-        caption="Comparison of cloud virtual PBX and on-premise IP PBX systems in Pakistan"
-      />
-
-      <CTABand
-        title="Not sure which model fits?"
-        body="Tell us your seat count and how spread out your team is — we'll recommend cloud or on-premise honestly."
-        onQuote={openQuote}
-        showWhatsApp
-      />
-
-      <ProcessTimeline
-        title={<>From first call to <span className="bn-display-accent">first extension ringing.</span></>}
-        kicker="Most virtual PBX deployments are live within a week, porting aside."
-        steps={steps}
-        imageLabel="Rollout Visual"
-        imageHint="Office staff on softphone headsets with a cloud PBX admin dashboard on screen, indigo grade with red rim light — 1000×1000"
-      />
-
-      <PricingTiers
-        eyebrow="Virtual PBX pricing"
-        title={<>Billed per extension. <span className="bn-display-accent">Nothing to depreciate.</span></>}
-        kicker="A monthly seat charge plus number rental and outbound minutes — inbound calls included."
-        tiers={tiers}
-        footnote="Indicative tiers only. Final virtual PBX pricing in Pakistan depends on extension count, feature tier, DID quantity, call volume and whether the service is bundled with BrainNET dedicated fiber. See our PBX price guide for how cloud compares against on-premise over five years."
-        onQuote={openQuote}
-      />
-
-      {/* ---------- Pairing ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bn-grid-bg opacity-30 pointer-events-none" />
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <SectionHeader
-            eyebrow="Works with"
-            title={<>Better on <span className="bn-display-accent">our own network.</span></>}
-            kicker="Pair the cloud phone system with the lines and routing underneath it."
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
-            {[
-              { to: "/services/internet/sip-trunk", title: "SIP Trunk", body: "Licensed channels carrying calls into your cloud tenant, sized to your busy hour." },
-              { to: "/services/internet/ivr-services", title: "IVR Services", body: "Urdu and English auto-attendant menus, queues and skills-based routing on top of your tenant." },
-              { to: "/services/internet/dedicated-internet-lahore", title: "Dedicated Internet", body: "Uncontended 1:1 fiber with QoS on voice traffic, on one invoice with your telephony." },
-            ].map((c) => (
-              <Link key={c.to} to={c.to} className="bn-tile p-7 flex flex-col gap-3 group">
-                <h3 className="font-display font-semibold text-xl text-[hsl(var(--bn-ink))] group-hover:text-[hsl(var(--bn-violet-soft))] transition-colors">
-                  {c.title}
-                </h3>
-                <p className="font-dm text-sm text-[hsl(var(--bn-ink-soft))] leading-relaxed">{c.body}</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <TelephonyFAQ
-        id="vpbx"
-        title={<>Virtual PBX in Pakistan, <span className="bn-display-accent">answered plainly.</span></>}
-        kicker="What businesses ask before moving their phone system to the cloud."
-        faqs={faqs}
-      />
-
-      <RelatedServices currentPath={PATH} />
-
-      <FinalCTASection />
-      <Footer />
-
-      <AvailabilityCheckerModal open={isModalOpen} onOpenChange={setIsModalOpen} />
-    </div>
-  );
+  return <div className="bn-home vpbx-page min-h-screen overflow-x-hidden"><Header /><div className="py-2 max-w-screen-xl mx-auto px-5"><Breadcrumb /></div><main id="main-content">
+    <section className="vpbx-hero"><img className="vpbx-photo" src={hero} alt="Business colleagues using desk phones in a modern Pakistani office" width={1536} height={864} fetchPriority="high" /><div className="max-w-screen-xl mx-auto px-5 py-10 md:py-12"><div className="max-w-2xl"><span className="bn-eyebrow">BrainNET Fiber · Hosted business voice</span><h1 className="font-display font-bold mt-6">Virtual PBX in Pakistan: <span className="bn-display-accent">A Full Business Phone System, No PBX Hardware</span></h1><p className="vpbx-muted font-dm text-base md:text-lg leading-relaxed mt-6">Extensions, a menu, call routing, voicemail and recording — run from our data center, not a box in your office. Your team answers on desk phones, mobile apps or laptops.</p><p className="font-dm leading-relaxed mt-4">BrainNET hosts and manages this virtual phone system for you, so there is no PBX hardware to buy, house or maintain.</p><div className="mt-7"><QuoteButtons /></div><p className="vpbx-muted font-dm text-sm mt-5">Last updated: 26 October 2026</p></div></div></section>
+    <div className="vpbx-band"><div className="max-w-screen-xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">{["Extensions in minutes", "IVR and call queues", "Call recording", "Mobile and desktop apps", "Works across branches", "Priced per user in PKR"].map(text => <div key={text} className="flex gap-2 text-sm font-dm"><Check className="vpbx-cloud w-4 h-4 shrink-0 mt-0.5" />{text}</div>)}</div></div>
+    <ClientLogoSlider />
+    <Section eyebrow="What’s included" heading="What a virtual PBX gives your business"><p className="vpbx-muted font-dm leading-relaxed mb-8">A virtual PBX, known as a hosted PBX or cloud PBX, is a business phone system. It operates from the provider’s data center, not from a box in your office. You get extensions, a menu, call routing, voicemail, and recording. Your team can answer calls on desk phones, mobile apps, or laptops.</p><Table columns={["Feature", "What it does", "Business benefit"]} rows={featureRows} caption="Virtual PBX features and business benefits" /><p className="font-dm vpbx-muted mt-6 leading-relaxed">BrainNET provides the PBX, an <Link className="vpbx-link" to="/services/internet/ivr-services">Urdu and English IVR</Link> and the voice lines (<Link className="vpbx-link" to="/services/internet/sip-trunk">SIP Trunk</Link>) as one service.</p></Section>
+    <Section eyebrow="One system, every device" heading="Your business number follows your team" kicker="Hosted and managed by BrainNET. Connected to your desks, branches and remote staff."><div className="vpbx-flow grid grid-cols-1 md:grid-cols-3 gap-8 items-center"><div className="text-center"><Phone className="vpbx-cloud w-9 h-9 mx-auto" /><h3 className="font-display font-semibold mt-4">Your business number</h3><p className="vpbx-muted font-dm text-sm mt-2">Incoming calls and SIP trunk lines</p><ArrowRight className="vpbx-cloud mx-auto mt-5 rotate-90 md:rotate-0" /></div><div className="text-center"><Cloud className="vpbx-cloud w-16 h-16 mx-auto" /><h3 className="font-display font-semibold text-xl mt-4">BrainNET hosted PBX</h3><p className="vpbx-muted font-dm text-sm mt-2">IVR → queues → extensions<br />Voicemail, recording and reports</p></div><div className="grid grid-cols-3 gap-4 text-center">{[{ Icon: Phone, label: "Desk phones" }, { Icon: Laptop, label: "Laptops" }, { Icon: Smartphone, label: "Mobile apps" }].map(({ Icon, label }) => <div key={label}><Icon className="vpbx-cloud w-7 h-7 mx-auto" /><p className="font-dm text-sm mt-3">{label}</p></div>)}</div></div></Section>
+    <Section eyebrow="Compare your options" heading="Virtual PBX vs IP PBX vs traditional PBX"><Table columns={["", "Virtual PBX (hosted)", "IP PBX (on-premise)", "Traditional PBX"]} rows={comparisonRows} caption="Virtual PBX, IP PBX and traditional PBX comparison" /><p className="vpbx-muted font-dm mt-6 leading-relaxed">Virtual PBX is the right default for most small and mid-size businesses. Choose an <Link className="vpbx-link" to="/services/internet/ip-pbx">IP PBX</Link> if you want everything on your own premises.</p></Section>
+    <Section eyebrow="Built for continuity" heading="What happens when the internet drops or power goes out?" kicker="The PBX stays online in our data center and can forward calls to mobiles or apps, but your office phones and internet need a UPS to keep working."><div className="grid md:grid-cols-2 gap-10 items-start"><img src={remote} alt="Remote business professional taking a call on a headset beside her laptop" width={1200} height={800} loading="lazy" className="w-full rounded-lg aspect-[3/2] object-cover" /><div className="grid gap-6">{resilience.map(({ Icon, title: name, body }) => <article key={name} className="flex gap-4"><Icon className="vpbx-cloud w-6 h-6 shrink-0 mt-1" /><div><h3 className="font-display font-semibold text-lg">{name}</h3><p className="vpbx-muted font-dm text-sm mt-2 leading-relaxed">{body}</p></div></article>)}<Link to="/services/internet/dedicated-internet-lahore" className="vpbx-link font-dm inline-flex items-center gap-2">Explore Dedicated Internet <ArrowRight className="w-4 h-4" /></Link></div></div></Section>
+    <Section eyebrow="Call quality and security" heading="Call quality and security"><div className="grid md:grid-cols-3 gap-6">{[{ Icon: Wifi, name: `About ${terms.bandwidthKbpsEachWay} kbps per call`, body: `Plan about ${terms.bandwidthKbpsEachWay} kbps per call each way (${terms.codec}).` }, { Icon: Network, name: "Latency, jitter, packet loss", body: "These matter more than raw speed for clear calls." }, { Icon: ShieldCheck, name: "Protected calls", body: "Encryption (TLS/SRTP), IP allowlisting and spend limits." }].map(({ Icon, name, body }) => <article key={name} className="bn-tile p-6"><Icon className="vpbx-cloud w-7 h-7" /><h3 className="font-display font-semibold text-lg mt-4">{name}</h3><p className="vpbx-muted font-dm text-sm mt-2 leading-relaxed">{body}</p></article>)}</div></Section>
+    <Section eyebrow="Transparent costs" heading="Virtual PBX price in Pakistan" kicker="Virtual PBX is priced per user per month in PKR, with a one-time setup for numbers, IVR and any desk phones."><p className="vpbx-muted font-dm leading-relaxed mb-8">Many international cloud phone tools bill in US dollars, so costs move with the exchange rate. Ours are quoted in {terms.currency}.</p><Table columns={["Plan", "Monthly", "One-time setup", "Best for"]} rows={plans.map(p => [p.name, p.monthly, p.oneTime, p.bestFor])} caption="Virtual PBX plans and quote-based PKR pricing" /><p className="vpbx-muted font-dm leading-relaxed mt-6"><strong>What moves the price:</strong> number of users, concurrent calls, call destinations and minutes, IVR complexity, and desk phones. Send us your headcount and we will send a free written quote within {terms.quoteWithinHours} hours.</p><div className="mt-7"><QuoteButtons /></div></Section>
+    <Section eyebrow="Who it’s for" heading="Who should use a virtual PBX"><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">{industries.map(({ Icon, title: name, setup, gain }) => <article className="bn-tile p-6" key={name}><Icon className="vpbx-cloud w-7 h-7" /><h3 className="font-display font-semibold text-xl mt-5">{name}</h3><p className="vpbx-muted font-dm text-sm leading-relaxed mt-3">{setup}</p><p className="font-dm text-sm leading-relaxed mt-4">{gain}</p></article>)}</div><p className="vpbx-muted font-dm leading-relaxed mt-7"><strong>Not a fit:</strong> sites with no stable internet at all, or businesses that must keep all call data on their own premises. For those, an <Link to="/services/internet/ip-pbx" className="vpbx-link">IP PBX</Link> is better. Large call centers may prefer <Link to="/services/internet/sip-trunk" className="vpbx-link">SIP Trunk</Link> + IP PBX.</p></Section>
+    <Section eyebrow="Legal channels" heading="Is a virtual PBX legal in Pakistan?"><p className="vpbx-muted font-dm leading-relaxed max-w-3xl">Yes, when it runs through legal channels. The PTA said in March 2020 that businesses can use legal VoIP services without extra permission, while it acts against traffic that bypasses licensed operators (Dawn). Calls to international destinations must go through licensed carriers (LDI licensees). BrainNET licence details are available on request. Rules change, so confirm current requirements with your provider or the PTA.</p></Section>
+    <Section eyebrow="From plan to first call" heading="How we set up your virtual PBX"><ol className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">{steps.map((step,i) => <li key={step.title} className="border-t border-border pt-5"><span className="vpbx-cloud font-display text-3xl font-bold">0{i+1}</span><h3 className="font-display font-semibold text-lg mt-5">{step.title}</h3><p className="vpbx-muted font-dm text-sm mt-3 leading-relaxed">{step.body}</p></li>)}</ol><p className="vpbx-muted font-dm mt-7">A small team can usually be live within days; larger or multi-branch setups depend on scope. Number porting can take longer. See also our <Link to="/services/internet/voip-providers-pakistan" className="vpbx-link">VoIP services</Link>.</p></Section>
+    <TelephonyFAQ id="vpbx" title="Virtual PBX FAQs" faqs={faqs} />
+    <RelatedServices currentPath={PATH} />
+    <section className="vpbx-band vpbx-section"><div className="max-w-screen-xl mx-auto px-5 text-center"><h2 className="font-display font-bold">Ready to switch to a virtual PBX?</h2><p className="vpbx-muted font-dm text-lg max-w-2xl mx-auto mt-5 leading-relaxed">Tell us your headcount, branches and call volume, and we will send a written PKR quote within {terms.quoteWithinHours} hours.</p><div className="flex justify-center mt-8"><QuoteButtons /></div></div></section>
+  </main><Footer /></div>;
 }

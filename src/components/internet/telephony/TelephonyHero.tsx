@@ -20,6 +20,8 @@ interface TelephonyHeroProps {
   badges: HeroBadge[];
   imageLabel: string;
   imageHint: string;
+  imageSrc?: string;
+  imageAlt?: string;
   onQuote: () => void;
 }
 
@@ -31,6 +33,8 @@ export const TelephonyHero = ({
   badges,
   imageLabel,
   imageHint,
+  imageSrc,
+  imageAlt,
   onQuote,
 }: TelephonyHeroProps) => (
   <section id="main-content" className="relative pt-8 pb-20 md:pb-28">
@@ -51,12 +55,23 @@ export const TelephonyHero = ({
       </ScrollReveal>
 
       <ScrollReveal delay={0.15}>
-        <ImagePlaceholder
-          label={imageLabel}
-          hint={imageHint}
-          aspect="aspect-[21/9]"
-          className="max-w-5xl mx-auto mb-12"
-        />
+        {imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={imageAlt ?? imageLabel}
+            width={1600}
+            height={768}
+            fetchPriority="high"
+            className="max-w-5xl mx-auto mb-12 w-full aspect-[21/9] object-cover rounded-2xl border border-[hsl(var(--bn-line)/0.55)] shadow-[0_30px_80px_-20px_hsl(var(--bn-violet)/0.5)]"
+          />
+        ) : (
+          <ImagePlaceholder
+            label={imageLabel}
+            hint={imageHint}
+            aspect="aspect-[21/9]"
+            className="max-w-5xl mx-auto mb-12"
+          />
+        )}
       </ScrollReveal>
 
       <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">

@@ -1,300 +1,122 @@
-import { useState } from "react";
+
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@/lib/router-compat";
-import {
-  Server,
-  ShieldCheck,
-  Cpu,
-  HardDrive,
-  Wrench,
-  Network,
-  Lock,
-  Wallet,
-  Layers,
-  Building2,
-  Users,
-  Gauge,
-} from "lucide-react";
-
+import { ArrowRight, MessageCircle, Check, Server, Gauge, Network, Zap, PlugZap, ShieldCheck, Building2, Headphones, GraduationCap, Factory, Landmark } from "lucide-react";
 import Header from "@/components/internet/Header";
 import Footer from "@/components/internet/Footer";
 import { Breadcrumb } from "@/components/internet/Breadcrumb";
 import { ClientLogoSlider } from "@/components/internet/ClientLogoSlider";
-import { AvailabilityCheckerModal } from "@/components/internet/AvailabilityCheckerModal";
-import FinalCTASection from "@/components/internet/home/FinalCTASection";
-import { ScrollReveal } from "@/components/internet/animations/ScrollReveal";
-
-import TelephonyHero from "@/components/internet/telephony/TelephonyHero";
-import FeatureGrid from "@/components/internet/telephony/FeatureGrid";
-import ComparisonTable from "@/components/internet/telephony/ComparisonTable";
-import ProcessTimeline from "@/components/internet/telephony/ProcessTimeline";
-import PricingTiers from "@/components/internet/telephony/PricingTiers";
-import CostDrivers from "@/components/internet/telephony/CostDrivers";
+import { Button } from "@/components/ui/button";
+import SectionHeader from "@/components/internet/home/SectionHeader";
 import TelephonyFAQ from "@/components/internet/telephony/TelephonyFAQ";
 import RelatedServices from "@/components/internet/telephony/RelatedServices";
-import CTABand from "@/components/internet/telephony/CTABand";
-import ImagePlaceholder from "@/components/internet/telephony/ImagePlaceholder";
-import { buildTelephonyJsonLd } from "@/components/internet/telephony/telephonySeo";
+import { WHATSAPP } from "@/components/internet/telephony/telephonyLinks";
+import { ipPBXFaqs as faqs, ipPBXStartingPrices as startingPrices, ipPBXSupportTerms as supportTerms, ipPBXTerms as terms } from "@/components/internet/telephony/ipPBXContent";
+import hero from "@/assets/internet/ip-pbx-hero.webp";
+import install from "@/assets/internet/ip-pbx-install.webp";
+import "@/components/internet/telephony/ip-pbx-page.css";
 
-const PATH = "/services/internet/ip-pbx-pakistan";
-
-const title = "IP PBX in Pakistan | IP PBX Price, Supply & Installation — BrainNET";
-const description =
-  "IP PBX systems in Pakistan — Yeastar, Grandstream, Asterisk & FreePBX supplied, installed and maintained. On-premise control, SIP trunk ready, on-site engineers.";
-
+const PATH = "/services/internet/ip-pbx";
+const SITE = "https://brain.net.pk";
+const title = "IP PBX Systems in Pakistan: Sized, Installed and Supported by One Team | BrainNET";
+const description = "On-premise IP PBX systems in Pakistan — sized, supplied, installed and supported by one team. SIP trunk and analog line support, Urdu and English IVR, written PKR quotes within 24 hours.";
+const jsonLd = [
+  { "@context": "https://schema.org", "@type": "Service", name: "IP PBX Systems in Pakistan", serviceType: "IP PBX supply, installation and support", description, url: `${SITE}${PATH}`, provider: { "@type": "Organization", name: "BrainNET", url: SITE }, areaServed: { "@type": "Country", name: "Pakistan" } },
+  { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map(f => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) },
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: SITE }, { "@type": "ListItem", position: 2, name: "Internet Services", item: `${SITE}/services/internet` }, { "@type": "ListItem", position: 3, name: "IP PBX Systems in Pakistan", item: `${SITE}${PATH}` }] },
+];
 export const Route = createFileRoute("/services/internet/ip-pbx")({
-  head: () => ({
-    meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => ({ meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }], scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }] }),
   component: IPPBX,
 });
 
-const features = [
-  { Icon: Server, title: "Appliance or server build", body: "Yeastar, Grandstream and Sangoma appliances for smaller sites; Asterisk, FreePBX or Issabel on a rack server where you need full customisation." },
-  { Icon: Lock, title: "Your data stays on site", body: "Call recordings, voicemail and CDRs live inside your own building — the deciding factor for banks, legal firms and anyone with data-residency rules." },
-  { Icon: Network, title: "SIP trunk ready", body: "Pre-configured against BrainNET SIP trunks with codecs, NAT and firewall rules tuned before the appliance ever leaves our bench." },
-  { Icon: Layers, title: "IVR, queues & recording built in", body: "Auto attendant, hunt groups, ring groups, call queues, voicemail-to-email and recording, all licensed with the system." },
-  { Icon: Cpu, title: "Sized for concurrency, not seats", body: "We spec CPU, RAM and transcoding headroom against your busy-hour concurrent calls so the system never chokes mid-shift." },
-  { Icon: HardDrive, title: "Backup & redundancy", body: "Scheduled configuration backups, optional hot-standby appliance and UPS-backed power planning for critical sites." },
-  { Icon: Wrench, title: "On-site maintenance contracts", body: "Annual maintenance with firmware patching, licence renewals, dial-plan changes and a same-day engineer callout in Lahore." },
-  { Icon: ShieldCheck, title: "Hardened against toll fraud", body: "SIP ACLs, fail2ban, strong extension secrets and international dialling locks configured as standard, not as an afterthought." },
+const sizingRows = [
+  ["5–20 users", "Compact IP PBX appliance", "Sized from your call volume", "Proposed after sizing", "Auto attendant, voicemail, a few SIP channels"],
+  ["20–100 users", "Mid-range appliance or server", "Sized from your call volume", "Proposed after sizing", "IVR, queues, recording, analog lines for existing numbers"],
+  ["100–300 users", "Higher-capacity appliance or server with failover", "Sized from your call volume", "Proposed after sizing", "Multiple SIP trunks, supervisors, analytics"],
+  ["300+ users or multi-site", "Server-based or clustered system", "Sized from your call volume", "Proposed after sizing", "High availability, CRM integration, branch trunks"],
 ];
-
+const featureRows = [
+  ["Extensions and softphone apps", "Desk phones, PCs and mobiles register to one system", "Staff reachable on any device"],
+  ["IVR auto attendant", "Urdu and English menus route callers", "Fewer missed and misrouted calls"],
+  ["Queues and ring groups", "Distribute calls across teams", "Short, fair wait times"],
+  ["Call recording", "Stores calls on the system or an external drive. Back recordings up. Tell callers they are recorded.", "Training, compliance and dispute records"],
+  ["SIP trunk and analog line support", "Connects internet voice lines and your existing phone lines", "Switch SIP carriers without replacing the PBX"],
+  ["Voicemail and conferencing", "Voicemail to email, audio multi-party calls", "One platform for internal communication"],
+  ["Reports and APIs", "Call logs, analytics, CRM integration via API", "Decisions on data, not guesses"],
+];
 const comparisonRows = [
-  { label: "Upfront cost", values: ["Higher (hardware + licences)", "Low (monthly per extension)"] },
-  { label: "Monthly cost", values: ["Low (maintenance only)", "Recurring per extension"] },
-  { label: "Recordings & data stored on your premises", values: ["yes", "no"] },
-  { label: "Works during an internet outage (internal calls)", values: ["yes", "no"] },
-  { label: "Scales instantly to new sites", values: ["partial", "yes"] },
-  { label: "Requires rack space, power & UPS", values: ["yes", "no"] },
-  { label: "You control every dial-plan detail", values: ["yes", "partial"] },
-  { label: "Hardware refresh every 5–7 years", values: ["yes", "no"] },
+  ["Where it runs", "On your premises", "Provider's data center", "On your premises"],
+  ["Who owns the equipment", "You", "Provider", "You"],
+  ["Who controls call data", "You", "Provider", "You"],
+  ["Cost pattern", "Upfront hardware; then support plus line and call charges", "Per user per month", "High hardware cost plus line rental"],
+  ["Works if the internet is down", "Internal calls yes; external depends on your lines", "No (calls can be forwarded to mobiles)", "Yes (analog lines)"],
+  ["Remote staff", "Via softphone over VPN or a session border controller", "Native", "Difficult"],
+  ["Scaling", "Add licences or modules", "Add users", "Add cards and wiring"],
+  ["Best for", "Offices and call centers wanting control", "Branches and remote teams", "Legacy sites"],
+];
+const networkChecks = [
+  { Icon: Gauge, title: "Bandwidth", body: `About ${terms.bandwidthKbpsEachWay} kbps per concurrent call each way (${terms.codec}, approximate). Latency, jitter and packet loss matter more than raw speed.` },
+  { Icon: Zap, title: "Voice priority (QoS)", body: "Your router and switches should prioritise voice over downloads, ideally on a separate voice VLAN." },
+  { Icon: PlugZap, title: "PoE switches", body: "Power desk phones over the network cable, so you need fewer adapters and cables." },
+  { Icon: Network, title: "Lines", body: "A SIP Trunk for internet voice lines, analog lines for numbers you want to keep (the PBX needs the right ports or a gateway), and a Dedicated Internet link when call quality is critical." },
+  { Icon: ShieldCheck, title: "Security", body: "We do not leave the PBX open to the internet. Remote staff connect through a VPN or a session border controller; a firewall with options such as TLS/SRTP encryption, IP allowlisting and spend limits helps prevent toll fraud." },
+];
+const migrationSteps = [
+  { title: "Audit", body: "We list your extensions, lines, call rules and phones." },
+  { title: "Design", body: "We size the system and map your IVR, queues and numbers." },
+  { title: "Install", body: "The new PBX is configured and tested alongside the old one." },
+  { title: "Cut over", body: "Phones and lines move over in a planned window, so the office stays reachable." },
+  { title: "Support", body: "We monitor, update and fix, so the system does not become another unmanaged box." },
+];
+const buyers = [
+  { Icon: Building2, title: "Offices and corporate HQs", why: "Control, extension dialing, low running cost", setup: "20–200 users, IVR, recording" },
+  { Icon: Headphones, title: "Call centres and BPOs", why: "Queues, recording, supervisor tools", setup: "SIP trunks, analytics, CRM integration via API" },
+  { Icon: GraduationCap, title: "Hospitals and universities", why: "Many departments, heavy internal calling", setup: "Department extensions, paging" },
+  { Icon: Factory, title: "Factories and warehouses", why: "On-site calling that survives an internet drop (with a UPS for the PBX, PoE switch and phones)", setup: "Analog and IP phones, mixed" },
+  { Icon: Landmark, title: "Banks and finance", why: "PBX and recordings stay on premises", setup: "Recording, high availability" },
 ];
 
-const steps = [
-  { n: "01", title: "Site survey & sizing", body: "Extension count, busy-hour concurrency, existing handsets, cabling and rack/power availability are surveyed on site." },
-  { n: "02", title: "Hardware & licence proposal", body: "A written bill of materials: appliance or server model, extension licences, handsets, gateways and any FXO/FXS cards for legacy lines." },
-  { n: "03", title: "Bench build & configuration", body: "The system is built and configured in our lab — dial plans, IVR, queues, trunk credentials and security hardening — before it ships." },
-  { n: "04", title: "Installation & handset rollout", body: "Rack mounting, power, VLAN and QoS setup, handset provisioning and desk-by-desk extension assignment at your site." },
-  { n: "05", title: "Training & maintenance handover", body: "Admin training for your IT team, documented dial plan, and an annual maintenance contract with named engineer escalation." },
-];
-
-const tiers = [
-  {
-    badge: "SMALL OFFICE",
-    title: "Up to 25 extensions",
-    scale: "Compact appliance, 8–15 concurrent calls",
-    from: "One-time hardware + licences",
-    fromNote: "Plus optional annual maintenance",
-    points: ["Appliance-class IP PBX", "Auto attendant & voicemail", "Basic call recording", "Installation & handset provisioning"],
-  },
-  {
-    badge: "MOST POPULAR",
-    title: "25–100 extensions",
-    scale: "Rack server, 30–60 concurrent calls",
-    from: "Quoted on bill of materials",
-    fromNote: "Hardware, licences, handsets and installation itemised",
-    points: [
-      "Multi-level IVR & call queues",
-      "Full recording with retention policy",
-      "SIP trunk integration & failover",
-      "VLAN / QoS network design",
-      "Annual maintenance contract",
-    ],
-    featured: true,
-  },
-  {
-    badge: "ENTERPRISE",
-    title: "100+ extensions",
-    scale: "Redundant pair, multi-branch",
-    from: "Custom project quote",
-    fromNote: "Includes HA design, UAT and staged rollout",
-    points: [
-      "Hot-standby / HA appliance pair",
-      "Multi-site inter-branch dialling",
-      "CRM & directory integration",
-      "Priority on-site SLA",
-      "Named account manager",
-    ],
-  },
-];
-
-const drivers = [
-  { Icon: Users, title: "Extension count & licences", body: "Most vendors licence in bands — 25, 50, 100 users. Crossing a band is the single biggest step change in an IP PBX quote.", impact: "Highest impact" },
-  { Icon: Gauge, title: "Concurrent call capacity", body: "Concurrency drives the hardware class and transcoding licences. A 50-seat sales floor costs more than a 50-seat back office.", impact: "High impact" },
-  { Icon: Building2, title: "Handsets & gateways", body: "IP phones are usually the largest line item after the system itself, and FXO/FXS gateways are needed to keep legacy analogue lines or door phones alive.", impact: "High impact" },
-  { Icon: Wallet, title: "Redundancy & maintenance", body: "A hot-standby appliance, UPS provisioning and an annual maintenance contract add cost — and are what keep the system running past year three.", impact: "Medium impact" },
-];
-
-const faqs = [
-  { question: "What is an IP PBX and how is it different from a traditional PBX?", answer: "An IP PBX is a phone system that routes calls over your data network using SIP, instead of over dedicated copper pairs like a traditional analogue PABX. Extensions are IP handsets or softphones, features such as IVR and call recording are software rather than add-on cards, and the system connects to the outside world through SIP trunks rather than PRI or analogue lines." },
-  { question: "How much does an IP PBX cost in Pakistan?", answer: "An IP PBX is largely a one-time capital purchase: the appliance or server, extension licences, IP handsets, any FXO/FXS gateways, and installation. Ongoing cost is limited to an annual maintenance contract and your SIP trunk charges. Because the bill of materials changes completely between a 20-extension office and a 150-extension multi-branch deployment, we quote against a site survey rather than publishing a flat price." },
-  { question: "Should I choose an IP PBX or a virtual (cloud) PBX?", answer: "Choose an on-premise IP PBX if you need call recordings and data to stay inside your building, want internal calls to keep working during an internet outage, or prefer a capital purchase over a monthly subscription. Choose a virtual PBX if you have distributed or remote teams, no rack space, and would rather pay per extension monthly with no hardware to maintain." },
-  { question: "Which IP PBX brands do you supply and support?", answer: "We deploy appliance-based systems from Yeastar, Grandstream and Sangoma, and open-platform builds on Asterisk, FreePBX and Issabel where deeper customisation is needed. We also support existing 3CX and Cisco CUCM estates when connecting them to our SIP trunks." },
-  { question: "Can I keep my existing phone numbers and analogue lines?", answer: "Yes. Existing numbers are ported onto SIP trunks, and any analogue equipment you need to retain — legacy handsets, fax machines, lift or door phones — is kept alive through FXO/FXS gateways connected to the IP PBX." },
-  { question: "What happens if the IP PBX hardware fails?", answer: "Configuration backups are scheduled so a replacement unit can be restored quickly. For critical sites we deploy a hot-standby appliance that takes over automatically, and inbound calls can fail over to mobile numbers or a cloud instance while the primary is restored." },
-  { question: "Do you provide installation and ongoing maintenance?", answer: "Yes. Our engineers handle rack mounting, network VLAN and QoS setup, handset provisioning and desk-by-desk rollout. Annual maintenance covers firmware patching, licence renewals, dial-plan changes and same-day on-site callout within Lahore." },
-  { question: "How long does an IP PBX deployment take?", answer: "Typically two to four weeks. Hardware lead time and handset supply are usually the longest part; the system itself is pre-built and configured on our bench, so on-site installation and rollout for a mid-sized office is generally completed within two working days." },
-];
+function Section({ eyebrow, heading, kicker, children }: { eyebrow: string; heading: string; kicker?: ReactNode; children: ReactNode }) {
+  return <section className="ippbx-section"><div className="max-w-screen-xl mx-auto px-5"><SectionHeader eyebrow={eyebrow} title={heading} kicker={kicker} /><div className="mt-10">{children}</div></div></section>;
+}
+function Table({ columns, rows, caption }: { columns: string[]; rows: string[][]; caption: string }) {
+  return <div className="ippbx-table-wrap" role="region" aria-label={caption} tabIndex={0}><table className="ippbx-table"><caption className="sr-only">{caption}</caption><thead><tr>{columns.map(c => <th key={c} scope="col">{c}</th>)}</tr></thead><tbody>{rows.map(row => <tr key={row[0]}>{row.map((cell, i) => i === 0 ? <th key={i} scope="row">{cell}</th> : <td key={i}>{cell}</td>)}</tr>)}</tbody></table></div>;
+}
+function QuoteButtons({ consult = false }: { consult?: boolean }) {
+  const email = `mailto:info@brain.net.pk?subject=${encodeURIComponent(consult ? "IP PBX — Free Consultation" : "IP PBX — Free PKR Quote")}&body=${encodeURIComponent("Please send a written PKR quote for an IP PBX system.\n\nCompany:\nContact number:\nHeadcount:\nExisting lines and numbers:\nConcurrent calls and monthly call volume:\n")}`;
+  return <div className="flex flex-col sm:flex-row gap-3">{consult
+    ? <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-display rounded-lg px-5"><a href={email}>Book a Free Consultation <ArrowRight /></a></Button>
+    : <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-display rounded-lg px-5"><a href={email}>Get a Free IP PBX Quote <ArrowRight /></a></Button>}
+    <Button asChild variant="outlined" size="lg" className="ippbx-outline rounded-lg px-5"><a href={WHATSAPP} target="_blank" rel="noopener noreferrer"><MessageCircle /> {consult ? "Talk to a PBX Expert" : "Talk to a PBX Expert"}</a></Button></div>;
+}
 
 function IPPBX() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openQuote = () => setIsModalOpen(true);
-
-  const jsonLd = buildTelephonyJsonLd({
-    path: PATH,
-    name: "IP PBX Systems in Pakistan",
-    serviceType: "IP PBX supply, installation and maintenance",
-    description:
-      "IP PBX supplier in Pakistan. On-premise phone systems from Yeastar, Grandstream, Sangoma, Asterisk and FreePBX with installation, handsets, SIP trunk integration and annual maintenance.",
-    breadcrumbLabel: "IP PBX in Pakistan",
-    faqs,
-    offers: tiers.map((t) => ({ name: t.title, description: t.scale })),
-  });
-
-  return (
-    <div className="bn-home min-h-screen relative overflow-x-hidden">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Header />
-
-      <div className="pt-24 max-w-screen-xl mx-auto px-5 relative z-10">
-        <Breadcrumb />
-      </div>
-
-      <TelephonyHero
-        eyebrow="IP PBX in Pakistan"
-        headline="IP PBX systems in Pakistan."
-        headlineAccent="Your phone system, in your building."
-        subcopy={
-          <>
-            On-premise IP PBX supplied, configured, installed and maintained by our own engineers —
-            with recordings and dial plans that never leave your site. Prefer no hardware? See{" "}
-            <Link to="/services/internet/virtual-pbx" className="text-[hsl(var(--bn-violet-soft))] underline underline-offset-4">
-              virtual PBX
-            </Link>
-            .
-          </>
-        }
-        badges={[
-          { Icon: Lock, label: "Data stays on premises" },
-          { Icon: Server, label: "Yeastar, Asterisk & FreePBX" },
-          { Icon: Wrench, label: "On-site engineers in Lahore" },
-        ]}
-        imageLabel="Hero Banner Image"
-        imageHint="Cinematic server rack with an IP PBX appliance and patched handset cabling, deep indigo with red status LEDs — 1920×900"
-        onQuote={openQuote}
-      />
-
-      <ClientLogoSlider />
-
-      {/* ---------- Why on-premise ---------- */}
-      <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="relative z-10 max-w-screen-xl mx-auto px-5">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <ScrollReveal className="lg:col-span-6">
-              <span className="bn-eyebrow">Why on-premise</span>
-              <h2 className="font-display font-bold text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.05] bn-display mt-5">
-                Own the system. <span className="bn-display-accent">Own the recordings.</span>
-              </h2>
-              <div className="flex flex-col gap-4 mt-6 font-dm text-[hsl(var(--bn-ink-soft))] leading-relaxed">
-                <p>
-                  For banks, legal firms, hospitals and anyone with data-residency obligations, the
-                  question isn't features — it's where the recordings sit. An on-premise IP PBX keeps
-                  call recordings, voicemail and call detail records inside your own rack, under your
-                  own retention policy.
-                </p>
-                <p>
-                  It's also a capital purchase rather than a subscription. After the hardware and
-                  licences are paid for, the running cost is an annual maintenance contract and your
-                  SIP trunk — which is why finance teams with a five-year horizon usually prefer it.
-                </p>
-                <p>
-                  And when the internet drops, internal extension-to-extension calling keeps working.
-                  On a cloud platform, it does not.
-                </p>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.15} className="lg:col-span-6">
-              <ImagePlaceholder
-                label="IP PBX Architecture Diagram"
-                hint="Neon line-art: SIP trunk → on-premise IP PBX appliance → LAN switch → IP handsets & softphones, indigo on deep navy — 1200×900"
-                aspect="aspect-[4/3]"
-              />
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      <FeatureGrid
-        eyebrow="What you get"
-        title={<>Specified, hardened, <span className="bn-display-accent">then installed properly.</span></>}
-        kicker="Every system is built and tested on our bench before an engineer ever brings it to your site."
-        items={features}
-        columns={4}
-      />
-
-      <ComparisonTable
-        title={<>On-premise IP PBX vs <span className="bn-display-accent">cloud virtual PBX.</span></>}
-        kicker="The honest trade-offs, so you can pick on facts rather than fashion."
-        columns={["On-premise IP PBX", "Virtual (cloud) PBX"]}
-        rows={comparisonRows}
-        highlightIndex={0}
-        caption="Comparison of on-premise IP PBX and cloud virtual PBX systems in Pakistan"
-      />
-
-      <CTABand
-        title="Want the bill of materials before you commit?"
-        body="Book a free site survey and we'll send an itemised hardware, licence and installation quote."
-        onQuote={openQuote}
-        showWhatsApp
-      />
-
-      <ProcessTimeline
-        title={<>Surveyed, bench-built, <span className="bn-display-accent">then racked.</span></>}
-        kicker="Typically two to four weeks end to end, with on-site rollout completed in a couple of days."
-        steps={steps}
-        imageLabel="Installation Visual"
-        imageHint="BrainNET engineer racking a PBX appliance and patching handset cabling, red rim light on indigo — 1000×1000"
-      />
-
-      <PricingTiers
-        eyebrow="IP PBX price in Pakistan"
-        title={<>A capital purchase, <span className="bn-display-accent">itemised line by line.</span></>}
-        kicker="Hardware, extension licences, handsets and installation quoted separately so you can see exactly what you're buying."
-        tiers={tiers}
-        footnote="Indicative tiers only. Final IP PBX price in Pakistan depends on extension count and licence band, concurrent call capacity, handset models, FXO/FXS gateways for legacy lines, redundancy and the maintenance contract selected. For a full price breakdown across system types, see our PBX price guide."
-        onQuote={openQuote}
-      />
-
-      <CostDrivers
-        title={<>What actually sets <span className="bn-display-accent">the quote.</span></>}
-        kicker="Four variables decide most of an IP PBX bill of materials."
-        drivers={drivers}
-        imageLabel="Hardware Line-up"
-        imageHint="Product still-life of PBX appliance, IP handsets and gateway on a dark reflective surface, indigo key light with red rim — 900×1125"
-      />
-
-      <TelephonyFAQ
-        id="ippbx"
-        title={<>IP PBX in Pakistan, <span className="bn-display-accent">answered plainly.</span></>}
-        kicker="What IT managers ask before signing off the hardware."
-        faqs={faqs}
-      />
-
-      <RelatedServices currentPath={PATH} />
-
-      <FinalCTASection />
-      <Footer />
-
-      <AvailabilityCheckerModal open={isModalOpen} onOpenChange={setIsModalOpen} />
-    </div>
-  );
+  return <div className="bn-home ippbx-page min-h-screen overflow-x-hidden"><Header /><div className="py-2 max-w-screen-xl mx-auto px-5"><Breadcrumb /></div><main id="main-content">
+    <section className="ippbx-hero"><img className="ippbx-photo" src={hero} alt="IP PBX appliance with patched handset cabling in a server rack" width={1536} height={864} fetchPriority="high" /><div className="max-w-screen-xl mx-auto px-5 py-10 md:py-12"><div className="max-w-2xl"><span className="bn-eyebrow">BrainNET Fiber · On-premise business voice</span><h1 className="font-display font-bold mt-6">IP PBX Systems in Pakistan: <span className="bn-display-accent">Sized, Installed and Supported by One Team</span></h1><p className="ippbx-muted font-dm text-base md:text-lg leading-relaxed mt-6">An IP PBX is a business phone system that runs on your own network and carries calls over IP. One system handles extensions, IVR, call queues, recording and your outside lines together.</p><p className="font-dm leading-relaxed mt-4">BrainNET sizes the right system for your team, supplies and installs it, connects it to SIP trunk lines, and supports it afterwards. You own the system and the call data; we keep it running.</p><div className="mt-7"><QuoteButtons /></div></div></div></section>
+    <div className="ippbx-band"><div className="max-w-screen-xl mx-auto px-5 py-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">{["Small offices to call centres", "IVR, queues, recording and softphone apps", "SIP trunk and analog line support", "Your PBX and call recordings stay on your premises", "Supply, setup and support from one team"].map(text => <div key={text} className="flex gap-2 text-sm font-dm"><Check className="ippbx-accent w-4 h-4 shrink-0 mt-0.5" />{text}</div>)}</div></div>
+    <ClientLogoSlider />
+    <Section eyebrow="Sizing" heading="Which IP PBX is big enough for you" kicker={`Size an IP PBX by two numbers: users (extensions) and concurrent calls. As a rule of thumb, plan for ${terms.concurrencyRuleOfThumbPercent} of users on a call at once; call centres plan for nearly all agents on calls. These are approximate figures; we confirm them against your real call volume.`}><Table columns={["Your team", "System class", "Approx. concurrent calls", "Example models", "Typical extras"]} rows={sizingRows} caption="IP PBX sizing by users, concurrent calls and system class" /><p className="ippbx-muted font-dm mt-6 leading-relaxed">Send us your headcount and call volume and we confirm the model, so you do not overbuy or run out of channels in a year.</p></Section>
+    <Section eyebrow="What’s included" heading="What an IP PBX includes"><Table columns={["Feature", "What it does", "Business benefit"]} rows={featureRows} caption="IP PBX features and business benefits" /><p className="font-dm ippbx-muted mt-6 leading-relaxed">Add a BrainNET <Link className="ippbx-link" to="/services/internet/ivr-services">Urdu and English IVR</Link> and <Link className="ippbx-link" to="/services/internet/sip-trunk">SIP Trunk lines</Link> for a complete setup.</p></Section>
+    <Section eyebrow="Compare your options" heading="IP PBX vs virtual PBX vs traditional PBX"><Table columns={["", "IP PBX", "Virtual PBX", "Traditional PBX"]} rows={comparisonRows} caption="IP PBX, virtual PBX and traditional PBX comparison" /><p className="ippbx-muted font-dm mt-6 leading-relaxed">If you would rather not own hardware, see our <Link className="ippbx-link" to="/services/internet/virtual-pbx">Virtual PBX</Link>. Some businesses start virtual and move to an IP PBX as they grow, or the reverse.</p></Section>
+    <Section eyebrow="Transparent costs" heading="IP PBX price in Pakistan" kicker="IP PBX cost has three parts: the system, installation and setup, and ongoing support.">
+      <Table columns={["Setup", "Starting price"]} rows={startingPrices.map(p => [p.setup, p.pricing])} caption="IP PBX starting prices by office size" />
+      <p className="ippbx-muted font-dm leading-relaxed mt-6">The final price depends on your users, concurrent calls, analog ports, phones and integrations. <strong>Prices exclude SIP trunk and call charges.</strong> Send us your headcount and call volume and we will send a free written {terms.currency} quote within {terms.quoteWithinHours} hours.</p>
+      <p className="font-dm text-sm ippbx-muted mt-4">Last updated: 26 October 2026</p>
+      <div className="mt-7"><QuoteButtons consult /></div>
+    </Section>
+    <Section eyebrow="Before we install" heading="Network and lines your IP PBX needs" kicker="An IP PBX is only as good as the network under it. We check these before install:">
+      <div className="grid md:grid-cols-2 gap-10 items-start"><img src={install} alt="BrainNET engineer racking a PBX appliance and patching network cabling" width={1200} height={800} loading="lazy" className="w-full rounded-lg aspect-[3/2] object-cover" /><div className="grid gap-6">{networkChecks.map(({ Icon, title: name, body }) => <article key={name} className="flex gap-4"><Icon className="ippbx-accent w-6 h-6 shrink-0 mt-1" /><div><h3 className="font-display font-semibold text-lg">{name}</h3><p className="ippbx-muted font-dm text-sm mt-2 leading-relaxed">{body}</p></div></article>)}<Link to="/services/internet/dedicated-internet-lahore" className="ippbx-link font-dm inline-flex items-center gap-2">Explore Dedicated Internet <ArrowRight className="w-4 h-4" /></Link></div></div>
+    </Section>
+    <Section eyebrow="Migration" heading="Moving from an old PBX"><ol className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">{migrationSteps.map((step, i) => <li key={step.title} className="border-t border-border pt-5"><span className="ippbx-accent font-display text-3xl font-bold">0{i + 1}</span><h3 className="font-display font-semibold text-lg mt-5">{step.title}</h3><p className="ippbx-muted font-dm text-sm mt-3 leading-relaxed">{step.body}</p></li>)}</ol></Section>
+    <Section eyebrow="After install" heading="Support after install" kicker="Support terms are agreed in your support plan. The items we set with you:"><Table columns={["Item", "How it is set"]} rows={supportTerms.map(s => [s.item, s.detail])} caption="IP PBX support items agreed in your support plan" /></Section>
+    <Section eyebrow="Who it’s for" heading="Who buys an IP PBX"><div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">{buyers.map(({ Icon, title: name, why, setup }) => <article className="bn-tile p-6" key={name}><Icon className="ippbx-accent w-7 h-7" /><h3 className="font-display font-semibold text-xl mt-5">{name}</h3><p className="ippbx-muted font-dm text-sm leading-relaxed mt-3">{why}</p><p className="font-dm text-sm leading-relaxed mt-4">{setup}</p></article>)}</div></Section>
+    <Section eyebrow="Compliance" heading="Is an IP PBX legal in Pakistan?">
+      <div className="ippbx-benchmark"><p className="font-dm leading-relaxed">Yes. The IP PBX itself is your own equipment on your own network. The rules apply to the lines it uses: calls to international destinations must go through licensed carriers (LDI licensees), and BrainNET's SIP Trunk lines are supplied through them. PTA's position on IP telephony for businesses follows its March 2020 framework — see the <Link className="ippbx-link" to="/services/internet/virtual-pbx">Virtual PBX page</Link> for the detail. BrainNET licence details are available on request.</p></div>
+    </Section>
+    <TelephonyFAQ id="ippbx" title="IP PBX FAQs" faqs={faqs} />
+    <RelatedServices currentPath={PATH} />
+    <section className="ippbx-band ippbx-section"><div className="max-w-screen-xl mx-auto px-5 text-center"><Server className="ippbx-accent w-10 h-10 mx-auto mb-5" /><h2 className="font-display font-bold">Ready to get the right IP PBX?</h2><p className="ippbx-muted font-dm text-lg max-w-2xl mx-auto mt-5 leading-relaxed">Tell us your headcount, lines and call volume, and we will send a written {terms.currency} quote within {terms.quoteWithinHours} hours.</p><div className="flex justify-center mt-8"><QuoteButtons /></div></div></section>
+  </main><Footer /></div>;
 }

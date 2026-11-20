@@ -17,6 +17,8 @@ interface ProcessTimelineProps {
   steps: ProcessStep[];
   imageLabel?: string;
   imageHint?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
 export const ProcessTimeline = ({
@@ -26,6 +28,8 @@ export const ProcessTimeline = ({
   steps,
   imageLabel,
   imageHint,
+  imageSrc,
+  imageAlt,
 }: ProcessTimelineProps) => (
   <section className="relative py-20 md:py-28 overflow-hidden">
     <div className="relative z-10 max-w-screen-xl mx-auto px-5">
@@ -50,7 +54,18 @@ export const ProcessTimeline = ({
 
         {imageLabel && (
           <ScrollReveal delay={0.2} className="lg:col-span-5 lg:sticky lg:top-32">
-            <ImagePlaceholder label={imageLabel} hint={imageHint} aspect="aspect-square" />
+            {imageSrc ? (
+              <img
+                src={imageSrc}
+                alt={imageAlt ?? imageLabel}
+                width={1008}
+                height={1008}
+                loading="lazy"
+                className="w-full aspect-square object-cover rounded-2xl border border-[hsl(var(--bn-line)/0.55)] shadow-[0_30px_80px_-20px_hsl(var(--bn-violet)/0.5)]"
+              />
+            ) : (
+              <ImagePlaceholder label={imageLabel} hint={imageHint} aspect="aspect-square" />
+            )}
           </ScrollReveal>
         )}
       </div>

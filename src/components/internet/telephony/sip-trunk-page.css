@@ -1,0 +1,29 @@
+.brand-internet .sipt-page { color: hsl(var(--bn-ink)); }
+.brand-internet .sipt-page .font-display { letter-spacing: 0; }
+.brand-internet .sipt-page h1 { font-size: 48px; line-height: 1.12; }
+.brand-internet .sipt-page h2 { font-size: 36px; }
+.brand-internet .sipt-muted { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .sipt-link { color: hsl(var(--bn-violet-soft)); }
+.brand-internet .sipt-link:hover { color: hsl(var(--bn-ink)); }
+.brand-internet .sipt-hero { position: relative; isolation: isolate; background: hsl(var(--bn-bg-deep)); }
+.brand-internet .sipt-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, hsl(var(--bn-bg-deep) / .96), hsl(var(--bn-bg-deep) / .82) 40%, hsl(var(--bn-bg-deep) / .12)); }
+.brand-internet .sipt-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.brand-internet .sipt-section { padding-block: 80px; }
+.brand-internet .sipt-band { background: hsl(var(--bn-violet) / .1); border-block: 1px solid hsl(var(--bn-line)); }
+.brand-internet .sipt-outline { color: hsl(var(--bn-ink)); border-color: hsl(var(--bn-ink-soft) / .55); }
+.brand-internet .sipt-outline:hover { background: hsl(var(--bn-ink) / .1); }
+.brand-internet .sipt-table-wrap { border: 1px solid hsl(var(--bn-line)); border-radius: 8px; overflow-x: auto; }
+.brand-internet .sipt-table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: 14px; line-height: 1.7; }
+.brand-internet .sipt-table th, .brand-internet .sipt-table td { padding: 20px; text-align: left; vertical-align: top; border-bottom: 1px solid hsl(var(--bn-line) / .65); }
+.brand-internet .sipt-table td { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .sipt-table thead { background: hsl(var(--bn-violet) / .13); }
+.brand-internet .sipt-table tr:last-child td, .brand-internet .sipt-table tr:last-child th { border-bottom: 0; }
+.brand-internet .sipt-accent { color: hsl(var(--bn-violet-soft)); }
+.brand-internet .sipt-callout { border: 1px solid hsl(var(--bn-line)); border-left: 3px solid hsl(var(--bn-violet)); border-radius: 8px; padding: 20px 24px; background: hsl(var(--bn-violet) / .07); }
+@media (max-width: 768px) {
+ .brand-internet .sipt-page h1 { font-size: 34px; }
+ .brand-internet .sipt-page h2 { font-size: 28px; }
+ .brand-internet .sipt-section { padding-block: 56px; }
+ .brand-internet .sipt-hero::after { background: hsl(var(--bn-bg-deep) / .82); }
+ .brand-internet .sipt-photo { object-position: 65% center; }
+}

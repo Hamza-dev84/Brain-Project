@@ -1,0 +1,33 @@
+.brand-internet .pbxprice-page { color: hsl(var(--bn-ink)); }
+.brand-internet .pbxprice-page .font-display { letter-spacing: 0; }
+.brand-internet .pbxprice-page h1 { font-size: 48px; line-height: 1.12; }
+.brand-internet .pbxprice-page h2 { font-size: 36px; line-height: 1.2; }
+.brand-internet .pbxprice-muted { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .pbxprice-accent, .brand-internet .pbxprice-link { color: hsl(var(--bn-violet-soft)); }
+.brand-internet .pbxprice-link:hover { color: hsl(var(--bn-ink)); }
+.brand-internet .pbxprice-hero { position: relative; isolation: isolate; background: hsl(var(--bn-bg-deep)); }
+.brand-internet .pbxprice-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, hsl(var(--bn-bg-deep) / .97), hsl(var(--bn-bg-deep) / .87) 38%, hsl(var(--bn-bg-deep) / .13)); }
+.brand-internet .pbxprice-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.brand-internet .pbxprice-section { padding-block: 80px; }
+.brand-internet .pbxprice-band { background: hsl(var(--bn-violet) / .1); border-block: 1px solid hsl(var(--bn-line)); }
+.brand-internet .pbxprice-outline { color: hsl(var(--bn-ink)); border-color: hsl(var(--bn-ink-soft) / .55); }
+.brand-internet .pbxprice-outline:hover { background: hsl(var(--bn-ink) / .1); }
+.brand-internet .pbxprice-table-wrap { border: 1px solid hsl(var(--bn-line)); border-radius: 8px; overflow-x: auto; }
+.brand-internet .pbxprice-table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: 14px; line-height: 1.7; }
+.brand-internet .pbxprice-table th, .brand-internet .pbxprice-table td { padding: 20px; text-align: left; vertical-align: top; border-bottom: 1px solid hsl(var(--bn-line) / .65); }
+.brand-internet .pbxprice-table td { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .pbxprice-table thead { background: hsl(var(--bn-violet) / .13); }
+.brand-internet .pbxprice-table tbody tr:last-child > * { border-bottom: 0; }
+.brand-internet .pbxprice-note { border-left: 3px solid hsl(var(--bn-violet-soft)); padding: 16px 20px; background: hsl(var(--bn-violet) / .07); }
+.brand-internet .pbxprice-formula { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px; border-block: 1px solid hsl(var(--bn-line)); padding: 32px 0; }
+.brand-internet .pbxprice-formula strong { font-size: 24px; }
+.brand-internet .pbxprice-formula small { display: block; margin-top: 8px; color: hsl(var(--bn-ink-soft)); font-size: 13px; }
+@media (max-width: 768px) {
+ .brand-internet .pbxprice-page h1 { font-size: 34px; }
+ .brand-internet .pbxprice-page h2 { font-size: 28px; }
+ .brand-internet .pbxprice-section { padding-block: 56px; }
+ .brand-internet .pbxprice-hero::after { background: hsl(var(--bn-bg-deep) / .84); }
+ .brand-internet .pbxprice-photo { object-position: 65% center; }
+ .brand-internet .pbxprice-formula { gap: 14px; }
+ .brand-internet .pbxprice-formula strong { font-size: 19px; }
+}

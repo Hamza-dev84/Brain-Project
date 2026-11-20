@@ -1,0 +1,29 @@
+.brand-internet .vpbx-page { color: hsl(var(--bn-ink)); }
+.brand-internet .vpbx-page .font-display { letter-spacing: 0; }
+.brand-internet .vpbx-page h1 { font-size: 48px; line-height: 1.12; }
+.brand-internet .vpbx-page h2 { font-size: 36px; }
+.brand-internet .vpbx-muted { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .vpbx-link { color: hsl(var(--bn-violet-soft)); }
+.brand-internet .vpbx-link:hover { color: hsl(var(--bn-ink)); }
+.brand-internet .vpbx-hero { position: relative; isolation: isolate; background: hsl(var(--bn-bg-deep)); }
+.brand-internet .vpbx-hero::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, hsl(var(--bn-bg-deep) / .96), hsl(var(--bn-bg-deep) / .82) 40%, hsl(var(--bn-bg-deep) / .12)); }
+.brand-internet .vpbx-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.brand-internet .vpbx-section { padding-block: 80px; }
+.brand-internet .vpbx-band { background: hsl(var(--bn-violet) / .1); border-block: 1px solid hsl(var(--bn-line)); }
+.brand-internet .vpbx-outline { color: hsl(var(--bn-ink)); border-color: hsl(var(--bn-ink-soft) / .55); }
+.brand-internet .vpbx-outline:hover { background: hsl(var(--bn-ink) / .1); }
+.brand-internet .vpbx-table-wrap { border: 1px solid hsl(var(--bn-line)); border-radius: 8px; overflow-x: auto; }
+.brand-internet .vpbx-table { width: 100%; min-width: 680px; border-collapse: collapse; font-size: 14px; line-height: 1.7; }
+.brand-internet .vpbx-table th, .brand-internet .vpbx-table td { padding: 20px; text-align: left; vertical-align: top; border-bottom: 1px solid hsl(var(--bn-line) / .65); }
+.brand-internet .vpbx-table td { color: hsl(var(--bn-ink-soft)); }
+.brand-internet .vpbx-table thead { background: hsl(var(--bn-violet) / .13); }
+.brand-internet .vpbx-table tr:last-child td, .brand-internet .vpbx-table tr:last-child th { border-bottom: 0; }
+.brand-internet .vpbx-cloud { color: hsl(var(--bn-violet-soft)); }
+.brand-internet .vpbx-flow { border-block: 1px solid hsl(var(--bn-line)); padding-block: 32px; }
+@media (max-width: 768px) {
+ .brand-internet .vpbx-page h1 { font-size: 34px; }
+ .brand-internet .vpbx-page h2 { font-size: 28px; }
+ .brand-internet .vpbx-section { padding-block: 56px; }
+ .brand-internet .vpbx-hero::after { background: hsl(var(--bn-bg-deep) / .82); }
+ .brand-internet .vpbx-photo { object-position: 65% center; }
+}
