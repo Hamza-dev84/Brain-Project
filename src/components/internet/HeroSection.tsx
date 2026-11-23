@@ -81,6 +81,9 @@ const Slide1 = ({ onCheck, speedCount }: { onCheck: () => void; speedCount: numb
           <p className="mt-6 font-dm text-[hsl(var(--bn-ink-soft))] text-base md:text-lg max-w-xl">
             Fast, stable, and high-performance fiber internet for homes and businesses across Lahore. We are Pakistan's Pioneer Fiber Internet Provider.
           </p>
+          <p className="mt-6 font-dm text-[hsl(var(--bn-ink-soft))] text-base md:text-lg max-w-xl">
+            We provide consistent speed, real technical support, and transparent pricing without hidden charges. Whether you need home internet, business connectivity, or dedicated fiber solutions, BrainNET Fiber delivers reliable service across major areas of Lahore.
+          </p>
         </div>
         <PrimaryCtas onPrimary={onCheck} />
       </motion.div>
@@ -499,8 +502,8 @@ const HeroSection = () => {
                 aria-label={`Go to slide ${i + 1}: ${label}`}
                 onClick={() => api?.scrollTo(i)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${active
-                    ? 'w-8 bg-accent shadow-[0_0_20px_-2px_hsl(var(--bn-red)/0.8)]'
-                    : 'w-2.5 bg-white/30 hover:bg-white/50'
+                  ? 'w-8 bg-accent shadow-[0_0_20px_-2px_hsl(var(--bn-red)/0.8)]'
+                  : 'w-2.5 bg-white/30 hover:bg-white/50'
                   }`}
               />
             );

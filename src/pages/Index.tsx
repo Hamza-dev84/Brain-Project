@@ -121,7 +121,7 @@ const SERVICES = [{
   buttonText: 'View Solutions',
   buttonVariant: 'default' as const
 }, {
-  id: 'telephone',
+  id: 'internet/telephony',
   title: 'Telephone Services',
   subtitle: 'BrainTELEPHONY',
   icon: Phone,
@@ -304,7 +304,8 @@ const Index = memo(() => {
             }}></div>
           </div>
 
-          <div className="relative mx-auto w-full px-4 md:px-6">
+          {/* <div className="relative mx-auto w-full px-4 md:px-6"> */}
+          <div className="relative mx-auto w-full max-w-[1440px] px-6 lg:px-14">
             {/* Two-column grid layout for desktop */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12 items-center w-full">
               {/* Left Column - Content */}

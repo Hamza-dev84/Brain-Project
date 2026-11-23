@@ -3,6 +3,7 @@ import { Zap, Headphones, Globe, Server, CheckCircle, ArrowRight } from "lucide-
 import { ScrollReveal } from "@/components/internet/animations/ScrollReveal";
 import { StaggerContainer, StaggerItem } from "@/components/internet/animations/StaggerContainer";
 import SectionHeader from "@/components/internet/home/SectionHeader";
+import { useSignupModal } from "@/components/internet/SignupModalProvider";
 import cirIcon from "@/assets/internet/site/business-cir-speedometer.webp";
 import volumeIcon from "@/assets/internet/site/business-volume-blocks.webp";
 
@@ -25,6 +26,8 @@ const advantages = [
 ];
 
 const BusinessSection = () => {
+  const { openSignup } = useSignupModal();
+
   return (
     <section className="relative bn-home py-24 md:py-32 overflow-hidden border-t border-[hsl(var(--bn-line)/0.4)]">
       <div className="absolute inset-0 bn-grid-bg opacity-30 pointer-events-none" />
@@ -141,7 +144,11 @@ const BusinessSection = () => {
                   Home or Business internet? Let's figure it out together.
                 </h3>
               </div>
-              <button className="relative inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-display font-semibold text-base px-6 py-4 rounded-full shadow-[0_15px_40px_-10px_hsl(var(--bn-red)/0.7)] transition-all hover:translate-y-[-2px]">
+              <button
+                type="button"
+                onClick={() => openSignup()}
+                className="relative inline-flex items-center justify-center gap-2 bg-accent hover:bg-accent/90 text-white font-display font-semibold text-base px-6 py-4 rounded-full shadow-[0_15px_40px_-10px_hsl(var(--bn-red)/0.7)] transition-all hover:translate-y-[-2px]"
+              >
                 Consult Our Experts
                 <ArrowRight className="w-4 h-4" />
               </button>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import { useContactDialog } from "@/components/cloud/site/contact-dialog";
 import {
   IconCloud,
   IconServer,
@@ -58,6 +59,7 @@ export function SolutionsGrid({
   subheading?: string;
   className?: string;
 }) {
+  const { open } = useContactDialog();
   const items = SOLUTIONS.filter((s) => s.to !== excludeTo);
   const dark = variant === "cross-link";
 
@@ -110,7 +112,22 @@ export function SolutionsGrid({
               "group flex flex-col rounded-[var(--radius-card)] border border-hairline bg-white p-8 transition-all duration-[var(--dur-base)] ease-[var(--ease-out)] hover:-translate-y-0.5 hover:shadow-[var(--shadow-card-hover)]";
 
             return s.to ? (
-              <Link key={s.title} to={s.to} className={cls}>
+              <Link
+                key={s.title}
+                to={s.to}
+                className={cls}
+                onClick={(event) => {
+                  if (s.to !== "/services/cloud") return;
+                  event.preventDefault();
+                  open({
+                    intent: "Hero · Free infrastructure audit",
+                    service: "Cloud Hosting",
+                    title: "Get Your Free Infrastructure Audit.",
+                    subtitle:
+                      "Share what you're running. A BrainCLOUD Solutions Consultant will reply within 1 Business Hour.",
+                  });
+                }}
+              >
                 {inner}
               </Link>
             ) : (
