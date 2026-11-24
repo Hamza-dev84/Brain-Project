@@ -1,0 +1,406 @@
+{
+  "info": {
+    "_postman_id": "543cc138-1679-4072-82a3-0d50a1f5a59b",
+    "name": "Brain Website",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13712729"
+  },
+  "item": [
+    {
+      "name": "testing",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"jdbsflhr36@brain.net.pk\",\r\n  \"name\": \"ontact template\",\r\n  \"phone\": \"03001234567\",\r\n  \"source\": \"Website Contact Form\",\r\n  \"subject\": \"Inquiry\",\r\n  \"message\": \"I want details about your services.testing 1\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/send-form",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "send-form"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainTel Referral Form",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customerCode\": \"2434\",\r\n  \"referenceName\": \"ali\",\r\n  \"referencePhone\": \"923037895346\",\r\n  \"serviceType\": \"Telephony Services - VoIP\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/braintel/referral",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "braintel",
+            "referral"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainTel Home Page Form",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Test\",\r\n  \"email\": \"test@gmail.com\",\r\n  \"phone\": \"923084545040\",\r\n  \"message\": \"Testing\",\r\n  \"inquiryType\": \"Technical\",\r\n  \"hearAboutUs\": \"AI Search\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/braintel/home",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "braintel",
+            "home"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainTel Contact-Us Form",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Ali\",\r\n  \"email\": \"ali@gmail.com\",\r\n  \"phone\": \"923053598284\",\r\n  \"inquiryType\": \"Technical\",\r\n  \"hearAboutUs\": \"AI Search\",\r\n  \"message\": \"Testing\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/braintel/contact",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "braintel",
+            "contact"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainNet Home Page Email",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"ahmad@gmail.com\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/brainnet/home",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "brainnet",
+            "home"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainNet Contact-Us",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Test\",\r\n  \"email\": \"test@gmail.com\",\r\n  \"phone\": \"923084545040\",\r\n  \"inquiryType\": \"Technical\",\r\n  \"hearAboutUs\": \"Brochure\",\r\n  \"message\": \"Testing\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/brainnet/contact",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "brainnet",
+            "contact"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainNet Check Availability",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"area\": \"Cavalry Ground\",\r\n  \"serviceType\": \"home\",\r\n  \"package\": \"Free Speed Boost 35 → 55 Mbps\",\r\n  \"name\": \"Test\",\r\n  \"mobile\": \"92304545040\",\r\n  \"email\": \"ali@gmail.com\",\r\n  \"referralSource\": \"Social Media\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/brainnet/availability",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "brainnet",
+            "availability"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainSoft Project Planner",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Ali\",\r\n  \"email\": \"ali@gmail.com\",\r\n  \"hearAboutUs\": \"Social Media\",\r\n  \"message\": \"I'm interested in Web Development Services - Frontend Development with the following features:\\n\\n1. React/Vue.js Components\\n2. Responsive CSS Framework\\n3. Progressive Web App (PWA)\",\r\n  \"projectType\": \"Frontend Development\",\r\n  \"selectedFeatures\": [\r\n    \"React/Vue.js Components\",\r\n    \"Responsive CSS Framework\",\r\n    \"Progressive Web App (PWA)\"\r\n  ],\r\n  \"serviceName\": \"Web Development Services\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/brainsoft/planner",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "brainsoft",
+            "planner"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainSoft Contact-Us",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Test\",\r\n  \"email\": \"Test@gmail.com\",\r\n  \"inquiryType\": \"Technical\",\r\n  \"hearAboutUs\": \"AI Search\",\r\n  \"message\": \"Testing\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/brainsoft/contact",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "brainsoft",
+            "contact"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BSMS Campaign Form",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"goal\": \"promotional\",\r\n  \"message\": \"Your verification code is {OTP}. Valid for 10 minutes.\",\r\n  \"senderId\": \"Brand Name\",\r\n  \"messageParts\": 1,\r\n  \"encodingType\": \"GSM-7\",\r\n  \"selectedPackage\": {\r\n    \"tierName\": \"Starter\",\r\n    \"smsVolume\": \"5,000\",\r\n    \"validity\": \"3 Months\",\r\n    \"maskCount\": \"1\",\r\n    \"variant\": \"standard\",\r\n    \"features\": [\"Basic reporting\", \"Email support\", \"API access\", \"Delivery reports\"]\r\n  },\r\n  \"selectedCategory\": \"otp\",\r\n  \"name\": \"Usman\",\r\n  \"email\": \"ali@gmail.com\",\r\n  \"company\": \"brain\",\r\n  \"phone\": \"923088569712\",\r\n  \"purpose\": \"developer\",\r\n  \"subscribeToTips\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/bsms/campaign",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "bsms",
+            "campaign"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BSMS Contact-Us",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"test\",\r\n  \"email\": \"Test@gmail.com\",\r\n  \"phone\": \"923084545040\",\r\n  \"message\": \"Testing\",\r\n  \"inquiryType\": \"Technical\",\r\n  \"hearAboutUs\": \"AI Search\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/bsms/contact",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "bsms",
+            "contact"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "BrainTel Resume",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "fullName",
+              "value": "Ghazanfar Pasha",
+              "type": "text",
+              "uuid": "bd6b40b5-1104-4bfd-bdcb-f86b0741e681"
+            },
+            {
+              "key": "email",
+              "value": "ghazanfar@brain.net.pk",
+              "type": "text",
+              "uuid": "4f0ed0d0-bae7-4df4-836a-8c0e71fea299"
+            },
+            {
+              "key": "phone",
+              "value": "923337922255",
+              "type": "text",
+              "uuid": "3754d0b4-1c9a-464d-add4-5d31e37ebebc"
+            },
+            {
+              "key": "position",
+              "value": "Team Lead",
+              "type": "text",
+              "uuid": "d8e71842-39fa-4615-97fe-d2467173dd28"
+            },
+            {
+              "key": "coverLetter",
+              "value": "this is my cv cover letter",
+              "type": "text",
+              "uuid": "853dcca9-fd90-46d1-998c-697cbf37d17a"
+            },
+            {
+              "key": "resume",
+              "type": "file",
+              "uuid": "98e2250f-8160-4a0b-9aa2-de33be7b8e77",
+              "src": "/C:/Users/HP/Documents/1_Networks_REST_Apis.docx"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{url}}/api/braintel/resume",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "braintel",
+            "resume"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": ""
+    }
+  ]
+}

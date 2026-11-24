@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; }
+    .card { max-width: 650px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
+    .title { font-size: 20px; font-weight: bold; color: #2c3e50; margin-bottom: 15px; }
+    .row { margin: 8px 0; }
+    .label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="title">BrainNet Check Availability Request</div>
+
+    <div class="row"><span class="label">Area:</span> <%= area || '-' %></div>
+    <div class="row"><span class="label">Service Type:</span> <%= serviceType || '-' %></div>
+    <div class="row"><span class="label">Package:</span> <%= packageName || '-' %></div>
+    <div class="row"><span class="label">Name:</span> <%= name || '-' %></div>
+    <div class="row"><span class="label">Mobile:</span> <%= mobile || '-' %></div>
+    <div class="row"><span class="label">Email:</span> <%= email || '-' %></div>
+    <div class="row"><span class="label">Referral Source:</span> <%= referralSource || '-' %></div>
+    <div class="row"><span class="label">Oracle Lead #:</span> <%= (typeof oracleLeadId !== 'undefined' && oracleLeadId) ? oracleLeadId : 'Not created' %></div>
+
+    <hr/>
+
+    <div class="row">Submitted On: <%= createdAt %></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "rollback": "npx sequelize-cli db:migrate:undo"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "mysql2": "^3.16.0",
+    "nodemailer": "^7.0.12",
+    "sequelize": "^6.37.7"
+  }
+}
