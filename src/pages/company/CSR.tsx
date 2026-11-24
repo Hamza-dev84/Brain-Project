@@ -127,7 +127,24 @@ export default function CSR() {
               </CardHeader>
               <CardContent>
                 <p className="text-neutral-medium leading-relaxed">
-                  These tech hubs united students and professors from different backgrounds and helped them gain essential computer know-how, career counselling, and access to virtual educational institutes.
+                  These tech hubs united students and professors from different backgrounds and helped them gain essential computer know-how,
+                  <a
+                    href="/company/careers"
+                    className="
+     text-[#2563EB]
+    hover:text-[#1D4ED8]
+    active:text-[#1E3A8A]
+
+    dark:text-[#60A5FA]
+    dark:hover:text-[#93C5FD]
+    dark:active:text-[#BFDBFE]
+
+    transition-colors
+  "
+                  >
+                    {" "} career counselling, {" "}
+                  </a>
+                  and access to virtual educational institutes.
                 </p>
               </CardContent>
             </Card>

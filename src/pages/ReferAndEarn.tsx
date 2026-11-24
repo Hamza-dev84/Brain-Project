@@ -186,7 +186,7 @@ export default function ReferAndEarn() {
                 Let's Grow Together!
               </h3> */}
 
-              <h3 className="text-2xl md:text-3xl font-bold heading-solid-white text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold heading-solid-white text-center mb-8 dark:[--primary-foreground:0_0%_100%]">
                 Let's Grow Together!
               </h3>
 

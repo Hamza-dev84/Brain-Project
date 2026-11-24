@@ -126,7 +126,7 @@ const NewsletterSection = () => {
                 <div className="text-accent font-lato font-bold text-body-xs tracking-wide uppercase mb-1">
                   24/7 WhatsApp Chat
                 </div>
-                <div className="text-white font-lato font-bold text-[20px] leading-7">(042) 32100340</div>
+                <div className="text-white font-lato font-bold text-[20px] leading-7">923276222888</div>
               </div>
             </div>
           </a>

@@ -173,7 +173,7 @@ function CallCentersContent() {
       />
 
       {/* Hero Section with Enhanced Visuals */}
-      <section className="relative bg-white py-20 px-4 md:px-6 overflow-hidden">
+      <section className="relative bg-white py-20 px-4 md:px-6 overflow-hidden dark:bg-background">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -384,7 +384,7 @@ function CallCentersContent() {
 
         <div className="container mx-auto max-w-5xl text-center space-y-10 relative z-10">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white pb-2">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold heading-solid-white pb-2 dark:[--primary-foreground:0_0%_100%]">
               Build a more efficient call center operation.
             </h2>
             <p className="text-lead-lg text-white/90 max-w-2xl mx-auto">
@@ -397,7 +397,7 @@ function CallCentersContent() {
               asChild
               size="lg"
               variant="secondary"
-              className="rounded-full px-12 py-4 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              className="rounded-full px-12 py-4 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl group dark:text-white"
             >
               <Link to="/contact-us">
                 Request a Quote

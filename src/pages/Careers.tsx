@@ -311,6 +311,11 @@ export default function Careers() {
     return matchesSearch && matchesDepartment && matchesLocation && matchesExperience;
   });
 
+  const scrollToFeatures = () => {
+    const firstSection = document.getElementById("form-section");
+    firstSection?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* <PageMeta
@@ -621,7 +626,7 @@ export default function Careers() {
             })}
           </div>
 
-          <motion.div
+          {/* <motion.div
             className="text-center mt-12"
             initial={{ opacity: 1 }}
             whileInView={{ opacity: 1 }}
@@ -631,7 +636,7 @@ export default function Careers() {
             <Button variant="outlined" asChild className="btn-outlined border-primary text-primary px-6 py-3 rounded-full">
               <Link to="/company/about-us">View All Benefits</Link>
             </Button>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section >
 
@@ -917,7 +922,8 @@ export default function Careers() {
                       className="w-full btn-filled bg-primary text-primary-foreground hover:elevated-2 transition-all duration-300"
                     >
                       <a
-                        href={`mailto:careers@brain.net.pk?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
+                        // href={`mailto:careers@brain.net.pk?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
+                        onClick={scrollToFeatures}
                         aria-label={`Apply for ${job.title}`}
                       >
                         Apply Now
@@ -932,11 +938,13 @@ export default function Careers() {
       </section >
 
       {/* Application Form Section */}
-      < section className="py-20 px-4 bg-neutral-light relative" style={{
-        backgroundImage: `url(${formBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}>
+      < section
+        id="form-section"
+        className="py-20 px-4 bg-neutral-light relative" style={{
+          backgroundImage: `url(${formBackground})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}>
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
         <div className="max-w-4xl mx-auto relative z-10">
           <motion.div

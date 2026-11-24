@@ -32,7 +32,7 @@ const Header = () => {
 
   const homeMenu = [
     { label: 'Home Internet', href: '/services/internet/home-internet-services-lahore' },
-    { label: 'Voice Plans', href: '/services/internet/voice-plans' },
+    { label: 'Voice Plans', href: '/services/internet/telephony' },
     { label: 'HDTV Bundles', href: '/services/internet/iptv-lahore' },
   ];
 

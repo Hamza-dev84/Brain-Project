@@ -185,7 +185,7 @@ export function MobileNav({ open, onOpenChange }: MobileNavProps) {
               <span className="font-medium">Contact Us</span>
             </Link>
             <a
-              href="https://company/careers.brain.net.pk"
+              href="/company/careers"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleLinkClick}

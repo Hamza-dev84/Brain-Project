@@ -117,7 +117,7 @@ const SMSMarketingWhyChoose = () => {
           description="For businesses requiring a multi-channel approach, pairing your SMS campaigns with our Voice Broadcast service creates an unstoppable communication stream."
         >
           <a
-            href="/services/internet/voice-plans"
+            href="/services/internet/telephony"
             className="inline-flex items-center text-sm text-primary hover:underline font-medium"
             title="Voice Broadcast Services in Pakistan"
           >

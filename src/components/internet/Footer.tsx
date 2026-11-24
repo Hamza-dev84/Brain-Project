@@ -23,7 +23,7 @@ const Footer = () => {
       links: [
         { label: 'Home Internet', href: '/services/internet/home-internet-services-lahore', type: 'route' },
         { label: 'Dedicated Internet', href: '/services/internet/dedicated-internet-lahore', type: 'route' },
-        { label: 'Voice Plans', href: '/services/internet/voice-plans', type: 'route' },
+        { label: 'Voice Plans', href: '/services/internet/telephony', type: 'route' },
         { label: 'HDTV Bundles', href: '/services/internet/iptv-lahore', type: 'route' },
       ],
     },

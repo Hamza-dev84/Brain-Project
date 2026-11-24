@@ -41,12 +41,12 @@ function ContactInfoCard({
             target="_blank"
             rel="noopener noreferrer"
           >
-            <p key={idx} className="text-foreground text-sm">
+            <p key={idx} className="text-foreground text-sm dark:text-primary">
               {line}
             </p>
           </a>
         ) : (
-          <p key={idx} className="text-foreground text-sm">
+          <p key={idx} className="text-foreground text-sm dark:text-primary">
             {line}
           </p>
         ),
@@ -59,7 +59,7 @@ function ContactInfoCard({
             (item, idx) =>
               item.value && (
                 <span key={idx} className="block">
-                  <span className="!text-primary font-semibold">{item.label}:</span>{" "}
+                  <span className="!text-primary font-semibold dark:text-primary!">{item.label}:</span>{" "}
                   <a
                     href={
                       item.label === "WhatsApp"
@@ -72,7 +72,7 @@ function ContactInfoCard({
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="hover:underline text-sm"
+                    className="hover:underline text-sm dark:text-primary"
                   >
                     {item.value}
                   </a>
@@ -96,7 +96,7 @@ function ContactInfoCard({
                     href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email.value}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:underline"
+                    className="hover:underline dark:text-primary"
                   >
                     {email.value}
                   </a>
